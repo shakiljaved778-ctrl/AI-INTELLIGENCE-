@@ -1,0 +1,114 @@
+[
+  {
+    "title": "OpenAI Announces GPT-5 with New Reasoning Capabilities",
+    "slug": "openai-gpt5-announcement",
+    "subtitle": "The latest model pushes performance on coding, math, and science benchmarks while cutting hallucinations.",
+    "excerpt": "OpenAI on Monday unveiled GPT-5, its most capable model to date, positioning the release as a step change in machine reasoning rather than an incremental…",
+    "category": "products",
+    "tags": [
+      "LLM",
+      "OpenAI",
+      "GPT"
+    ],
+    "date": "2025-09-01",
+    "isPick": true
+  },
+  {
+    "title": "Anthropic Expands Claude for the Enterprise",
+    "slug": "anthropic-claude-enterprise-expansion",
+    "subtitle": "New administrative controls, longer context, and compliance features target regulated industries.",
+    "excerpt": "Anthropic is pushing deeper into the enterprise, announcing a slate of features aimed at large organizations in finance, healthcare, and government — sectors…",
+    "category": "companies",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Enterprise"
+    ],
+    "date": "2025-08-28",
+    "isPick": false
+  },
+  {
+    "title": "EU AI Act Enforcement Begins: What Companies Must Do Now",
+    "slug": "eu-ai-act-enforcement-begins",
+    "subtitle": "The first obligations under Europe's landmark AI law take effect, and the compliance clock is running.",
+    "excerpt": "The European Union's AI Act, the world's most comprehensive attempt to regulate artificial intelligence, has entered its enforcement phase. The first tranche…",
+    "category": "policy",
+    "tags": [
+      "EU AI Act",
+      "Regulation",
+      "Policy"
+    ],
+    "date": "2025-08-20",
+    "isPick": true
+  },
+  {
+    "title": "DeepMind's New Model Accelerates Materials Discovery",
+    "slug": "deepmind-materials-discovery",
+    "subtitle": "A generative system proposes thousands of candidate compounds, compressing years of lab work into weeks.",
+    "excerpt": "Researchers at Google DeepMind have unveiled a model that proposes and screens candidate materials at a pace no human lab could match, the latest sign that…",
+    "category": "research",
+    "tags": [
+      "DeepMind",
+      "Science",
+      "Materials"
+    ],
+    "date": "2025-08-15",
+    "isPick": true
+  },
+  {
+    "title": "The Open-Source LLM Landscape Just Shifted Again",
+    "slug": "open-source-llm-roundup",
+    "subtitle": "A new wave of permissively licensed models narrows the gap with closed frontier systems.",
+    "excerpt": "The gap between open and closed models keeps narrowing. A fresh wave of permissively licensed releases now matches last year's frontier on many benchmarks —…",
+    "category": "models",
+    "tags": [
+      "LLM",
+      "Open Source",
+      "Models"
+    ],
+    "date": "2025-08-10",
+    "isPick": false
+  },
+  {
+    "title": "Humanoid Robots Reach a Commercial Tipping Point",
+    "slug": "humanoid-robotics-milestone",
+    "subtitle": "Pilot deployments in warehouses signal that general-purpose robots are edging from demo to duty.",
+    "excerpt": "Humanoid robots are moving from viral demo reels to paid pilots. Several manufacturers now have units performing repetitive logistics tasks on real warehouse…",
+    "category": "products",
+    "tags": [
+      "Robotics",
+      "Hardware",
+      "Automation"
+    ],
+    "date": "2025-08-05",
+    "isPick": false
+  },
+  {
+    "title": "Opinion: The Agentic AI Hype Needs a Reality Check",
+    "slug": "opinion-agentic-hype",
+    "subtitle": "Autonomous agents are genuinely useful — and genuinely oversold. Knowing the difference is now a core skill.",
+    "excerpt": "\"Agentic\" is the word of the year, and like most words of the year it is doing too much work. Autonomous AI agents — systems that plan, call tools, and act…",
+    "category": "opinion",
+    "tags": [
+      "Agents",
+      "Opinion",
+      "LLM"
+    ],
+    "date": "2025-07-30",
+    "isPick": true
+  },
+  {
+    "title": "Five Takeaways from the Frontier AI Summit",
+    "slug": "frontier-ai-summit-recap",
+    "subtitle": "Labs, regulators, and enterprises gathered to argue about capability, safety, and who pays for compute.",
+    "excerpt": "This week's Frontier AI Summit drew lab leaders, regulators, and enterprise buyers into the same rooms, where the mood swung between genuine optimism and sober…",
+    "category": "events",
+    "tags": [
+      "Events",
+      "Policy",
+      "Industry"
+    ],
+    "date": "2025-07-22",
+    "isPick": false
+  }
+]

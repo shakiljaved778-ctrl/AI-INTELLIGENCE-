@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fbfaf7"/>
+  <rect width="1200" height="12" fill="#8a1c1c"/>
+  <text x="80" y="150" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#8a1c1c" letter-spacing="6">THE WSJ OF AI</text>
+  <text x="80" y="320" font-family="Georgia, 'Times New Roman', serif" font-size="140" font-weight="bold" fill="#1a1614">AI Journal</text>
+  <text x="80" y="420" font-family="ui-sans-serif, system-ui, sans-serif" font-size="34" fill="#4a4440">Comprehensive, trustworthy AI news and analysis.</text>
+  <text x="80" y="470" font-family="ui-sans-serif, system-ui, sans-serif" font-size="34" fill="#4a4440">Models · Companies · Research · Products · Policy</text>
+  <rect x="80" y="540" width="1040" height="2" fill="#d9d2c7"/>
+</svg>

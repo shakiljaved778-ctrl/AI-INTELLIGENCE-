@@ -6,7 +6,8 @@
 
 # next.js
 /.next/
-/out/
+# NOTE: /out/ is intentionally NOT ignored — the prebuilt static export is
+# committed and served by Vercel with no build step (see vercel.json).
 
 # production
 /build

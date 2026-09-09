@@ -2,9 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   // The site is fully static: every route is prerendered at build time from MDX
-  // in the repo. No runtime API routes or external data fetching. We use the
-  // standard Next.js output (not `output: 'export'`) because Vercel's native
-  // Next.js builder handles it most reliably and still prerenders every page.
+  // in the repo. No runtime API routes or external data fetching.
+  // `output: 'export'` emits a self-contained static site to out/, which is
+  // committed and served directly by Vercel with NO build step (see vercel.json)
+  // — so a Vercel build can never fail. To regenerate out/ after editing content
+  // or code, run `pnpm build` locally and commit the updated out/ directory.
+  output: "export",
   images: {
     // The site uses local/static assets only; no next/image optimization server
     // is needed.
