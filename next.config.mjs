@@ -1,0 +1,22 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  // The site is fully static: every route is prerendered at build time from MDX
+  // in the repo. No runtime API routes or external data fetching. We use the
+  // standard Next.js output (not `output: 'export'`) because Vercel's native
+  // Next.js builder handles it most reliably and still prerenders every page.
+  images: {
+    // The site uses local/static assets only; no next/image optimization server
+    // is needed.
+    unoptimized: true,
+  },
+  eslint: {
+    // Linting is run separately via `pnpm lint` (and in CI). Skipping it during
+    // `next build` keeps production deploys from failing on ESLint version /
+    // config differences between environments. It does NOT affect type
+    // checking — TypeScript errors still fail the build.
+    ignoreDuringBuilds: true,
+  },
+};
+
+export default nextConfig;
