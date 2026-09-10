@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://ai-journal.vercel.app/sitemap.xml
+Sitemap: https://cambrian-ai.vercel.app/sitemap.xml

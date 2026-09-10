@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "AI Journal is the WSJ of AI — comprehensive, trustworthy news and analysis on artificial intelligence.",
+    "Cambrian AI is the WSJ of AI — comprehensive, trustworthy news and analysis on artificial intelligence.",
 };
 
 const team = [

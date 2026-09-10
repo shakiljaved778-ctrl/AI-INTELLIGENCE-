@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!tag) return {};
   return {
     title: `#${tag}`,
-    description: `All AI Journal stories tagged ${tag}.`,
+    description: `All Cambrian AI stories tagged ${tag}.`,
   };
 }
 

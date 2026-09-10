@@ -6,15 +6,15 @@
  * publication is a one-line change to `name`.
  */
 export const siteConfig = {
-  name: "AI Journal",
+  name: "Cambrian AI",
   tagline: "The WSJ of AI",
   description:
     "Authoritative, comprehensive news and analysis on AI models, companies, research, products, and policy — for researchers, engineers, founders, and investors.",
   // Update this to your production domain once deployed on Vercel.
-  url: "https://ai-journal.vercel.app",
+  url: "https://cambrian-ai.vercel.app",
   ogImage: "/og-default.svg",
-  contactEmail: "tips@ai-journal.example",
-  advertiseEmail: "ads@ai-journal.example",
+  contactEmail: "tips@cambrian.ai",
+  advertiseEmail: "ads@cambrian.ai",
   links: {
     twitter: "https://twitter.com",
     github: "https://github.com",

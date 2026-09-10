@@ -23,9 +23,9 @@ export function SiteFooter() {
             <p className="mt-2 max-w-md text-sm text-muted-foreground">
               {siteConfig.description}
             </p>
-            <div className="mt-4 max-w-md">
+            <div id="newsletter" className="mt-4 max-w-md scroll-mt-24">
               <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                The AI Journal Briefing
+                The {siteConfig.name} Briefing
               </p>
               <NewsletterSignup />
             </div>

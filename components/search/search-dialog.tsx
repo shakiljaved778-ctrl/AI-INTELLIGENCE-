@@ -99,7 +99,7 @@ export function SearchDialog() {
       >
         <DialogTitle className="sr-only">Search articles</DialogTitle>
         <DialogDescription className="sr-only">
-          Search AI Journal articles by title, topic, or tag.
+          Search Cambrian AI articles by title, topic, or tag.
         </DialogDescription>
 
         <div className="flex items-center gap-3 border-b px-4">

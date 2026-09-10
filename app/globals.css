@@ -4,73 +4,78 @@
 
 @layer base {
   :root {
-    /* Font stacks (system-based so the build needs no network font fetch).
-       Swap these for next/font families if you prefer web fonts. */
-    --font-serif: "Iowan Old Style", "Palatino Linotype", "Source Serif 4",
-      Georgia, Cambria, "Times New Roman", serif;
+    /* Type: a clean, modern sans across the whole site (headings + body).
+       The `--font-serif` token is kept for compatibility with existing
+       components but now points at the same refined sans stack, giving the
+       minimalist, letter-spaced look of the reference design. No web-font
+       fetch is required at build time. */
     --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif;
+      Helvetica, Arial, "Helvetica Neue", sans-serif;
+    --font-serif: var(--font-sans);
 
-    /* Light theme — WSJ-inspired: near-black ink on warm paper, deep-red accent. */
-    --background: 40 33% 99%;
-    --foreground: 20 14% 12%;
+    /* Light theme — minimalist, cool, monochrome with a steel-blue accent. */
+    --background: 210 20% 99%;
+    --foreground: 220 18% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 20 14% 12%;
+    --card-foreground: 220 18% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14% 12%;
+    --popover-foreground: 220 18% 11%;
 
-    --primary: 0 63% 34%;
-    --primary-foreground: 40 33% 99%;
+    /* Near-black primary → black pill buttons, like the reference. */
+    --primary: 220 22% 12%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 10% 92%;
-    --secondary-foreground: 20 14% 20%;
+    --secondary: 214 16% 94%;
+    --secondary-foreground: 220 18% 22%;
 
-    --muted: 30 10% 94%;
-    --muted-foreground: 25 8% 42%;
+    --muted: 214 16% 95%;
+    --muted-foreground: 218 10% 44%;
 
-    --accent: 33 90% 46%;
-    --accent-foreground: 20 14% 12%;
+    /* Steel-blue accent, used sparingly (picks, highlights). */
+    --accent: 212 60% 47%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 42%;
-    --destructive-foreground: 40 33% 99%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 30 12% 87%;
-    --input: 30 12% 85%;
-    --ring: 0 63% 34%;
+    --border: 214 20% 90%;
+    --input: 214 20% 88%;
+    --ring: 220 22% 12%;
 
-    --radius: 0.4rem;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 20 14% 8%;
-    --foreground: 40 20% 92%;
+    --background: 220 20% 7%;
+    --foreground: 210 16% 92%;
 
-    --card: 20 12% 11%;
-    --card-foreground: 40 20% 92%;
+    --card: 220 16% 10%;
+    --card-foreground: 210 16% 92%;
 
-    --popover: 20 12% 11%;
-    --popover-foreground: 40 20% 92%;
+    --popover: 220 16% 10%;
+    --popover-foreground: 210 16% 92%;
 
-    --primary: 0 65% 55%;
-    --primary-foreground: 20 14% 8%;
+    /* In dark mode the pill buttons invert to near-white on dark text. */
+    --primary: 0 0% 97%;
+    --primary-foreground: 220 22% 10%;
 
-    --secondary: 20 8% 18%;
-    --secondary-foreground: 40 20% 90%;
+    --secondary: 220 12% 17%;
+    --secondary-foreground: 210 16% 90%;
 
-    --muted: 20 8% 16%;
-    --muted-foreground: 30 8% 62%;
+    --muted: 220 12% 15%;
+    --muted-foreground: 214 10% 63%;
 
-    --accent: 33 85% 55%;
-    --accent-foreground: 20 14% 8%;
+    --accent: 212 70% 62%;
+    --accent-foreground: 220 22% 8%;
 
-    --destructive: 0 65% 50%;
-    --destructive-foreground: 40 20% 92%;
+    --destructive: 0 65% 52%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 20 8% 22%;
-    --input: 20 8% 24%;
-    --ring: 0 65% 55%;
+    --border: 220 12% 20%;
+    --input: 220 12% 22%;
+    --ring: 0 0% 88%;
   }
 }
 
@@ -81,30 +86,37 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   h1,
   h2,
   h3,
   h4 {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
+    letter-spacing: -0.015em;
+  }
+  /* Eyebrow / section labels: uppercase, widely tracked — the reference look. */
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground;
   }
 }
 
-/* Long-form article typography tuning for the Tailwind Typography plugin. */
+/* Long-form article typography (clean sans, generous measure). */
 @layer components {
   .prose-article {
     @apply prose prose-neutral max-w-none dark:prose-invert
-      prose-headings:font-serif
+      prose-headings:font-sans prose-headings:tracking-tight
+      prose-headings:font-semibold
       prose-h2:mt-10 prose-h2:text-2xl
       prose-h3:mt-8 prose-h3:text-xl
-      prose-p:leading-relaxed
-      prose-a:text-primary prose-a:underline-offset-2
-      prose-blockquote:border-primary prose-blockquote:not-italic
-      prose-img:rounded-lg
+      prose-p:leading-relaxed prose-p:text-foreground/90
+      prose-a:text-accent prose-a:font-medium prose-a:no-underline hover:prose-a:underline prose-a:underline-offset-4
+      prose-blockquote:border-l-2 prose-blockquote:border-accent prose-blockquote:not-italic prose-blockquote:text-foreground/80
+      prose-img:rounded-xl
       prose-figcaption:text-center;
-    font-family: var(--font-serif);
-    font-size: 1.125rem;
-    line-height: 1.75;
+    font-family: var(--font-sans);
+    font-size: 1.075rem;
+    line-height: 1.8;
   }
 }

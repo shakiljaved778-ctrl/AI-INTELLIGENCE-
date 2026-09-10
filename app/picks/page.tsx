@@ -6,7 +6,7 @@ import { getPicks } from "@/lib/posts";
 export const metadata: Metadata = {
   title: "Picks",
   description:
-    "The latest stories picked by leading AI models and the AI Journal editorial desk — each with a short rationale.",
+    "The latest stories picked by leading AI models and the Cambrian AI editorial desk — each with a short rationale.",
 };
 
 export default function PicksPage() {

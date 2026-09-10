@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact & Tips",
   description:
-    "Send AI Journal a tip, a correction, or a press inquiry. We read everything.",
+    "Send Cambrian AI a tip, a correction, or a press inquiry. We read everything.",
 };
 
 export default function ContactPage() {

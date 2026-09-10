@@ -6,12 +6,10 @@ import { TopPicks } from "@/components/post/top-picks";
 import { AdRectangle } from "@/components/ads/ad-rectangle";
 import { AdBanner } from "@/components/ads/ad-banner";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { categories } from "@/lib/categories";
-import {
-  getAllPostMeta,
-  getFeaturedPosts,
-  getPicks,
-} from "@/lib/posts";
+import { siteConfig } from "@/lib/site";
+import { getAllPostMeta, getFeaturedPosts, getPicks } from "@/lib/posts";
 
 export default function HomePage() {
   const featured = getFeaturedPosts(4);
@@ -21,102 +19,130 @@ export default function HomePage() {
   const sidebarPicks = getPicks().slice(0, 5);
 
   return (
-    <div className="container py-8">
-      {/* Category quick links */}
-      <nav
-        aria-label="Sections"
-        className="mb-8 flex flex-wrap gap-2 border-b pb-4"
-      >
-        {categories.map((category) => (
-          <Link key={category.slug} href={`/category/${category.slug}`}>
-            <Badge variant="outline" className="hover:bg-accent hover:text-accent-foreground">
-              {category.title}
-            </Badge>
-          </Link>
-        ))}
-      </nav>
-
-      {/* HERO: Top Stories */}
-      <section aria-labelledby="top-stories" className="mb-12">
-        <h2
-          id="top-stories"
-          className="mb-6 text-xs font-semibold uppercase tracking-widest text-primary"
-        >
-          Top Stories
-        </h2>
-        <div className="grid gap-8 lg:grid-cols-3">
-          {lead && (
-            <div className="lg:col-span-2 lg:border-r lg:pr-8">
-              <PostCard post={lead} variant="feature" />
-            </div>
-          )}
-          <div className="flex flex-col divide-y lg:divide-y">
-            {secondary.map((post) => (
-              <div key={post.slug} className="py-5 first:pt-0">
-                <PostCard post={post} />
-              </div>
-            ))}
+    <>
+      {/* HERO BAND — airy, minimalist, typographic */}
+      <section className="border-b bg-gradient-to-b from-secondary/50 to-background">
+        <div className="container py-16 text-center sm:py-24">
+          <p className="eyebrow">{siteConfig.name} · {siteConfig.tagline}</p>
+          <h1 className="mx-auto mt-5 max-w-4xl text-4xl font-light leading-[1.08] tracking-tight sm:text-6xl">
+            The intelligence age, <span className="font-normal italic">reported</span>.
+          </h1>
+          <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
+            Authoritative news and analysis on the models, companies, research,
+            and policy shaping artificial intelligence.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="#latest" className={buttonVariants({ size: "lg" })}>
+              Read the latest
+            </a>
+            <a
+              href="#newsletter"
+              className={buttonVariants({ variant: "outline", size: "lg" })}
+            >
+              Subscribe
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Mid-page banner ad between sections */}
-      <AdBanner slotId="home-mid-banner" className="!px-0" />
-
-      {/* Main grid: Latest news + sidebar */}
-      <div className="mt-8 grid gap-10 lg:grid-cols-3">
-        <section aria-labelledby="latest" className="lg:col-span-2">
-          <h2
-            id="latest"
-            className="mb-2 border-b pb-2 text-lg font-bold uppercase tracking-wide"
-          >
-            Latest News
-          </h2>
-          <PostList posts={latest} />
-        </section>
-
-        <aside className="space-y-8">
-          <TopPicks picks={sidebarPicks} />
-          {/* Sidebar rectangle ad */}
-          <AdRectangle slotId="home-sidebar" />
-          <section>
-            <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              Sections
-            </h2>
-            <ul className="space-y-2 text-sm">
-              {categories.map((category) => (
-                <li key={category.slug}>
-                  <Link
-                    href={`/category/${category.slug}`}
-                    className="hover:text-primary"
-                  >
-                    {category.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </aside>
-      </div>
-
-      {/* Model & Company Picks */}
-      {picks.length > 0 && (
-        <section aria-labelledby="picks" className="mt-14">
-          <div className="mb-6 flex items-end justify-between border-b pb-2">
-            <h2 id="picks" className="text-lg font-bold uppercase tracking-wide">
-              Model &amp; Company Picks
-            </h2>
-            <Link href="/picks" className="text-sm text-primary hover:underline">
-              View all picks →
+      <div className="container py-10 sm:py-14">
+        {/* Category quick links */}
+        <nav
+          aria-label="Sections"
+          className="mb-10 flex flex-wrap justify-center gap-2 border-b pb-6"
+        >
+          {categories.map((category) => (
+            <Link key={category.slug} href={`/category/${category.slug}`}>
+              <Badge
+                variant="outline"
+                className="hover:bg-secondary hover:text-secondary-foreground"
+              >
+                {category.title}
+              </Badge>
             </Link>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {picks.map((pick) => (
-              <PickCard key={pick.slug} post={pick} />
-            ))}
+          ))}
+        </nav>
+
+        {/* Top Stories */}
+        <section aria-labelledby="top-stories" className="mb-16">
+          <p id="top-stories" className="eyebrow mb-8">
+            Top Stories
+          </p>
+          <div className="grid gap-10 lg:grid-cols-3">
+            {lead && (
+              <div className="lg:col-span-2 lg:border-r lg:pr-10">
+                <PostCard post={lead} variant="feature" />
+              </div>
+            )}
+            <div className="flex flex-col divide-y">
+              {secondary.map((post) => (
+                <div key={post.slug} className="py-6 first:pt-0">
+                  <PostCard post={post} />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
-      )}
-    </div>
+
+        {/* Mid-page banner ad between sections */}
+        <AdBanner slotId="home-mid-banner" className="!px-0" />
+
+        {/* Main grid: Latest news + sidebar */}
+        <div className="mt-10 grid gap-12 lg:grid-cols-3">
+          <section aria-labelledby="latest" className="lg:col-span-2">
+            <h2
+              id="latest"
+              className="mb-4 scroll-mt-24 border-b pb-3 text-2xl font-semibold tracking-tight"
+            >
+              Latest News
+            </h2>
+            <PostList posts={latest} />
+          </section>
+
+          <aside className="space-y-10">
+            <TopPicks picks={sidebarPicks} />
+            {/* Sidebar rectangle ad */}
+            <AdRectangle slotId="home-sidebar" />
+            <section>
+              <p className="eyebrow mb-3">Sections</p>
+              <ul className="space-y-2 text-sm">
+                {categories.map((category) => (
+                  <li key={category.slug}>
+                    <Link
+                      href={`/category/${category.slug}`}
+                      className="text-foreground/80 transition-colors hover:text-accent"
+                    >
+                      {category.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </aside>
+        </div>
+
+        {/* Model & Company Picks */}
+        {picks.length > 0 && (
+          <section aria-labelledby="picks" className="mt-16">
+            <div className="mb-8 flex items-end justify-between border-b pb-3">
+              <h2 id="picks" className="text-2xl font-semibold tracking-tight">
+                Model &amp; Company Picks
+              </h2>
+              <Link
+                href="/picks"
+                className="text-sm font-medium text-accent hover:underline"
+              >
+                View all picks →
+              </Link>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {picks.map((pick) => (
+                <PickCard key={pick.slug} post={pick} />
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </>
   );
 }

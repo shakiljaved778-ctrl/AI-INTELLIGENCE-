@@ -21,7 +21,7 @@ export function PostCard({
     return (
       <article className="group">
         <Link href={`/post/${post.slug}`} className="block">
-          <h3 className="font-serif text-base font-semibold leading-snug group-hover:underline">
+          <h3 className="text-base font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
             {post.title}
           </h3>
           <p className="mt-1 text-xs text-muted-foreground">
@@ -50,8 +50,8 @@ export function PostCard({
         <h3
           className={
             isFeature
-              ? "mt-3 font-serif text-2xl font-bold leading-tight group-hover:underline sm:text-3xl"
-              : "mt-2 font-serif text-xl font-bold leading-tight group-hover:underline"
+              ? "mt-4 text-3xl font-semibold leading-[1.12] tracking-tight transition-colors group-hover:text-accent sm:text-[2.6rem]"
+              : "mt-2 text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent"
           }
         >
           {post.title}
