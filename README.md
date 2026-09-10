@@ -82,6 +82,15 @@ and workflow. In short:
 Required frontmatter fields are validated at build time; missing fields fail the
 build with a clear, file-specific error, so broken content never ships.
 
+### Browser-based editing (Decap CMS)
+
+A git-based CMS is wired up at **`/admin`**. It lets you write and edit articles
+in a browser; saving commits MDX to the repo, and the auto-rebuild Action
+redeploys. One-time setup of the GitHub login is documented in
+[`oauth-provider/README.md`](oauth-provider/README.md). To edit locally with no
+login, run `npx decap-server` alongside `pnpm dev` and open
+`http://localhost:3000/admin/`.
+
 ---
 
 ## Ads & monetization

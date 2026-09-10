@@ -1,0 +1,9 @@
+{
+  "name": "cambrian-ai-decap-oauth",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal GitHub OAuth provider for Decap CMS (deploy as its own Vercel project).",
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

@@ -8,6 +8,10 @@ const nextConfig = {
   // — so a Vercel build can never fail. To regenerate out/ after editing content
   // or code, run `pnpm build` locally and commit the updated out/ directory.
   output: "export",
+  // Use a stable build ID so an unchanged source tree produces a byte-identical
+  // out/. This keeps the auto-rebuild CI (which commits out/) idempotent — it
+  // only commits when content or code actually changed, avoiding noisy commits.
+  generateBuildId: async () => "cambrian-ai",
   images: {
     // The site uses local/static assets only; no next/image optimization server
     // is needed.

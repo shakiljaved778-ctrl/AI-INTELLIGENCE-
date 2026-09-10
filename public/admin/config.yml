@@ -1,0 +1,108 @@
+# Decap CMS configuration for Cambrian AI.
+# Docs: https://decapcms.org/docs/
+
+backend:
+  name: github
+  repo: shakiljaved778-ctrl/AI-INTELLIGENCE-
+  branch: main
+  # The OAuth handshake needs a tiny server (GitHub requires a client secret).
+  # Deploy the provider in ./oauth-provider as its own Vercel project, then
+  # replace the host below with that project's domain. See oauth-provider/README.md.
+  base_url: https://REPLACE-WITH-YOUR-OAUTH-PROXY.vercel.app
+  auth_endpoint: api/auth
+
+# Lets you run the CMS locally against your working tree:
+#   npx decap-server   (in one terminal)
+#   pnpm dev           (in another) then open http://localhost:3000/admin/
+# When decap-server is running, auth is bypassed — great for testing.
+local_backend: true
+
+# Uploaded images are committed here and served from /uploads.
+media_folder: public/uploads
+public_folder: /uploads
+
+# Small commit messages, so the git history reads cleanly.
+site_url: https://cambrian-ai.vercel.app
+publish_mode: simple
+
+collections:
+  - name: posts
+    label: Articles
+    label_singular: Article
+    folder: content/posts
+    create: true
+    extension: mdx
+    format: frontmatter
+    # New files are named after the slug field (falls back to the title).
+    slug: "{{fields.slug | default(slug)}}"
+    summary: "{{title}}  —  {{category}}  ({{date}})"
+    sortable_fields: [date, title, category]
+    preview_path: "post/{{fields.slug | default(slug)}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle / deck, name: subtitle, widget: string, required: false }
+      - {
+          label: Slug (URL),
+          name: slug,
+          widget: string,
+          required: false,
+          hint: "Leave blank to derive from the title. Must be unique.",
+        }
+      - {
+          label: Date,
+          name: date,
+          widget: datetime,
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+          format: "YYYY-MM-DD",
+        }
+      - {
+          label: Updated,
+          name: updated,
+          widget: datetime,
+          required: false,
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+          format: "YYYY-MM-DD",
+        }
+      - { label: Author, name: author, widget: string, default: "Cambrian AI Staff" }
+      - {
+          label: Category,
+          name: category,
+          widget: select,
+          options:
+            [research, products, companies, policy, models, opinion, events],
+        }
+      - {
+          label: Tags,
+          name: tags,
+          widget: list,
+          required: false,
+          hint: "e.g. OpenAI, LLM, Policy",
+        }
+      - { label: Featured (home hero), name: featured, widget: boolean, required: false, default: false }
+      - { label: Is a Pick, name: isPick, widget: boolean, required: false, default: false }
+      - {
+          label: Pick source,
+          name: pickSource,
+          widget: string,
+          required: false,
+          hint: "Required if 'Is a Pick' is on — e.g. Claude, Gemini, Editor",
+        }
+      - { label: Pick rationale, name: pickRationale, widget: text, required: false }
+      - {
+          label: Read time (minutes),
+          name: readTime,
+          widget: number,
+          required: false,
+          value_type: int,
+          min: 1,
+        }
+      - {
+          label: Hero image,
+          name: image,
+          widget: image,
+          required: false,
+          hint: "Leave blank to auto-generate a branded hero.",
+        }
+      - { label: Body, name: body, widget: markdown }
