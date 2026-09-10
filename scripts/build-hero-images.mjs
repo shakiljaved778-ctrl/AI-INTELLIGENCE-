@@ -74,46 +74,46 @@ function generateSvg({ slug, category, title }) {
   // Cool steel-blue family; small per-post hue variation keeps them related.
   const hue = 205 + Math.floor(r() * 24); // 205–228
   const angle = Math.floor(r() * 360);
-  const dark = `hsl(${hue}, 32%, 11%)`;
-  const mid = `hsl(${hue}, 38%, ${20 + Math.floor(r() * 8)}%)`;
-  const glow = `hsl(${hue}, 78%, 62%)`;
-  const line = `hsl(${hue}, 45%, 82%)`;
+  const dark = `hsl(${hue}, 44%, 8%)`;
+  const mid = `hsl(${hue}, 58%, ${24 + Math.floor(r() * 8)}%)`;
+  const accent = `hsl(${hue}, 90%, 63%)`;
+  const line = `hsl(${hue}, 55%, 86%)`;
 
-  // Glow kept to the right half so the left-aligned headline stays readable.
-  const gx = 62 + Math.floor(r() * 28);
-  const gy = 18 + Math.floor(r() * 44);
+  // Vivid accent glow, kept to the right so the headline stays readable.
+  const gx = 66 + Math.floor(r() * 22);
+  const gy = 14 + Math.floor(r() * 40);
 
-  // Concentric rings.
-  const ringCount = 3 + Math.floor(r() * 3);
+  // A few subtle concentric rings on the right for depth.
   let rings = "";
-  const cx = 1240 + Math.floor(r() * 220);
-  const cy = 300 + Math.floor(r() * 320);
-  for (let i = 0; i < ringCount; i++) {
-    const rad = 130 + i * (70 + Math.floor(r() * 40));
-    rings += `<circle cx="${cx}" cy="${cy}" r="${rad}" fill="none" stroke="${line}" stroke-width="1.5" opacity="${(0.22 - i * 0.03).toFixed(2)}"/>`;
+  const cx = 1300 + Math.floor(r() * 170);
+  const cy = 240 + Math.floor(r() * 260);
+  for (let i = 0; i < 3; i++) {
+    const rad = 150 + i * (95 + Math.floor(r() * 30));
+    rings += `<circle cx="${cx}" cy="${cy}" r="${rad}" fill="none" stroke="${line}" stroke-width="1.5" opacity="${(0.16 - i * 0.04).toFixed(2)}"/>`;
   }
 
   // Faint diagonal hatch for texture.
   let hatch = "";
-  for (let x = -900; x < 1600; x += 90) {
-    hatch += `<line x1="${x}" y1="0" x2="${x + 900}" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/>`;
+  for (let x = -900; x < 1600; x += 96) {
+    hatch += `<line x1="${x}" y1="0" x2="${x + 900}" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.028"/>`;
   }
 
   const label = esc((category || "").toUpperCase());
 
-  // Headline set large across the card so it reads as an editorial title card
-  // (fills the space and is relevant) rather than a mostly-empty background.
-  const headlineLines = wrapHeadline(title, 22, 4);
-  const fontSize = headlineLines.length >= 4 ? 66 : headlineLines.length === 3 ? 74 : 80;
-  const lh = fontSize * 1.16;
+  // Big, bold headline set across the card — a punchy editorial title card.
+  const headlineLines = wrapHeadline(title, 20, 4);
+  const fontSize =
+    headlineLines.length >= 4 ? 74 : headlineLines.length === 3 ? 84 : 96;
+  const lh = fontSize * 1.1;
   const blockTop = 470 - ((headlineLines.length - 1) * lh) / 2;
   const headlineSvg = headlineLines
     .map(
       (ln, idx) =>
-        `<text x="80" y="${Math.round(blockTop + idx * lh)}" font-family="Helvetica, Arial, sans-serif" font-size="${fontSize}" font-weight="600" letter-spacing="-0.5" fill="#ffffff" opacity="0.96">${esc(ln)}</text>`
+        `<text x="78" y="${Math.round(blockTop + idx * lh)}" font-family="Helvetica, Arial, sans-serif" font-size="${fontSize}" font-weight="700" letter-spacing="-2" fill="#ffffff">${esc(ln)}</text>`
     )
     .join("");
-  const eyebrowY = Math.round(blockTop - fontSize - 34);
+  const eyebrowY = Math.round(blockTop - fontSize - 30);
+  const barY = eyebrowY - 40;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="${esc(title)}">
   <defs>
@@ -121,21 +121,21 @@ function generateSvg({ slug, category, title }) {
       <stop offset="0" stop-color="${dark}"/>
       <stop offset="1" stop-color="${mid}"/>
     </linearGradient>
-    <radialGradient id="glow" cx="${gx}%" cy="${gy}%" r="70%">
-      <stop offset="0" stop-color="${glow}" stop-opacity="0.42"/>
-      <stop offset="55%" stop-color="${glow}" stop-opacity="0.10"/>
-      <stop offset="100%" stop-color="${glow}" stop-opacity="0"/>
+    <radialGradient id="glow" cx="${gx}%" cy="${gy}%" r="66%">
+      <stop offset="0" stop-color="${accent}" stop-opacity="0.55"/>
+      <stop offset="52%" stop-color="${accent}" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="${accent}" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1600" height="900" fill="url(#bg)"/>
   <g>${hatch}</g>
+  <text x="1584" y="1012" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="300" font-weight="800" letter-spacing="-10" fill="#ffffff" opacity="0.05">${label}</text>
   <rect width="1600" height="900" fill="url(#glow)"/>
   <g>${rings}</g>
-  <text x="80" y="118" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="10" fill="#ffffff" opacity="0.60">CAMBRIAN AI</text>
-  <text x="82" y="${eyebrowY}" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="7" fill="${line}" opacity="0.95">${label}</text>
+  <text x="80" y="120" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="10" fill="#ffffff" opacity="0.62">CAMBRIAN AI</text>
+  <rect x="80" y="${barY}" width="74" height="8" rx="4" fill="${accent}"/>
+  <text x="82" y="${eyebrowY}" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="7" fill="${accent}">${label}</text>
   ${headlineSvg}
-  <rect x="82" y="812" width="60" height="4" rx="2" fill="${glow}" opacity="0.9"/>
-  <text x="82" y="852" font-family="Helvetica, Arial, sans-serif" font-size="22" letter-spacing="2" fill="#ffffff" opacity="0.55">cambrian-ai.vercel.app</text>
 </svg>
 `;
 }
