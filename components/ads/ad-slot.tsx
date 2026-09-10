@@ -1,6 +1,19 @@
 import { cn } from "@/lib/utils";
 
 /**
+ * Set to `true` once a real ad network is wired up (see app/layout.tsx). While
+ * this is `false`, ad slots render nothing on the live (production) site and
+ * only show a labelled placeholder during local development, so visitors never
+ * see empty "insert ad tag here" boxes.
+ */
+export const ADS_ENABLED = false;
+
+/** True when ad slots should render nothing (prod + no network configured). */
+export function adsHidden(): boolean {
+  return !ADS_ENABLED && process.env.NODE_ENV === "production";
+}
+
+/**
  * Base ad slot.
  * =============================================================================
  * This renders a labelled placeholder container. NO ad network is wired up by
@@ -41,6 +54,9 @@ export function AdSlot({
   heightClassName = "h-24",
   className,
 }: AdSlotProps) {
+  // Hidden on the live site until a real ad network is wired up.
+  if (adsHidden()) return null;
+
   return (
     <aside
       // Wire your ad network here. `data-ad-slot` is a convenient hook.

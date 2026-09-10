@@ -1,4 +1,4 @@
-import { AdSlot } from "@/components/ads/ad-slot";
+import { AdSlot, adsHidden } from "@/components/ads/ad-slot";
 import { cn } from "@/lib/utils";
 
 /**
@@ -12,6 +12,7 @@ export function AdBanner({
   slotId?: string;
   className?: string;
 }) {
+  if (adsHidden()) return null;
   return (
     <div className={cn("container py-4", className)}>
       <AdSlot

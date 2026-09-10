@@ -1,4 +1,4 @@
-import { AdSlot } from "@/components/ads/ad-slot";
+import { AdSlot, adsHidden } from "@/components/ads/ad-slot";
 
 /**
  * In-article ad. Placed inside post content after the first few paragraphs.
@@ -9,6 +9,7 @@ export function AdInArticle({
 }: {
   slotId?: string;
 }) {
+  if (adsHidden()) return null;
   return (
     <div className="not-prose my-8">
       <AdSlot
