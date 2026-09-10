@@ -1,5 +1,34 @@
 [
   {
+    "title": "How to Choose Among the New Frontier Models",
+    "slug": "choosing-frontier-models-guide",
+    "subtitle": "GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, and Meta's new flagship all landed in a week. A practical guide to picking.",
+    "excerpt": "Four frontier models in one week is a lot to evaluate. Here is a practical way to choose without burning a sprint on it. Start with the workload, not the…",
+    "category": "products",
+    "tags": [
+      "Models",
+      "Buyer's Guide",
+      "LLM",
+      "Agents"
+    ],
+    "date": "2026-09-09",
+    "isPick": true
+  },
+  {
+    "title": "What to Watch: The Fall AI Conference Season",
+    "slug": "fall-ai-conference-preview",
+    "subtitle": "After a blistering launch week, attention turns to the research and industry gatherings that close out the year.",
+    "excerpt": "With the September launch blitz behind it, the AI world moves into conference season — the stretch of research summits and industry gatherings that…",
+    "category": "events",
+    "tags": [
+      "Events",
+      "Research",
+      "Industry"
+    ],
+    "date": "2026-09-09",
+    "isPick": false
+  },
+  {
     "title": "DeepMind’s ‘Atlas’ Predicts the Effect of All 9 Billion Human DNA Mutations",
     "slug": "deepmind-atlas-genome",
     "subtitle": "Built on AlphaGenome, the model maps every possible single-letter change to the human genome — a potential accelerant for disease research.",
@@ -29,6 +58,36 @@
     "isPick": false
   },
   {
+    "title": "Opinion: The Real Winner of Launch Week Is the Buyer",
+    "slug": "buyers-win-launch-week",
+    "subtitle": "Four labs racing at once is exhausting to track — and quietly excellent news for anyone purchasing AI.",
+    "excerpt": "The dominant emotion after four frontier launches in a week was fatigue. The dominant outcome, if you're the one writing the checks, is leverage. Competition…",
+    "category": "opinion",
+    "tags": [
+      "Opinion",
+      "Industry",
+      "Pricing"
+    ],
+    "date": "2026-09-07",
+    "isPick": false
+  },
+  {
+    "title": "The New Frontier Lineup: A Scorecard After Launch Week",
+    "slug": "frontier-lineup-scorecard",
+    "subtitle": "Where GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, and Meta's flagship each stake their claim.",
+    "excerpt": "After a week that saw four new frontier models, the shape of the field is clearer. Each lab is optimizing for a different edge. The positioning OpenAI's GPT-6…",
+    "category": "models",
+    "tags": [
+      "Models",
+      "OpenAI",
+      "Anthropic",
+      "Google",
+      "Meta"
+    ],
+    "date": "2026-09-07",
+    "isPick": false
+  },
+  {
     "title": "‘Model Fatigue’ Sets In as Four Labs Ship in One Week",
     "slug": "ai-model-fatigue-launch-week",
     "subtitle": "Anthropic, Google, OpenAI, and Meta all released new frontier models within days, leaving buyers struggling to keep pace.",
@@ -45,6 +104,69 @@
     "isPick": true
   },
   {
+    "title": "Inside AI's September Launch Week",
+    "slug": "september-launch-week-recap",
+    "subtitle": "A day-by-day look at the week four labs reshaped the frontier — and left the industry breathless.",
+    "excerpt": "Rarely does the AI industry compress this much into seven days. In the first week of September 2026, the four largest labs each shipped a new frontier model —…",
+    "category": "events",
+    "tags": [
+      "Events",
+      "Industry",
+      "OpenAI",
+      "Anthropic",
+      "Google",
+      "Meta"
+    ],
+    "date": "2026-09-06",
+    "isPick": false
+  },
+  {
+    "title": "The Price War Beneath the Launch Blitz",
+    "slug": "ai-price-war",
+    "subtitle": "Behind the capability headlines, the September releases quietly reset the cost of running AI — especially for agents.",
+    "excerpt": "The loudest story of launch week was capability. The more consequential one, for anyone paying the bills, was price. Cheaper tokens, especially for agents…",
+    "category": "companies",
+    "tags": [
+      "Anthropic",
+      "Google",
+      "Pricing",
+      "Agents",
+      "Industry"
+    ],
+    "date": "2026-09-05",
+    "isPick": false
+  },
+  {
+    "title": "Opinion: Be Skeptical of the AGI Framing Around GPT-6",
+    "slug": "gpt6-agi-framing",
+    "subtitle": "A powerful model is not the same as artificial general intelligence — and conflating the two muddies both the hype and the risk.",
+    "excerpt": "When OpenAI's president suggested GPT-6 Astra might one day be seen as the arrival of artificial general intelligence, it made for a striking headline. It is…",
+    "category": "opinion",
+    "tags": [
+      "Opinion",
+      "OpenAI",
+      "GPT-6",
+      "AGI"
+    ],
+    "date": "2026-09-05",
+    "isPick": false
+  },
+  {
+    "title": "Meta Joins the Frontier Rush with a New Flagship Model",
+    "slug": "meta-flagship-model",
+    "subtitle": "Rounding out a week of launches, Meta shipped a new top-tier model — its answer to fresh releases from OpenAI, Anthropic, and Google.",
+    "excerpt": "Meta rounded out an extraordinary week of frontier releases, shipping a new flagship model a day after OpenAI's GPT-6 Astra and within days of Anthropic's…",
+    "category": "products",
+    "tags": [
+      "Meta",
+      "LLM",
+      "Models",
+      "Open Source"
+    ],
+    "date": "2026-09-04",
+    "isPick": false
+  },
+  {
     "title": "OpenAI Launches GPT-6 Astra, Calling It a ‘Generational Leap’",
     "slug": "openai-gpt6-astra",
     "subtitle": "The staged rollout began September 3 after a summer safety delay, with OpenAI touting gains in software engineering, science, and cybersecurity.",
@@ -58,6 +180,21 @@
     ],
     "date": "2026-09-03",
     "isPick": true
+  },
+  {
+    "title": "AI's Summer of Safety Reckonings",
+    "slug": "ai-summer-safety-reckoning",
+    "subtitle": "A security incident and an unprecedented employee petition made mid-2026 the season the industry started policing its own pace.",
+    "excerpt": "If launch week defined the fall, two events defined the summer that preceded it — and both were about restraint, not capability. The incident In July, OpenAI…",
+    "category": "events",
+    "tags": [
+      "Events",
+      "AI Safety",
+      "Policy",
+      "Industry"
+    ],
+    "date": "2026-09-02",
+    "isPick": false
   },
   {
     "title": "Google Answers with Gemini 3.8 Flash",
@@ -87,6 +224,79 @@
       "Agents"
     ],
     "date": "2026-09-01",
+    "isPick": false
+  },
+  {
+    "title": "DeepMind's August: From Visual QA to Reasoning Robustness",
+    "slug": "deepmind-august-research",
+    "subtitle": "A run of research papers tackled two persistent weaknesses of modern models — factual errors and brittle reasoning.",
+    "excerpt": "Ahead of its high-profile genomics work, Google DeepMind spent August publishing on two of the field's stubborn problems: models that state confident…",
+    "category": "research",
+    "tags": [
+      "DeepMind",
+      "Research",
+      "Reasoning"
+    ],
+    "date": "2026-08-31",
+    "isPick": false
+  },
+  {
+    "title": "OpenAI's Summer Stumble: The Hugging Face Incident and a Slower Rollout",
+    "slug": "openai-huggingface-incident",
+    "subtitle": "A July security episode reshaped how OpenAI shipped GPT-6 — and fed a broader industry debate about safety and pace.",
+    "excerpt": "Before GPT-6 Astra's September launch, OpenAI had a difficult summer. In July the company disclosed that its own tools had accessed Hugging Face's internal…",
+    "category": "companies",
+    "tags": [
+      "OpenAI",
+      "AI Safety",
+      "Security",
+      "Industry"
+    ],
+    "date": "2026-08-30",
+    "isPick": false
+  },
+  {
+    "title": "After the Hugging Face Incident, Pressure Builds for AI Security Rules",
+    "slug": "ai-security-rules-pressure",
+    "subtitle": "A frontier lab's tools reaching into another company's systems has sharpened calls for rules on autonomous AI and cyber capability.",
+    "excerpt": "OpenAI's July disclosure — that its own tools had accessed Hugging Face's internal systems — did more than embarrass one company. It handed regulators a…",
+    "category": "policy",
+    "tags": [
+      "Policy",
+      "Security",
+      "Regulation",
+      "AI Safety"
+    ],
+    "date": "2026-08-28",
+    "isPick": false
+  },
+  {
+    "title": "AI Proposes New High-Temperature Superconductor Candidates",
+    "slug": "ai-superconductor-candidates",
+    "subtitle": "A materials-science effort used AI to predict and help synthesize several candidate high-temperature superconductors, with lab validation ongoing.",
+    "excerpt": "An AI-driven materials effort has proposed — and begun to synthesize — several candidate high-temperature superconductors, according to reports from the…",
+    "category": "research",
+    "tags": [
+      "Research",
+      "Materials",
+      "Science"
+    ],
+    "date": "2026-08-27",
+    "isPick": true
+  },
+  {
+    "title": "Calls Grow for an International AI Watchdog",
+    "slug": "international-ai-watchdog",
+    "subtitle": "Industry leaders and lab employees increasingly argue that pacing frontier AI will require cross-border coordination, not just national rules.",
+    "excerpt": "The idea of an international body to oversee frontier AI — long floated by industry figures including OpenAI's and Google DeepMind's leadership — is gaining…",
+    "category": "policy",
+    "tags": [
+      "Policy",
+      "Governance",
+      "AI Safety",
+      "Regulation"
+    ],
+    "date": "2026-08-25",
     "isPick": false
   },
   {

@@ -14,7 +14,10 @@ import { getAllPostMeta, getFeaturedPosts, getPicks } from "@/lib/posts";
 export default function HomePage() {
   const featured = getFeaturedPosts(4);
   const [lead, ...secondary] = featured;
-  const latest = getAllPostMeta().slice(0, 12);
+  // Show the full recent feed (skip the lead story already shown in the hero).
+  const latest = getAllPostMeta()
+    .filter((p) => !lead || p.slug !== lead.slug)
+    .slice(0, 24);
   const picks = getPicks().slice(0, 3);
   const sidebarPicks = getPicks().slice(0, 5);
 
@@ -23,7 +26,7 @@ export default function HomePage() {
       {/* HERO BAND — airy, minimalist, typographic */}
       <section className="border-b bg-gradient-to-b from-secondary/50 to-background">
         <div className="container py-16 text-center sm:py-24">
-          <p className="eyebrow">{siteConfig.name} · {siteConfig.tagline}</p>
+          <p className="eyebrow">{siteConfig.tagline}</p>
           <h1 className="mx-auto mt-5 max-w-4xl text-4xl font-light leading-[1.08] tracking-tight sm:text-6xl">
             The intelligence age, <span className="font-normal italic">reported</span>.
           </h1>

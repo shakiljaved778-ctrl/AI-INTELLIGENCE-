@@ -7,7 +7,7 @@
  */
 export const siteConfig = {
   name: "Cambrian AI",
-  tagline: "The WSJ of AI",
+  tagline: "AI News & Analysis",
   description:
     "Authoritative, comprehensive news and analysis on AI models, companies, research, products, and policy — for researchers, engineers, founders, and investors.",
   // Update this to your production domain once deployed on Vercel.

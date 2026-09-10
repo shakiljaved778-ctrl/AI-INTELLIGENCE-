@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Cambrian AI is the WSJ of AI — comprehensive, trustworthy news and analysis on artificial intelligence.",
+    "Cambrian AI is a comprehensive, trustworthy source of news and analysis on artificial intelligence.",
 };
 
 const team = [
@@ -24,11 +24,10 @@ export default function AboutPage() {
           </h1>
           <div className="prose-article mt-6">
             <p>
-              <strong>{siteConfig.name}</strong> is the Wall Street Journal of
-              AI — a comprehensive, trustworthy source for news and analysis on
-              artificial intelligence. We cover the models, companies, research,
-              products, and policy shaping the most consequential technology of
-              our era.
+              <strong>{siteConfig.name}</strong> is a comprehensive, trustworthy
+              source for news and analysis on artificial intelligence. We cover
+              the models, companies, research, products, and policy shaping the
+              most consequential technology of our era.
             </p>
             <h2>Our mission</h2>
             <p>
