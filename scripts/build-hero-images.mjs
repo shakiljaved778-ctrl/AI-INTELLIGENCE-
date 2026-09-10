@@ -42,6 +42,31 @@ function esc(s) {
   return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+/** Greedy word-wrap into up to maxLines lines of ~maxChars; ellipsis if longer. */
+function wrapHeadline(text, maxChars, maxLines) {
+  const words = String(text).split(/\s+/).filter(Boolean);
+  const lines = [];
+  let cur = "";
+  let i = 0;
+  for (; i < words.length; i++) {
+    const t = cur ? `${cur} ${words[i]}` : words[i];
+    if (t.length <= maxChars) {
+      cur = t;
+    } else {
+      if (cur) lines.push(cur);
+      cur = words[i];
+      if (lines.length === maxLines) break;
+    }
+  }
+  if (lines.length < maxLines && cur) lines.push(cur);
+  const consumed = lines.join(" ").split(/\s+/).filter(Boolean).length;
+  if (consumed < words.length && lines.length) {
+    lines[lines.length - 1] =
+      lines[lines.length - 1].replace(/[.,;:—-]+$/, "") + "…";
+  }
+  return lines.slice(0, maxLines);
+}
+
 function generateSvg({ slug, category, title }) {
   const seed = hash(slug);
   const r = rng(seed);
@@ -54,9 +79,9 @@ function generateSvg({ slug, category, title }) {
   const glow = `hsl(${hue}, 78%, 62%)`;
   const line = `hsl(${hue}, 45%, 82%)`;
 
-  // Glow position (kept toward an edge so text stays readable).
-  const gx = 20 + Math.floor(r() * 60);
-  const gy = 15 + Math.floor(r() * 45);
+  // Glow kept to the right half so the left-aligned headline stays readable.
+  const gx = 62 + Math.floor(r() * 28);
+  const gy = 18 + Math.floor(r() * 44);
 
   // Concentric rings.
   const ringCount = 3 + Math.floor(r() * 3);
@@ -75,7 +100,20 @@ function generateSvg({ slug, category, title }) {
   }
 
   const label = esc((category || "").toUpperCase());
-  const kicker = esc(title || "").slice(0, 46);
+
+  // Headline set large across the card so it reads as an editorial title card
+  // (fills the space and is relevant) rather than a mostly-empty background.
+  const headlineLines = wrapHeadline(title, 22, 4);
+  const fontSize = headlineLines.length >= 4 ? 66 : headlineLines.length === 3 ? 74 : 80;
+  const lh = fontSize * 1.16;
+  const blockTop = 470 - ((headlineLines.length - 1) * lh) / 2;
+  const headlineSvg = headlineLines
+    .map(
+      (ln, idx) =>
+        `<text x="80" y="${Math.round(blockTop + idx * lh)}" font-family="Helvetica, Arial, sans-serif" font-size="${fontSize}" font-weight="600" letter-spacing="-0.5" fill="#ffffff" opacity="0.96">${esc(ln)}</text>`
+    )
+    .join("");
+  const eyebrowY = Math.round(blockTop - fontSize - 34);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="${esc(title)}">
   <defs>
@@ -93,9 +131,11 @@ function generateSvg({ slug, category, title }) {
   <g>${hatch}</g>
   <rect width="1600" height="900" fill="url(#glow)"/>
   <g>${rings}</g>
-  <text x="80" y="120" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="10" fill="#ffffff" opacity="0.62">CAMBRIAN AI</text>
-  <text x="80" y="790" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="6" fill="#ffffff" opacity="0.92">${label}</text>
-  <text x="80" y="835" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#ffffff" opacity="0.55">${kicker}</text>
+  <text x="80" y="118" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="10" fill="#ffffff" opacity="0.60">CAMBRIAN AI</text>
+  <text x="82" y="${eyebrowY}" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="7" fill="${line}" opacity="0.95">${label}</text>
+  ${headlineSvg}
+  <rect x="82" y="812" width="60" height="4" rx="2" fill="${glow}" opacity="0.9"/>
+  <text x="82" y="852" font-family="Helvetica, Arial, sans-serif" font-size="22" letter-spacing="2" fill="#ffffff" opacity="0.55">cambrian-ai.vercel.app</text>
 </svg>
 `;
 }

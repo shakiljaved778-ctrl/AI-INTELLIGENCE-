@@ -227,7 +227,7 @@
     "isPick": false
   },
   {
-    "title": "DeepMind's August: From Visual QA to Reasoning Robustness",
+    "title": "DeepMind’s August: From Visual QA to Reasoning Robustness",
     "slug": "deepmind-august-research",
     "subtitle": "A run of research papers tackled two persistent weaknesses of modern models — factual errors and brittle reasoning.",
     "excerpt": "Ahead of its high-profile genomics work, Google DeepMind spent August publishing on two of the field's stubborn problems: models that state confident…",
