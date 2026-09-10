@@ -37,6 +37,17 @@ export function PostCard({
   return (
     <article className="group flex flex-col">
       <Link href={`/post/${post.slug}`} className="flex flex-col">
+        {post.image && (
+          <div className="mb-4 overflow-hidden rounded-xl border bg-muted">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.image}
+              alt=""
+              loading="lazy"
+              className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+            />
+          </div>
+        )}
         <div className="flex items-center gap-2">
           {category && (
             <Badge variant="secondary" className="uppercase tracking-wide">

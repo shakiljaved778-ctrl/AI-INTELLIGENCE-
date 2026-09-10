@@ -90,8 +90,10 @@ function parsePost(filename: string): Post {
       ? data.readTime
       : Math.max(1, Math.round(readingTime(content).minutes));
 
+  const slug = (data.slug as string) || fileSlug;
+
   return {
-    slug: (data.slug as string) || fileSlug,
+    slug,
     title: data.title,
     subtitle: data.subtitle,
     date: data.date,
@@ -104,7 +106,8 @@ function parsePost(filename: string): Post {
     pickSource: data.pickSource,
     pickRationale: data.pickRationale,
     readTime,
-    image: data.image,
+    // Fall back to the generated hero image (scripts/build-hero-images.mjs).
+    image: (data.image as string) || `/heroes/${slug}.svg`,
     excerpt: makeExcerpt(content),
     content,
   };

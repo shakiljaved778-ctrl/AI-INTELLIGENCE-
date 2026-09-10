@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="AI's Summer of Safety Reckonings">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(231 0.5 0.5)">
+      <stop offset="0" stop-color="hsl(216, 32%, 11%)"/>
+      <stop offset="1" stop-color="hsl(216, 38%, 26%)"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="51%" cy="46%" r="70%">
+      <stop offset="0" stop-color="hsl(216, 78%, 62%)" stop-opacity="0.42"/>
+      <stop offset="55%" stop-color="hsl(216, 78%, 62%)" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="hsl(216, 78%, 62%)" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g><line x1="-900" y1="0" x2="0" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="-810" y1="0" x2="90" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="-720" y1="0" x2="180" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="-630" y1="0" x2="270" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="-540" y1="0" x2="360" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="-450" y1="0" x2="450" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="-360" y1="0" x2="540" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="-270" y1="0" x2="630" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="-180" y1="0" x2="720" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="-90" y1="0" x2="810" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="0" y1="0" x2="900" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="90" y1="0" x2="990" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="180" y1="0" x2="1080" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="270" y1="0" x2="1170" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="360" y1="0" x2="1260" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="450" y1="0" x2="1350" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="540" y1="0" x2="1440" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="630" y1="0" x2="1530" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="720" y1="0" x2="1620" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="810" y1="0" x2="1710" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="900" y1="0" x2="1800" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="990" y1="0" x2="1890" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="1080" y1="0" x2="1980" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="1170" y1="0" x2="2070" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="1260" y1="0" x2="2160" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="1350" y1="0" x2="2250" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="1440" y1="0" x2="2340" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/><line x1="1530" y1="0" x2="2430" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.03"/></g>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <g><circle cx="1319" cy="323" r="130" fill="none" stroke="hsl(216, 45%, 82%)" stroke-width="1.5" opacity="0.22"/><circle cx="1319" cy="323" r="229" fill="none" stroke="hsl(216, 45%, 82%)" stroke-width="1.5" opacity="0.19"/><circle cx="1319" cy="323" r="302" fill="none" stroke="hsl(216, 45%, 82%)" stroke-width="1.5" opacity="0.16"/></g>
+  <text x="80" y="120" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="10" fill="#ffffff" opacity="0.62">CAMBRIAN AI</text>
+  <text x="80" y="790" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="6" fill="#ffffff" opacity="0.92">EVENTS</text>
+  <text x="80" y="835" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#ffffff" opacity="0.55">AI's Summer of Safety Reckonings</text>
+</svg>

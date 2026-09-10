@@ -13,7 +13,18 @@ export function PickCard({ post }: { post: PostMeta }) {
   const category = getCategory(post.category);
 
   return (
-    <Card className="flex h-full flex-col transition-shadow hover:shadow-md">
+    <Card className="group flex h-full flex-col overflow-hidden transition-shadow hover:shadow-md">
+      {post.image && (
+        <Link href={`/post/${post.slug}`} className="block overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={post.image}
+            alt=""
+            loading="lazy"
+            className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          />
+        </Link>
+      )}
       <CardContent className="flex flex-1 flex-col p-5">
         <div className="mb-3 flex items-center gap-2">
           <Badge variant="accent">

@@ -33,5 +33,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# generated search index (rebuilt on predev/prebuild)
+# generated assets (rebuilt on predev/prebuild)
 /public/search-index.json
+/public/heroes/

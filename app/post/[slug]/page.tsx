@@ -146,6 +146,17 @@ export default async function PostPage({
             </div>
           </header>
 
+          {post.image && (
+            <figure className="mt-8 overflow-hidden rounded-xl border bg-muted">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={post.image}
+                alt={post.title}
+                className="aspect-[16/9] w-full object-cover"
+              />
+            </figure>
+          )}
+
           {post.isPick && post.pickRationale && (
             <div className="mt-6 rounded-md border-l-4 border-accent bg-accent/10 p-4">
               <p className="text-xs font-semibold uppercase tracking-widest text-accent-foreground/70">
