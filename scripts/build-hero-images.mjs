@@ -71,8 +71,9 @@ function generateSvg({ slug, category, title }) {
   const seed = hash(slug);
   const r = rng(seed);
 
-  // Cool steel-blue family; small per-post hue variation keeps them related.
-  const hue = 205 + Math.floor(r() * 24); // 205–228
+  // Brand blue locked to the chosen "first preview" hue for a consistent look
+  // across every hero; per-article variety comes from composition, not color.
+  const hue = 227;
   const angle = Math.floor(r() * 360);
   const dark = `hsl(${hue}, 44%, 8%)`;
   const mid = `hsl(${hue}, 58%, ${24 + Math.floor(r() * 8)}%)`;
