@@ -27,6 +27,7 @@ export const siteConfig = {
  */
 export const mainNav = [
   { title: "Home", href: "/" },
+  { title: "Enterprise", href: "/category/enterprise" },
   { title: "Learn", href: "/category/learning" },
   { title: "Picks", href: "/picks" },
   { title: "About", href: "/about" },
