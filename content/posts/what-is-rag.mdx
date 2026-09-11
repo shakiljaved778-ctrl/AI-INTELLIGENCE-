@@ -1,0 +1,49 @@
+---
+title: "What Is RAG (Retrieval-Augmented Generation)?"
+subtitle: "How to give a language model access to your own, up-to-date knowledge — without retraining it."
+slug: "what-is-rag"
+date: "2026-09-11"
+author: "Cambrian AI Explainers"
+category: "learning"
+tags: ["RAG", "Fundamentals", "LLM", "Vector Database"]
+---
+
+A large language model only knows what it learned during training. Ask it about
+your company's internal policy or yesterday's news and it will either decline or
+confidently make something up. **Retrieval-Augmented Generation (RAG)** fixes
+that by fetching relevant information at question time and handing it to the
+model as context.
+
+## The core idea
+
+RAG splits the job in two:
+
+1. **Retrieve.** Search a knowledge source (your documents, a database, the web)
+   for the passages most relevant to the user's question.
+2. **Generate.** Paste those passages into the model's prompt and ask it to
+   answer *using that provided context.*
+
+The model still writes the answer, but it's now grounded in real, current, and
+often private information it never saw in training.
+
+## How it works under the hood
+
+Most RAG systems rely on **embeddings** and a **vector database**. Documents are
+chopped into chunks, each chunk is turned into a numeric vector that captures its
+meaning, and those vectors are stored. At query time, the question is embedded
+too, and the system finds the chunks whose vectors are "closest" — i.e., most
+semantically similar — and feeds them to the model.
+
+## Why it matters
+
+RAG is the workhorse pattern behind most enterprise AI assistants. It lets a
+general model answer questions about *your* data, keeps answers current without
+expensive retraining, and — crucially — can cite its sources, which makes
+answers checkable.
+
+## The caveats
+
+RAG is only as good as its retrieval. Feed the model irrelevant or wrong
+chunks and it will faithfully produce a wrong answer. Chunking strategy, search
+quality, and keeping the knowledge base fresh matter more than the model choice.
+Done well, RAG turns a clever generalist into a reliable expert on your world.

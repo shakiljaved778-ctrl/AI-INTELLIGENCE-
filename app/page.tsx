@@ -9,17 +9,27 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { categories } from "@/lib/categories";
 import { siteConfig } from "@/lib/site";
-import { getAllPostMeta, getFeaturedPosts, getPicks } from "@/lib/posts";
+import {
+  getAllPostMeta,
+  getFeaturedPosts,
+  getPicks,
+  getPostsByCategory,
+} from "@/lib/posts";
 
 export default function HomePage() {
   const featured = getFeaturedPosts(4);
   const [lead, ...secondary] = featured;
-  // Show the full recent feed (skip the lead story already shown in the hero).
+  // Latest-news feed: skip the hero lead and exclude evergreen "Learn"
+  // explainers (they live in their own section, not the news feed).
   const latest = getAllPostMeta()
-    .filter((p) => !lead || p.slug !== lead.slug)
+    .filter(
+      (p) =>
+        p.category !== "learning" && (!lead || p.slug !== lead.slug)
+    )
     .slice(0, 24);
   const picks = getPicks().slice(0, 3);
   const sidebarPicks = getPicks().slice(0, 5);
+  const learn = getPostsByCategory("learning").slice(0, 4);
 
   return (
     <>
@@ -141,6 +151,45 @@ export default function HomePage() {
             <div className="grid gap-6 md:grid-cols-3">
               {picks.map((pick) => (
                 <PickCard key={pick.slug} post={pick} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Learn — evergreen concept explainers */}
+        {learn.length > 0 && (
+          <section aria-labelledby="learn" className="mt-16">
+            <div className="mb-8 flex items-end justify-between border-b pb-3">
+              <div>
+                <p className="eyebrow mb-1">Learn</p>
+                <h2 id="learn" className="text-2xl font-semibold tracking-tight">
+                  AI concepts, explained
+                </h2>
+              </div>
+              <Link
+                href="/category/learning"
+                className="text-sm font-medium text-accent hover:underline"
+              >
+                All explainers →
+              </Link>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {learn.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/post/${p.slug}`}
+                  className="group rounded-xl border p-5 transition-colors hover:border-accent"
+                >
+                  <p className="eyebrow mb-2">Explainer</p>
+                  <h3 className="text-lg font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
+                    {p.title}
+                  </h3>
+                  {p.subtitle && (
+                    <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+                      {p.subtitle}
+                    </p>
+                  )}
+                </Link>
               ))}
             </div>
           </section>

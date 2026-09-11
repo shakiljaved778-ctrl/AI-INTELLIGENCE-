@@ -1,0 +1,43 @@
+---
+title: "Embeddings: How AI Turns Meaning Into Numbers"
+subtitle: "The quiet building block behind semantic search, RAG, recommendations, and vector databases."
+slug: "what-are-embeddings"
+date: "2026-09-11"
+author: "Cambrian AI Explainers"
+category: "learning"
+tags: ["Embeddings", "Fundamentals", "Vector Database", "RAG"]
+---
+
+An **embedding** is a way of representing meaning as a list of numbers. Feed a
+word, sentence, image, or document to an embedding model and it returns a vector
+— often hundreds or thousands of numbers — that captures *what that thing is
+about*. It's one of the most useful ideas in modern AI, and it sits under a
+surprising amount of what you use every day.
+
+## Similar meaning, similar numbers
+
+The magic property is this: things with similar meaning get vectors that are
+close together in space. "Dog" and "puppy" land near each other; "dog" and "tax
+law" land far apart. Because meaning becomes geometry, you can now do math on
+concepts — measure how related two texts are by how close their vectors are.
+
+## What that unlocks
+
+- **Semantic search** — find results by meaning, not exact keywords.
+- **RAG** — retrieve the passages most relevant to a question.
+- **Recommendations** — "more like this" for products, songs, or articles.
+- **Clustering & classification** — group or label content automatically.
+
+## A concrete intuition
+
+Imagine every possible sentence placed as a point on a vast map, arranged so
+related ideas sit near one another. An embedding model is what assigns each
+sentence its coordinates. A vector database is the map's index, built to answer
+"what's nearby?" in an instant.
+
+## The takeaway
+
+Embeddings are the bridge between messy human meaning and the precise math
+computers can search and compare. Understand embeddings and most of the modern
+AI retrieval stack — vector databases, semantic search, RAG — suddenly makes
+sense as variations on one idea.

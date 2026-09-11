@@ -12,7 +12,9 @@ export type CategorySlug =
   | "policy"
   | "models"
   | "opinion"
-  | "events";
+  | "events"
+  | "enterprise"
+  | "learning";
 
 export interface Category {
   slug: CategorySlug;
@@ -62,6 +64,18 @@ export const categories: Category[] = [
     title: "Events",
     description:
       "Conferences, launches, and moments that move the AI industry.",
+  },
+  {
+    slug: "enterprise",
+    title: "Enterprise",
+    description:
+      "How real businesses — many of them not tech companies — deploy AI, and what it does to their bottom line.",
+  },
+  {
+    slug: "learning",
+    title: "Learn",
+    description:
+      "Plain-English explainers of the core AI concepts — RAG, vector databases, agents, embeddings, and more.",
   },
 ];
 

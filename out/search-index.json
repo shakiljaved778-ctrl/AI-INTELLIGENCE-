@@ -1,5 +1,112 @@
 [
   {
+    "title": "Embeddings: How AI Turns Meaning Into Numbers",
+    "slug": "what-are-embeddings",
+    "subtitle": "The quiet building block behind semantic search, RAG, recommendations, and vector databases.",
+    "excerpt": "An embedding is a way of representing meaning as a list of numbers. Feed a word, sentence, image, or document to an embedding model and it returns a vector —…",
+    "category": "learning",
+    "tags": [
+      "Embeddings",
+      "Fundamentals",
+      "Vector Database",
+      "RAG"
+    ],
+    "date": "2026-09-11",
+    "isPick": false
+  },
+  {
+    "title": "Vector Databases, Explained",
+    "slug": "what-is-a-vector-database",
+    "subtitle": "The storage layer that lets AI search by meaning instead of exact keywords.",
+    "excerpt": "A traditional database finds things by exact matches: give it a keyword, it returns rows containing that keyword. A vector database finds things by meaning —…",
+    "category": "learning",
+    "tags": [
+      "Vector Database",
+      "Fundamentals",
+      "Embeddings",
+      "RAG"
+    ],
+    "date": "2026-09-11",
+    "isPick": false
+  },
+  {
+    "title": "Agentic AI: From Chatbots to Autonomous Workers",
+    "slug": "what-is-agentic-ai",
+    "subtitle": "What separates an 'agent' from a chatbot — and why it's the defining AI pattern of the moment.",
+    "excerpt": "A chatbot answers a question and stops. An agent is given a goal and works toward it — planning steps, using tools, checking its own progress, and looping…",
+    "category": "learning",
+    "tags": [
+      "Agents",
+      "Fundamentals",
+      "LLM",
+      "Automation"
+    ],
+    "date": "2026-09-11",
+    "isPick": false
+  },
+  {
+    "title": "Model Context Protocol (MCP), Explained",
+    "slug": "what-is-mcp",
+    "subtitle": "The open standard that lets AI assistants plug into your tools and data the way USB-C plugs into your devices.",
+    "excerpt": "An AI model is only as useful as what it can reach. Model Context Protocol (MCP) is an open standard — introduced by Anthropic in late 2024 and now widely…",
+    "category": "learning",
+    "tags": [
+      "MCP",
+      "Fundamentals",
+      "Agents",
+      "Tools"
+    ],
+    "date": "2026-09-11",
+    "isPick": false
+  },
+  {
+    "title": "What Is RAG (Retrieval-Augmented Generation)?",
+    "slug": "what-is-rag",
+    "subtitle": "How to give a language model access to your own, up-to-date knowledge — without retraining it.",
+    "excerpt": "A large language model only knows what it learned during training. Ask it about your company's internal policy or yesterday's news and it will either decline…",
+    "category": "learning",
+    "tags": [
+      "RAG",
+      "Fundamentals",
+      "LLM",
+      "Vector Database"
+    ],
+    "date": "2026-09-11",
+    "isPick": false
+  },
+  {
+    "title": "Vibe Coding, Explained",
+    "slug": "what-is-vibe-coding",
+    "subtitle": "Building software by describing what you want in natural language and letting AI write the code — plus where it helps and where it bites.",
+    "excerpt": "Vibe coding is the practice of building software mostly by describing what you want in plain language and letting an AI generate the code — steering by the…",
+    "category": "learning",
+    "tags": [
+      "Vibe Coding",
+      "Fundamentals",
+      "Developers",
+      "Agents"
+    ],
+    "date": "2026-09-11",
+    "isPick": false
+  },
+  {
+    "title": "One Year After DeepSeek, China's Labs Are Racing Ahead — and Winning on Cost",
+    "slug": "chinese-ai-labs-race",
+    "subtitle": "Alibaba, Moonshot, DeepSeek, and Z.ai are shipping fast and undercutting US labs on price, reshaping the open-model landscape.",
+    "excerpt": "A year after DeepSeek's breakout forced the West to take Chinese AI seriously, the country's labs are no longer catching up — in open models, they are…",
+    "category": "companies",
+    "tags": [
+      "China",
+      "DeepSeek",
+      "Alibaba",
+      "Moonshot",
+      "Open Source",
+      "Industry"
+    ],
+    "date": "2026-09-10",
+    "isPick": false
+  },
+  {
     "title": "How to Choose Among the New Frontier Models",
     "slug": "choosing-frontier-models-guide",
     "subtitle": "GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, and Meta's new flagship all landed in a week. A practical guide to picking.",
@@ -15,6 +122,21 @@
     "isPick": true
   },
   {
+    "title": "The AI ROI Gap: Why Most Companies Invest and Only Some Cash In",
+    "slug": "enterprise-ai-roi-gap",
+    "subtitle": "Nearly everyone is using AI; far fewer see it in earnings. The winners share a strikingly consistent playbook.",
+    "excerpt": "The paradox of enterprise AI in 2026: adoption is nearly universal, but returns are not. By one McKinsey figure, 88% of companies use AI — yet only 39% see a…",
+    "category": "enterprise",
+    "tags": [
+      "Enterprise",
+      "ROI",
+      "Strategy",
+      "Agents"
+    ],
+    "date": "2026-09-09",
+    "isPick": false
+  },
+  {
     "title": "What to Watch: The Fall AI Conference Season",
     "slug": "fall-ai-conference-preview",
     "subtitle": "After a blistering launch week, attention turns to the research and industry gatherings that close out the year.",
@@ -26,6 +148,22 @@
       "Industry"
     ],
     "date": "2026-09-09",
+    "isPick": false
+  },
+  {
+    "title": "Chinese Models Are Quietly Dominating OpenRouter's Top 10",
+    "slug": "chinese-models-dominate-openrouter",
+    "subtitle": "On the popular model marketplace, Chinese labs have at times held all of the top five slots — a real-usage signal that's hard to spin.",
+    "excerpt": "Benchmarks can be gamed and press releases spun, but usage is harder to fake. On OpenRouter — a popular marketplace where developers reach many models through…",
+    "category": "companies",
+    "tags": [
+      "China",
+      "Open Source",
+      "Industry",
+      "DeepSeek",
+      "MiniMax"
+    ],
+    "date": "2026-09-08",
     "isPick": false
   },
   {
@@ -121,6 +259,22 @@
     "isPick": false
   },
   {
+    "title": "Walmart Leans on AI for Delivery, Fraud, and Compliance",
+    "slug": "walmart-ai-operations",
+    "subtitle": "The retailer is folding AI into the unglamorous core of operations — and crediting it in a stretch of strong sales growth.",
+    "excerpt": "Walmart is not an AI company, and that is precisely the point. The retailer has been embedding AI into the operational machinery — delivery routing, fraud…",
+    "category": "enterprise",
+    "tags": [
+      "Enterprise",
+      "Retail",
+      "Walmart",
+      "Operations",
+      "ROI"
+    ],
+    "date": "2026-09-06",
+    "isPick": false
+  },
+  {
     "title": "The Price War Beneath the Launch Blitz",
     "slug": "ai-price-war",
     "subtitle": "Behind the capability headlines, the September releases quietly reset the cost of running AI — especially for agents.",
@@ -152,6 +306,22 @@
     "isPick": false
   },
   {
+    "title": "JPMorgan Now Runs 450+ AI Agents in Production — and It's Showing Up in the Results",
+    "slug": "jpmorgan-agentic-ai",
+    "subtitle": "The bank's contract-intelligence and workflow agents are cited alongside record quarterly numbers, a rare case of AI tied to the bottom line.",
+    "excerpt": "JPMorgan Chase has become one of the most aggressive AI deployers in any industry — and, unusually, it can point to numbers. The bank reportedly runs more than…",
+    "category": "enterprise",
+    "tags": [
+      "Enterprise",
+      "Finance",
+      "JPMorgan",
+      "Agents",
+      "ROI"
+    ],
+    "date": "2026-09-05",
+    "isPick": false
+  },
+  {
     "title": "Meta Joins the Frontier Rush with a New Flagship Model",
     "slug": "meta-flagship-model",
     "subtitle": "Rounding out a week of launches, Meta shipped a new top-tier model — its answer to fresh releases from OpenAI, Anthropic, and Google.",
@@ -165,6 +335,22 @@
     ],
     "date": "2026-09-04",
     "isPick": false
+  },
+  {
+    "title": "Klarna's AI Assistant Now Does the Work of 853 Agents",
+    "slug": "klarna-ai-customer-service",
+    "subtitle": "The fintech's customer-service bot is credited with ~$60M in annual savings, 82% faster responses, and 25% fewer repeat contacts.",
+    "excerpt": "Few companies have put a harder number on AI's payoff than Klarna. The fintech's customer-service assistant now reportedly handles the equivalent workload of…",
+    "category": "enterprise",
+    "tags": [
+      "Enterprise",
+      "Customer Service",
+      "Klarna",
+      "ROI",
+      "Agents"
+    ],
+    "date": "2026-09-03",
+    "isPick": true
   },
   {
     "title": "OpenAI Launches GPT-6 Astra, Calling It a ‘Generational Leap’",
@@ -300,6 +486,22 @@
     "isPick": false
   },
   {
+    "title": "Alibaba's Qwen Claims the Top Spot in Global Open-Model Rankings",
+    "slug": "alibaba-qwen-tops-open-models",
+    "subtitle": "The e-commerce giant's open family reportedly overtook Meta and Google, while a new Qwen3-Max-Thinking targets the reasoning frontier.",
+    "excerpt": "Alibaba's Qwen family has, by one widely cited ranking, overtaken Meta and Google to claim the top position among open models globally — a milestone for a…",
+    "category": "models",
+    "tags": [
+      "China",
+      "Alibaba",
+      "Qwen",
+      "Open Source",
+      "LLM"
+    ],
+    "date": "2026-08-20",
+    "isPick": false
+  },
+  {
     "title": "1,200 AI Workers Ask Washington to Build a ‘Brake Pedal’ for Frontier AI",
     "slug": "pacing-the-frontier-letter",
     "subtitle": "The ‘Pacing the Frontier’ statement, signed by senior lab leaders, asks the US to develop tools to deliberately slow AI — if it ever becomes necessary.",
@@ -312,6 +514,22 @@
       "Governance"
     ],
     "date": "2026-07-28",
+    "isPick": false
+  },
+  {
+    "title": "Moonshot's Kimi K3 Becomes the World's Largest Open Model",
+    "slug": "moonshot-kimi-k3",
+    "subtitle": "At a reported 2.8 trillion parameters, the Chinese lab's release pushes the open-weights frontier past anything a US lab has shipped openly.",
+    "excerpt": "Moonshot AI released Kimi K3 on July 17, 2026 — billed as the world's largest open-source model at a reported 2.8 trillion parameters. It is the starkest sign…",
+    "category": "models",
+    "tags": [
+      "China",
+      "Moonshot",
+      "Kimi",
+      "Open Source",
+      "LLM"
+    ],
+    "date": "2026-07-17",
     "isPick": false
   }
 ]

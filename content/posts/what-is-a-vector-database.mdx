@@ -1,0 +1,43 @@
+---
+title: "Vector Databases, Explained"
+subtitle: "The storage layer that lets AI search by meaning instead of exact keywords."
+slug: "what-is-a-vector-database"
+date: "2026-09-11"
+author: "Cambrian AI Explainers"
+category: "learning"
+tags: ["Vector Database", "Fundamentals", "Embeddings", "RAG"]
+---
+
+A traditional database finds things by exact matches: give it a keyword, it
+returns rows containing that keyword. A **vector database** finds things by
+*meaning* — return the items most similar in concept to what you asked, even if
+they share no words at all.
+
+## Vectors: meaning as numbers
+
+The trick is the **embedding** — a list of numbers (a vector) that represents
+the meaning of a piece of text, an image, or audio. Similar things get similar
+vectors. "Car" and "automobile" land close together; "car" and "banana" land far
+apart. A vector database stores millions of these vectors and is optimized to
+answer one question fast: *which stored vectors are closest to this one?*
+
+## Why "closest" is hard at scale
+
+Comparing a query against millions of high-dimensional vectors naively would be
+far too slow. Vector databases use **approximate nearest-neighbor (ANN)**
+indexes — clever data structures that find the closest matches in milliseconds
+by trading a tiny bit of accuracy for enormous speed.
+
+## Where you'll meet one
+
+Vector databases are the memory behind most RAG systems, semantic search,
+recommendation engines, and "find similar" features. Popular options include
+Pinecone, Weaviate, Qdrant, Milvus, and pgvector (an extension that adds vector
+search to PostgreSQL).
+
+## The takeaway
+
+If embeddings turn meaning into numbers, the vector database is where those
+numbers live and get searched. It's the unglamorous plumbing that makes
+"search by meaning" — and therefore most modern AI retrieval — practical at
+scale.

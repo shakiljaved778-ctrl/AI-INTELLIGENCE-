@@ -1,0 +1,45 @@
+---
+title: "Model Context Protocol (MCP), Explained"
+subtitle: "The open standard that lets AI assistants plug into your tools and data the way USB-C plugs into your devices."
+slug: "what-is-mcp"
+date: "2026-09-11"
+author: "Cambrian AI Explainers"
+category: "learning"
+tags: ["MCP", "Fundamentals", "Agents", "Tools"]
+---
+
+An AI model is only as useful as what it can reach. **Model Context Protocol
+(MCP)** is an open standard — introduced by Anthropic in late 2024 and now
+widely adopted — that defines a common way for AI applications to connect to
+external tools, data sources, and services.
+
+## The "USB-C for AI" analogy
+
+Before MCP, every integration between an AI app and an external system was
+bespoke: custom glue for each pairing. MCP standardizes the connector. A tool or
+data source exposes an **MCP server**; an AI app acts as an **MCP client**; and
+any client can talk to any server through the same protocol. Build the
+integration once, and it works across every MCP-compatible assistant.
+
+## What an MCP server offers
+
+MCP servers can expose three kinds of things to a model:
+
+- **Tools** — actions the model can call (query a database, send a message,
+  open a pull request).
+- **Resources** — data the model can read (files, records, documents).
+- **Prompts** — reusable templates a user can invoke.
+
+## Why it matters
+
+MCP is a big part of what makes today's **agents** practical. Instead of every
+vendor reinventing tool-calling, a growing ecosystem of MCP servers — for GitHub,
+Google Drive, databases, and countless internal systems — means an assistant can
+be extended by simply pointing it at more servers. It turns integrations from a
+custom engineering project into a plug-in.
+
+## The takeaway
+
+If agents are AI that acts, MCP is a standard way to give them hands. It's plumbing
+— but plumbing that increasingly determines how capable and connected an AI
+assistant can be.
