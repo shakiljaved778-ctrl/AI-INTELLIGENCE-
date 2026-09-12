@@ -5,6 +5,7 @@ import { MDXContent } from "@/components/post/mdx-content";
 import { RelatedStories } from "@/components/post/related-stories";
 import { TopPicks } from "@/components/post/top-picks";
 import { AdRectangle } from "@/components/ads/ad-rectangle";
+import { Reveal } from "@/components/reveal";
 import { Badge } from "@/components/ui/badge";
 import { getCategory } from "@/lib/categories";
 import {
@@ -111,7 +112,7 @@ export default async function PostPage({
           </nav>
 
           <header className="border-b pb-6">
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2 animate-fade-up">
               {category && (
                 <Badge variant="secondary" className="uppercase tracking-wide">
                   {category.title}
@@ -122,16 +123,25 @@ export default async function PostPage({
               )}
             </div>
 
-            <h1 className="mt-3 font-serif text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+            <h1
+              className="mt-3 font-serif text-3xl font-bold leading-tight tracking-tight animate-fade-up sm:text-4xl"
+              style={{ animationDelay: "80ms" }}
+            >
               {post.title}
             </h1>
             {post.subtitle && (
-              <p className="mt-3 text-lg text-muted-foreground sm:text-xl">
+              <p
+                className="mt-3 text-lg text-muted-foreground animate-fade-up sm:text-xl"
+                style={{ animationDelay: "150ms" }}
+              >
                 {post.subtitle}
               </p>
             )}
 
-            <div className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+            <div
+              className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground animate-fade-up"
+              style={{ animationDelay: "220ms" }}
+            >
               <span className="font-medium text-foreground">{post.author}</span>
               <span>·</span>
               <time dateTime={post.date}>{formatDate(post.date)}</time>
@@ -147,7 +157,10 @@ export default async function PostPage({
           </header>
 
           {post.image && (
-            <figure className="mt-8 overflow-hidden rounded-xl border bg-muted">
+            <figure
+              className="mt-8 overflow-hidden rounded-xl border bg-muted animate-fade-up"
+              style={{ animationDelay: "300ms" }}
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={post.image}
@@ -191,11 +204,15 @@ export default async function PostPage({
         </article>
 
         {/* Sidebar */}
-        <aside className="space-y-8 lg:border-l lg:pl-8">
+        <Reveal
+          as="aside"
+          delay={120}
+          className="space-y-8 lg:border-l lg:pl-8"
+        >
           <RelatedStories posts={related} />
           <TopPicks picks={picks} title="Model picks" />
           <AdRectangle slotId="post-sidebar" />
-        </aside>
+        </Reveal>
       </div>
     </div>
   );

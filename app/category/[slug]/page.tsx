@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PostList } from "@/components/post/post-list";
 import { TopPicks } from "@/components/post/top-picks";
 import { AdRectangle } from "@/components/ads/ad-rectangle";
+import { Reveal } from "@/components/reveal";
 import { categories, getCategory } from "@/lib/categories";
 import { getPicks, getPostsByCategory } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
@@ -45,26 +46,30 @@ export default async function CategoryPage({
   return (
     <div className="container py-8">
       <header className="mb-8 border-b pb-6">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary">
-          Section
-        </p>
-        <h1 className="mt-1 font-serif text-4xl font-bold tracking-tight">
+        <p className="eyebrow text-primary animate-fade-up">Section</p>
+        <h1
+          className="mt-2 font-serif text-4xl font-bold tracking-tight animate-fade-up"
+          style={{ animationDelay: "80ms" }}
+        >
           {category.title}
         </h1>
-        <p className="mt-2 max-w-2xl text-muted-foreground">
+        <p
+          className="mt-2 max-w-2xl text-muted-foreground animate-fade-up"
+          style={{ animationDelay: "150ms" }}
+        >
           {category.description}
         </p>
       </header>
 
       <div className="grid gap-10 lg:grid-cols-3">
         <section className="lg:col-span-2">
-          <PostList posts={posts} />
+          <PostList posts={posts} animate />
         </section>
 
-        <aside className="space-y-8">
+        <Reveal as="aside" className="space-y-8" delay={120}>
           <TopPicks picks={picks} />
           <AdRectangle slotId={`category-${category.slug}-sidebar`} />
-        </aside>
+        </Reveal>
       </div>
     </div>
   );
