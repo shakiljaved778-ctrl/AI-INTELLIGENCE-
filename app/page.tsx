@@ -18,14 +18,15 @@ import {
 } from "@/lib/posts";
 
 export default function HomePage() {
-  const featured = getFeaturedPosts(4);
+  const featured = getFeaturedPosts(7);
   const [lead, ...secondary] = featured;
-  // Latest-news feed: skip the hero lead and exclude evergreen "Learn"
-  // explainers (they live in their own section, not the news feed).
+  // The bento mosaic under the lead: first tile spans wide, the rest tile in.
+  const bento = secondary.slice(0, 5);
+  // Latest-news feed: skip anything already shown up top (the lead + the
+  // bento mosaic) and exclude evergreen "Learn" explainers (own section).
+  const featuredSlugs = new Set(featured.map((p) => p.slug));
   const latest = getAllPostMeta()
-    .filter(
-      (p) => p.category !== "learning" && (!lead || p.slug !== lead.slug)
-    )
+    .filter((p) => p.category !== "learning" && !featuredSlugs.has(p.slug))
     .slice(0, 24);
   const picks = getPicks().slice(0, 3);
   const sidebarPicks = getPicks().slice(0, 5);
@@ -123,16 +124,21 @@ export default function HomePage() {
           ))}
         </nav>
 
-        {/* More Top Stories (the rest of the featured set) */}
-        {secondary.length > 0 && (
+        {/* More Top Stories — an asymmetric editorial mosaic (Verge-style):
+            the first tile runs wide, the rest tile in beside and below it. */}
+        {bento.length > 0 && (
           <Reveal as="section" aria-labelledby="top-stories" className="mb-16">
             <p id="top-stories" className="eyebrow mb-8">
               More Top Stories
             </p>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {secondary.map((post, i) => (
-                <Reveal key={post.slug} delay={i * 80}>
-                  <PostCard post={post} />
+              {bento.map((post, i) => (
+                <Reveal
+                  key={post.slug}
+                  delay={i * 80}
+                  className={i === 0 ? "sm:col-span-2" : ""}
+                >
+                  <PostCard post={post} variant={i === 0 ? "feature" : "default"} />
                 </Reveal>
               ))}
             </div>

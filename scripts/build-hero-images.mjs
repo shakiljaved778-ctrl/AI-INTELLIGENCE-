@@ -120,65 +120,94 @@ function generateSvg({ slug, category, title, tags }) {
   const seed = hash(slug);
   const r = rng(seed);
 
-  // Brand blue locked to the chosen "first preview" hue for a consistent look
-  // across every hero; per-article variety comes from the topic motif.
-  const hue = 227;
-  const angle = Math.floor(r() * 360);
-  const dark = `hsl(${hue}, 44%, 8%)`;
-  const mid = `hsl(${hue}, 58%, ${24 + Math.floor(r() * 8)}%)`;
-  const accent = `hsl(${hue}, 90%, 63%)`;
+  // Brand blue family; per-article variety comes from a seeded mesh of blobs
+  // (kept inside the blue → indigo → cyan range) and from the topic motif.
+  const base = 227;
+  const hueA = base + Math.floor(r() * 22 - 11); // ~216–238
+  const hueB = base - 24 + Math.floor(r() * 20); // indigo/violet lean
+  const hueC = 196 + Math.floor(r() * 22); // cyan lean
+  const angle = Math.floor(r() * 60 - 30);
 
-  // Vivid accent glow behind the topic icon on the right.
-  const gx = 68;
-  const gy = 40;
+  const dark = `hsl(${base}, 48%, 6%)`;
+  const deep = `hsl(${base}, 54%, 13%)`;
+  const accent = `hsl(${base}, 95%, 66%)`;
 
-  // Topic motif (right side) — hints at what the article is about.
+  // Seeded mesh-blob centres (px) — three soft coloured pools of light.
+  const bx1 = Math.round(180 + r() * 320);
+  const by1 = Math.round(120 + r() * 200);
+  const bx2 = Math.round(900 + r() * 480);
+  const by2 = Math.round(140 + r() * 240);
+  const bx3 = Math.round(760 + r() * 520);
+  const by3 = Math.round(540 + r() * 240);
+
+  // Topic motif — hints at what the article is about, set in a glass card.
   const icon = ICONS[iconKey(category, title, tags)] || ICONS.spark;
-  const iconGroup = `<g transform="translate(1090 250) scale(3.35)" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">${icon}</g>`;
-
-  // Faint diagonal hatch for texture.
-  let hatch = "";
-  for (let x = -900; x < 1600; x += 96) {
-    hatch += `<line x1="${x}" y1="0" x2="${x + 900}" y2="900" stroke="#ffffff" stroke-width="1" opacity="0.028"/>`;
-  }
+  const cardX = 1052;
+  const cardY = 232;
+  const cardS = 396;
+  const cardCx = cardX + cardS / 2;
+  const cardCy = cardY + cardS / 2;
+  const glyphScale = 2.9;
+  const glyphTx = Math.round(cardCx - 50 * glyphScale);
+  const glyphTy = Math.round(cardCy - 50 * glyphScale);
+  const iconGroup = `<g transform="translate(${glyphTx} ${glyphTy}) scale(${glyphScale})" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">${icon}</g>`;
 
   const label = esc((category || "").toUpperCase());
 
-  // Big, bold headline set across the card — a punchy editorial title card.
-  const headlineLines = wrapHeadline(title, 18, 4);
+  // Editorial headline (display serif), lower-left, up to 3 lines.
+  const headlineLines = wrapHeadline(title, 20, 3);
   const fontSize =
-    headlineLines.length >= 4 ? 72 : headlineLines.length === 3 ? 82 : 92;
-  const lh = fontSize * 1.1;
-  const blockTop = 470 - ((headlineLines.length - 1) * lh) / 2;
+    headlineLines.length >= 3 ? 76 : headlineLines.length === 2 ? 88 : 104;
+  const lh = fontSize * 1.12;
+  const lastBaseline = 792;
+  const firstBaseline = lastBaseline - (headlineLines.length - 1) * lh;
   const headlineSvg = headlineLines
     .map(
       (ln, idx) =>
-        `<text x="78" y="${Math.round(blockTop + idx * lh)}" font-family="Helvetica, Arial, sans-serif" font-size="${fontSize}" font-weight="700" letter-spacing="-2" fill="#ffffff">${esc(ln)}</text>`
+        `<text x="78" y="${Math.round(firstBaseline + idx * lh)}" font-family="Georgia, 'Times New Roman', serif" font-size="${fontSize}" font-weight="600" letter-spacing="-1.5" fill="#ffffff">${esc(ln)}</text>`
     )
     .join("");
-  const eyebrowY = Math.round(blockTop - fontSize - 30);
-  const barY = eyebrowY - 40;
+  const eyebrowY = Math.round(firstBaseline - fontSize * 0.86 - 44);
+  const barY = eyebrowY - 30;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="${esc(title)}">
   <defs>
     <linearGradient id="bg" gradientTransform="rotate(${angle} 0.5 0.5)">
       <stop offset="0" stop-color="${dark}"/>
-      <stop offset="1" stop-color="${mid}"/>
+      <stop offset="1" stop-color="${deep}"/>
     </linearGradient>
-    <radialGradient id="glow" cx="${gx}%" cy="${gy}%" r="60%">
-      <stop offset="0" stop-color="${accent}" stop-opacity="0.5"/>
-      <stop offset="55%" stop-color="${accent}" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="${accent}" stop-opacity="0"/>
-    </radialGradient>
+    <radialGradient id="b1"><stop offset="0" stop-color="hsl(${hueA}, 88%, 60%)" stop-opacity="0.55"/><stop offset="100%" stop-color="hsl(${hueA}, 88%, 60%)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b2"><stop offset="0" stop-color="hsl(${hueB}, 82%, 56%)" stop-opacity="0.5"/><stop offset="100%" stop-color="hsl(${hueB}, 82%, 56%)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b3"><stop offset="0" stop-color="hsl(${hueC}, 92%, 62%)" stop-opacity="0.5"/><stop offset="100%" stop-color="hsl(${hueC}, 92%, 62%)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cardGlow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="${accent}" stop-opacity="0.6"/><stop offset="60%" stop-color="${accent}" stop-opacity="0.12"/><stop offset="100%" stop-color="${accent}" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vignette" cx="42%" cy="46%" r="80%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.14"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/></linearGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/></filter>
   </defs>
+
   <rect width="1600" height="900" fill="url(#bg)"/>
-  <g>${hatch}</g>
-  <text x="1584" y="1012" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="300" font-weight="800" letter-spacing="-10" fill="#ffffff" opacity="0.05">${label}</text>
-  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- Mesh gradient: three soft pools of coloured light -->
+  <ellipse cx="${bx1}" cy="${by1}" rx="640" ry="540" fill="url(#b1)"/>
+  <ellipse cx="${bx2}" cy="${by2}" rx="560" ry="520" fill="url(#b2)"/>
+  <ellipse cx="${bx3}" cy="${by3}" rx="620" ry="520" fill="url(#b3)"/>
+
+  <!-- Oversized ghosted section word -->
+  <text x="1584" y="1004" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="300" font-weight="700" letter-spacing="-8" fill="#ffffff" opacity="0.05">${label}</text>
+
+  <!-- Glass card + accent glow holding the topic glyph -->
+  <rect x="${cardX - 40}" y="${cardY - 40}" width="${cardS + 80}" height="${cardS + 80}" fill="url(#cardGlow)"/>
+  <rect x="${cardX}" y="${cardY}" width="${cardS}" height="${cardS}" rx="40" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.5"/>
   ${iconGroup}
-  <text x="80" y="120" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="10" fill="#ffffff" opacity="0.62">CAMBRIAN AI</text>
-  <rect x="80" y="${barY}" width="74" height="8" rx="4" fill="${accent}"/>
-  <text x="82" y="${eyebrowY}" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="7" fill="${accent}">${label}</text>
+
+  <!-- Depth + film grain -->
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.09"/>
+
+  <!-- Masthead + kicker + headline -->
+  <text x="80" y="118" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="10" fill="#ffffff" opacity="0.6">CAMBRIAN AI</text>
+  <rect x="80" y="${barY}" width="72" height="7" rx="3.5" fill="${accent}"/>
+  <text x="82" y="${eyebrowY}" font-family="Helvetica, Arial, sans-serif" font-size="29" font-weight="700" letter-spacing="7" fill="${accent}">${label}</text>
   ${headlineSvg}
 </svg>
 `;

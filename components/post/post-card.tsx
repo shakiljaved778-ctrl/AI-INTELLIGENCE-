@@ -24,7 +24,14 @@ export function PostCard({
           <h3 className="text-base font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
             {post.title}
           </h3>
-          <p className="mt-1 text-xs text-muted-foreground">
+          <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
+            {category && (
+              <span
+                aria-hidden
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ backgroundColor: `hsl(${category.color})` }}
+              />
+            )}
             {category?.title} · {formatDate(post.date)}
           </p>
         </Link>
@@ -50,7 +57,12 @@ export function PostCard({
         )}
         <div className="flex items-center gap-2">
           {category && (
-            <Badge variant="secondary" className="uppercase tracking-wide">
+            <Badge variant="secondary" className="gap-1.5 uppercase tracking-wide">
+              <span
+                aria-hidden
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ backgroundColor: `hsl(${category.color})` }}
+              />
               {category.title}
             </Badge>
           )}
@@ -61,8 +73,8 @@ export function PostCard({
         <h3
           className={
             isFeature
-              ? "mt-4 text-3xl font-semibold leading-[1.12] tracking-tight transition-colors group-hover:text-accent sm:text-[2.6rem]"
-              : "mt-2 text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent"
+              ? "mt-4 font-serif text-3xl font-semibold leading-[1.08] tracking-tight transition-colors group-hover:text-accent sm:text-[2.7rem]"
+              : "mt-2 font-serif text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent sm:text-2xl"
           }
         >
           {post.title}

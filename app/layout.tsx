@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fraunces } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -6,6 +7,20 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { AdBanner } from "@/components/ads/ad-banner";
 import { AdFooter } from "@/components/ads/ad-footer";
 import { siteConfig } from "@/lib/site";
+
+/**
+ * Display serif for headlines — a high-contrast variable editorial face that
+ * gives the site a premium "newspaper" voice. Body copy stays on the clean
+ * system sans (see globals.css). Self-hosted at build time by next/font, so no
+ * runtime font fetch or layout shift.
+ */
+const display = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -48,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={display.variable} suppressHydrationWarning>
       {/*
         AD NETWORK LOADER
         =====================================================================

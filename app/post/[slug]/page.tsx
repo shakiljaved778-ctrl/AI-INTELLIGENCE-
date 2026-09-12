@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXContent } from "@/components/post/mdx-content";
+import { ReadingProgress } from "@/components/post/reading-progress";
 import { RelatedStories } from "@/components/post/related-stories";
 import { TopPicks } from "@/components/post/top-picks";
 import { AdRectangle } from "@/components/ads/ad-rectangle";
@@ -86,6 +87,7 @@ export default async function PostPage({
 
   return (
     <div className="container py-8">
+      <ReadingProgress />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
