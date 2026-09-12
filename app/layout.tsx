@@ -60,6 +60,11 @@ export default function RootLayout({
         wiring instructions.
       */}
       <body>
+        {/* Without JS, scroll-reveal elements never get toggled visible —
+            so make sure they show anyway. */}
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important;}`}</style>
+        </noscript>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

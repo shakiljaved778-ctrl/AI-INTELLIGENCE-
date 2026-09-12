@@ -120,3 +120,65 @@
     line-height: 1.8;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Motion: subtle entrance + scroll-reveal animations.
+   All are disabled under prefers-reduced-motion for accessibility.
+--------------------------------------------------------------------------- */
+@layer utilities {
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* On-load entrance (hero). Pair with an inline animation-delay for stagger. */
+  .animate-fade-up {
+    animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Scroll-reveal: starts hidden, .is-visible is toggled by <Reveal>. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Slow drift for decorative background blobs. */
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(0, -22px, 0) scale(1.06);
+    }
+  }
+  .animate-float-slow {
+    animation: float-slow 14s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .reveal,
+  .reveal.is-visible,
+  .animate-float-slow {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

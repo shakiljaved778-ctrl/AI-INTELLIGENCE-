@@ -107,6 +107,21 @@
     "isPick": false
   },
   {
+    "title": "Opinion: In 2026, AI Funding Rewards Proof, Not Promise",
+    "slug": "ai-funding-proof-over-promise",
+    "subtitle": "Mega-rounds still go to the giants — but for everyone else, the era of raising on a slide deck and a vibe is over.",
+    "excerpt": "The AI funding market has split in two. Enormous checks keep flowing to a handful of frontier labs and chip makers. For nearly everyone else, the bar has risen…",
+    "category": "opinion",
+    "tags": [
+      "Opinion",
+      "Funding",
+      "Startups",
+      "Industry"
+    ],
+    "date": "2026-09-09",
+    "isPick": false
+  },
+  {
     "title": "How to Choose Among the New Frontier Models",
     "slug": "choosing-frontier-models-guide",
     "subtitle": "GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, and Meta's new flagship all landed in a week. A practical guide to picking.",
@@ -182,6 +197,21 @@
     "isPick": true
   },
   {
+    "title": "Mistral Raises €3B to Back a Sovereign European AI",
+    "slug": "mistral-3b-sovereign-ai",
+    "subtitle": "The French lab's mega-round is as much a geopolitical statement as a financing — Europe wants a frontier champion of its own.",
+    "excerpt": "France's Mistral has reportedly raised €3 billion, a round explicitly framed around building a sovereign European AI — a frontier capability that Europe owns,…",
+    "category": "companies",
+    "tags": [
+      "Mistral",
+      "Europe",
+      "Funding",
+      "Industry"
+    ],
+    "date": "2026-09-08",
+    "isPick": false
+  },
+  {
     "title": "Opinion: Model Fatigue Is a Buyer’s Problem, Not a Buyer’s Excuse",
     "slug": "opinion-model-fatigue",
     "subtitle": "Four frontier models in a week is exhausting. It is not a reason to stop evaluating — it’s a reason to evaluate better.",
@@ -191,6 +221,21 @@
       "Opinion",
       "Industry",
       "Models"
+    ],
+    "date": "2026-09-08",
+    "isPick": false
+  },
+  {
+    "title": "Qualcomm and AWS Partner on AI Chips",
+    "slug": "qualcomm-aws-ai-chips",
+    "subtitle": "A tie-up between a mobile-silicon giant and the largest cloud signals how hard everyone is working to break the GPU bottleneck.",
+    "excerpt": "Qualcomm and Amazon Web Services have reportedly teamed up on AI chips — a pairing of a mobile- and edge-silicon leader with the world's largest cloud…",
+    "category": "products",
+    "tags": [
+      "Chips",
+      "Qualcomm",
+      "AWS",
+      "Hardware"
     ],
     "date": "2026-09-08",
     "isPick": false
@@ -275,6 +320,21 @@
     "isPick": false
   },
   {
+    "title": "AI Chip Funding Tilts Toward Inference as SambaNova Closes $1B",
+    "slug": "ai-chip-funding-inference",
+    "subtitle": "Investors are betting that the next bottleneck isn't training models — it's running them cheaply at scale.",
+    "excerpt": "The money flowing into AI silicon is shifting from training to inference — the cost of actually running models in production. By one tally, 12 disclosed AI…",
+    "category": "companies",
+    "tags": [
+      "Chips",
+      "Hardware",
+      "Funding",
+      "Inference"
+    ],
+    "date": "2026-09-05",
+    "isPick": false
+  },
+  {
     "title": "The Price War Beneath the Launch Blitz",
     "slug": "ai-price-war",
     "subtitle": "Behind the capability headlines, the September releases quietly reset the cost of running AI — especially for agents.",
@@ -332,6 +392,21 @@
       "LLM",
       "Models",
       "Open Source"
+    ],
+    "date": "2026-09-04",
+    "isPick": false
+  },
+  {
+    "title": "Money Pours Into Robotics and 'Physical AI'",
+    "slug": "physical-ai-robotics-investment",
+    "subtitle": "Investors are chasing software tied to physical assets — robots, autonomy, and industrial systems with hard-to-copy operating data.",
+    "excerpt": "After years dominated by chatbots and copilots, capital is flowing toward physical AI — robotics, industrial automation, autonomous systems, and defense…",
+    "category": "products",
+    "tags": [
+      "Robotics",
+      "Physical AI",
+      "Automation",
+      "Funding"
     ],
     "date": "2026-09-04",
     "isPick": false

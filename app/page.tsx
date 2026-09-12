@@ -7,6 +7,7 @@ import { AdRectangle } from "@/components/ads/ad-rectangle";
 import { AdBanner } from "@/components/ads/ad-banner";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { Reveal } from "@/components/reveal";
 import { categories } from "@/lib/categories";
 import { siteConfig } from "@/lib/site";
 import {
@@ -23,8 +24,7 @@ export default function HomePage() {
   // explainers (they live in their own section, not the news feed).
   const latest = getAllPostMeta()
     .filter(
-      (p) =>
-        p.category !== "learning" && (!lead || p.slug !== lead.slug)
+      (p) => p.category !== "learning" && (!lead || p.slug !== lead.slug)
     )
     .slice(0, 24);
   const picks = getPicks().slice(0, 3);
@@ -33,18 +33,39 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO BAND — airy, minimalist, typographic */}
-      <section className="border-b bg-gradient-to-b from-secondary/50 to-background">
-        <div className="container py-16 text-center sm:py-24">
-          <p className="eyebrow">{siteConfig.tagline}</p>
-          <h1 className="mx-auto mt-5 max-w-4xl text-4xl font-light leading-[1.08] tracking-tight sm:text-6xl">
-            The intelligence age, <span className="font-normal italic">reported</span>.
+      {/* HERO BAND — airy, minimalist, with a soft animated backdrop */}
+      <section className="relative overflow-hidden border-b bg-gradient-to-b from-secondary/50 to-background">
+        {/* Decorative drifting accent blobs (purely visual). */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-accent/20 blur-3xl animate-float-slow"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl animate-float-slow"
+          style={{ animationDelay: "-7s" }}
+        />
+
+        <div className="container relative z-10 py-16 text-center sm:py-24">
+          <p className="eyebrow animate-fade-up">{siteConfig.tagline}</p>
+          <h1
+            className="mx-auto mt-5 max-w-4xl text-4xl font-light leading-[1.08] tracking-tight animate-fade-up sm:text-6xl"
+            style={{ animationDelay: "90ms" }}
+          >
+            The intelligence age,{" "}
+            <span className="font-normal italic">reported</span>.
           </h1>
-          <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
+          <p
+            className="mx-auto mt-5 max-w-xl text-base text-muted-foreground animate-fade-up sm:text-lg"
+            style={{ animationDelay: "170ms" }}
+          >
             Authoritative news and analysis on the models, companies, research,
             and policy shaping artificial intelligence.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div
+            className="mt-8 flex flex-wrap justify-center gap-3 animate-fade-up"
+            style={{ animationDelay: "250ms" }}
+          >
             <a href="#latest" className={buttonVariants({ size: "lg" })}>
               Read the latest
             </a>
@@ -68,7 +89,7 @@ export default function HomePage() {
             <Link key={category.slug} href={`/category/${category.slug}`}>
               <Badge
                 variant="outline"
-                className="hover:bg-secondary hover:text-secondary-foreground"
+                className="transition-transform hover:-translate-y-0.5 hover:bg-secondary hover:text-secondary-foreground"
               >
                 {category.title}
               </Badge>
@@ -77,7 +98,7 @@ export default function HomePage() {
         </nav>
 
         {/* Top Stories */}
-        <section aria-labelledby="top-stories" className="mb-16">
+        <Reveal as="section" aria-labelledby="top-stories" className="mb-16">
           <p id="top-stories" className="eyebrow mb-8">
             Top Stories
           </p>
@@ -95,13 +116,13 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-        </section>
+        </Reveal>
 
         {/* Mid-page banner ad between sections */}
         <AdBanner slotId="home-mid-banner" className="!px-0" />
 
         {/* Main grid: Latest news + sidebar */}
-        <div className="mt-10 grid gap-12 lg:grid-cols-3">
+        <Reveal className="mt-10 grid gap-12 lg:grid-cols-3">
           <section aria-labelledby="latest" className="lg:col-span-2">
             <h2
               id="latest"
@@ -132,11 +153,11 @@ export default function HomePage() {
               </ul>
             </section>
           </aside>
-        </div>
+        </Reveal>
 
         {/* Model & Company Picks */}
         {picks.length > 0 && (
-          <section aria-labelledby="picks" className="mt-16">
+          <Reveal as="section" aria-labelledby="picks" className="mt-16">
             <div className="mb-8 flex items-end justify-between border-b pb-3">
               <h2 id="picks" className="text-2xl font-semibold tracking-tight">
                 Model &amp; Company Picks
@@ -149,16 +170,18 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
-              {picks.map((pick) => (
-                <PickCard key={pick.slug} post={pick} />
+              {picks.map((pick, i) => (
+                <Reveal key={pick.slug} delay={i * 90}>
+                  <PickCard post={pick} />
+                </Reveal>
               ))}
             </div>
-          </section>
+          </Reveal>
         )}
 
         {/* Learn — evergreen concept explainers */}
         {learn.length > 0 && (
-          <section aria-labelledby="learn" className="mt-16">
+          <Reveal as="section" aria-labelledby="learn" className="mt-16">
             <div className="mb-8 flex items-end justify-between border-b pb-3">
               <div>
                 <p className="eyebrow mb-1">Learn</p>
@@ -174,25 +197,26 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {learn.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/post/${p.slug}`}
-                  className="group rounded-xl border p-5 transition-colors hover:border-accent"
-                >
-                  <p className="eyebrow mb-2">Explainer</p>
-                  <h3 className="text-lg font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
-                    {p.title}
-                  </h3>
-                  {p.subtitle && (
-                    <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
-                      {p.subtitle}
-                    </p>
-                  )}
-                </Link>
+              {learn.map((p, i) => (
+                <Reveal key={p.slug} delay={i * 80}>
+                  <Link
+                    href={`/post/${p.slug}`}
+                    className="group block h-full rounded-xl border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-md"
+                  >
+                    <p className="eyebrow mb-2">Explainer</p>
+                    <h3 className="text-lg font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
+                      {p.title}
+                    </h3>
+                    {p.subtitle && (
+                      <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+                        {p.subtitle}
+                      </p>
+                    )}
+                  </Link>
+                </Reveal>
               ))}
             </div>
-          </section>
+          </Reveal>
         )}
       </div>
     </>
