@@ -8,8 +8,8 @@ import { AdBanner } from "@/components/ads/ad-banner";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
-import { categories } from "@/lib/categories";
-import { siteConfig } from "@/lib/site";
+import { categories, getCategory } from "@/lib/categories";
+import { formatDate } from "@/lib/utils";
 import {
   getAllPostMeta,
   getFeaturedPosts,
@@ -33,51 +33,77 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO BAND — airy, minimalist, with a soft animated backdrop */}
-      <section className="relative overflow-hidden border-b bg-gradient-to-b from-secondary/50 to-background">
-        {/* Decorative drifting accent blobs (purely visual). */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-accent/20 blur-3xl animate-float-slow"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl animate-float-slow"
-          style={{ animationDelay: "-7s" }}
-        />
-
-        <div className="container relative z-10 py-16 text-center sm:py-24">
-          <p className="eyebrow animate-fade-up">{siteConfig.tagline}</p>
-          <h1
-            className="mx-auto mt-5 max-w-4xl text-4xl font-light leading-[1.08] tracking-tight animate-fade-up sm:text-6xl"
-            style={{ animationDelay: "90ms" }}
-          >
-            The intelligence age,{" "}
-            <span className="font-normal italic">reported</span>.
-          </h1>
-          <p
-            className="mx-auto mt-5 max-w-xl text-base text-muted-foreground animate-fade-up sm:text-lg"
-            style={{ animationDelay: "170ms" }}
-          >
-            Authoritative news and analysis on the models, companies, research,
-            and policy shaping artificial intelligence.
-          </p>
+      {/* HERO — opens with the latest top story, front and center */}
+      {lead && (
+        <section className="relative overflow-hidden border-b bg-gradient-to-b from-secondary/50 to-background">
+          {/* Decorative drifting accent blobs (purely visual). */}
           <div
-            className="mt-8 flex flex-wrap justify-center gap-3 animate-fade-up"
-            style={{ animationDelay: "250ms" }}
-          >
-            <a href="#latest" className={buttonVariants({ size: "lg" })}>
-              Read the latest
-            </a>
-            <a
-              href="#newsletter"
-              className={buttonVariants({ variant: "outline", size: "lg" })}
+            aria-hidden
+            className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-accent/20 blur-3xl animate-float-slow"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl animate-float-slow"
+            style={{ animationDelay: "-7s" }}
+          />
+
+          <div className="container relative z-10 grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2 lg:gap-12">
+            {/* Image (top on mobile, right on desktop) */}
+            <Link
+              href={`/post/${lead.slug}`}
+              className="group order-1 block overflow-hidden rounded-2xl border bg-muted animate-fade-up lg:order-2"
+              style={{ animationDelay: "200ms" }}
             >
-              Subscribe
-            </a>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={lead.image}
+                alt={lead.title}
+                className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+            </Link>
+
+            {/* Headline + dek */}
+            <div className="order-2 lg:order-1">
+              <p className="eyebrow animate-fade-up">
+                Top Story{getCategory(lead.category) ? ` · ${getCategory(lead.category)!.title}` : ""}
+              </p>
+              <h1
+                className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight animate-fade-up sm:text-5xl"
+                style={{ animationDelay: "80ms" }}
+              >
+                <Link
+                  href={`/post/${lead.slug}`}
+                  className="transition-colors hover:text-accent"
+                >
+                  {lead.title}
+                </Link>
+              </h1>
+              {lead.subtitle && (
+                <p
+                  className="mt-4 max-w-xl text-lg text-muted-foreground animate-fade-up"
+                  style={{ animationDelay: "150ms" }}
+                >
+                  {lead.subtitle}
+                </p>
+              )}
+              <div
+                className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 animate-fade-up"
+                style={{ animationDelay: "230ms" }}
+              >
+                <Link
+                  href={`/post/${lead.slug}`}
+                  className={buttonVariants({ size: "lg" })}
+                >
+                  Read the story
+                </Link>
+                <span className="text-sm text-muted-foreground">
+                  {lead.author} · {formatDate(lead.date)} · {lead.readTime} min read
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <div className="container py-10 sm:py-14">
         {/* Category quick links */}
@@ -97,26 +123,21 @@ export default function HomePage() {
           ))}
         </nav>
 
-        {/* Top Stories */}
-        <Reveal as="section" aria-labelledby="top-stories" className="mb-16">
-          <p id="top-stories" className="eyebrow mb-8">
-            Top Stories
-          </p>
-          <div className="grid gap-10 lg:grid-cols-3">
-            {lead && (
-              <div className="lg:col-span-2 lg:border-r lg:pr-10">
-                <PostCard post={lead} variant="feature" />
-              </div>
-            )}
-            <div className="flex flex-col divide-y">
-              {secondary.map((post) => (
-                <div key={post.slug} className="py-6 first:pt-0">
+        {/* More Top Stories (the rest of the featured set) */}
+        {secondary.length > 0 && (
+          <Reveal as="section" aria-labelledby="top-stories" className="mb-16">
+            <p id="top-stories" className="eyebrow mb-8">
+              More Top Stories
+            </p>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {secondary.map((post, i) => (
+                <Reveal key={post.slug} delay={i * 80}>
                   <PostCard post={post} />
-                </div>
+                </Reveal>
               ))}
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        )}
 
         {/* Mid-page banner ad between sections */}
         <AdBanner slotId="home-mid-banner" className="!px-0" />

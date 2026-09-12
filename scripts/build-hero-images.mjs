@@ -67,31 +67,74 @@ function wrapHeadline(text, maxChars, maxLines) {
   return lines.slice(0, maxLines);
 }
 
-function generateSvg({ slug, category, title }) {
+/**
+ * Line-art topic icons drawn in a 100×100 space (fill:none, white stroke),
+ * so every hero carries a motif that hints at the article's subject.
+ */
+const ICONS = {
+  chip: `<rect x="30" y="30" width="40" height="40" rx="4"/><rect x="42" y="42" width="16" height="16" rx="2"/><path d="M40 22v8M50 22v8M60 22v8M40 70v8M50 70v8M60 70v8M22 40h8M22 50h8M22 60h8M70 40h8M70 50h8M70 60h8"/>`,
+  robot: `<rect x="30" y="36" width="40" height="32" rx="6"/><circle cx="42" cy="52" r="3.5"/><circle cx="58" cy="52" r="3.5"/><path d="M50 24v12"/><circle cx="50" cy="22" r="3"/><path d="M30 50h-6M70 50h6M42 68v8M58 68v8"/>`,
+  atom: `<circle cx="50" cy="50" r="6"/><ellipse cx="50" cy="50" rx="32" ry="13"/><ellipse cx="50" cy="50" rx="32" ry="13" transform="rotate(60 50 50)"/><ellipse cx="50" cy="50" rx="32" ry="13" transform="rotate(120 50 50)"/>`,
+  neural: `<path d="M30 34 52 42M30 34 52 60M30 52 52 42M30 52 52 60M30 70 52 42M30 70 52 60M52 42 74 50M52 60 74 50"/><circle cx="30" cy="34" r="4"/><circle cx="30" cy="52" r="4"/><circle cx="30" cy="70" r="4"/><circle cx="52" cy="42" r="4"/><circle cx="52" cy="60" r="4"/><circle cx="74" cy="50" r="4"/>`,
+  chart: `<path d="M24 24V78H80"/><path d="M30 66 46 52 58 60 78 34"/><path d="M66 34H78V46"/>`,
+  building: `<path d="M22 42 50 24 78 42"/><path d="M26 42V76M38 42V76M50 42V76M62 42V76M74 42V76"/><path d="M20 80H80M24 48H76"/>`,
+  globe: `<circle cx="50" cy="50" r="30"/><ellipse cx="50" cy="50" rx="12" ry="30"/><path d="M20 50H80M25 36H75M25 64H75"/>`,
+  database: `<ellipse cx="50" cy="30" rx="26" ry="9"/><path d="M24 30V70 A26 9 0 0 0 76 70V30M24 50 A26 9 0 0 0 76 50"/>`,
+  book: `<path d="M50 32 C42 26 28 26 22 30V74 C28 70 42 70 50 76 C58 70 72 70 78 74V30 C72 26 58 26 50 32Z"/><path d="M50 32V76"/>`,
+  brackets: `<path d="M42 30 26 50 42 70M58 30 74 50 58 70"/>`,
+  calendar: `<rect x="24" y="30" width="52" height="46" rx="4"/><path d="M24 44H76M36 24V34M64 24V34"/><circle cx="38" cy="56" r="2.5"/><circle cx="50" cy="56" r="2.5"/><circle cx="62" cy="56" r="2.5"/>`,
+  scales: `<path d="M50 22V80M34 80H66M22 34H78M50 22V34"/><path d="M22 34 14 52 a9 9 0 0 0 16 0Z"/><path d="M78 34 70 52 a9 9 0 0 0 16 0Z"/>`,
+  quote: `<path d="M32 36h14v14c0 8 -5 12 -13 14M54 36h14v14c0 8 -5 12 -13 14"/>`,
+  spark: `<path d="M50 22 C53 43 57 47 78 50 C57 53 53 57 50 78 C47 57 43 53 22 50 C43 47 47 43 50 22Z"/>`,
+};
+
+/** Choose an icon that best reflects the article's subject. */
+function iconKey(category, title, tags) {
+  const hay = `${category} ${title} ${(tags || []).join(" ")}`.toLowerCase();
+  const has = (arr) => arr.some((w) => hay.includes(w));
+
+  if (has(["chip", "silicon", "nvidia", "qualcomm", "gpu", "inference", "hardware"])) return "chip";
+  if (has(["robot", "physical ai", "autonom", "drone", "humanoid"])) return "robot";
+  if (has(["genome", "dna", "mutation", "superconductor", "material", "protein"])) return "atom";
+  if (category === "learning") {
+    if (has(["rag", "vector", "embedding", "database", "retrieval"])) return "database";
+    if (has(["mcp", "agent", "vibe", "coding", "tool"])) return "brackets";
+    return "book";
+  }
+  if (category === "enterprise") {
+    return has(["fund", "round", "valuation", "billion", "invest"]) ? "chart" : "building";
+  }
+  if (category === "policy") return "scales";
+  if (category === "events") return "calendar";
+  if (category === "opinion") return "quote";
+  if (has(["china", "chinese", "deepseek", "alibaba", "qwen", "moonshot", "kimi", "tencent", "minimax", "openrouter", "mistral", "europe", "sovereign", "global"])) return "globe";
+  if (has(["fund", "round", "valuation", "billion", "invest", "venture"])) return "chart";
+  if (has(["rag", "vector", "embedding", "database", "retrieval"])) return "database";
+  if (has(["agent", "mcp", "vibe"])) return "brackets";
+  if (has(["science", "research", "deepmind"])) return "atom";
+  if (has(["model", "llm", "gpt", "gemini", "claude", "fable", "flash", "reasoning"])) return "neural";
+  return "spark";
+}
+
+function generateSvg({ slug, category, title, tags }) {
   const seed = hash(slug);
   const r = rng(seed);
 
   // Brand blue locked to the chosen "first preview" hue for a consistent look
-  // across every hero; per-article variety comes from composition, not color.
+  // across every hero; per-article variety comes from the topic motif.
   const hue = 227;
   const angle = Math.floor(r() * 360);
   const dark = `hsl(${hue}, 44%, 8%)`;
   const mid = `hsl(${hue}, 58%, ${24 + Math.floor(r() * 8)}%)`;
   const accent = `hsl(${hue}, 90%, 63%)`;
-  const line = `hsl(${hue}, 55%, 86%)`;
 
-  // Vivid accent glow, kept to the right so the headline stays readable.
-  const gx = 66 + Math.floor(r() * 22);
-  const gy = 14 + Math.floor(r() * 40);
+  // Vivid accent glow behind the topic icon on the right.
+  const gx = 68;
+  const gy = 40;
 
-  // A few subtle concentric rings on the right for depth.
-  let rings = "";
-  const cx = 1300 + Math.floor(r() * 170);
-  const cy = 240 + Math.floor(r() * 260);
-  for (let i = 0; i < 3; i++) {
-    const rad = 150 + i * (95 + Math.floor(r() * 30));
-    rings += `<circle cx="${cx}" cy="${cy}" r="${rad}" fill="none" stroke="${line}" stroke-width="1.5" opacity="${(0.16 - i * 0.04).toFixed(2)}"/>`;
-  }
+  // Topic motif (right side) — hints at what the article is about.
+  const icon = ICONS[iconKey(category, title, tags)] || ICONS.spark;
+  const iconGroup = `<g transform="translate(1090 250) scale(3.35)" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">${icon}</g>`;
 
   // Faint diagonal hatch for texture.
   let hatch = "";
@@ -102,9 +145,9 @@ function generateSvg({ slug, category, title }) {
   const label = esc((category || "").toUpperCase());
 
   // Big, bold headline set across the card — a punchy editorial title card.
-  const headlineLines = wrapHeadline(title, 20, 4);
+  const headlineLines = wrapHeadline(title, 18, 4);
   const fontSize =
-    headlineLines.length >= 4 ? 74 : headlineLines.length === 3 ? 84 : 96;
+    headlineLines.length >= 4 ? 72 : headlineLines.length === 3 ? 82 : 92;
   const lh = fontSize * 1.1;
   const blockTop = 470 - ((headlineLines.length - 1) * lh) / 2;
   const headlineSvg = headlineLines
@@ -122,9 +165,9 @@ function generateSvg({ slug, category, title }) {
       <stop offset="0" stop-color="${dark}"/>
       <stop offset="1" stop-color="${mid}"/>
     </linearGradient>
-    <radialGradient id="glow" cx="${gx}%" cy="${gy}%" r="66%">
-      <stop offset="0" stop-color="${accent}" stop-opacity="0.55"/>
-      <stop offset="52%" stop-color="${accent}" stop-opacity="0.12"/>
+    <radialGradient id="glow" cx="${gx}%" cy="${gy}%" r="60%">
+      <stop offset="0" stop-color="${accent}" stop-opacity="0.5"/>
+      <stop offset="55%" stop-color="${accent}" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="${accent}" stop-opacity="0"/>
     </radialGradient>
   </defs>
@@ -132,7 +175,7 @@ function generateSvg({ slug, category, title }) {
   <g>${hatch}</g>
   <text x="1584" y="1012" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="300" font-weight="800" letter-spacing="-10" fill="#ffffff" opacity="0.05">${label}</text>
   <rect width="1600" height="900" fill="url(#glow)"/>
-  <g>${rings}</g>
+  ${iconGroup}
   <text x="80" y="120" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="10" fill="#ffffff" opacity="0.62">CAMBRIAN AI</text>
   <rect x="80" y="${barY}" width="74" height="8" rx="4" fill="${accent}"/>
   <text x="82" y="${eyebrowY}" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="7" fill="${accent}">${label}</text>
@@ -159,6 +202,7 @@ function build() {
       slug,
       category: data.category ?? "",
       title: data.title ?? "",
+      tags: Array.isArray(data.tags) ? data.tags : [],
     });
     fs.writeFileSync(path.join(OUT_DIR, `${slug}.svg`), svg);
     made++;
