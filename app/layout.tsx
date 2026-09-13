@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -55,6 +56,17 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
   },
   robots: { index: true, follow: true },
+  alternates: {
+    types: { "application/rss+xml": `${siteConfig.url}/rss.xml` },
+  },
+  verification: {
+    ...(siteConfig.verification.google
+      ? { google: siteConfig.verification.google }
+      : {}),
+    ...(siteConfig.verification.bing
+      ? { other: { "msvalidate.01": siteConfig.verification.bing } }
+      : {}),
+  },
 };
 
 export default function RootLayout({
@@ -95,6 +107,8 @@ export default function RootLayout({
             <AdFooter />
             <SiteFooter />
           </div>
+          {/* Privacy-light, zero-config analytics (Vercel dashboard). */}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

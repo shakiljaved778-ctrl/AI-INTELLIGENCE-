@@ -2,45 +2,43 @@
 
 import * as React from "react";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site";
 
 /**
- * Newsletter signup (placeholder).
+ * Newsletter signup.
  * =============================================================================
- * This does NOT send data anywhere. To connect a provider (Substack, Beehiiv,
- * ConvertKit, Mailchimp, Resend, …), replace the `handleSubmit` body with a
- * POST to your provider's form endpoint, or embed the provider's own form.
+ * When `siteConfig.newsletter.action` is set (your provider's public embed FORM
+ * ACTION URL — Buttondown, Mailchimp, Beehiiv, …), the form posts real
+ * subscribers to it. Submissions go to a hidden iframe so the page doesn't
+ * navigate away. When it's empty, the form shows a friendly "coming soon".
  */
 export function NewsletterSignup({ compact = false }: { compact?: boolean }) {
   const [email, setEmail] = React.useState("");
   const [done, setDone] = React.useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    // TODO: integrate your newsletter provider here.
-    setDone(true);
-  }
+  const action = siteConfig.newsletter.action;
+  const field = siteConfig.newsletter.emailField || "email";
+  const connected = Boolean(action);
 
   if (done) {
     return (
       <p className="text-sm text-muted-foreground">
-        Thanks! Connect a provider in{" "}
-        <code className="rounded bg-muted px-1">NewsletterSignup</code> to start
-        collecting real subscribers.
+        {connected
+          ? "Thanks for subscribing — check your inbox to confirm."
+          : "Thanks! Newsletter sign-ups open soon."}
       </p>
     );
   }
 
-  return (
-    <form
-      onSubmit={handleSubmit}
-      className={compact ? "flex gap-2" : "flex flex-col gap-2 sm:flex-row"}
-    >
+  const inputAndButton = (
+    <>
       <label htmlFor="newsletter-email" className="sr-only">
         Email address
       </label>
       <input
         id="newsletter-email"
         type="email"
+        name={connected ? field : undefined}
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -50,6 +48,44 @@ export function NewsletterSignup({ compact = false }: { compact?: boolean }) {
       <Button type="submit" className="shrink-0">
         Subscribe
       </Button>
+    </>
+  );
+
+  const className = compact ? "flex gap-2" : "flex flex-col gap-2 sm:flex-row";
+
+  // Connected: POST to the provider (into a hidden iframe), then show thanks.
+  if (connected) {
+    return (
+      <>
+        <iframe
+          name="newsletter_target"
+          title="newsletter"
+          className="hidden"
+          aria-hidden
+        />
+        <form
+          action={action}
+          method="post"
+          target="newsletter_target"
+          onSubmit={() => window.setTimeout(() => setDone(true), 400)}
+          className={className}
+        >
+          {inputAndButton}
+        </form>
+      </>
+    );
+  }
+
+  // Not connected yet: no data is sent anywhere.
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        setDone(true);
+      }}
+      className={className}
+    >
+      {inputAndButton}
     </form>
   );
 }

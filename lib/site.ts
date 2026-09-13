@@ -19,6 +19,25 @@ export const siteConfig = {
     twitter: "https://twitter.com",
     github: "https://github.com",
   },
+
+  // Search Console verification. Paste the code strings you get after
+  // registering the site (Google Search Console / Bing Webmaster Tools), or set
+  // the matching env vars at build time. Leaving these empty simply omits the
+  // meta tags.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "",
+    bing: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ?? "",
+  },
+
+  // Newsletter: paste your provider's public embed FORM ACTION URL (Buttondown,
+  // Mailchimp, Beehiiv, …). When set, the signup form posts real subscribers to
+  // it; when empty, the form shows a friendly "not connected yet" message.
+  // Example (Buttondown): https://buttondown.com/api/emails/embed-subscribe/YOURUSERNAME
+  newsletter: {
+    action: process.env.NEXT_PUBLIC_NEWSLETTER_ACTION ?? "",
+    // The form field name the provider expects for the email address.
+    emailField: process.env.NEXT_PUBLIC_NEWSLETTER_EMAIL_FIELD ?? "email",
+  },
 } as const;
 
 /**

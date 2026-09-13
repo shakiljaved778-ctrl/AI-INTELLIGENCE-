@@ -68,6 +68,8 @@ const BLOCK_TERMS = [
 
 const AUTHOR_AI = "Cambrian AI Desk";
 const AUTHOR_WORLD = "Cambrian Desk";
+const SITE_URL = (process.env.SITE_URL || "https://cambrian-ai.vercel.app").replace(/\/$/, "");
+const SOCIAL_QUEUE = path.join(ROOT, "content", "social-queue.md");
 const BASE = "https://generativelanguage.googleapis.com/v1beta";
 
 const log = (...a) => console.log("[draft-news-gemini]", ...a);
@@ -160,7 +162,8 @@ Frontmatter fields:
 - subtitle: one-sentence dek
 - category: EXACTLY one of [models, products, companies, research, policy, opinion, events, enterprise, technology, finance, sports, entertainment, lifestyle, politics] — use the AI-desk categories (models…enterprise) for AI stories and the Beyond-desk categories (technology, finance, sports, entertainment, lifestyle, politics) for non-AI stories
 - tags: array of 3–5 short lowercase topic tags
-- excerpt: one plain sentence, <=160 chars`;
+- excerpt: one plain sentence, <=160 chars
+- social: a ready-to-post social blurb — one punchy hook sentence plus 2–3 relevant hashtags, <=260 chars, no link and no emoji spam`;
 
 function userPrompt(item) {
   return `Source item:
@@ -269,6 +272,7 @@ function normalize(mdx, item, slugsInUse) {
     author: item.desk === "world" ? AUTHOR_WORLD : AUTHOR_AI,
     category, tags,
     excerpt: fm.excerpt ? String(fm.excerpt).slice(0, 160) : undefined,
+    social: fm.social ? String(fm.social).replace(/\s+/g, " ").slice(0, 280) : undefined,
     featured: false, source: item.link,
   };
   let body = parsed.content.trim();
@@ -347,6 +351,11 @@ async function main() {
       const mdx = extractMdx(raw);
       const { slug, front, body } = normalize(mdx, item, slugsInUse);
       fs.writeFileSync(path.join(POSTS_DIR, `${slug}.mdx`), toYaml(front) + body + "\n");
+      // Append a ready-to-post social blurb to a copy-paste queue.
+      if (front.social) {
+        const block = `\n## ${front.title}\n${front.social}\n${SITE_URL}/post/${slug}\n`;
+        fs.appendFileSync(SOCIAL_QUEUE, block);
+      }
       created.push({ slug, title: front.title });
       log(`wrote content/posts/${slug}.mdx`);
     } catch (e) {

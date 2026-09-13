@@ -72,6 +72,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
           git add content/posts content/.news-seen.json
+          [ -f content/social-queue.md ] && git add content/social-queue.md
           git commit -m "Draft AI news for review ($DATE)"
           git push -u origin "$BRANCH"
           gh pr create \
