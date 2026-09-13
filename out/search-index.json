@@ -1,5 +1,65 @@
 [
   {
+    "title": "Agents on the Attack: Hundreds of AI Bots Breach 440 Servers in Days",
+    "slug": "ai-agents-weaponized-papercut-attack",
+    "subtitle": "Researchers say a threat actor wired together AI coding agents to exploit known bugs — reaching remote code execution in under four hours.",
+    "excerpt": "The fear that autonomous AI agents would eventually be turned into offensive weapons stopped being hypothetical this week. Security researchers at GreyNoise…",
+    "category": "policy",
+    "tags": [
+      "security",
+      "ai agents",
+      "cyberattack",
+      "regulation"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
+    "title": "‘Pace the Frontier’: AI’s Own Leaders Say Slow Down",
+    "slug": "amodei-pace-the-frontier",
+    "subtitle": "Anthropic’s Dario Amodei urges companies and governments to ease off the accelerator — days after a safety researcher quit warning the industry is ‘gambling with our lives.’",
+    "excerpt": "The loudest call yet to slow down AI is coming from inside the house. Anthropic CEO Dario Amodei has published a roughly 3,800-word essay urging companies and…",
+    "category": "policy",
+    "tags": [
+      "ai safety",
+      "regulation",
+      "anthropic",
+      "governance"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
+    "title": "DeepSeek Doubles Down: V4.1 Flash Scales Up as Prices Fall",
+    "slug": "deepseek-v41-flash-scales-up",
+    "subtitle": "The new Flash model is roughly twice the size of its predecessor, yet launched cheaper and with stronger benchmarks.",
+    "excerpt": "DeepSeek is once again moving in the opposite direction from the rest of the frontier: making its models bigger and cheaper at the same time. The Chinese lab…",
+    "category": "models",
+    "tags": [
+      "deepseek",
+      "open models",
+      "china",
+      "pricing"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
+    "title": "OpenAI Raises the Toll: First Frontier Price Hike in Years",
+    "slug": "openai-raises-frontier-prices",
+    "subtitle": "The company lifted its top-tier rate to $10/$50 per million tokens — and Sam Altman says an IPO isn't happening this year.",
+    "excerpt": "For years the direction of AI pricing pointed one way: down. OpenAI just bent the curve the other way. The company raised its frontier rate for the first time…",
+    "category": "companies",
+    "tags": [
+      "openai",
+      "pricing",
+      "ipo",
+      "business"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
     "title": "Embeddings: How AI Turns Meaning Into Numbers",
     "slug": "what-are-embeddings",
     "subtitle": "The quiet building block behind semantic search, RAG, recommendations, and vector databases.",
