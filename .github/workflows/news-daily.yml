@@ -1,0 +1,81 @@
+name: Daily AI news drafts (Gemini)
+
+# The keyless-of-Anthropic daily "news desk": drafts a few original AI-news
+# articles with Google Gemini (free tier), pushes them on a news/ branch, and
+# opens a review Pull Request. Nothing goes live until you merge the PR.
+#
+# Requires:
+#   1. Repository secret GEMINI_API_KEY  (free key: https://aistudio.google.com/apikey)
+#   2. Settings → Actions → General → Workflow permissions →
+#      "Allow GitHub Actions to create and approve pull requests"  (checked)
+
+on:
+  schedule:
+    # 13:00 UTC = 8:00 AM US Eastern (EST). GitHub cron is UTC and ignores DST,
+    # so during EDT (mid-Mar–early Nov) this fires at 9:00 AM Eastern.
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many drafts to generate"
+        required: false
+        default: "3"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: news-daily
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Draft news with Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DRAFT_COUNT: ${{ github.event.inputs.count || '3' }}
+        run: node scripts/draft-news-gemini.mjs
+
+      - name: Push branch and open review PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain content/posts)" ]; then
+            echo "No new drafts — nothing to open."
+            exit 0
+          fi
+          DATE=$(date -u +%Y-%m-%d)
+          BRANCH="news/auto-$DATE-${{ github.run_number }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add content/posts content/.news-seen.json
+          git commit -m "Draft AI news for review ($DATE)"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "AI news drafts for review — $DATE" \
+            --body "Automated AI-news drafts (Gemini) awaiting your review. Merge to publish (the site rebuilds and redeploys), or close to discard. Add \`draft: true\` to any file to hold just that one. Please skim for accuracy before merging."

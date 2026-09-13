@@ -16,7 +16,8 @@
     "lint": "next lint",
     "search-index": "node scripts/build-search-index.mjs",
     "hero-images": "node scripts/build-hero-images.mjs",
-    "draft-news": "node scripts/draft-news.mjs"
+    "draft-news": "node scripts/draft-news.mjs",
+    "draft-news-gemini": "node scripts/draft-news-gemini.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",

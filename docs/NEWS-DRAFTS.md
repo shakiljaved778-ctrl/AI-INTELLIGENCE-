@@ -1,75 +1,71 @@
 # Automated news drafts (with human review)
 
-Cambrian AI can draft fresh AI-news articles on a schedule and open them as a
+Cambrian AI drafts fresh AI-news articles on a schedule and opens them as a
 **Pull Request for you to review**. Nothing is ever published automatically —
 you approve each batch by merging (or discard it by closing) the PR.
 
-## How it works
+The **daily** path uses **Google Gemini (free tier)** so it needs no paid
+Anthropic API key. (Two other paths exist as fallbacks — see the bottom.)
 
-1. **Daily**, a GitHub Action (`.github/workflows/draft-news.yml`) runs
-   `scripts/draft-news.mjs`.
-2. The script pulls recent items from several AI-news RSS feeds, skips anything
-   already covered, and asks **Claude** to write an original short analysis for
-   the top few — grounding itself on the real article (via the `web_fetch`
-   tool) and citing the source.
-3. The drafts are written to `content/posts/*.mdx` and pushed to a new branch,
-   and a **Pull Request** titled "AI news drafts for review — <date>" is opened.
-4. **You review the PR.**
-   - **Merge it** → the drafts land on `main`, the build workflow rebuilds the
-     site (each post gets a generated hero image + search entry), and Vercel
-     redeploys. Now they're live.
-   - **Close it** → the drafts are discarded, nothing is published.
-   - **Edit before merging** → change wording, categories, tags, or headlines
-     right in the PR. To hold back just one story in a batch, add
-     `draft: true` to its frontmatter (drafts are excluded from the live site).
+## Daily path — Gemini (recommended)
 
-So the loop is: *drafted for you → you approve → it publishes.* A human is
-always in the loop.
+**Workflow:** `.github/workflows/news-daily.yml` → `scripts/draft-news-gemini.mjs`
 
-## One-time setup: add your Anthropic API key
+Each day it:
+1. Pulls recent items from several AI-news RSS feeds and skips anything already
+   covered (existing posts' `source:` frontmatter, their titles, and the URLs in
+   `content/.news-seen.json`).
+2. Asks **Gemini** (with Google Search grounding when available) to write an
+   original ~350–600 word analysis for the top few, citing the source.
+3. Pushes the drafts on a `news/auto-<date>-<run>` branch and opens a review PR
+   titled **"AI news drafts for review — <date>"**.
+4. **You review the PR** → **merge** to publish (the build workflow rebuilds the
+   site — each post gets a hero image + search entry — and Vercel redeploys) or
+   **close** to discard. Add `draft: true` to any file to hold just that one.
 
-The drafting step calls the Claude API, so it needs an API key stored as a
-repository secret:
+### One-time setup (two steps)
 
-1. Get a key at <https://console.anthropic.com/> (Settings → API Keys).
-2. In the GitHub repo: **Settings → Secrets and variables → Actions → New
-   repository secret**.
-3. Name it exactly `ANTHROPIC_API_KEY` and paste the key.
+1. **Free Gemini key** → get one at <https://aistudio.google.com/apikey>. In the
+   repo: **Settings → Secrets and variables → Actions → New repository secret**,
+   name it exactly **`GEMINI_API_KEY`**.
+2. **Let Actions open PRs** → **Settings → Actions → General → Workflow
+   permissions** → check **"Allow GitHub Actions to create and approve pull
+   requests"** → Save.
 
-Until this secret is set, the scheduled run fails with a clear message (it does
-not publish anything).
+Until both are done, the run fails with a clear message and publishes nothing.
 
-## Try it now (without waiting for the schedule)
+### Try it now
+**Actions → "Daily AI news drafts (Gemini)" → Run workflow.** A review PR should
+appear under **Pull requests** within a minute or two.
 
-In the repo: **Actions → "Draft AI news for review" → Run workflow**. You can
-set how many drafts to generate. When it finishes, check **Pull requests** for
-the review PR.
+### Schedule / cost
+- Runs daily at **13:00 UTC (8:00 AM US Eastern, EST**; 9:00 AM during EDT — cron
+  can't follow daylight saving). Change the `cron` in `news-daily.yml` to adjust;
+  use `0 12 * * *` to prefer 8 AM during summer.
+- **Cost: $0** on Gemini's free tier (subject to Google's free-tier rate limits).
 
-## Cost
-
-Each run drafts a few short articles. By default it uses `claude-opus-5`. A
-typical run costs cents. To use a cheaper model, set the workflow input
-`model` (e.g. `claude-sonnet-5`) when running manually, or change the
-`DRAFT_MODEL` default in the workflow.
-
-## Tuning
-
-Environment variables read by `scripts/draft-news.mjs`:
-
-| Variable | Default | Meaning |
+### Tuning (`scripts/draft-news-gemini.mjs`)
+| Env var | Default | Meaning |
 |---|---|---|
-| `DRAFT_COUNT` | `3` | How many drafts per run |
-| `DRAFT_MODEL` | `claude-opus-5` | Claude model id |
+| `DRAFT_COUNT` | `3` | Drafts per run |
+| `GEMINI_MODEL` | `gemini-2.0-flash` | Model id (auto-falls back to an available flash model) |
 | `LOOKBACK_HOURS` | `36` | Only consider items newer than this |
 | `NEWS_FEEDS` | (built-in list) | Comma-separated RSS feed URLs |
 
-The list of stories already seen is tracked in `content/.news-seen.json` so the
-same story isn't drafted twice.
+Run locally: `GEMINI_API_KEY=... pnpm draft-news-gemini` (then
+`CAMBRIAN_INCLUDE_DRAFTS=1 pnpm dev` to preview drafts).
 
-## Run locally
+## Drafts and the `draft:` flag
+A post with `draft: true` in its frontmatter is excluded from the built/live
+site, the search index, and hero generation. Use it to hold a story back;
+remove it to let the next build publish it.
 
-```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-pnpm draft-news          # writes drafts into content/posts/
-CAMBRIAN_INCLUDE_DRAFTS=1 pnpm dev   # preview drafts locally
-```
+## Fallback paths
+- **Anthropic API (manual):** `.github/workflows/draft-news.yml` +
+  `scripts/draft-news.mjs`. Manual-run only; needs `ANTHROPIC_API_KEY`. Kept as a
+  fallback; the daily schedule uses Gemini instead.
+- **Auto-PR on branch push:** `.github/workflows/auto-pr.yml` opens a review PR
+  whenever a `news/**` branch is pushed by a person (also needs the "Allow
+  Actions to create PRs" setting above).
+- **On-demand:** just ask Claude Code to add today's AI news; it drafts and opens
+  a PR the same way.
