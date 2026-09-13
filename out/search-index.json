@@ -30,6 +30,21 @@
     "isPick": false
   },
   {
+    "title": "The Theater Strikes Back: A Record Summer Rewrites the Streaming Story",
+    "slug": "box-office-record-summer-2026",
+    "subtitle": "Summer 2026 hit a record $4.76 billion in the U.S. — and the year's box office has $10 billion in sight as streaming loses its shine.",
+    "excerpt": "For years the industry narrative was tidy: the couch was winning, and the multiplex was managing decline. Summer 2026 complicated that story. U.S. theaters…",
+    "category": "entertainment",
+    "tags": [
+      "box office",
+      "streaming",
+      "movies",
+      "hollywood"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
     "title": "DeepSeek Doubles Down: V4.1 Flash Scales Up as Prices Fall",
     "slug": "deepseek-v41-flash-scales-up",
     "subtitle": "The new Flash model is roughly twice the size of its predecessor, yet launched cheaper and with stronger benchmarks.",
@@ -45,6 +60,21 @@
     "isPick": false
   },
   {
+    "title": "Hot Inflation Sets Up a Tense Fed Week on Wall Street",
+    "slug": "markets-brace-for-fed-decision",
+    "subtitle": "A firmer CPI has money markets pricing a September move as near-certain, even as falling oil helped stocks steady after a four-day slide.",
+    "excerpt": "Wall Street closed out a jittery week the way it started it — watching the Federal Reserve. Stocks steadied, with a dip in oil prices helping equity buyers…",
+    "category": "finance",
+    "tags": [
+      "markets",
+      "federal reserve",
+      "inflation",
+      "stocks"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
     "title": "OpenAI Raises the Toll: First Frontier Price Hike in Years",
     "slug": "openai-raises-frontier-prices",
     "subtitle": "The company lifted its top-tier rate to $10/$50 per million tokens — and Sam Altman says an IPO isn't happening this year.",
@@ -55,6 +85,51 @@
       "pricing",
       "ipo",
       "business"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
+    "title": "Arsenal March On as the Title Chasers Stumble",
+    "slug": "premier-league-arsenal-perfect-start",
+    "subtitle": "A Premier League matchday that rewarded the ruthless and punished the rest — Liverpool and Chelsea among those dropping points.",
+    "excerpt": "Early September is when Premier League tables start telling small truths, and this weekend's told a clear one: Arsenal are setting the pace, and almost…",
+    "category": "sports",
+    "tags": [
+      "premier league",
+      "football",
+      "arsenal",
+      "soccer"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
+    "title": "'Techtember' Returns: 20+ Phones and a Fight for Your Upgrade",
+    "slug": "techtember-2026-phone-flood",
+    "subtitle": "From the iPhone 18 Pro to a wave of foldables and Snapdragon flagships, September's launch glut is really a battle over one thing — a reason to upgrade.",
+    "excerpt": "The industry's most predictable ritual is back. \"Techtember\" — the annual September flood of phone launches — is on track to bring more than 20 devices,…",
+    "category": "technology",
+    "tags": [
+      "smartphones",
+      "gadgets",
+      "apple",
+      "hardware"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
+    "title": "Travel to Recalibrate: Wellness Trips Trade Hustle for the Nervous System",
+    "slug": "wellness-travel-2026-recalibrate",
+    "subtitle": "2026's wellness travel is moving from performance and pampering toward sleep, mental health, and 'intention-led' trips built around how a place makes you feel.",
+    "excerpt": "The wellness vacation used to promise optimization: green juice, a punishing schedule, a slightly better version of you on the return flight. In 2026 the pitch…",
+    "category": "lifestyle",
+    "tags": [
+      "travel",
+      "wellness",
+      "health",
+      "trends"
     ],
     "date": "2026-09-13",
     "isPick": false
