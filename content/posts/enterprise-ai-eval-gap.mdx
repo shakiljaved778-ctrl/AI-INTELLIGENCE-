@@ -1,0 +1,63 @@
+---
+title: "The Eval Gap: Companies Are Shipping AI They Can't Measure"
+subtitle: "As enterprises move agents into production, the hardest problem isn't the model — it's knowing whether it's working."
+date: "2026-09-13T17:30:00Z"
+author: "Cambrian AI Staff"
+category: "enterprise"
+tags: ["Enterprise", "Evaluation", "Agents", "Observability"]
+excerpt: "Enterprises can deploy AI faster than they can evaluate it. The measurement gap is now the real bottleneck."
+featured: false
+---
+
+The bottleneck in enterprise AI has moved. A year ago the hard part was getting a
+capable model into a workflow at all. Now the models are capable and the
+integrations are routine — and the question that stalls projects is deceptively
+simple: *is it actually working?*
+
+Most organizations cannot answer that with confidence. They can tell you a model
+is deployed, how many requests it served, and roughly what it costs. What they
+usually cannot tell you is whether its outputs are correct, whether quality drifted
+after last month's model update, or which of two prompts is genuinely better
+rather than just newer.
+
+## Why measurement is hard here
+
+Traditional software has deterministic outputs and obvious failures — a function
+returns the wrong number, a page throws an error. Generative systems fail softly.
+An answer can be fluent, confident, and wrong. A summary can omit the one fact
+that mattered. An agent can complete a task in a way that looks right and quietly
+isn't. None of that trips a conventional alert.
+
+Evaluating it properly means defining what "good" means for each use case,
+building datasets of real inputs, and scoring outputs against them — often with a
+mix of automated graders, model-based judges, and human review. That is real
+engineering work, and it competes for attention with the more visible task of
+shipping the next feature.
+
+## The cost of skipping it
+
+Teams that skip it tend to discover the gap the expensive way. A model provider
+ships an update, behavior shifts, and no one notices until a customer does. A
+prompt tweak that felt like an improvement quietly degrades a downstream step. An
+agent that worked in the demo fails on the long tail of real requests it never
+saw in testing.
+
+The pattern is consistent: the failure isn't the model's raw capability, it's the
+absence of a feedback loop to catch regressions before users do.
+
+## What good looks like
+
+The organizations pulling ahead treat evaluation as infrastructure, not an
+afterthought. They keep versioned test sets drawn from production traffic, gate
+model and prompt changes behind measured comparisons, and monitor live outputs the
+way they'd monitor latency or error rates. The tooling for this is maturing
+quickly, and a category of "AI observability" products has grown up to serve it.
+
+The lesson enterprises are learning in 2026 is that deploying AI is the easy 20
+percent. Knowing whether it's still doing its job next quarter is the other
+eighty — and it's the part that separates a durable system from an impressive
+demo.
+
+<Callout>
+Analysis of enterprise AI evaluation and observability practices in 2026.
+</Callout>
