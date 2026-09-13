@@ -16,17 +16,26 @@ const ROOT = process.cwd();
 const POSTS_DIR = path.join(ROOT, "content", "posts");
 const LEDGER = path.join(ROOT, "content", ".news-seen.json");
 
-const CATEGORIES = [
+const AI_CATEGORIES = [
   "models", "products", "companies", "research",
   "policy", "opinion", "events", "enterprise",
 ];
+const WORLD_CATEGORIES = [
+  "technology", "finance", "sports", "entertainment", "lifestyle", "politics",
+];
+const CATEGORIES = [...AI_CATEGORIES, ...WORLD_CATEGORIES];
 
 const API_KEY = process.env.GEMINI_API_KEY;
 const MODEL_PREF = process.env.GEMINI_MODEL || "gemini-2.0-flash";
 const MAX_DRAFTS = Math.max(1, Number(process.env.DRAFT_COUNT) || 3);
 const LOOKBACK_HOURS = Math.max(6, Number(process.env.LOOKBACK_HOURS) || 36);
-const FEEDS = (
-  process.env.NEWS_FEEDS ||
+// Content mix: ~65% AI, ~35% "Beyond" (non-AI). Politics is kept tiny (~1%)
+// by simply not subscribing to a politics feed — stray political items from
+// general feeds are handled by the conflict filter + prompt rules below.
+const AI_RATIO = Math.min(0.95, Math.max(0.05, Number(process.env.AI_RATIO) || 0.65));
+
+const AI_FEEDS = (
+  process.env.AI_FEEDS || process.env.NEWS_FEEDS ||
   [
     "https://techcrunch.com/category/artificial-intelligence/feed/",
     "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
@@ -36,7 +45,29 @@ const FEEDS = (
   ].join(",")
 ).split(",").map((s) => s.trim()).filter(Boolean);
 
-const AUTHOR = "Cambrian AI Desk";
+const WORLD_FEEDS = (
+  process.env.WORLD_FEEDS ||
+  [
+    "https://feeds.bbci.co.uk/sport/rss.xml",          // sports
+    "https://www.cnbc.com/id/10000664/device/rss/rss.html", // markets / finance
+    "https://variety.com/feed/",                        // entertainment
+    "https://www.engadget.com/rss.xml",                 // non-AI consumer tech
+    "https://www.cntraveler.com/feed/rss",              // lifestyle / travel
+  ].join(",")
+).split(",").map((s) => s.trim()).filter(Boolean);
+
+// Hard exclusions: no Middle East coverage and no active geopolitical
+// conflict/war stories, on any desk. Matched against title + snippet.
+const BLOCK_TERMS = [
+  "middle east", "gaza", "israel", "israeli", "palestin", "hamas", "hezbollah",
+  "west bank", "idf", "iran", "iranian", "syria", "syrian", "lebanon", "yemen",
+  "houthi", "ukraine", "ukrainian", "russia-ukraine", "kremlin", "putin",
+  "airstrike", "air strike", "missile strike", "ceasefire", "war crimes",
+  "frontline", "invasion", "militant", "insurgent", "occupied territories",
+];
+
+const AUTHOR_AI = "Cambrian AI Desk";
+const AUTHOR_WORLD = "Cambrian Desk";
 const BASE = "https://generativelanguage.googleapis.com/v1beta";
 
 const log = (...a) => console.log("[draft-news-gemini]", ...a);
@@ -74,11 +105,16 @@ function existingSlugs() {
   return s;
 }
 
-async function gatherItems() {
+function isBlocked(item) {
+  const hay = `${item.title} ${item.snippet}`.toLowerCase();
+  return BLOCK_TERMS.some((t) => hay.includes(t));
+}
+
+async function gatherItems(feeds, desk) {
   const parser = new Parser({ timeout: 20000 });
   const cutoff = Date.now() - LOOKBACK_HOURS * 3600 * 1000;
   const items = [];
-  for (const url of FEEDS) {
+  for (const url of feeds) {
     try {
       const feed = await parser.parseURL(url);
       const source = feed.title || new URL(url).hostname;
@@ -86,13 +122,16 @@ async function gatherItems() {
         const ts = new Date(it.isoDate || it.pubDate || 0).getTime();
         if (Number.isFinite(ts) && ts && ts < cutoff) continue;
         if (!it.link || !it.title) continue;
-        items.push({
-          title: it.title.trim(), link: it.link.trim(), source,
+        const item = {
+          title: it.title.trim(), link: it.link.trim(), source, desk,
           snippet: (it.contentSnippet || it.content || "").slice(0, 800),
           ts: Number.isFinite(ts) ? ts : 0,
-        });
+        };
+        // Drop Middle East / active-conflict stories entirely, on any desk.
+        if (isBlocked(item)) continue;
+        items.push(item);
       }
-      log(`feed ok: ${url} (${feed.items?.length ?? 0})`);
+      log(`feed ok [${desk}]: ${url} (${feed.items?.length ?? 0})`);
     } catch (e) { log(`feed FAILED: ${url} — ${e?.message || e}`); }
   }
   items.sort((a, b) => b.ts - a.ts);
@@ -110,12 +149,16 @@ Hard rules:
 - End the body with an attribution line exactly like: *Source: [PUBLICATION](URL)*
 - Neutral, informed tone. No hype, no first person.
 
-Output ONLY a complete MDX file: a YAML frontmatter block delimited by --- lines, then the Markdown body. No code fences, no commentary.
+Editorial policy (strict):
+- Politics: only strictly NON-PARTISAN coverage, and keep it rare. NEVER write about the Middle East or any active geopolitical conflict or war. If the source is such a story, refuse by outputting exactly "SKIP" and nothing else.
+- Keep the tone neutral for any political or contentious topic; do not take sides.
+
+Output ONLY a complete MDX file: a YAML frontmatter block delimited by --- lines, then the Markdown body. No code fences, no commentary. (Or the single word SKIP if the story violates the policy above.)
 
 Frontmatter fields:
 - title: an original sharp headline (do NOT copy the source headline verbatim)
 - subtitle: one-sentence dek
-- category: EXACTLY one of [models, products, companies, research, policy, opinion, events, enterprise]
+- category: EXACTLY one of [models, products, companies, research, policy, opinion, events, enterprise, technology, finance, sports, entertainment, lifestyle, politics] — use the AI-desk categories (models…enterprise) for AI stories and the Beyond-desk categories (technology, finance, sports, entertainment, lifestyle, politics) for non-AI stories
 - tags: array of 3–5 short lowercase topic tags
 - excerpt: one plain sentence, <=160 chars`;
 
@@ -124,9 +167,10 @@ function userPrompt(item) {
 - Headline: ${item.title}
 - Publication: ${item.source}
 - URL: ${item.link}
+- Desk: ${item.desk === "world" ? "Beyond (non-AI) — choose a category from technology, finance, sports, entertainment, lifestyle, politics" : "AI — choose an AI-desk category"}
 - Snippet: ${item.snippet || "(none)"}
 
-Write the MDX article now. Original wording; only well-supported facts; 350–600 words; end with *Source: [${item.source}](${item.link})*.`;
+Write the MDX article now (or output SKIP if it violates the politics/conflict policy). Original wording; only well-supported facts; 350–600 words; end with *Source: [${item.source}](${item.link})*.`;
 }
 
 let RESOLVED_MODEL = null;
@@ -208,19 +252,22 @@ function normalize(mdx, item, slugsInUse) {
   const fm = parsed.data || {};
   const today = new Date().toISOString().slice(0, 10);
 
+  const deskDefault = item.desk === "world" ? "technology" : "companies";
   let category = String(fm.category || "").toLowerCase();
-  if (!CATEGORIES.includes(category)) category = "companies";
+  if (!CATEGORIES.includes(category)) category = deskDefault;
 
   const title = String(fm.title || item.title).trim();
-  let base = slugify(title) || "ai-news", slug = base, n = 2;
+  let base = slugify(title) || "news", slug = base, n = 2;
   while (slugsInUse.has(slug)) slug = `${base}-${n++}`;
   slugsInUse.add(slug);
 
-  const tags = Array.isArray(fm.tags) && fm.tags.length ? fm.tags.slice(0, 5) : ["ai"];
+  const tags = Array.isArray(fm.tags) && fm.tags.length ? fm.tags.slice(0, 5) : ["news"];
   const front = {
     title,
     subtitle: fm.subtitle ? String(fm.subtitle) : undefined,
-    date: today, author: AUTHOR, category, tags,
+    date: today,
+    author: item.desk === "world" ? AUTHOR_WORLD : AUTHOR_AI,
+    category, tags,
     excerpt: fm.excerpt ? String(fm.excerpt).slice(0, 160) : undefined,
     featured: false, source: item.link,
   };
@@ -248,29 +295,56 @@ async function main() {
   }
   fs.mkdirSync(POSTS_DIR, { recursive: true });
 
-  const items = await gatherItems();
-  log(`gathered ${items.length} recent items`);
+  const [aiItems, worldItems] = await Promise.all([
+    gatherItems(AI_FEEDS, "ai"),
+    gatherItems(WORLD_FEEDS, "world"),
+  ]);
+  log(`gathered ${aiItems.length} AI + ${worldItems.length} world items`);
 
   const ledgerSet = new Set(readLedger());
   const { sources, titles } = existingCoverage();
   const slugsInUse = existingSlugs();
-
-  const chosen = [];
   const seen = new Set();
-  for (const it of items) {
-    if (chosen.length >= MAX_DRAFTS) break;
+
+  const isNew = (it) => {
     const tk = titleKey(it.title);
-    if (ledgerSet.has(it.link) || sources.has(it.link) || titles.has(tk) || seen.has(tk)) continue;
-    seen.add(tk);
-    chosen.push(it);
-  }
+    return !(ledgerSet.has(it.link) || sources.has(it.link) || titles.has(tk) || seen.has(tk));
+  };
+  const take = (pool, n) => {
+    const out = [];
+    for (const it of pool) {
+      if (out.length >= n) break;
+      if (!isNew(it)) continue;
+      seen.add(titleKey(it.title));
+      out.push(it);
+    }
+    return out;
+  };
+
+  // Content mix: ~65% AI / ~35% Beyond.
+  const aiTarget = Math.round(MAX_DRAFTS * AI_RATIO);
+  const worldTarget = MAX_DRAFTS - aiTarget;
+  let chosen = [...take(aiItems, aiTarget), ...take(worldItems, worldTarget)];
+  // Backfill from either pool if one came up short.
+  if (chosen.length < MAX_DRAFTS)
+    chosen = chosen.concat(take(aiItems, MAX_DRAFTS - chosen.length));
+  if (chosen.length < MAX_DRAFTS)
+    chosen = chosen.concat(take(worldItems, MAX_DRAFTS - chosen.length));
+
   if (chosen.length === 0) { log("no new stories to draft."); return; }
+  log(`selected ${chosen.length} (${chosen.map((c) => c.desk).join(", ")})`);
 
   const created = [];
   for (const item of chosen) {
     try {
-      log(`drafting: ${item.title}`);
-      const mdx = extractMdx(await draftArticle(item));
+      log(`drafting [${item.desk}]: ${item.title}`);
+      const raw = await draftArticle(item);
+      if (/^\s*SKIP\s*$/i.test(raw)) {
+        log(`model skipped (policy): ${item.title}`);
+        ledgerSet.add(item.link);
+        continue;
+      }
+      const mdx = extractMdx(raw);
       const { slug, front, body } = normalize(mdx, item, slugsInUse);
       fs.writeFileSync(path.join(POSTS_DIR, `${slug}.mdx`), toYaml(front) + body + "\n");
       created.push({ slug, title: front.title });

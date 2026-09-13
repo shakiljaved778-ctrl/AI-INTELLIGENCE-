@@ -5,10 +5,12 @@ import { PickCard } from "@/components/post/pick-card";
 import { TopPicks } from "@/components/post/top-picks";
 import { AdRectangle } from "@/components/ads/ad-rectangle";
 import { AdBanner } from "@/components/ads/ad-banner";
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
-import { categories, getCategory } from "@/lib/categories";
+import {
+  getCategory,
+  aiCategorySlugs,
+  worldCategorySlugs,
+} from "@/lib/categories";
 import { formatDate } from "@/lib/utils";
 import {
   getAllPostMeta,
@@ -16,246 +18,246 @@ import {
   getPicks,
   getPostsByCategory,
 } from "@/lib/posts";
+import type { PostMeta } from "@/types/content";
+
+/** A compact card for the "Latest" fresh rail, numbered to convey sequence. */
+function FreshCard({ post, index }: { post: PostMeta; index: number }) {
+  const category = getCategory(post.category);
+  return (
+    <article className="group snap-start w-[82%] shrink-0 sm:w-[46%] lg:w-auto lg:shrink">
+      <Link href={`/post/${post.slug}`} className="block">
+        <div className="relative overflow-hidden rounded-xl border bg-muted">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={post.image}
+            alt=""
+            loading="lazy"
+            className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+          />
+          <span className="absolute left-2 top-2 rounded-md bg-background/85 px-1.5 py-0.5 font-mono text-[11px] font-semibold tabular-nums text-foreground/80 backdrop-blur">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+        </div>
+        <div className="mt-3 flex items-center gap-1.5">
+          {category && (
+            <>
+              <span
+                aria-hidden
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ backgroundColor: `hsl(${category.color})` }}
+              />
+              <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+                {category.title}
+              </span>
+            </>
+          )}
+        </div>
+        <h3 className="mt-1 font-serif text-lg font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
+          {post.title}
+        </h3>
+        <p className="mt-1 text-xs text-muted-foreground">
+          {formatDate(post.date)}
+        </p>
+      </Link>
+    </article>
+  );
+}
 
 export default function HomePage() {
-  // Lead story = the single newest article (excluding evergreen "Learn"
-  // explainers), so the homepage always opens with the freshest story —
-  // regardless of whether it's flagged `featured` (Verge-style).
-  const newsFeed = getAllPostMeta().filter((p) => p.category !== "learning");
-  const lead = newsFeed[0];
+  const allMeta = getAllPostMeta();
+  // News feed = everything except evergreen "Learn" explainers.
+  const news = allMeta.filter((p) => p.category !== "learning");
 
-  // "More Top Stories" bento: editor-featured posts (excluding the lead); if
-  // there aren't enough, fall back to the next newest stories.
-  const featuredSlugs = new Set(getFeaturedPosts(8).map((p) => p.slug));
-  let bento = newsFeed.filter(
-    (p) => (!lead || p.slug !== lead.slug) && featuredSlugs.has(p.slug)
+  // Fresh rail: the newest stories across BOTH desks, so the reader always
+  // opens to what's new this morning — shown in sequence, not stale.
+  const fresh = news.slice(0, 5);
+  const freshSlugs = new Set(fresh.map((p) => p.slug));
+
+  // ── AI desk (the core, ~65%) ──────────────────────────────────────────────
+  const aiRecent = news.filter(
+    (p) => aiCategorySlugs.has(p.category) && !freshSlugs.has(p.slug)
   );
-  if (bento.length < 3) {
-    bento = newsFeed.filter((p) => !lead || p.slug !== lead.slug);
-  }
-  bento = bento.slice(0, 5);
+  const aiFeatured = new Set(getFeaturedPosts(8).map((p) => p.slug));
+  let aiBento = aiRecent.filter((p) => aiFeatured.has(p.slug));
+  if (aiBento.length < 3) aiBento = aiRecent;
+  aiBento = aiBento.slice(0, 5);
+  const aiBentoSlugs = new Set(aiBento.map((p) => p.slug));
+  const aiLatest = aiRecent
+    .filter((p) => !aiBentoSlugs.has(p.slug))
+    .slice(0, 14);
 
-  // Latest News: recent stories not already shown as the lead or in the bento.
-  const shown = new Set([lead?.slug, ...bento.map((p) => p.slug)].filter(Boolean));
-  const latest = newsFeed.filter((p) => !shown.has(p.slug)).slice(0, 24);
-  const picks = getPicks().slice(0, 3);
+  // ── Beyond desk (non-AI, ~35%) ────────────────────────────────────────────
+  const beyond = news
+    .filter((p) => worldCategorySlugs.has(p.category) && !freshSlugs.has(p.slug))
+    .slice(0, 6);
+
   const sidebarPicks = getPicks().slice(0, 5);
   const learn = getPostsByCategory("learning").slice(0, 4);
 
   return (
-    <>
-      {/* HERO — opens with the latest top story, front and center */}
-      {lead && (
-        <section className="relative overflow-hidden border-b bg-gradient-to-b from-secondary/50 to-background">
-          {/* Decorative drifting accent blobs (purely visual). */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-accent/20 blur-3xl animate-float-slow"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl animate-float-slow"
-            style={{ animationDelay: "-7s" }}
-          />
-
-          <div className="container relative z-10 grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-2 lg:gap-12">
-            {/* Image (top on mobile, right on desktop) */}
-            <Link
-              href={`/post/${lead.slug}`}
-              className="group order-1 block overflow-hidden rounded-2xl border bg-muted animate-fade-up lg:order-2"
-              style={{ animationDelay: "200ms" }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={lead.image}
-                alt={lead.title}
-                className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-            </Link>
-
-            {/* Headline + dek */}
-            <div className="order-2 lg:order-1">
-              <p className="eyebrow animate-fade-up">
-                Top Story{getCategory(lead.category) ? ` · ${getCategory(lead.category)!.title}` : ""}
-              </p>
-              <h1
-                className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight animate-fade-up sm:text-5xl"
-                style={{ animationDelay: "80ms" }}
+    <div className="container py-8 sm:py-10">
+      {/* ── Fresh rail: newest across all desks, horizontal & sequential ── */}
+      {fresh.length > 0 && (
+        <section aria-labelledby="latest" className="mb-14">
+          <div className="mb-5 flex items-end justify-between border-b pb-3">
+            <div>
+              <p className="eyebrow mb-1">Fresh this morning</p>
+              <h2
+                id="latest"
+                className="font-serif text-2xl font-bold tracking-tight sm:text-3xl"
               >
-                <Link
-                  href={`/post/${lead.slug}`}
-                  className="transition-colors hover:text-accent"
-                >
-                  {lead.title}
-                </Link>
-              </h1>
-              {lead.subtitle && (
-                <p
-                  className="mt-4 max-w-xl text-lg text-muted-foreground animate-fade-up"
-                  style={{ animationDelay: "150ms" }}
-                >
-                  {lead.subtitle}
-                </p>
-              )}
-              <div
-                className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 animate-fade-up"
-                style={{ animationDelay: "230ms" }}
-              >
-                <Link
-                  href={`/post/${lead.slug}`}
-                  className={buttonVariants({ size: "lg" })}
-                >
-                  Read the story
-                </Link>
-                <span className="text-sm text-muted-foreground">
-                  {lead.author} · {formatDate(lead.date)} · {lead.readTime} min read
-                </span>
-              </div>
+                Latest
+              </h2>
             </div>
+            <span className="hidden text-xs text-muted-foreground sm:block">
+              Newest first · updated daily
+            </span>
+          </div>
+          <div className="-mx-1 flex snap-x gap-5 overflow-x-auto px-1 pb-4 lg:mx-0 lg:grid lg:grid-cols-5 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0">
+            {fresh.map((post, i) => (
+              <FreshCard key={post.slug} post={post} index={i} />
+            ))}
           </div>
         </section>
       )}
 
-      <div className="container py-10 sm:py-14">
-        {/* Category quick links */}
-        <nav
-          aria-label="Sections"
-          className="mb-10 flex flex-wrap justify-center gap-2 border-b pb-6"
-        >
-          {categories.map((category) => (
-            <Link key={category.slug} href={`/category/${category.slug}`}>
-              <Badge
-                variant="outline"
-                className="transition-transform hover:-translate-y-0.5 hover:bg-secondary hover:text-secondary-foreground"
-              >
-                {category.title}
-              </Badge>
-            </Link>
-          ))}
-        </nav>
+      {/* ── AI desk ── */}
+      <section aria-labelledby="ai-desk" className="mb-16">
+        <div className="mb-8 flex items-end justify-between border-b pb-3">
+          <div>
+            <p className="eyebrow mb-1">The core</p>
+            <h2
+              id="ai-desk"
+              className="font-serif text-2xl font-bold tracking-tight sm:text-3xl"
+            >
+              Artificial Intelligence
+            </h2>
+          </div>
+        </div>
 
-        {/* More Top Stories — an asymmetric editorial mosaic (Verge-style):
-            the first tile runs wide, the rest tile in beside and below it. */}
-        {bento.length > 0 && (
-          <Reveal as="section" aria-labelledby="top-stories" className="mb-16">
-            <p id="top-stories" className="eyebrow mb-8">
-              More Top Stories
-            </p>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {bento.map((post, i) => (
-                <Reveal
-                  key={post.slug}
-                  delay={i * 80}
-                  className={i === 0 ? "sm:col-span-2" : ""}
-                >
-                  <PostCard post={post} variant={i === 0 ? "feature" : "default"} />
-                </Reveal>
-              ))}
-            </div>
-          </Reveal>
+        {/* Top stories bento (wide lead tile + smaller tiles) */}
+        {aiBento.length > 0 && (
+          <div className="mb-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {aiBento.map((post, i) => (
+              <Reveal
+                key={post.slug}
+                delay={i * 80}
+                className={i === 0 ? "sm:col-span-2" : ""}
+              >
+                <PostCard post={post} variant={i === 0 ? "feature" : "default"} />
+              </Reveal>
+            ))}
+          </div>
         )}
 
-        {/* Mid-page banner ad between sections */}
         <AdBanner slotId="home-mid-banner" className="!px-0" />
 
-        {/* Main grid: Latest news + sidebar */}
+        {/* Latest AI news + sidebar */}
         <Reveal className="mt-10 grid gap-12 lg:grid-cols-3">
-          <section aria-labelledby="latest" className="lg:col-span-2">
-            <h2
-              id="latest"
-              className="mb-4 scroll-mt-24 border-b pb-3 text-2xl font-semibold tracking-tight"
+          <section aria-labelledby="ai-latest" className="lg:col-span-2">
+            <h3
+              id="ai-latest"
+              className="mb-4 scroll-mt-24 border-b pb-3 text-xl font-semibold tracking-tight"
             >
-              Latest News
-            </h2>
-            <PostList posts={latest} />
+              Latest in AI
+            </h3>
+            <PostList posts={aiLatest} />
           </section>
 
           <aside className="space-y-10">
             <TopPicks picks={sidebarPicks} />
-            {/* Sidebar rectangle ad */}
             <AdRectangle slotId="home-sidebar" />
-            <section>
-              <p className="eyebrow mb-3">Sections</p>
-              <ul className="space-y-2 text-sm">
-                {categories.map((category) => (
-                  <li key={category.slug}>
-                    <Link
-                      href={`/category/${category.slug}`}
-                      className="text-foreground/80 transition-colors hover:text-accent"
-                    >
-                      {category.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
           </aside>
         </Reveal>
+      </section>
 
-        {/* Model & Company Picks */}
-        {picks.length > 0 && (
-          <Reveal as="section" aria-labelledby="picks" className="mt-16">
-            <div className="mb-8 flex items-end justify-between border-b pb-3">
-              <h2 id="picks" className="text-2xl font-semibold tracking-tight">
-                Model &amp; Company Picks
+      {/* ── Beyond desk (non-AI) ── */}
+      {beyond.length > 0 && (
+        <Reveal as="section" aria-labelledby="beyond" className="mb-16">
+          <div className="mb-8 flex items-end justify-between border-b pb-3">
+            <div>
+              <p className="eyebrow mb-1">Beyond AI</p>
+              <h2
+                id="beyond"
+                className="font-serif text-2xl font-bold tracking-tight sm:text-3xl"
+              >
+                The wider world
               </h2>
-              <Link
-                href="/picks"
-                className="text-sm font-medium text-accent hover:underline"
-              >
-                View all picks →
-              </Link>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {picks.map((pick, i) => (
-                <Reveal key={pick.slug} delay={i * 90}>
-                  <PickCard post={pick} />
-                </Reveal>
-              ))}
-            </div>
-          </Reveal>
-        )}
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {beyond.map((post, i) => (
+              <Reveal key={post.slug} delay={i * 70}>
+                <PostCard post={post} />
+              </Reveal>
+            ))}
+          </div>
+        </Reveal>
+      )}
 
-        {/* Learn — evergreen concept explainers */}
-        {learn.length > 0 && (
-          <Reveal as="section" aria-labelledby="learn" className="mt-16">
-            <div className="mb-8 flex items-end justify-between border-b pb-3">
-              <div>
-                <p className="eyebrow mb-1">Learn</p>
-                <h2 id="learn" className="text-2xl font-semibold tracking-tight">
-                  AI concepts, explained
-                </h2>
-              </div>
-              <Link
-                href="/category/learning"
-                className="text-sm font-medium text-accent hover:underline"
-              >
-                All explainers →
-              </Link>
+      {/* ── Picks ── */}
+      {sidebarPicks.length > 0 && (
+        <Reveal as="section" aria-labelledby="picks" className="mb-16">
+          <div className="mb-8 flex items-end justify-between border-b pb-3">
+            <h2 id="picks" className="text-2xl font-semibold tracking-tight">
+              Model &amp; Company Picks
+            </h2>
+            <Link
+              href="/picks"
+              className="text-sm font-medium text-accent hover:underline"
+            >
+              View all picks →
+            </Link>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {sidebarPicks.slice(0, 3).map((pick, i) => (
+              <Reveal key={pick.slug} delay={i * 90}>
+                <PickCard post={pick} />
+              </Reveal>
+            ))}
+          </div>
+        </Reveal>
+      )}
+
+      {/* ── Learn ── */}
+      {learn.length > 0 && (
+        <Reveal as="section" aria-labelledby="learn">
+          <div className="mb-8 flex items-end justify-between border-b pb-3">
+            <div>
+              <p className="eyebrow mb-1">Learn</p>
+              <h2 id="learn" className="text-2xl font-semibold tracking-tight">
+                AI concepts, explained
+              </h2>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {learn.map((p, i) => (
-                <Reveal key={p.slug} delay={i * 80}>
-                  <Link
-                    href={`/post/${p.slug}`}
-                    className="group block h-full rounded-xl border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-md"
-                  >
-                    <p className="eyebrow mb-2">Explainer</p>
-                    <h3 className="text-lg font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
-                      {p.title}
-                    </h3>
-                    {p.subtitle && (
-                      <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
-                        {p.subtitle}
-                      </p>
-                    )}
-                  </Link>
-                </Reveal>
-              ))}
-            </div>
-          </Reveal>
-        )}
-      </div>
-    </>
+            <Link
+              href="/category/learning"
+              className="text-sm font-medium text-accent hover:underline"
+            >
+              All explainers →
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {learn.map((p, i) => (
+              <Reveal key={p.slug} delay={i * 80}>
+                <Link
+                  href={`/post/${p.slug}`}
+                  className="group block h-full rounded-xl border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-md"
+                >
+                  <p className="eyebrow mb-2">Explainer</p>
+                  <h3 className="text-lg font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
+                    {p.title}
+                  </h3>
+                  {p.subtitle && (
+                    <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+                      {p.subtitle}
+                    </p>
+                  )}
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </Reveal>
+      )}
+    </div>
   );
 }

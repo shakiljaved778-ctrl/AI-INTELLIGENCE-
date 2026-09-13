@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
-import { isValidCategory } from "@/lib/categories";
+import { isValidCategory, categorySlugs } from "@/lib/categories";
 import type { Post, PostMeta } from "@/types/content";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
@@ -68,7 +68,7 @@ function parsePost(filename: string): Post {
   if (!isValidCategory(data.category)) {
     throw new Error(
       `[content] Invalid category "${data.category}" in ${where}. ` +
-        `Must be one of: research, products, companies, policy, models, opinion, events.`
+        `Must be one of: ${categorySlugs.join(", ")}.`
     );
   }
 

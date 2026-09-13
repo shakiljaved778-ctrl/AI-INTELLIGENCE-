@@ -10,7 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { categories } from "@/lib/categories";
+import { aiCategories, worldCategories } from "@/lib/categories";
 import { mainNav, siteConfig } from "@/lib/site";
 
 /**
@@ -49,9 +49,23 @@ export function MobileNav() {
           ))}
 
           <p className="mt-4 mb-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            Sections
+            AI
           </p>
-          {categories.map((category) => (
+          {aiCategories.map((category) => (
+            <Link
+              key={category.slug}
+              href={`/category/${category.slug}`}
+              onClick={() => setOpen(false)}
+              className="border-b py-2.5 text-sm text-foreground/80"
+            >
+              {category.title}
+            </Link>
+          ))}
+
+          <p className="mt-4 mb-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Beyond
+          </p>
+          {worldCategories.map((category) => (
             <Link
               key={category.slug}
               href={`/category/${category.slug}`}

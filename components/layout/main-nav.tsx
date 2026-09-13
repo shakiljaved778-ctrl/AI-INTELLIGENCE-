@@ -11,12 +11,45 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { categories } from "@/lib/categories";
+import { aiCategories, worldCategories } from "@/lib/categories";
 import { mainNav } from "@/lib/site";
 
+function SectionDropdown({
+  label,
+  items,
+}: {
+  label: string;
+  items: { slug: string; title: string; color: string }[];
+}) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 outline-none transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring">
+        {label}
+        <ChevronDown className="h-4 w-4" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start" className="min-w-[15rem]">
+        <DropdownMenuLabel>{label}</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        {items.map((c) => (
+          <DropdownMenuItem key={c.slug} asChild>
+            <Link href={`/category/${c.slug}`} className="flex items-center gap-2">
+              <span
+                aria-hidden
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ backgroundColor: `hsl(${c.color})` }}
+              />
+              {c.title}
+            </Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
 /**
- * Desktop navigation: primary links plus a "Categories" dropdown built from
- * the category taxonomy.
+ * Desktop navigation: Home, an "AI" dropdown and a "Beyond" dropdown built from
+ * the two category desks, then the remaining primary links.
  */
 export function MainNav() {
   return (
@@ -33,21 +66,8 @@ export function MainNav() {
           </Link>
         ))}
 
-      <DropdownMenu>
-        <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 outline-none transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring">
-          Categories
-          <ChevronDown className="h-4 w-4" />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="min-w-[16rem]">
-          <DropdownMenuLabel>Sections</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          {categories.map((category) => (
-            <DropdownMenuItem key={category.slug} asChild>
-              <Link href={`/category/${category.slug}`}>{category.title}</Link>
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <SectionDropdown label="AI" items={aiCategories} />
+      <SectionDropdown label="Beyond" items={worldCategories} />
 
       {mainNav
         .filter((item) => item.title !== "Home")

@@ -86,12 +86,26 @@ const ICONS = {
   scales: `<path d="M50 22V80M34 80H66M22 34H78M50 22V34"/><path d="M22 34 14 52 a9 9 0 0 0 16 0Z"/><path d="M78 34 70 52 a9 9 0 0 0 16 0Z"/>`,
   quote: `<path d="M32 36h14v14c0 8 -5 12 -13 14M54 36h14v14c0 8 -5 12 -13 14"/>`,
   spark: `<path d="M50 22 C53 43 57 47 78 50 C57 53 53 57 50 78 C47 57 43 53 22 50 C43 47 47 43 50 22Z"/>`,
+  // Beyond desk motifs.
+  trophy: `<path d="M35 24h30v10a15 15 0 0 1 -30 0zM35 28H24a10 10 0 0 0 11 12M65 28h11a10 10 0 0 1 -11 12M44 49h12v10H44zM38 72h24l-3 -10H41z"/>`,
+  film: `<rect x="24" y="28" width="52" height="44" rx="4"/><path d="M24 40h52M24 60h52M36 28V72M64 28V72"/>`,
+  leaf: `<path d="M28 72C28 44 48 28 74 28C74 54 56 72 28 72Z"/><path d="M28 72C40 60 52 52 68 46"/>`,
+  monitor: `<rect x="22" y="26" width="56" height="38" rx="4"/><path d="M40 72h20M50 64v8M22 54h56"/>`,
+  landmark: `<path d="M22 40 50 24 78 40"/><path d="M28 40V68M40 40V68M60 40V68M72 40V68"/><path d="M20 76H80M24 68H76"/>`,
 };
 
 /** Choose an icon that best reflects the article's subject. */
 function iconKey(category, title, tags) {
   const hay = `${category} ${title} ${(tags || []).join(" ")}`.toLowerCase();
   const has = (arr) => arr.some((w) => hay.includes(w));
+
+  // Beyond desk: category-driven motifs first.
+  if (category === "sports") return "trophy";
+  if (category === "entertainment") return "film";
+  if (category === "lifestyle") return "leaf";
+  if (category === "technology") return "monitor";
+  if (category === "finance") return "chart";
+  if (category === "politics") return "landmark";
 
   if (has(["chip", "silicon", "nvidia", "qualcomm", "gpu", "inference", "hardware"])) return "chip";
   if (has(["robot", "physical ai", "autonom", "drone", "humanoid"])) return "robot";

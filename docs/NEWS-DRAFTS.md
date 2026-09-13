@@ -44,13 +44,24 @@ appear under **Pull requests** within a minute or two.
   use `0 12 * * *` to prefer 8 AM during summer.
 - **Cost: $0** on Gemini's free tier (subject to Google's free-tier rate limits).
 
+### Content mix & editorial rules
+The writer targets roughly **65% AI** and **35% "Beyond"** (non-AI: technology,
+finance, sports, entertainment, lifestyle) each batch, drawing from two feed
+sets. **Politics is kept tiny (~1%)** — there's no politics feed, so it only
+appears if a general feed surfaces something. Two hard rules are enforced in
+code and in the model prompt: coverage is **strictly non-partisan**, and there
+is **no coverage of the Middle East or any active geopolitical conflict/war**
+(such items are filtered out by keyword and the model is told to skip them).
+
 ### Tuning (`scripts/draft-news-gemini.mjs`)
 | Env var | Default | Meaning |
 |---|---|---|
 | `DRAFT_COUNT` | `3` | Drafts per run |
+| `AI_RATIO` | `0.65` | Share of each batch that is AI (rest is Beyond) |
 | `GEMINI_MODEL` | `gemini-2.0-flash` | Model id (auto-falls back to an available flash model) |
 | `LOOKBACK_HOURS` | `36` | Only consider items newer than this |
-| `NEWS_FEEDS` | (built-in list) | Comma-separated RSS feed URLs |
+| `AI_FEEDS` | (built-in list) | Comma-separated AI RSS feeds |
+| `WORLD_FEEDS` | (built-in list) | Comma-separated non-AI RSS feeds |
 
 Run locally: `GEMINI_API_KEY=... pnpm draft-news-gemini` (then
 `CAMBRIAN_INCLUDE_DRAFTS=1 pnpm dev` to preview drafts).
