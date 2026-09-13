@@ -86,7 +86,7 @@ const QUERY_OVERRIDES = {
   // finance
   "easy-mortgage-loans-risk-2026": "house keys real estate",
   "ipo-window-reopens-2026": "new york stock exchange",
-  "markets-brace-for-fed-decision": "federal reserve building",
+  "markets-brace-for-fed-decision": "new york stock exchange",
   "markets-record-highs-2026": "stock trading screen",
   "snowflake-earnings-pop-2026": "data cloud server",
   "treasury-yields-two-year-high-2026": "government bonds finance",
