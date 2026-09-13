@@ -3,7 +3,7 @@
 3:I[7278,["726","static/chunks/726-0d5fee421ca0697c.js","739","static/chunks/739-f33f3c406840f26c.js","81","static/chunks/81-4992573bed1c0c4d.js","177","static/chunks/app/layout-bc69f5235a6d3850.js"],"SiteHeader"]
 4:I[3559,[],""]
 5:I[4795,[],""]
-6:I[9726,["726","static/chunks/726-0d5fee421ca0697c.js","739","static/chunks/739-f33f3c406840f26c.js","974","static/chunks/app/page-55ca605e957fc382.js"],""]
+6:I[9726,["726","static/chunks/726-0d5fee421ca0697c.js","739","static/chunks/739-f33f3c406840f26c.js","974","static/chunks/app/page-c84dcfc48b60d57d.js"],""]
 7:I[5474,["726","static/chunks/726-0d5fee421ca0697c.js","739","static/chunks/739-f33f3c406840f26c.js","81","static/chunks/81-4992573bed1c0c4d.js","177","static/chunks/app/layout-bc69f5235a6d3850.js"],"NewsletterSignup"]
 15:I[8557,[],""]
 :HL["/_next/static/media/6ba5f591ae6c56f6-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
