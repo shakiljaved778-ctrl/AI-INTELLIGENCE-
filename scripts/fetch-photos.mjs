@@ -56,6 +56,95 @@ const SAFE_KEYWORDS = [
   "robot", "chip", "gpu", "server", "coding", "startup", "venture",
 ];
 
+// Hand-authored, concrete queries per slug (photograph-friendly subjects).
+// Overridden slugs always re-fetch and pick from the top few results, so the
+// image is on-topic. New posts fall back to buildQuery().
+const QUERY_OVERRIDES = {
+  // companies
+  "ai-chip-funding-inference": "silicon computer chip",
+  "ai-model-fatigue-launch-week": "server room data center",
+  "ai-price-war": "stock market chart falling",
+  "chinese-ai-labs-race": "shanghai skyline night",
+  "chinese-models-dominate-openrouter": "shanghai city skyline",
+  "mistral-3b-sovereign-ai": "eiffel tower paris",
+  "openai-huggingface-incident": "code error screen",
+  "openai-raises-frontier-prices": "dollar money finance",
+  // enterprise
+  "enterprise-ai-roi-gap": "business charts meeting",
+  "jpmorgan-agentic-ai": "wall street skyscraper bank",
+  "klarna-ai-customer-service": "call center headset",
+  "walmart-ai-operations": "warehouse logistics",
+  // entertainment
+  "awards-season-nominations-2026": "concert stage lights",
+  "box-office-record-summer-2026": "movie theater seats",
+  "emmys-2026-preview": "red carpet awards",
+  "fall-tv-premieres-2026": "television living room",
+  // events
+  "ai-summer-safety-reckoning": "conference audience hall",
+  "fall-ai-conference-preview": "tech conference stage",
+  "september-launch-week-recap": "product launch stage",
+  // finance
+  "easy-mortgage-loans-risk-2026": "house keys real estate",
+  "ipo-window-reopens-2026": "new york stock exchange",
+  "markets-brace-for-fed-decision": "wall street building",
+  "markets-record-highs-2026": "stock trading screen",
+  "snowflake-earnings-pop-2026": "data cloud server",
+  "treasury-yields-two-year-high-2026": "government bonds finance",
+  // learning
+  "what-are-embeddings": "abstract network dots",
+  "what-is-a-vector-database": "database server racks",
+  "what-is-agentic-ai": "humanoid robot",
+  "what-is-mcp": "network connection abstract",
+  "what-is-rag": "library books knowledge",
+  "what-is-vibe-coding": "programming code screen",
+  // lifestyle
+  "brain-health-foods-trend-2026": "healthy food nuts berries",
+  "glp1-protein-snacking-2026": "protein snacks healthy",
+  "wellness-travel-2026-recalibrate": "yoga retreat nature",
+  // models
+  "alibaba-qwen-tops-open-models": "shanghai technology skyline",
+  "anthropic-claude-fable-5-1": "abstract glowing network",
+  "deepseek-v41-flash-scales-up": "circuit board macro",
+  "frontier-lineup-scorecard": "checklist clipboard",
+  "google-gemini-3-8-flash": "abstract blue technology",
+  "moonshot-kimi-k3": "full moon night sky",
+  // opinion
+  "ai-funding-proof-over-promise": "handshake investment meeting",
+  "buyers-win-launch-week": "shopping technology store",
+  "gpt6-agi-framing": "abstract brain technology",
+  "opinion-model-fatigue": "many screens overwhelmed",
+  // policy
+  "ai-agents-weaponized-papercut-attack": "cybersecurity hacker code",
+  "ai-security-rules-pressure": "digital security lock",
+  "amodei-pace-the-frontier": "slow down road sign",
+  "international-ai-watchdog": "flags international summit",
+  "pacing-the-frontier-letter": "car brake pedal",
+  // politics
+  "why-funding-deadlines-recur-2026": "us capitol washington",
+  // products
+  "choosing-frontier-models-guide": "decision signpost direction",
+  "meta-flagship-model": "abstract data network",
+  "openai-gpt6-astra": "futuristic technology glow",
+  "physical-ai-robotics-investment": "robot arm factory",
+  "qualcomm-aws-ai-chips": "semiconductor chip closeup",
+  // research
+  "ai-superconductor-candidates": "physics laboratory",
+  "deepmind-atlas-genome": "dna double helix",
+  "deepmind-august-research": "science laboratory computer",
+  // sports
+  "2026-biggest-year-in-sports": "olympic stadium crowd",
+  "f1-2026-norris-title-defense": "formula 1 race car",
+  "nfl-2026-season-kickoff": "american football stadium",
+  "premier-league-arsenal-perfect-start": "soccer stadium football",
+  "summer-transfer-window-2026-recap": "soccer ball pitch",
+  "team-tennis-davis-cup-bjk-cup": "tennis court player",
+  // technology
+  "apple-foldable-2nm-chip-2026": "foldable smartphone",
+  "driver-license-data-breach-2026": "cybersecurity laptop hacker",
+  "falcon9-reuse-milestone-2026": "rocket launch space",
+  "techtember-2026-phone-flood": "smartphones on table",
+};
+
 function buildQuery(data) {
   const category = String(data.category || "").toLowerCase();
   const seed = SEED[category] || "technology abstract";
@@ -111,14 +200,19 @@ async function main() {
     if (data.image) continue;              // author supplied their own image
     const slug = data.slug ?? file.replace(/\.mdx?$/, "");
     const dest = path.join(PHOTOS_DIR, `${slug}.jpg`);
-    if (fs.existsSync(dest)) { skipped++; continue; } // already have it
+    const override = QUERY_OVERRIDES[slug];
+    // Overridden slugs always re-fetch (to replace an off-topic photo); others
+    // are fetched once and then kept.
+    if (fs.existsSync(dest) && !override) { skipped++; continue; }
 
-    const query = buildQuery(data);
+    const query = override || buildQuery(data);
     try {
       let photos = await pexelsSearch(query);
       if (photos.length === 0) photos = await pexelsSearch((SEED[data.category] || "technology").split(" ")[0]);
       if (photos.length === 0) { log(`no photo for ${slug} ("${query}")`); failed++; continue; }
-      const photo = photos[pick(slug, photos.length)];
+      // For a hand-authored query, choose from the top few (most relevant);
+      // otherwise spread across all results for variety.
+      const photo = photos[pick(slug, override ? Math.min(5, photos.length) : photos.length)];
       const src = photo.src?.landscape || photo.src?.large || photo.src?.original;
       if (!src) { failed++; continue; }
       await download(src, dest);
