@@ -1,20 +1,16 @@
 name: Draft AI news for review
 
-# Scheduled "news desk": pulls recent AI headlines, drafts original short
-# analyses with Claude (grounded on the source article), and opens a Pull
-# Request with the drafts for a human to review. Nothing goes live until the
-# PR is merged — merging publishes (the build workflow then rebuilds + deploys),
-# closing discards. Runs daily and can be triggered manually.
+# "News desk": pulls recent AI headlines, drafts original short analyses with
+# the Claude API (grounded on the source article), and opens a Pull Request with
+# the drafts for review. Nothing goes live until the PR is merged.
 #
-# Requires the repository secret ANTHROPIC_API_KEY.
+# NOTE: The daily *schedule* is handled by a Claude Code Routine instead (which
+# needs no ANTHROPIC_API_KEY — it drafts using your Claude Code account). This
+# workflow is kept as a MANUAL fallback: it only runs on demand, and only works
+# if you add the repository secret ANTHROPIC_API_KEY. To re-enable a daily
+# API-based run, add a `schedule:` block back under `on:`.
 
 on:
-  schedule:
-    # 13:00 UTC = 8:00 AM US Eastern Standard Time (daily). GitHub cron runs in
-    # UTC and does not follow daylight saving, so during EDT (mid-Mar–early Nov)
-    # this fires at 9:00 AM Eastern. Change to "0 12 * * *" to prefer 8 AM in
-    # summer instead.
-    - cron: "0 13 * * *"
   workflow_dispatch:
     inputs:
       count:
