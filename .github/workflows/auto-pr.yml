@@ -1,0 +1,38 @@
+name: Open PR for news drafts
+
+# When the daily Claude Code Routine pushes a `news/**` branch of drafts, this
+# opens a review Pull Request against main automatically — using the built-in
+# GITHUB_TOKEN (no API key, no external secret). Merging the PR publishes the
+# drafts; closing it discards them.
+
+on:
+  push:
+    branches:
+      - "news/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open PR if none exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          existing=$(gh pr list --head "$BRANCH" --base main --state open --json number --jq 'length')
+          if [ "$existing" != "0" ]; then
+            echo "A PR is already open for $BRANCH."
+            exit 0
+          fi
+          DATE=$(printf '%s' "$BRANCH" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}' | head -1)
+          [ -z "$DATE" ] && DATE=$(date -u +%Y-%m-%d)
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "AI news drafts for review — $DATE" \
+            --body "Automated AI-news drafts awaiting your review. Merge to publish (the site rebuilds and redeploys), or close to discard. Add \`draft: true\` to any file to hold just that one."
