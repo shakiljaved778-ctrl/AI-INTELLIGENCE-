@@ -19,6 +19,8 @@ export interface PostFrontmatter {
   pickRationale?: string;
   readTime?: number; // minutes; auto-computed from body if omitted
   image?: string; // optional hero/OG image path
+  draft?: boolean; // when true, excluded from the built/live site
+  source?: string; // optional origin URL (used by auto-drafted posts)
 }
 
 /**
@@ -39,6 +41,8 @@ export interface Post {
   pickRationale?: string;
   readTime: number;
   image?: string;
+  draft: boolean;
+  source?: string;
   excerpt: string;
   /** Raw MDX body (without frontmatter). */
   content: string;

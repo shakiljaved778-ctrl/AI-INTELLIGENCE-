@@ -108,6 +108,8 @@ function parsePost(filename: string): Post {
     readTime,
     // Fall back to the generated hero image (scripts/build-hero-images.mjs).
     image: (data.image as string) || `/heroes/${slug}.svg`,
+    draft: Boolean(data.draft),
+    source: data.source,
     excerpt: makeExcerpt(content),
     content,
   };
@@ -120,6 +122,10 @@ export function getAllPosts(): Post[] {
   if (_cache) return _cache;
   const posts = getPostFiles()
     .map(parsePost)
+    // Drafts (draft: true) are kept out of the built/live site. They still
+    // live in the repo (e.g. in a review PR) until approved by removing the
+    // flag. Set CAMBRIAN_INCLUDE_DRAFTS=1 to preview them locally.
+    .filter((p) => !p.draft || process.env.CAMBRIAN_INCLUDE_DRAFTS === "1")
     .sort((a, b) => +new Date(b.date) - +new Date(a.date));
 
   // Guard against duplicate slugs, which would collide on the same URL.

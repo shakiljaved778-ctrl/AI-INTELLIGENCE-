@@ -49,6 +49,9 @@ function build() {
     .map((file) => {
       const raw = fs.readFileSync(path.join(POSTS_DIR, file), "utf8");
       const { data, content } = matter(raw);
+      // Drafts are excluded from the live site, so keep them out of search too
+      // (unless previewing with CAMBRIAN_INCLUDE_DRAFTS=1).
+      if (data.draft && process.env.CAMBRIAN_INCLUDE_DRAFTS !== "1") return null;
       return {
         title: data.title ?? file,
         slug: data.slug ?? file.replace(/\.mdx?$/, ""),
@@ -60,6 +63,7 @@ function build() {
         isPick: Boolean(data.isPick),
       };
     })
+    .filter(Boolean)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });

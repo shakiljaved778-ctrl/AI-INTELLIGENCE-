@@ -225,6 +225,7 @@ function build() {
   for (const file of files) {
     const raw = fs.readFileSync(path.join(POSTS_DIR, file), "utf8");
     const { data } = matter(raw);
+    if (data.draft && process.env.CAMBRIAN_INCLUDE_DRAFTS !== "1") continue; // drafts aren't on the live site
     if (data.image) continue; // author supplied their own image
     const slug = data.slug ?? file.replace(/\.mdx?$/, "");
     const svg = generateSvg({

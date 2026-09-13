@@ -1,0 +1,86 @@
+name: Draft AI news for review
+
+# Scheduled "news desk": pulls recent AI headlines, drafts original short
+# analyses with Claude (grounded on the source article), and opens a Pull
+# Request with the drafts for a human to review. Nothing goes live until the
+# PR is merged — merging publishes (the build workflow then rebuilds + deploys),
+# closing discards. Runs daily and can be triggered manually.
+#
+# Requires the repository secret ANTHROPIC_API_KEY.
+
+on:
+  schedule:
+    - cron: "0 13 * * *" # daily at 13:00 UTC
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many drafts to generate"
+        required: false
+        default: "3"
+      model:
+        description: "Claude model id (blank = claude-opus-5)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: draft-news
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Draft news
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DRAFT_COUNT: ${{ github.event.inputs.count || '3' }}
+          DRAFT_MODEL: ${{ github.event.inputs.model || '' }}
+          DRAFT_SUMMARY_FILE: ${{ runner.temp }}/draft-summary.md
+        run: node scripts/draft-news.mjs
+
+      - name: Open review PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain content/posts)" ]; then
+            echo "No new drafts — nothing to open."
+            exit 0
+          fi
+          DATE=$(date -u +%Y-%m-%d)
+          BRANCH="news/drafts-$DATE-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add content/posts content/.news-seen.json
+          git commit -m "Draft AI news for review ($DATE)"
+          git push -u origin "$BRANCH"
+          BODY_FILE="${{ runner.temp }}/draft-summary.md"
+          if [ ! -s "$BODY_FILE" ]; then
+            printf '%s\n' "Auto-drafted AI news awaiting review. Merge to publish, close to discard." > "$BODY_FILE"
+          fi
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "AI news drafts for review — $DATE" \
+            --body-file "$BODY_FILE"
