@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Awards Season Warms Up: Country and Latin Music Reveal Their Contenders">
+  <defs>
+    <linearGradient id="bg" gradientTransform="rotate(18 0.5 0.5)">
+      <stop offset="0" stop-color="hsl(227, 48%, 6%)"/>
+      <stop offset="1" stop-color="hsl(227, 54%, 13%)"/>
+    </linearGradient>
+    <radialGradient id="b1"><stop offset="0" stop-color="hsl(229, 88%, 60%)" stop-opacity="0.55"/><stop offset="100%" stop-color="hsl(229, 88%, 60%)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b2"><stop offset="0" stop-color="hsl(218, 82%, 56%)" stop-opacity="0.5"/><stop offset="100%" stop-color="hsl(218, 82%, 56%)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b3"><stop offset="0" stop-color="hsl(204, 92%, 62%)" stop-opacity="0.5"/><stop offset="100%" stop-color="hsl(204, 92%, 62%)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cardGlow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="hsl(227, 95%, 66%)" stop-opacity="0.6"/><stop offset="60%" stop-color="hsl(227, 95%, 66%)" stop-opacity="0.12"/><stop offset="100%" stop-color="hsl(227, 95%, 66%)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vignette" cx="42%" cy="46%" r="80%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.14"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/></linearGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/></filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- Mesh gradient: three soft pools of coloured light -->
+  <ellipse cx="352" cy="292" rx="640" ry="540" fill="url(#b1)"/>
+  <ellipse cx="1233" cy="357" rx="560" ry="520" fill="url(#b2)"/>
+  <ellipse cx="900" cy="775" rx="620" ry="520" fill="url(#b3)"/>
+
+  <!-- Oversized ghosted section word -->
+  <text x="1584" y="1004" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="300" font-weight="700" letter-spacing="-8" fill="#ffffff" opacity="0.05">ENTERTAINMENT</text>
+
+  <!-- Glass card + accent glow holding the topic glyph -->
+  <rect x="1012" y="192" width="476" height="476" fill="url(#cardGlow)"/>
+  <rect x="1052" y="232" width="396" height="396" rx="40" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.5"/>
+  <g transform="translate(1105 285) scale(2.9)" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"><rect x="24" y="28" width="52" height="44" rx="4"/><path d="M24 40h52M24 60h52M36 28V72M64 28V72"/></g>
+
+  <!-- Depth + film grain -->
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.09"/>
+
+  <!-- Masthead + kicker + headline -->
+  <text x="80" y="118" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="10" fill="#ffffff" opacity="0.6">CAMBRIAN AI</text>
+  <rect x="80" y="482" width="72" height="7" rx="3.5" fill="hsl(227, 95%, 66%)"/>
+  <text x="82" y="512" font-family="Helvetica, Arial, sans-serif" font-size="29" font-weight="700" letter-spacing="7" fill="hsl(227, 95%, 66%)">ENTERTAINMENT</text>
+  <text x="78" y="622" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="600" letter-spacing="-1.5" fill="#ffffff">Awards Season Warms</text><text x="78" y="707" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="600" letter-spacing="-1.5" fill="#ffffff">Up: Country and</text><text x="78" y="792" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="600" letter-spacing="-1.5" fill="#ffffff">Latin Music Reveal…</text>
+</svg>

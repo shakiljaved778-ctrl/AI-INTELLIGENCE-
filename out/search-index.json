@@ -60,6 +60,20 @@
     "isPick": false
   },
   {
+    "title": "The Fall TV Rush: Spies, Stranger Things and Traitors Return",
+    "slug": "fall-tv-premieres-2026",
+    "subtitle": "Mid-September reloads the streaming slate — 'Slow Horses,' a 'Stranger Things' spin-off, and a fresh 'Traitors' land within days of each other.",
+    "excerpt": "The lull is over. Mid-September reloads the streaming slate with a cluster of returns and spin-offs landing within days of one another — the annual signal that…",
+    "category": "entertainment",
+    "tags": [
+      "television",
+      "streaming",
+      "premieres"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
     "title": "Hot Inflation Sets Up a Tense Fed Week on Wall Street",
     "slug": "markets-brace-for-fed-decision",
     "subtitle": "A firmer CPI has money markets pricing a September move as near-certain, even as falling oil helped stocks steady after a four-day slide.",
@@ -105,6 +119,20 @@
     "isPick": false
   },
   {
+    "title": "Tennis Goes Team: Davis Cup and BJK Cup Take Center Court",
+    "slug": "team-tennis-davis-cup-bjk-cup",
+    "subtitle": "After a summer of singles drama, the sport's national team competitions bring a different kind of pressure — playing for a flag, not a ranking.",
+    "excerpt": "Tennis spends most of the year as a solitary pursuit, but September hands it over to the teams. The Davis Cup Qualifiers (Sept. 18-20) and the Billie Jean King…",
+    "category": "sports",
+    "tags": [
+      "tennis",
+      "davis cup",
+      "billie jean king cup"
+    ],
+    "date": "2026-09-13",
+    "isPick": false
+  },
+  {
     "title": "'Techtember' Returns: 20+ Phones and a Fight for Your Upgrade",
     "slug": "techtember-2026-phone-flood",
     "subtitle": "From the iPhone 18 Pro to a wave of foldables and Snapdragon flagships, September's launch glut is really a battle over one thing — a reason to upgrade.",
@@ -132,6 +160,36 @@
       "trends"
     ],
     "date": "2026-09-13",
+    "isPick": false
+  },
+  {
+    "title": "Emmys 2026: 'The Pitt' Leads as the Streaming Wars Peak",
+    "slug": "emmys-2026-preview",
+    "subtitle": "Television's biggest night arrives with a hospital drama out front, 'Hacks' bowing out on a record, and a new host in the chair.",
+    "excerpt": "Television hands out its top honors on Monday, Sept. 14, live from the Peacock Theater in Los Angeles, with Mariska Hargitay — Olivia Benson herself — stepping…",
+    "category": "entertainment",
+    "tags": [
+      "emmys",
+      "television",
+      "awards",
+      "streaming"
+    ],
+    "date": "2026-09-12",
+    "isPick": false
+  },
+  {
+    "title": "Awards Season Warms Up: Country and Latin Music Reveal Their Contenders",
+    "slug": "awards-season-nominations-2026",
+    "subtitle": "CMA and Latin Grammy nominations kick off the fall run-up, a stretch that increasingly shapes what the algorithms push next.",
+    "excerpt": "The music industry's fall awards run is under way. Nominees for the 60th annual CMA Awards were announced Sept. 10, and Latin Grammy nominations follow on…",
+    "category": "entertainment",
+    "tags": [
+      "music",
+      "awards",
+      "grammys",
+      "cma"
+    ],
+    "date": "2026-09-11",
     "isPick": false
   },
   {
@@ -225,6 +283,21 @@
     "isPick": false
   },
   {
+    "title": "Apple Bends: Its First Foldable Arrives on a 2nm Chip",
+    "slug": "apple-foldable-2nm-chip-2026",
+    "subtitle": "The company that waited out the foldable era finally joins it — paired with a leap to 2-nanometer silicon.",
+    "excerpt": "Apple's product strategy has always been to arrive late and arrive polished, and it just did both. The company unveiled its first foldable iPhone and, in the…",
+    "category": "technology",
+    "tags": [
+      "apple",
+      "iphone",
+      "chips",
+      "hardware"
+    ],
+    "date": "2026-09-10",
+    "isPick": false
+  },
+  {
     "title": "One Year After DeepSeek, China's Labs Are Racing Ahead — and Winning on Cost",
     "slug": "chinese-ai-labs-race",
     "subtitle": "Alibaba, Moonshot, DeepSeek, and Z.ai are shipping fast and undercutting US labs on price, reshaping the open-model landscape.",
@@ -301,6 +374,35 @@
     "isPick": false
   },
   {
+    "title": "How GLP-1 Rewired the Snack Aisle",
+    "slug": "glp1-protein-snacking-2026",
+    "subtitle": "Protein bars are graduating from gym bag to everyday staple as smaller, denser eating patterns reshape what and how we snack.",
+    "excerpt": "A quiet reorganization is happening in the snack aisle, and the driver is pharmacological. As GLP-1 medications reshape how millions eat — smaller portions,…",
+    "category": "lifestyle",
+    "tags": [
+      "food",
+      "nutrition",
+      "glp-1",
+      "health"
+    ],
+    "date": "2026-09-09",
+    "isPick": false
+  },
+  {
+    "title": "The NFL Is Back: A Wide-Open Race Kicks Off",
+    "slug": "nfl-2026-season-kickoff",
+    "subtitle": "The 2026 season opened with the Patriots visiting Seattle — and a league that looks less top-heavy than it has in years.",
+    "excerpt": "Football is back. The NFL's 2026-27 regular season kicked off with the New England Patriots at the Seattle Seahawks, the traditional curtain-raiser that turns…",
+    "category": "sports",
+    "tags": [
+      "nfl",
+      "football",
+      "season"
+    ],
+    "date": "2026-09-09",
+    "isPick": false
+  },
+  {
     "title": "Chinese Models Are Quietly Dominating OpenRouter's Top 10",
     "slug": "chinese-models-dominate-openrouter",
     "subtitle": "On the popular model marketplace, Chinese labs have at times held all of the top five slots — a real-usage signal that's hard to spin.",
@@ -330,6 +432,35 @@
     ],
     "date": "2026-09-08",
     "isPick": true
+  },
+  {
+    "title": "Norris Defends His Crown as F1's Autumn Run Begins",
+    "slug": "f1-2026-norris-title-defense",
+    "subtitle": "The reigning champion enters the season's back half with a target on his car and a calendar that rewards consistency.",
+    "excerpt": "Title defenses in Formula 1 are a different sport from title wins. Lando Norris, chasing down his first championship a year ago, now carries the number that…",
+    "category": "sports",
+    "tags": [
+      "formula 1",
+      "motorsport",
+      "lando norris"
+    ],
+    "date": "2026-09-08",
+    "isPick": false
+  },
+  {
+    "title": "The IPO Window Swings Open Again",
+    "slug": "ipo-window-reopens-2026",
+    "subtitle": "Goldman Sachs sees U.S. listing proceeds potentially quadrupling toward $160 billion — a thaw after years of a frozen market.",
+    "excerpt": "After years of companies staying private and bankers staring at an empty pipeline, the IPO market is showing a pulse. Goldman Sachs projects U.S. IPO proceeds…",
+    "category": "finance",
+    "tags": [
+      "ipo",
+      "markets",
+      "goldman sachs",
+      "business"
+    ],
+    "date": "2026-09-08",
+    "isPick": false
   },
   {
     "title": "Mistral Raises €3B to Back a Sovereign European AI",
@@ -390,6 +521,21 @@
     "isPick": false
   },
   {
+    "title": "Reuse Becomes Routine: A Falcon 9 Booster Flies for the 35th Time",
+    "slug": "falcon9-reuse-milestone-2026",
+    "subtitle": "A rocket stage flying dozens of times used to be science fiction. In 2026 it's a logistics footnote — and that's the point.",
+    "excerpt": "The most radical thing about spaceflight in 2026 is how boring the milestones have become. A Falcon 9 booster reportedly logged a 35th flight — a number that…",
+    "category": "technology",
+    "tags": [
+      "spacex",
+      "space",
+      "rockets",
+      "engineering"
+    ],
+    "date": "2026-09-07",
+    "isPick": false
+  },
+  {
     "title": "The New Frontier Lineup: A Scorecard After Launch Week",
     "slug": "frontier-lineup-scorecard",
     "subtitle": "Where GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, and Meta's flagship each stake their claim.",
@@ -420,6 +566,21 @@
     ],
     "date": "2026-09-06",
     "isPick": true
+  },
+  {
+    "title": "150 Million Driver's Licenses Stolen From a Verification Vendor",
+    "slug": "driver-license-data-breach-2026",
+    "subtitle": "A breach at an identity-check provider is a reminder that the riskiest data isn't always held by the companies you chose to trust.",
+    "excerpt": "One of the year's largest data exposures didn't come from a household-name app. A verification vendor confirmed that more than 150 million driver's licenses…",
+    "category": "technology",
+    "tags": [
+      "cybersecurity",
+      "data breach",
+      "privacy",
+      "identity"
+    ],
+    "date": "2026-09-06",
+    "isPick": false
   },
   {
     "title": "Inside AI's September Launch Week",
@@ -486,6 +647,36 @@
     "isPick": false
   },
   {
+    "title": "The Next Wellness Frontier Is Between Your Ears",
+    "slug": "brain-health-foods-trend-2026",
+    "subtitle": "Brain health is becoming the label to watch in 2026, as supplements and functional foods pivot from muscle and gut to mind.",
+    "excerpt": "Wellness has spent recent years obsessed with the gut and the muscle. In 2026 the attention is moving north — to the brain. Interest in cognitive health is…",
+    "category": "lifestyle",
+    "tags": [
+      "health",
+      "nutrition",
+      "wellness",
+      "food"
+    ],
+    "date": "2026-09-05",
+    "isPick": false
+  },
+  {
+    "title": "The 'Super Easy' Mortgage Wall Street Is Betting Billions On",
+    "slug": "easy-mortgage-loans-risk-2026",
+    "subtitle": "A fast, low-friction path to a home loan is spreading — and so is the money flowing into it. History says that combination deserves scrutiny.",
+    "excerpt": "A new type of home loan is spreading across the country, marketed as a super quick, super easy way to get a mortgage — and Wall Street has funneled billions of…",
+    "category": "finance",
+    "tags": [
+      "housing",
+      "mortgages",
+      "wall street",
+      "credit"
+    ],
+    "date": "2026-09-05",
+    "isPick": false
+  },
+  {
     "title": "Opinion: Be Skeptical of the AGI Framing Around GPT-6",
     "slug": "gpt6-agi-framing",
     "subtitle": "A powerful model is not the same as artificial general intelligence — and conflating the two muddies both the hype and the risk.",
@@ -547,6 +738,36 @@
     "isPick": false
   },
   {
+    "title": "Snowflake Jumps 16% as Data Spending Holds Up",
+    "slug": "snowflake-earnings-pop-2026",
+    "subtitle": "A beat-and-raise quarter sent shares soaring — and offered a read on whether enterprises are still opening their wallets.",
+    "excerpt": "Software earnings are a useful barometer of corporate confidence, and this quarter's reading was warm. Snowflake shares jumped more than 16% after the…",
+    "category": "finance",
+    "tags": [
+      "earnings",
+      "snowflake",
+      "stocks",
+      "enterprise software"
+    ],
+    "date": "2026-09-04",
+    "isPick": false
+  },
+  {
+    "title": "Why the Same Budget Deadline Keeps Coming Back",
+    "slug": "why-funding-deadlines-recur-2026",
+    "subtitle": "A non-partisan look at the mechanics behind recurring government-funding fights — the calendar, the bills, and the stopgaps.",
+    "excerpt": "Government-funding standoffs can feel like a recurring surprise, but the calendar behind them is fixed and predictable. This is a mechanics explainer — no…",
+    "category": "politics",
+    "tags": [
+      "government",
+      "budget",
+      "civics",
+      "explainer"
+    ],
+    "date": "2026-09-04",
+    "isPick": false
+  },
+  {
     "title": "Klarna's AI Assistant Now Does the Work of 853 Agents",
     "slug": "klarna-ai-customer-service",
     "subtitle": "The fintech's customer-service bot is credited with ~$60M in annual savings, 82% faster responses, and 25% fewer repeat contacts.",
@@ -561,6 +782,21 @@
     ],
     "date": "2026-09-03",
     "isPick": true
+  },
+  {
+    "title": "Wall Street Grinds to New Highs, Yields Nagging in the Background",
+    "slug": "markets-record-highs-2026",
+    "subtitle": "The S&P 500 pushed past 7,660 and the Dow above 53,000 — even as rising Treasury yields keep testing the rally's nerve.",
+    "excerpt": "The U.S. stock market keeps finding higher ground. The S&P 500 advanced to around 7,666, the Nasdaq to 26,218, and the Dow added nearly 300 points to close…",
+    "category": "finance",
+    "tags": [
+      "stocks",
+      "s&p 500",
+      "markets",
+      "treasury yields"
+    ],
+    "date": "2026-09-03",
+    "isPick": false
   },
   {
     "title": "OpenAI Launches GPT-6 Astra, Calling It a ‘Generational Leap’",
@@ -605,6 +841,51 @@
       "Models"
     ],
     "date": "2026-09-02",
+    "isPick": false
+  },
+  {
+    "title": "The Window Slams Shut: What Deadline Day Left Behind",
+    "slug": "summer-transfer-window-2026-recap",
+    "subtitle": "Europe's summer transfer windows have closed, freezing squads in place until January — and locking in the bets clubs will live or die by.",
+    "excerpt": "The most frantic day on the football business calendar has passed. Europe's major summer transfer windows closed on Sept. 1, ending months of speculation,…",
+    "category": "sports",
+    "tags": [
+      "football",
+      "transfers",
+      "premier league",
+      "soccer"
+    ],
+    "date": "2026-09-02",
+    "isPick": false
+  },
+  {
+    "title": "Bond Yields Hit a Two-Year High — and That Touches Everything",
+    "slug": "treasury-yields-two-year-high-2026",
+    "subtitle": "The 10-year Treasury yield climbed to levels unseen since late 2023, a quiet number with loud consequences for mortgages, borrowing, and stocks.",
+    "excerpt": "The most consequential number in finance isn't a stock price — it's the yield on the 10-year U.S. Treasury, and it just hit a high of about 4.818%, a level not…",
+    "category": "finance",
+    "tags": [
+      "bonds",
+      "interest rates",
+      "treasury",
+      "economy"
+    ],
+    "date": "2026-09-02",
+    "isPick": false
+  },
+  {
+    "title": "Brace Yourself: 2026 Is Sport's Most Crowded Year",
+    "slug": "2026-biggest-year-in-sports",
+    "subtitle": "A men's World Cup and a Winter Olympics in the same calendar make 2026 a rare convergence of the planet's biggest events.",
+    "excerpt": "Some years the sporting calendar simmers. 2026 boils. The convergence of a men's FIFA World Cup and a Winter Olympics in a single year turns the next several…",
+    "category": "sports",
+    "tags": [
+      "world cup",
+      "winter olympics",
+      "2026",
+      "global sport"
+    ],
+    "date": "2026-09-01",
     "isPick": false
   },
   {
