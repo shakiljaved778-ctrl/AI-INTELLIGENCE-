@@ -26,7 +26,17 @@ const WORLD_CATEGORIES = [
 const CATEGORIES = [...AI_CATEGORIES, ...WORLD_CATEGORIES];
 
 const API_KEY = process.env.GEMINI_API_KEY;
-const MODEL_PREF = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+const MODEL_PREF = process.env.GEMINI_MODEL || "gemini-3.6-flash";
+// Ordered fallbacks tried if the preferred model 404s (newest usable first).
+// Older "-flash" builds are periodically retired for new API keys, so we walk
+// down a known-good ladder before resorting to a live ListModels lookup.
+const MODEL_FALLBACKS = [
+  "gemini-3.6-flash",
+  "gemini-3-flash",
+  "gemini-2.5-flash",
+  "gemini-flash-latest",
+  "gemini-2.0-flash",
+];
 const MAX_DRAFTS = Math.max(1, Number(process.env.DRAFT_COUNT) || 3);
 const LOOKBACK_HOURS = Math.max(6, Number(process.env.LOOKBACK_HOURS) || 36);
 // Content mix: ~65% AI, ~35% "Beyond" (non-AI). Politics is kept tiny (~1%)
@@ -200,8 +210,14 @@ async function listFlashModel() {
   const data = await res.json();
   const usable = (data.models || []).filter((m) =>
     (m.supportedGenerationMethods || []).includes("generateContent"));
-  const flash = usable.find((m) => /flash/i.test(m.name) && !/(vision|embedding|image|tts|live)/i.test(m.name));
-  const pick = (flash || usable[0]);
+  // Prefer the highest-numbered plain "flash" model (e.g. 3.6 over 2.5).
+  const flashes = usable
+    .filter((m) => /flash/i.test(m.name) && !/(vision|embedding|image|tts|live)/i.test(m.name))
+    .sort((a, b) => {
+      const ver = (n) => parseFloat((n.match(/gemini-([\d.]+)/) || [])[1] || "0");
+      return ver(b.name) - ver(a.name);
+    });
+  const pick = (flashes[0] || usable[0]);
   if (!pick) throw new Error("no generateContent-capable model available");
   return pick.name.replace(/^models\//, "");
 }
@@ -237,11 +253,20 @@ async function draftArticle(item) {
   let model = await resolveModel();
   let attempt = await callGemini(model, SYSTEM, userPrompt(item), true);
 
-  // Model not found → discover a usable flash model and retry.
-  if (!attempt.ok && (attempt.status === 404 || /not found|not supported/i.test(attempt.text))) {
+  // Model not found → walk the known-good ladder, then a live ListModels lookup.
+  const notFound = (a) => !a.ok && (a.status === 404 || /not found|not supported|no longer available|update your code/i.test(a.text));
+  if (notFound(attempt)) {
+    for (const candidate of MODEL_FALLBACKS) {
+      if (candidate === model) continue;
+      log(`model "${model}" unavailable; trying "${candidate}"`);
+      attempt = await callGemini(candidate, SYSTEM, userPrompt(item), true);
+      if (!notFound(attempt)) { model = candidate; RESOLVED_MODEL = candidate; break; }
+    }
+  }
+  if (notFound(attempt)) {
     model = await listFlashModel();
     RESOLVED_MODEL = model;
-    log(`falling back to model: ${model}`);
+    log(`falling back to discovered model: ${model}`);
     attempt = await callGemini(model, SYSTEM, userPrompt(item), true);
   }
   // Search tool rejected → retry without it.
@@ -383,4 +408,8 @@ async function main() {
   if (created.length === 0) log("no drafts created (see errors above).");
 }
 
-main().catch((e) => { console.error("::error::draft-news-gemini failed:", e?.stack || e); process.exit(1); });
+main()
+  // Force a clean exit — undici/fetch can keep the event loop alive on open
+  // keep-alive sockets and hang the process for minutes after we're done.
+  .then(() => process.exit(0))
+  .catch((e) => { console.error("::error::draft-news-gemini failed:", e?.stack || e); process.exit(1); });

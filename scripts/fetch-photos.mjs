@@ -247,8 +247,12 @@ async function main() {
   log(`done: ${fetched} fetched, ${skipped} kept, ${failed} failed.`);
 }
 
-main().catch((e) => {
-  // Never fail the build over photos — fall back to SVG heroes.
-  console.error("[fetch-photos] non-fatal error:", e?.message || e);
-  process.exit(0);
-});
+main()
+  // Force a clean exit — keep-alive sockets from fetch can otherwise stall
+  // the process for minutes after the work is done.
+  .then(() => process.exit(0))
+  .catch((e) => {
+    // Never fail the build over photos — fall back to SVG heroes.
+    console.error("[fetch-photos] non-fatal error:", e?.message || e);
+    process.exit(0);
+  });
