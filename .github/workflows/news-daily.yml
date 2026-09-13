@@ -54,8 +54,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Draft news with Gemini
+      - name: Draft news (Groq if set, else Gemini)
         env:
+          # Groq is used automatically when its key is present (more generous
+          # free tier); otherwise the script falls back to Gemini.
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DRAFT_COUNT: ${{ github.event.inputs.count || '3' }}
         run: node scripts/draft-news-gemini.mjs

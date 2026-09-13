@@ -1,11 +1,15 @@
-// Scheduled AI-news drafting with Google Gemini (free tier) — no Anthropic key.
+// Scheduled AI-news drafting with a free LLM — no Anthropic key required.
 //
-// Pulls recent items from AI-news RSS feeds, skips anything already covered,
-// and asks Gemini (with Google Search grounding when available) to write an
-// original short analysis for the top few. Writes MDX into content/posts/ for
-// review; never publishes on its own. Requires GEMINI_API_KEY.
+// Pulls recent items from news RSS feeds, skips anything already covered, and
+// asks a free-tier model to write an original short analysis for the top few.
+// Writes MDX into content/posts/ for review; never publishes on its own.
 //
-// Tunable via env: DRAFT_COUNT, GEMINI_MODEL, NEWS_FEEDS, LOOKBACK_HOURS.
+// Provider is chosen automatically: if GROQ_API_KEY is set it uses Groq
+// (generous free tier, OpenAI-compatible); otherwise it uses Google Gemini
+// via GEMINI_API_KEY (with Google Search grounding when available).
+//
+// Tunable via env: DRAFT_COUNT, GROQ_MODEL / GEMINI_MODEL, AI_FEEDS,
+// WORLD_FEEDS, LOOKBACK_HOURS, AI_RATIO, SITE_URL.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -37,6 +41,20 @@ const MODEL_FALLBACKS = [
   "gemini-flash-latest",
   "gemini-2.0-flash",
 ];
+
+// Groq (free tier, OpenAI-compatible). Preferred when GROQ_API_KEY is present.
+const GROQ_API_KEY = process.env.GROQ_API_KEY;
+const GROQ_BASE = "https://api.groq.com/openai/v1";
+const GROQ_MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+// Groq periodically decommissions models; walk this ladder, then a live lookup.
+const GROQ_FALLBACKS = [
+  "llama-3.3-70b-versatile",
+  "llama-3.1-8b-instant",
+  "openai/gpt-oss-120b",
+  "gemma2-9b-it",
+];
+// Which backend to use: Groq if its key is set, else Gemini.
+const PROVIDER = GROQ_API_KEY ? "groq" : "gemini";
 const MAX_DRAFTS = Math.max(1, Number(process.env.DRAFT_COUNT) || 3);
 const LOOKBACK_HOURS = Math.max(6, Number(process.env.LOOKBACK_HOURS) || 36);
 // Content mix: ~65% AI, ~35% "Beyond" (non-AI). Politics is kept tiny (~1%)
@@ -257,6 +275,98 @@ function extractGeminiText(raw) {
   return parts.map((p) => p.text || "").join("").trim();
 }
 
+// ---- Groq backend (OpenAI-compatible chat completions) --------------------
+
+async function callGroq(model, system, user) {
+  const res = await fetchT(
+    `${GROQ_BASE}/chat/completions`,
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${GROQ_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model,
+        temperature: 0.7,
+        max_tokens: 4096,
+        messages: [
+          { role: "system", content: system },
+          { role: "user", content: user },
+        ],
+      }),
+    },
+    90000
+  );
+  const text = await res.text();
+  return { ok: res.ok, status: res.status, text };
+}
+
+function extractGroqText(raw) {
+  try {
+    const d = JSON.parse(raw);
+    return (d?.choices?.[0]?.message?.content || "").trim();
+  } catch { return ""; }
+}
+
+async function listGroqModel() {
+  const res = await fetchT(`${GROQ_BASE}/models`, {
+    headers: { authorization: `Bearer ${GROQ_API_KEY}` },
+  }, 30000);
+  if (!res.ok) throw new Error(`Groq ListModels ${res.status}`);
+  const data = await res.json();
+  const ids = (data?.data || []).map((m) => m.id).filter(Boolean);
+  // Prefer a capable instruct/versatile chat model; avoid audio/guard/vision.
+  const bad = /(whisper|guard|tts|vision|embed|distil|allam)/i;
+  const good = ids.filter((id) => !bad.test(id));
+  const pick =
+    good.find((id) => /llama.*(70b|versatile)/i.test(id)) ||
+    good.find((id) => /(gpt-oss|qwen|llama)/i.test(id)) ||
+    good[0];
+  if (!pick) throw new Error("no usable Groq chat model available");
+  return pick;
+}
+
+async function draftWithGroq(item) {
+  let model = GROQ_MODEL;
+  let attempt = await callGroq(model, SYSTEM, userPrompt(item));
+
+  // Model decommissioned / not found → walk the ladder, then a live lookup.
+  const badModel = (a) => !a.ok && (a.status === 404 ||
+    /decommission|not found|does not exist|model_not_found|invalid model/i.test(a.text));
+  if (badModel(attempt)) {
+    for (const candidate of GROQ_FALLBACKS) {
+      if (candidate === model) continue;
+      log(`groq model "${model}" unavailable; trying "${candidate}"`);
+      attempt = await callGroq(candidate, SYSTEM, userPrompt(item));
+      if (!badModel(attempt)) { model = candidate; break; }
+    }
+  }
+  if (badModel(attempt)) {
+    model = await listGroqModel();
+    log(`groq falling back to discovered model: ${model}`);
+    attempt = await callGroq(model, SYSTEM, userPrompt(item));
+  }
+  // Rate limited → bounded backoff (Groq honors retry-after in the body too).
+  let rl = 0;
+  while (!attempt.ok && attempt.status === 429 && rl < 3) {
+    const wait = Math.min(parseRetryDelayMs(attempt.text) || (2 ** rl) * 5000, 30000);
+    log(`groq rate limited (429); waiting ${Math.round(wait / 1000)}s then retrying (${rl + 1}/3)`);
+    await sleep(wait);
+    attempt = await callGroq(model, SYSTEM, userPrompt(item));
+    rl++;
+  }
+  if (!attempt.ok) throw new Error(`Groq ${attempt.status}: ${attempt.text.slice(0, 800)}`);
+  const text = extractGroqText(attempt.text);
+  if (!text) throw new Error("empty response");
+  return text;
+}
+
+/** Provider-agnostic single-article generation. */
+async function generate(item) {
+  return PROVIDER === "groq" ? draftWithGroq(item) : draftArticle(item);
+}
+
 async function draftArticle(item) {
   let model = await resolveModel();
   let attempt = await callGemini(model, SYSTEM, userPrompt(item), true);
@@ -353,10 +463,11 @@ function toYaml(front) {
 }
 
 async function main() {
-  if (!API_KEY) {
-    console.error("::error::GEMINI_API_KEY is not set. Add it as a repository secret (Settings → Secrets and variables → Actions). Get a free key at https://aistudio.google.com/apikey");
+  if (!GROQ_API_KEY && !API_KEY) {
+    console.error("::error::No LLM key set. Add GROQ_API_KEY (free: https://console.groq.com/keys) or GEMINI_API_KEY (free: https://aistudio.google.com/apikey) as a repository secret (Settings → Secrets and variables → Actions).");
     process.exit(1);
   }
+  log(`provider: ${PROVIDER} (model: ${PROVIDER === "groq" ? GROQ_MODEL : MODEL_PREF})`);
   fs.mkdirSync(POSTS_DIR, { recursive: true });
 
   const [aiItems, worldItems] = await Promise.all([
@@ -402,7 +513,7 @@ async function main() {
   for (const item of chosen) {
     try {
       log(`drafting [${item.desk}]: ${item.title}`);
-      const raw = await draftArticle(item);
+      const raw = await generate(item);
       if (/^\s*SKIP\s*$/i.test(raw)) {
         log(`model skipped (policy): ${item.title}`);
         ledgerSet.add(item.link);

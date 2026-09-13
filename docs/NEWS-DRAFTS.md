@@ -4,19 +4,27 @@ Cambrian AI drafts fresh AI-news articles on a schedule and opens them as a
 **Pull Request for you to review**. Nothing is ever published automatically —
 you approve each batch by merging (or discard it by closing) the PR.
 
-The **daily** path uses **Google Gemini (free tier)** so it needs no paid
-Anthropic API key. (Two other paths exist as fallbacks — see the bottom.)
+The **daily** path uses a **free-tier LLM** so it needs no paid Anthropic key.
+It supports two free providers and picks one automatically:
 
-## Daily path — Gemini (recommended)
+- **Groq (recommended)** — used when `GROQ_API_KEY` is set. Generous free tier,
+  very reliable for unattended automation.
+- **Google Gemini** — used when only `GEMINI_API_KEY` is set. Free tier, but its
+  per-project quota can be restrictive (a brand-new key with no allocated free
+  quota returns `RESOURCE_EXHAUSTED` on every call — if that happens, use Groq).
+
+(Two other paths exist as fallbacks — see the bottom.)
+
+## Daily path (recommended)
 
 **Workflow:** `.github/workflows/news-daily.yml` → `scripts/draft-news-gemini.mjs`
 
 Each day it:
-1. Pulls recent items from several AI-news RSS feeds and skips anything already
+1. Pulls recent items from several news RSS feeds and skips anything already
    covered (existing posts' `source:` frontmatter, their titles, and the URLs in
    `content/.news-seen.json`).
-2. Asks **Gemini** (with Google Search grounding when available) to write an
-   original ~350–600 word analysis for the top few, citing the source.
+2. Asks the chosen model (Gemini adds Google Search grounding when available) to
+   write an original ~350–600 word analysis for the top few, citing the source.
 3. Pushes the drafts on a `news/auto-<date>-<run>` branch and opens a review PR
    titled **"AI news drafts for review — <date>"**.
 4. **You review the PR** → **merge** to publish (the build workflow rebuilds the
@@ -25,9 +33,15 @@ Each day it:
 
 ### One-time setup (two steps)
 
-1. **Free Gemini key** → get one at <https://aistudio.google.com/apikey>. In the
-   repo: **Settings → Secrets and variables → Actions → New repository secret**,
-   name it exactly **`GEMINI_API_KEY`**.
+1. **A free LLM key** — either is fine; Groq is used first if both are present:
+   - **Groq (recommended):** get a key at <https://console.groq.com/keys>, add it
+     as the repository secret **`GROQ_API_KEY`**.
+   - **Gemini:** get a key at <https://aistudio.google.com/apikey> (create it in a
+     *new* project, not one linked to Cloud Billing, or the free tier may be
+     disabled), add it as **`GEMINI_API_KEY`**.
+
+   Add secrets under **Settings → Secrets and variables → Actions → New
+   repository secret**.
 2. **Let Actions open PRs** → **Settings → Actions → General → Workflow
    permissions** → check **"Allow GitHub Actions to create and approve pull
    requests"** → Save.
@@ -42,7 +56,7 @@ appear under **Pull requests** within a minute or two.
 - Runs daily at **13:00 UTC (8:00 AM US Eastern, EST**; 9:00 AM during EDT — cron
   can't follow daylight saving). Change the `cron` in `news-daily.yml` to adjust;
   use `0 12 * * *` to prefer 8 AM during summer.
-- **Cost: $0** on Gemini's free tier (subject to Google's free-tier rate limits).
+- **Cost: $0** on either provider's free tier (subject to their rate limits).
 
 ### Content mix & editorial rules
 The writer targets roughly **65% AI** and **35% "Beyond"** (non-AI: technology,
@@ -58,13 +72,15 @@ is **no coverage of the Middle East or any active geopolitical conflict/war**
 |---|---|---|
 | `DRAFT_COUNT` | `3` | Drafts per run |
 | `AI_RATIO` | `0.65` | Share of each batch that is AI (rest is Beyond) |
-| `GEMINI_MODEL` | `gemini-2.0-flash` | Model id (auto-falls back to an available flash model) |
+| `GROQ_MODEL` | `llama-3.3-70b-versatile` | Groq model id (auto-falls back to an available chat model) |
+| `GEMINI_MODEL` | `gemini-3.6-flash` | Gemini model id (auto-falls back to an available flash model) |
 | `LOOKBACK_HOURS` | `36` | Only consider items newer than this |
 | `AI_FEEDS` | (built-in list) | Comma-separated AI RSS feeds |
 | `WORLD_FEEDS` | (built-in list) | Comma-separated non-AI RSS feeds |
 
-Run locally: `GEMINI_API_KEY=... pnpm draft-news-gemini` (then
-`CAMBRIAN_INCLUDE_DRAFTS=1 pnpm dev` to preview drafts).
+Provider is chosen automatically: **Groq** if `GROQ_API_KEY` is set, else
+**Gemini**. Run locally: `GROQ_API_KEY=... pnpm draft-news-gemini` (or
+`GEMINI_API_KEY=...`), then `CAMBRIAN_INCLUDE_DRAFTS=1 pnpm dev` to preview.
 
 ## Article photos (Pexels)
 Post heroes use a real, topic-matched photo from **Pexels** when available,
