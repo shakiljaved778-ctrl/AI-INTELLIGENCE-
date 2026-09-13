@@ -18,16 +18,26 @@ import {
 } from "@/lib/posts";
 
 export default function HomePage() {
-  const featured = getFeaturedPosts(7);
-  const [lead, ...secondary] = featured;
-  // The bento mosaic under the lead: first tile spans wide, the rest tile in.
-  const bento = secondary.slice(0, 5);
-  // Latest-news feed: skip anything already shown up top (the lead + the
-  // bento mosaic) and exclude evergreen "Learn" explainers (own section).
-  const featuredSlugs = new Set(featured.map((p) => p.slug));
-  const latest = getAllPostMeta()
-    .filter((p) => p.category !== "learning" && !featuredSlugs.has(p.slug))
-    .slice(0, 24);
+  // Lead story = the single newest article (excluding evergreen "Learn"
+  // explainers), so the homepage always opens with the freshest story —
+  // regardless of whether it's flagged `featured` (Verge-style).
+  const newsFeed = getAllPostMeta().filter((p) => p.category !== "learning");
+  const lead = newsFeed[0];
+
+  // "More Top Stories" bento: editor-featured posts (excluding the lead); if
+  // there aren't enough, fall back to the next newest stories.
+  const featuredSlugs = new Set(getFeaturedPosts(8).map((p) => p.slug));
+  let bento = newsFeed.filter(
+    (p) => (!lead || p.slug !== lead.slug) && featuredSlugs.has(p.slug)
+  );
+  if (bento.length < 3) {
+    bento = newsFeed.filter((p) => !lead || p.slug !== lead.slug);
+  }
+  bento = bento.slice(0, 5);
+
+  // Latest News: recent stories not already shown as the lead or in the bento.
+  const shown = new Set([lead?.slug, ...bento.map((p) => p.slug)].filter(Boolean));
+  const latest = newsFeed.filter((p) => !shown.has(p.slug)).slice(0, 24);
   const picks = getPicks().slice(0, 3);
   const sidebarPicks = getPicks().slice(0, 5);
   const learn = getPostsByCategory("learning").slice(0, 4);
