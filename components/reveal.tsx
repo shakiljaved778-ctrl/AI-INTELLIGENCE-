@@ -40,7 +40,10 @@ export function Reveal({
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      // threshold 0 fires as soon as any part enters; the generous bottom
+      // rootMargin pre-reveals ~300px before the block scrolls into view, so
+      // tall content blocks never sit as blank space.
+      { threshold: 0, rootMargin: "0px 0px 300px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();

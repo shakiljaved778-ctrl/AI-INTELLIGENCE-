@@ -11,9 +11,10 @@ name: Daily AI news drafts (Gemini)
 
 on:
   schedule:
-    # 13:00 UTC = 8:00 AM US Eastern (EST). GitHub cron is UTC and ignores DST,
-    # so during EDT (mid-Mar–early Nov) this fires at 9:00 AM Eastern.
-    - cron: "0 13 * * *"
+    # Twice daily. GitHub cron is UTC and ignores DST, so during EDT
+    # (mid-Mar–early Nov) each fires one hour later in Eastern.
+    - cron: "0 13 * * *" # 8:00 AM US Eastern (EST) — morning edition
+    - cron: "0 1 * * *"  # 8:00 PM US Eastern (EST) — evening edition
   workflow_dispatch:
     inputs:
       count:
@@ -58,6 +59,11 @@ jobs:
           DRAFT_COUNT: ${{ github.event.inputs.count || '3' }}
         run: node scripts/draft-news-gemini.mjs
 
+      - name: Fetch photos for the new drafts
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: node scripts/fetch-photos.mjs
+
       - name: Push branch and open review PR
         env:
           GH_TOKEN: ${{ github.token }}
@@ -73,6 +79,8 @@ jobs:
           git checkout -b "$BRANCH"
           git add content/posts content/.news-seen.json
           [ -f content/social-queue.md ] && git add content/social-queue.md
+          [ -d public/photos ] && git add public/photos
+          [ -f content/.photo-manifest.json ] && git add content/.photo-manifest.json
           git commit -m "Draft AI news for review ($DATE)"
           git push -u origin "$BRANCH"
           gh pr create \
