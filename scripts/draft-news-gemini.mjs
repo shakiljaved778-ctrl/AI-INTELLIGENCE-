@@ -193,6 +193,14 @@ async function resolveModel() {
   RESOLVED_MODEL = MODEL_PREF;
   return RESOLVED_MODEL;
 }
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Pull Gemini's suggested retry delay out of a 429 body, if present.
+function parseRetryDelayMs(text) {
+  const m = String(text || "").match(/"retryDelay"\s*:\s*"(\d+(?:\.\d+)?)s"/);
+  return m ? Math.ceil(parseFloat(m[1]) * 1000) : 0;
+}
+
 // fetch with a hard timeout so a hung request can never stall the whole job.
 async function fetchT(url, opts = {}, ms = 60000) {
   const ctrl = new AbortController();
@@ -274,7 +282,19 @@ async function draftArticle(item) {
     log("google_search grounding unavailable; retrying without it");
     attempt = await callGemini(model, SYSTEM, userPrompt(item), false);
   }
-  if (!attempt.ok) throw new Error(`Gemini ${attempt.status}: ${attempt.text.slice(0, 300)}`);
+  // Rate limited (429) → back off and retry a bounded number of times. The
+  // free tier's per-minute cap trips when we fire calls back to back; a short
+  // wait (honoring Gemini's own retryDelay hint) usually clears it. A hard
+  // daily-quota 429 won't clear — we cap total wait so the job can't hang.
+  let rl = 0;
+  while (!attempt.ok && attempt.status === 429 && rl < 3) {
+    const wait = Math.min(parseRetryDelayMs(attempt.text) || (2 ** rl) * 5000, 30000);
+    log(`rate limited (429); waiting ${Math.round(wait / 1000)}s then retrying (${rl + 1}/3)`);
+    await sleep(wait);
+    attempt = await callGemini(model, SYSTEM, userPrompt(item), true);
+    rl++;
+  }
+  if (!attempt.ok) throw new Error(`Gemini ${attempt.status}: ${attempt.text.slice(0, 800)}`);
 
   const text = extractGeminiText(attempt.text);
   if (!text) throw new Error("empty response");
