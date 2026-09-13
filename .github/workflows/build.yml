@@ -43,15 +43,23 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build static export
+        env:
+          # Optional: enables real Pexels photos for post heroes. Without it the
+          # build falls back to the generated SVG heroes.
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: pnpm build
 
-      - name: Commit regenerated out/
+      - name: Commit regenerated out/ (and any newly fetched photos)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add out
+          # Persist fetched photos + their attribution so they aren't re-fetched
+          # every build (and stay licensed/attributed in the repo).
+          [ -d public/photos ] && git add public/photos
+          [ -f content/.photo-manifest.json ] && git add content/.photo-manifest.json
           if git diff --cached --quiet; then
-            echo "out/ is already up to date — nothing to commit."
+            echo "Nothing to commit — already up to date."
           else
             git commit -m "chore: rebuild static export [skip ci]"
             git push

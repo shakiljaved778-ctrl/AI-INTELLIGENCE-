@@ -66,6 +66,21 @@ is **no coverage of the Middle East or any active geopolitical conflict/war**
 Run locally: `GEMINI_API_KEY=... pnpm draft-news-gemini` (then
 `CAMBRIAN_INCLUDE_DRAFTS=1 pnpm dev` to preview drafts).
 
+## Article photos (Pexels)
+Post heroes use a real, topic-matched photo from **Pexels** when available,
+falling back to the generated color-coded SVG otherwise. To enable:
+
+1. Get a free key at <https://www.pexels.com/api/>.
+2. Add it as the repository secret **`PEXELS_API_KEY`** (Settings → Secrets and
+   variables → Actions).
+
+On the next build, `scripts/fetch-photos.mjs` fetches a landscape photo for each
+post that lacks one, saves it to `public/photos/<slug>.jpg`, records attribution
+in `content/.photo-manifest.json`, and the build commits both so they persist —
+only *new* posts are fetched on later builds. A photographer credit is shown
+under each article's hero. To override a single post, set `image:` in its
+frontmatter. Run locally with `PEXELS_API_KEY=... pnpm photos`.
+
 ## Drafts and the `draft:` flag
 A post with `draft: true` in its frontmatter is excluded from the built/live
 site, the search index, and hero generation. Use it to hold a story back;

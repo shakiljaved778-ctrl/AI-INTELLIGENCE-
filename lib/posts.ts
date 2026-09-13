@@ -6,6 +6,36 @@ import { isValidCategory, categorySlugs } from "@/lib/categories";
 import type { Post, PostMeta } from "@/types/content";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
+const PHOTOS_DIR = path.join(process.cwd(), "public", "photos");
+
+/** Pexels attribution manifest (written by scripts/fetch-photos.mjs). */
+let _photoManifest: Record<
+  string,
+  { photographer?: string; photographer_url?: string; pexels_url?: string }
+> | null = null;
+function photoManifest() {
+  if (_photoManifest) return _photoManifest;
+  try {
+    _photoManifest = JSON.parse(
+      fs.readFileSync(path.join(process.cwd(), "content", ".photo-manifest.json"), "utf8")
+    );
+  } catch {
+    _photoManifest = {};
+  }
+  return _photoManifest!;
+}
+
+/** If a fetched photo exists for this slug, return its path + credit. */
+function photoFor(slug: string) {
+  if (!fs.existsSync(path.join(PHOTOS_DIR, `${slug}.jpg`))) return null;
+  const m = photoManifest()[slug];
+  return {
+    path: `/photos/${slug}.jpg`,
+    credit: m?.photographer
+      ? { name: m.photographer, url: m.photographer_url, source: m.pexels_url }
+      : undefined,
+  };
+}
 
 /**
  * Strip MDX/Markdown/JSX down to plain text so we can derive an excerpt.
@@ -92,6 +122,10 @@ function parsePost(filename: string): Post {
 
   const slug = (data.slug as string) || fileSlug;
 
+  // Image priority: author-specified > fetched Pexels photo > generated SVG hero.
+  const authoredImage = data.image as string | undefined;
+  const photo = authoredImage ? null : photoFor(slug);
+
   return {
     slug,
     title: data.title,
@@ -106,8 +140,8 @@ function parsePost(filename: string): Post {
     pickSource: data.pickSource,
     pickRationale: data.pickRationale,
     readTime,
-    // Fall back to the generated hero image (scripts/build-hero-images.mjs).
-    image: (data.image as string) || `/heroes/${slug}.svg`,
+    image: authoredImage || photo?.path || `/heroes/${slug}.svg`,
+    imageCredit: photo?.credit,
     draft: Boolean(data.draft),
     source: data.source,
     excerpt: makeExcerpt(content),

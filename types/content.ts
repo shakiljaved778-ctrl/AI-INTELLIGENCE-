@@ -41,6 +41,8 @@ export interface Post {
   pickRationale?: string;
   readTime: number;
   image?: string;
+  /** Photo attribution when the hero came from a stock source (Pexels). */
+  imageCredit?: { name: string; url?: string; source?: string };
   draft: boolean;
   source?: string;
   excerpt: string;

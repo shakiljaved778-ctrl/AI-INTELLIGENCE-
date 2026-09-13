@@ -160,15 +160,43 @@ export default async function PostPage({
 
           {post.image && (
             <figure
-              className="mt-8 overflow-hidden rounded-xl border bg-muted animate-fade-up"
+              className="mt-8 animate-fade-up"
               style={{ animationDelay: "300ms" }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={post.image}
-                alt={post.title}
-                className="aspect-[16/9] w-full object-cover"
-              />
+              <div className="overflow-hidden rounded-xl border bg-muted">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="aspect-[16/9] w-full object-cover"
+                />
+              </div>
+              {post.imageCredit?.name && (
+                <figcaption className="mt-2 text-xs text-muted-foreground">
+                  Photo:{" "}
+                  {post.imageCredit.url ? (
+                    <a
+                      href={post.imageCredit.url}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="hover:text-accent hover:underline"
+                    >
+                      {post.imageCredit.name}
+                    </a>
+                  ) : (
+                    post.imageCredit.name
+                  )}{" "}
+                  /{" "}
+                  <a
+                    href={post.imageCredit.source ?? "https://www.pexels.com"}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="hover:text-accent hover:underline"
+                  >
+                    Pexels
+                  </a>
+                </figcaption>
+              )}
             </figure>
           )}
 

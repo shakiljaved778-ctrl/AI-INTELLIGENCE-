@@ -7,7 +7,7 @@
     "node": ">=20.9.0"
   },
   "scripts": {
-    "assets": "node scripts/build-search-index.mjs && node scripts/build-hero-images.mjs",
+    "assets": "node scripts/build-hero-images.mjs && node scripts/fetch-photos.mjs && node scripts/build-search-index.mjs",
     "predev": "pnpm run assets",
     "dev": "next dev",
     "prebuild": "pnpm run assets",
@@ -16,6 +16,7 @@
     "lint": "next lint",
     "search-index": "node scripts/build-search-index.mjs",
     "hero-images": "node scripts/build-hero-images.mjs",
+    "photos": "node scripts/fetch-photos.mjs",
     "draft-news": "node scripts/draft-news.mjs",
     "draft-news-gemini": "node scripts/draft-news-gemini.mjs"
   },
