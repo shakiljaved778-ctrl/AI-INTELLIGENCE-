@@ -130,21 +130,32 @@ function iconKey(category, title, tags) {
   return "spark";
 }
 
+// Base hue per section — mirrors the `color` hues in lib/categories.ts so a
+// hero's colour signals its section at a glance (Finance green, Sports orange,
+// Entertainment pink, and so on). Per-article variety then comes from the
+// seeded mesh of blobs and the topic motif.
+const CATEGORY_HUE = {
+  models: 221, products: 262, companies: 188, research: 330, policy: 14,
+  opinion: 43, events: 152, enterprise: 210, learning: 280,
+  technology: 199, finance: 158, sports: 24, entertainment: 322,
+  lifestyle: 48, politics: 215,
+};
+
 function generateSvg({ slug, category, title, tags }) {
   const seed = hash(slug);
   const r = rng(seed);
 
-  // Brand blue family; per-article variety comes from a seeded mesh of blobs
-  // (kept inside the blue → indigo → cyan range) and from the topic motif.
-  const base = 227;
-  const hueA = base + Math.floor(r() * 22 - 11); // ~216–238
-  const hueB = base - 24 + Math.floor(r() * 20); // indigo/violet lean
-  const hueC = 196 + Math.floor(r() * 22); // cyan lean
+  // Section colour drives the palette; the blobs spread into an analogous range
+  // around it so every hero in a section shares a family but stays distinct.
+  const base = CATEGORY_HUE[category] ?? 227;
+  const hueA = base + Math.floor(r() * 24 - 12); // ± around the base
+  const hueB = base - (18 + Math.floor(r() * 22)); // cooler analogous
+  const hueC = base + (16 + Math.floor(r() * 26)); // warmer analogous
   const angle = Math.floor(r() * 60 - 30);
 
-  const dark = `hsl(${base}, 48%, 6%)`;
-  const deep = `hsl(${base}, 54%, 13%)`;
-  const accent = `hsl(${base}, 95%, 66%)`;
+  const dark = `hsl(${base}, 42%, 7%)`;
+  const deep = `hsl(${base}, 50%, 14%)`;
+  const accent = `hsl(${base}, 92%, 66%)`;
 
   // Seeded mesh-blob centres (px) — three soft coloured pools of light.
   const bx1 = Math.round(180 + r() * 320);
