@@ -86,7 +86,7 @@ const QUERY_OVERRIDES = {
   // finance
   "easy-mortgage-loans-risk-2026": "house keys real estate",
   "ipo-window-reopens-2026": "new york stock exchange",
-  "markets-brace-for-fed-decision": "wall street building",
+  "markets-brace-for-fed-decision": "federal reserve building",
   "markets-record-highs-2026": "stock trading screen",
   "snowflake-earnings-pop-2026": "data cloud server",
   "treasury-yields-two-year-high-2026": "government bonds finance",
@@ -201,11 +201,13 @@ async function main() {
     const slug = data.slug ?? file.replace(/\.mdx?$/, "");
     const dest = path.join(PHOTOS_DIR, `${slug}.jpg`);
     const override = QUERY_OVERRIDES[slug];
-    // Overridden slugs always re-fetch (to replace an off-topic photo); others
-    // are fetched once and then kept.
-    if (fs.existsSync(dest) && !override) { skipped++; continue; }
-
     const query = override || buildQuery(data);
+    // Keep an existing photo unless its (overridden) query changed — so tweaking
+    // one query re-fetches just that slug, not all of them.
+    if (fs.existsSync(dest)) {
+      const rec = manifest[slug];
+      if ((rec && rec.query === query) || !override) { skipped++; continue; }
+    }
     try {
       let photos = await pexelsSearch(query);
       if (photos.length === 0) photos = await pexelsSearch((SEED[data.category] || "technology").split(" ")[0]);
