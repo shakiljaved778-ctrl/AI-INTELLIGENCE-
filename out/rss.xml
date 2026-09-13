@@ -6,7 +6,61 @@
     <atom:link href="https://cambrian-ai.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Authoritative, comprehensive news and analysis on AI models, companies, research, products, and policy — for researchers, engineers, founders, and investors.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 18:00:00 GMT</lastBuildDate>
+    <item>
+      <title>The Small-Model Surge: Capable AI That Runs on Your Laptop</title>
+      <link>https://cambrian-ai.vercel.app/post/small-models-on-device-surge</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/small-models-on-device-surge</guid>
+      <pubDate>Sun, 13 Sep 2026 18:00:00 GMT</pubDate>
+      <category>Models</category>
+      <dc:creator>Cambrian AI Staff</dc:creator>
+      <description>A wave of efficient open-weight models is pushing useful inference off the cloud and onto the device in your hands.</description>
+    </item>
+    <item>
+      <title>The Eval Gap: Companies Are Shipping AI They Can't Measure</title>
+      <link>https://cambrian-ai.vercel.app/post/enterprise-ai-eval-gap</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/enterprise-ai-eval-gap</guid>
+      <pubDate>Sun, 13 Sep 2026 17:30:00 GMT</pubDate>
+      <category>Enterprise</category>
+      <dc:creator>Cambrian AI Staff</dc:creator>
+      <description>As enterprises move agents into production, the hardest problem isn't the model — it's knowing whether it's working.</description>
+    </item>
+    <item>
+      <title>Fifty Rulebooks: America's AI Law Patchwork Becomes a Moat</title>
+      <link>https://cambrian-ai.vercel.app/post/state-ai-law-patchwork</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/state-ai-law-patchwork</guid>
+      <pubDate>Sun, 13 Sep 2026 17:00:00 GMT</pubDate>
+      <category>AI Policy</category>
+      <dc:creator>Cambrian AI Staff</dc:creator>
+      <description>With no single federal standard, companies face a growing thicket of state AI rules — and compliance is becoming a competitive advantage.</description>
+    </item>
+    <item>
+      <title>Teaching Machines Physics: World Models Move From Demo to Tool</title>
+      <link>https://cambrian-ai.vercel.app/post/world-models-physics-research</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/world-models-physics-research</guid>
+      <pubDate>Sun, 13 Sep 2026 16:30:00 GMT</pubDate>
+      <category>Research</category>
+      <dc:creator>Cambrian AI Staff</dc:creator>
+      <description>Systems that learn how the world behaves — not just how to talk about it — are edging out of the lab and into robotics and simulation.</description>
+    </item>
+    <item>
+      <title>The Repairable Phone Grows Up: Right-to-Repair Reshapes 2026 Hardware</title>
+      <link>https://cambrian-ai.vercel.app/post/repairable-phone-right-to-repair</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/repairable-phone-right-to-repair</guid>
+      <pubDate>Sun, 13 Sep 2026 16:00:00 GMT</pubDate>
+      <category>Technology</category>
+      <dc:creator>Cambrian Desk</dc:creator>
+      <description>After a decade of glued-shut gadgets, repairability is becoming a selling point — pushed by new laws and, increasingly, by buyers.</description>
+    </item>
+    <item>
+      <title>Private Credit's Moment: Money Migrates Out of Public Markets</title>
+      <link>https://cambrian-ai.vercel.app/post/private-credit-shift</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/private-credit-shift</guid>
+      <pubDate>Sun, 13 Sep 2026 15:30:00 GMT</pubDate>
+      <category>Wealth &amp; Finance</category>
+      <dc:creator>Cambrian Desk</dc:creator>
+      <description>Lending that once ran through banks and bond markets is increasingly happening in private funds — reshaping who finances the economy.</description>
+    </item>
     <item>
       <title>Agents on the Attack: Hundreds of AI Bots Breach 440 Servers in Days</title>
       <link>https://cambrian-ai.vercel.app/post/ai-agents-weaponized-papercut-attack</link>
@@ -402,60 +456,6 @@
       <category>Lifestyle</category>
       <dc:creator>Cambrian Desk</dc:creator>
       <description>Brain health is becoming the label to watch in 2026, as supplements and functional foods pivot from muscle and gut to mind.</description>
-    </item>
-    <item>
-      <title>The 'Super Easy' Mortgage Wall Street Is Betting Billions On</title>
-      <link>https://cambrian-ai.vercel.app/post/easy-mortgage-loans-risk-2026</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/easy-mortgage-loans-risk-2026</guid>
-      <pubDate>Sat, 05 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Wealth &amp; Finance</category>
-      <dc:creator>Cambrian Desk</dc:creator>
-      <description>A fast, low-friction path to a home loan is spreading — and so is the money flowing into it. History says that combination deserves scrutiny.</description>
-    </item>
-    <item>
-      <title>Opinion: Be Skeptical of the AGI Framing Around GPT-6</title>
-      <link>https://cambrian-ai.vercel.app/post/gpt6-agi-framing</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/gpt6-agi-framing</guid>
-      <pubDate>Sat, 05 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Opinion</category>
-      <dc:creator>Cambrian AI Editorial Board</dc:creator>
-      <description>A powerful model is not the same as artificial general intelligence — and conflating the two muddies both the hype and the risk.</description>
-    </item>
-    <item>
-      <title>JPMorgan Now Runs 450+ AI Agents in Production — and It's Showing Up in the Results</title>
-      <link>https://cambrian-ai.vercel.app/post/jpmorgan-agentic-ai</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/jpmorgan-agentic-ai</guid>
-      <pubDate>Sat, 05 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Enterprise</category>
-      <dc:creator>Cambrian AI Staff</dc:creator>
-      <description>The bank's contract-intelligence and workflow agents are cited alongside record quarterly numbers, a rare case of AI tied to the bottom line.</description>
-    </item>
-    <item>
-      <title>Meta Joins the Frontier Rush with a New Flagship Model</title>
-      <link>https://cambrian-ai.vercel.app/post/meta-flagship-model</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/meta-flagship-model</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Products</category>
-      <dc:creator>Cambrian AI Staff</dc:creator>
-      <description>Rounding out a week of launches, Meta shipped a new top-tier model — its answer to fresh releases from OpenAI, Anthropic, and Google.</description>
-    </item>
-    <item>
-      <title>Money Pours Into Robotics and 'Physical AI'</title>
-      <link>https://cambrian-ai.vercel.app/post/physical-ai-robotics-investment</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/physical-ai-robotics-investment</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Products</category>
-      <dc:creator>Cambrian AI Staff</dc:creator>
-      <description>Investors are chasing software tied to physical assets — robots, autonomy, and industrial systems with hard-to-copy operating data.</description>
-    </item>
-    <item>
-      <title>Snowflake Jumps 16% as Data Spending Holds Up</title>
-      <link>https://cambrian-ai.vercel.app/post/snowflake-earnings-pop-2026</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/snowflake-earnings-pop-2026</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Wealth &amp; Finance</category>
-      <dc:creator>Cambrian Desk</dc:creator>
-      <description>A beat-and-raise quarter sent shares soaring — and offered a read on whether enterprises are still opening their wallets.</description>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,95 @@
 [
   {
+    "title": "The Small-Model Surge: Capable AI That Runs on Your Laptop",
+    "slug": "small-models-on-device-surge",
+    "subtitle": "A wave of efficient open-weight models is pushing useful inference off the cloud and onto the device in your hands.",
+    "excerpt": "For two years the story of frontier AI was scale: bigger models, bigger clusters, bigger bills. The quieter story of 2026 is the opposite. A run of compact,…",
+    "category": "models",
+    "tags": [
+      "Open Models",
+      "On-Device",
+      "Efficiency",
+      "LLM"
+    ],
+    "date": "2026-09-13T18:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Eval Gap: Companies Are Shipping AI They Can't Measure",
+    "slug": "enterprise-ai-eval-gap",
+    "subtitle": "As enterprises move agents into production, the hardest problem isn't the model — it's knowing whether it's working.",
+    "excerpt": "The bottleneck in enterprise AI has moved. A year ago the hard part was getting a capable model into a workflow at all. Now the models are capable and the…",
+    "category": "enterprise",
+    "tags": [
+      "Enterprise",
+      "Evaluation",
+      "Agents",
+      "Observability"
+    ],
+    "date": "2026-09-13T17:30:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Fifty Rulebooks: America's AI Law Patchwork Becomes a Moat",
+    "slug": "state-ai-law-patchwork",
+    "subtitle": "With no single federal standard, companies face a growing thicket of state AI rules — and compliance is becoming a competitive advantage.",
+    "excerpt": "In the absence of a comprehensive federal AI law, the United States is regulating artificial intelligence the way it has regulated privacy and much else: one…",
+    "category": "policy",
+    "tags": [
+      "Policy",
+      "Regulation",
+      "Compliance",
+      "Governance"
+    ],
+    "date": "2026-09-13T17:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Teaching Machines Physics: World Models Move From Demo to Tool",
+    "slug": "world-models-physics-research",
+    "subtitle": "Systems that learn how the world behaves — not just how to talk about it — are edging out of the lab and into robotics and simulation.",
+    "excerpt": "Most of the AI that reached the public learned language: predict the next word, and enough of the world comes along for the ride. A parallel research thread…",
+    "category": "research",
+    "tags": [
+      "Research",
+      "World Models",
+      "Robotics",
+      "Simulation"
+    ],
+    "date": "2026-09-13T16:30:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Repairable Phone Grows Up: Right-to-Repair Reshapes 2026 Hardware",
+    "slug": "repairable-phone-right-to-repair",
+    "subtitle": "After a decade of glued-shut gadgets, repairability is becoming a selling point — pushed by new laws and, increasingly, by buyers.",
+    "excerpt": "For most of the smartphone era, \"thin and sealed\" won. Batteries were glued in, screens were fused to frames, and a cracked display or a dead cell often meant…",
+    "category": "technology",
+    "tags": [
+      "hardware",
+      "right-to-repair",
+      "smartphones",
+      "sustainability"
+    ],
+    "date": "2026-09-13T16:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Private Credit's Moment: Money Migrates Out of Public Markets",
+    "slug": "private-credit-shift",
+    "subtitle": "Lending that once ran through banks and bond markets is increasingly happening in private funds — reshaping who finances the economy.",
+    "excerpt": "One of the quieter but more consequential shifts in finance has little to do with the stock ticker most people watch. It is the steady migration of lending out…",
+    "category": "finance",
+    "tags": [
+      "finance",
+      "private-credit",
+      "markets",
+      "lending"
+    ],
+    "date": "2026-09-13T15:30:00Z",
+    "isPick": false
+  },
+  {
     "title": "Agents on the Attack: Hundreds of AI Bots Breach 440 Servers in Days",
     "slug": "ai-agents-weaponized-papercut-attack",
     "subtitle": "Researchers say a threat actor wired together AI coding agents to exploit known bugs — reaching remote code execution in under four hours.",

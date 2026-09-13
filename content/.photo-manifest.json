@@ -406,5 +406,41 @@
     "photographer_url": "https://www.pexels.com/@ramazphotos",
     "pexels_url": "https://www.pexels.com/photo/united-states-capitol-facade-7016960/",
     "query": "us capitol washington"
+  },
+  "enterprise-ai-eval-gap": {
+    "photographer": "Rafael Minguet Delgado",
+    "photographer_url": "https://www.pexels.com/@thales13",
+    "pexels_url": "https://www.pexels.com/photo/dynamic-financial-data-visualization-and-analysis-38808473/",
+    "query": "data dashboard analytics screen"
+  },
+  "private-credit-shift": {
+    "photographer": "AlphaTradeZone",
+    "photographer_url": "https://www.pexels.com/@alphatradezone",
+    "pexels_url": "https://www.pexels.com/photo/man-in-blue-and-white-pinstripe-long-sleeves-shirt-using-a-computer-5831262/",
+    "query": "financial trading desk monitors"
+  },
+  "repairable-phone-right-to-repair": {
+    "photographer": "Andrey Matveev",
+    "photographer_url": "https://www.pexels.com/@zeleboba",
+    "pexels_url": "https://www.pexels.com/photo/dismantled-smartphone-on-yellow-surface-14534828/",
+    "query": "smartphone repair tools"
+  },
+  "small-models-on-device-surge": {
+    "photographer": "Erkan  Utu",
+    "photographer_url": "https://www.pexels.com/@erkan",
+    "pexels_url": "https://www.pexels.com/photo/selective-blur-of-black-computer-keys-222835/",
+    "query": "laptop computer workspace"
+  },
+  "state-ai-law-patchwork": {
+    "photographer": "KATRIN  BOLOVTSOVA",
+    "photographer_url": "https://www.pexels.com/@ekaterina-bolovtsova",
+    "pexels_url": "https://www.pexels.com/photo/judge-signing-on-the-papers-6077447/",
+    "query": "gavel law books desk"
+  },
+  "world-models-physics-research": {
+    "photographer": "Youn Seung Jin",
+    "photographer_url": "https://www.pexels.com/@youn-seung-jin-36101845",
+    "pexels_url": "https://www.pexels.com/photo/advanced-robotic-automation-in-laboratory-32778341/",
+    "query": "robot arm engineering lab"
   }
 }
