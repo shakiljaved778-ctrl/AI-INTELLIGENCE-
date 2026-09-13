@@ -10,7 +10,11 @@ name: Draft AI news for review
 
 on:
   schedule:
-    - cron: "0 13 * * *" # daily at 13:00 UTC
+    # 13:00 UTC = 8:00 AM US Eastern Standard Time (daily). GitHub cron runs in
+    # UTC and does not follow daylight saving, so during EDT (mid-Mar–early Nov)
+    # this fires at 9:00 AM Eastern. Change to "0 12 * * *" to prefer 8 AM in
+    # summer instead.
+    - cron: "0 13 * * *"
   workflow_dispatch:
     inputs:
       count:
