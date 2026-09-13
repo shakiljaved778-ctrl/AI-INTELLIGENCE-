@@ -165,16 +165,27 @@ function readManifest() {
   try { return JSON.parse(fs.readFileSync(MANIFEST, "utf8")); } catch { return {}; }
 }
 
+// fetch with a hard timeout so a hung request can't stall the build.
+async function fetchT(url, opts = {}, ms = 30000) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), ms);
+  try {
+    return await fetch(url, { ...opts, signal: ctrl.signal });
+  } finally {
+    clearTimeout(t);
+  }
+}
+
 async function pexelsSearch(query) {
   const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=15&orientation=landscape`;
-  const res = await fetch(url, { headers: { Authorization: API_KEY } });
+  const res = await fetchT(url, { headers: { Authorization: API_KEY } }, 30000);
   if (!res.ok) throw new Error(`Pexels ${res.status}`);
   const data = await res.json();
   return Array.isArray(data.photos) ? data.photos : [];
 }
 
 async function download(url, dest) {
-  const res = await fetch(url);
+  const res = await fetchT(url, {}, 45000);
   if (!res.ok) throw new Error(`download ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
   fs.writeFileSync(dest, buf);

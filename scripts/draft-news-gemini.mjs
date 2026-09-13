@@ -183,8 +183,19 @@ async function resolveModel() {
   RESOLVED_MODEL = MODEL_PREF;
   return RESOLVED_MODEL;
 }
+// fetch with a hard timeout so a hung request can never stall the whole job.
+async function fetchT(url, opts = {}, ms = 60000) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), ms);
+  try {
+    return await fetch(url, { ...opts, signal: ctrl.signal });
+  } finally {
+    clearTimeout(t);
+  }
+}
+
 async function listFlashModel() {
-  const res = await fetch(`${BASE}/models?key=${API_KEY}`);
+  const res = await fetchT(`${BASE}/models?key=${API_KEY}`, {}, 30000);
   if (!res.ok) throw new Error(`ListModels ${res.status}`);
   const data = await res.json();
   const usable = (data.models || []).filter((m) =>
@@ -202,11 +213,15 @@ async function callGemini(model, system, user, withSearch) {
     generationConfig: { temperature: 0.7, maxOutputTokens: 4096 },
   };
   if (withSearch) body.tools = [{ google_search: {} }];
-  const res = await fetch(`${BASE}/models/${model}:generateContent?key=${API_KEY}`, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(body),
-  });
+  const res = await fetchT(
+    `${BASE}/models/${model}:generateContent?key=${API_KEY}`,
+    {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(body),
+    },
+    90000
+  );
   const text = await res.text();
   return { ok: res.ok, status: res.status, text };
 }
