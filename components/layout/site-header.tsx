@@ -6,6 +6,7 @@ import { MainNav } from "@/components/layout/main-nav";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { SearchDialog } from "@/components/search/search-dialog";
+import { Wordmark } from "@/components/layout/brand";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
@@ -38,17 +39,8 @@ export function SiteHeader() {
       >
         <div className="flex items-center gap-2">
           <MobileNav />
-          <Link href="/" aria-label={siteConfig.name}>
-            <span
-              className={cn(
-                "font-semibold uppercase transition-all duration-300",
-                scrolled
-                  ? "text-base tracking-[0.22em] sm:text-lg"
-                  : "text-lg tracking-[0.3em] sm:text-xl"
-              )}
-            >
-              {siteConfig.name}
-            </span>
+          <Link href="/" aria-label={siteConfig.name} className="group">
+            <Wordmark size={scrolled ? "sm" : "md"} />
           </Link>
         </div>
 

@@ -11,7 +11,7 @@ CMS at it.
 ### 1. Create a GitHub OAuth App
 - Go to **GitHub → Settings → Developer settings → OAuth Apps → New OAuth App**
   (or your org's Developer settings).
-- **Application name:** `Cambrian AI CMS` (anything)
+- **Application name:** `Salience Intelligence CMS` (anything)
 - **Homepage URL:** your site, e.g. `https://cambrian-ai.vercel.app`
 - **Authorization callback URL:** leave as a placeholder for now, e.g.
   `https://example.com/api/callback` — you'll update it in step 3.

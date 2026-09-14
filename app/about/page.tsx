@@ -5,13 +5,13 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Cambrian AI is a comprehensive, trustworthy source of news and analysis on artificial intelligence.",
+    "Salience Intelligence surfaces the signal from the noise — sharp, original reporting on AI, technology, markets, and culture, and what each shift means.",
 };
 
 const team = [
-  { name: "Editorial Desk", role: "News & analysis" },
-  { name: "Research Desk", role: "Papers & methods" },
-  { name: "Policy Desk", role: "Regulation & governance" },
+  { name: "AI Desk", role: "Models, research & policy" },
+  { name: "Beyond Desk", role: "Tech, markets & culture" },
+  { name: "Signal Desk", role: "Analysis & picks" },
 ];
 
 export default function AboutPage() {
@@ -22,28 +22,29 @@ export default function AboutPage() {
           <h1 className="font-serif text-4xl font-bold tracking-tight">
             About {siteConfig.name}
           </h1>
+          <p className="eyebrow mt-3 !text-accent">{siteConfig.tagline}</p>
           <div className="prose-article mt-6">
             <p>
-              <strong>{siteConfig.name}</strong> is a comprehensive, trustworthy
-              source for news and analysis on artificial intelligence. We cover
-              the models, companies, research, products, and policy shaping the
-              most consequential technology of our era.
+              <strong>{siteConfig.name}</strong> exists to surface the signal
+              from the noise. We report on the technology reshaping the world —
+              led by artificial intelligence — and on the shifts it sets off
+              across markets, business, culture, and everyday life.
             </p>
             <h2>Our mission</h2>
             <p>
-              To give researchers, engineers, founders, and investors a single,
-              authoritative place to understand what&rsquo;s happening in AI —
-              and why it matters. We prize clarity, accuracy, and depth over
-              hype.
+              Enough is happening every day to fill a hundred feeds. Our job is
+              to tell you what actually matters and why — clearly, accurately,
+              and without hype. We <em>see the signal</em>, then help you{" "}
+              <em>understand the shift</em>.
             </p>
-            <h2>How content is curated</h2>
+            <h2>What we cover</h2>
             <p>
-              Every story is written and edited by our desks, then organized into
-              clear sections — Models, Products, Companies, Research, Policy,
-              Opinion, and Events. Standout stories are surfaced as{" "}
-              <a href="/picks">Picks</a>, selected by leading AI models and our
-              editors, each with a short rationale explaining why it earned the
-              spotlight.
+              Roughly two-thirds of our coverage is AI — the models, companies,
+              research, products, and policy defining the field. The rest is{" "}
+              <strong>Beyond</strong>: the technology, markets, sports,
+              entertainment, and lifestyle stories worth your attention.
+              Standout pieces are surfaced as <a href="/picks">Picks</a>, each
+              with a short rationale explaining why it earned the spotlight.
             </p>
             <h2>Editorially independent</h2>
             <p>

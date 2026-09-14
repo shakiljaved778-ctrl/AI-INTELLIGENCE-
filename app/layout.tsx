@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces } from "next/font/google";
+import { Fraunces, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/theme-provider";
@@ -20,6 +20,18 @@ const display = Fraunces({
   weight: ["400", "500", "600", "700", "900"],
   style: ["normal", "italic"],
   variable: "--font-display",
+  display: "swap",
+});
+
+/**
+ * Brand face — Space Grotesk, a precise technical grotesque. Carries the
+ * Salience wordmark and the uppercase eyebrow/section labels, giving the
+ * identity a "signal instrument" feel distinct from the editorial serif.
+ */
+const brand = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-brand-sg",
   display: "swap",
 });
 
@@ -75,7 +87,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={display.variable} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${display.variable} ${brand.variable}`}
+      suppressHydrationWarning
+    >
       {/*
         AD NETWORK LOADER
         =====================================================================

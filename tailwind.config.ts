@@ -43,6 +43,10 @@ const config: Config = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        signal: {
+          DEFAULT: "hsl(var(--signal))",
+          strong: "hsl(var(--signal-strong))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -60,6 +64,7 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-serif)", "Georgia", "Cambria", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        brand: ["var(--font-brand)", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       keyframes: {
         "fade-in": {

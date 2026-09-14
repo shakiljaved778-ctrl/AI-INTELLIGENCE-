@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { NewsletterSignup } from "@/components/newsletter-signup";
+import { BrandMark } from "@/components/layout/brand";
 import { categories } from "@/lib/categories";
 import { siteConfig } from "@/lib/site";
 
@@ -17,15 +18,22 @@ export function SiteFooter() {
       <div className="container py-12">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <p className="font-serif text-2xl font-bold tracking-tight">
-              {siteConfig.name}
-            </p>
-            <p className="mt-2 max-w-md text-sm text-muted-foreground">
+            <div className="flex items-center gap-2.5">
+              <BrandMark className="h-7 w-7" />
+              <p className="font-brand text-2xl font-semibold tracking-[-0.01em]">
+                Salience
+                <span className="ml-1.5 font-normal text-muted-foreground">
+                  Intelligence
+                </span>
+              </p>
+            </div>
+            <p className="eyebrow mt-3 !text-accent">{siteConfig.tagline}</p>
+            <p className="mt-3 max-w-md text-sm text-muted-foreground">
               {siteConfig.description}
             </p>
             <div id="newsletter" className="mt-4 max-w-md scroll-mt-24">
               <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                The {siteConfig.name} Briefing
+                The {siteConfig.shortName} Briefing
               </p>
               <NewsletterSignup />
             </div>
@@ -70,7 +78,7 @@ export function SiteFooter() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-2 border-t pt-6 text-xs text-muted-foreground sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {siteConfig.name}. {siteConfig.tagline}.
+            © {new Date().getFullYear()} {siteConfig.name}. {siteConfig.tagline}
           </p>
           <p>All content is editorial and for demonstration purposes.</p>
         </div>

@@ -12,70 +12,85 @@
       Helvetica, Arial, "Helvetica Neue", sans-serif;
     --font-serif: var(--font-display), Georgia, "Times New Roman", "Iowan Old Style",
       serif;
+    /* Brand face (Space Grotesk) — wordmark + eyebrows. Falls back to a
+       geometric-ish system stack. */
+    --font-brand: var(--font-brand-sg), "SF Pro Display", ui-sans-serif,
+      system-ui, "Segoe UI", Roboto, sans-serif;
 
-    /* Light theme — minimalist, cool, monochrome with a steel-blue accent. */
-    --background: 210 20% 99%;
-    --foreground: 220 18% 11%;
+    /* ── Salience Intelligence "Signal" palette ──
+       Cool ink neutrals (premium, dossier-like) + one ownable Signal Amber
+       accent — the "highlight what matters" colour. */
+    --background: 210 24% 99%;
+    --foreground: 222 30% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 18% 11%;
+    --card-foreground: 222 30% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 18% 11%;
+    --popover-foreground: 222 30% 9%;
 
-    /* Near-black primary → black pill buttons, like the reference. */
-    --primary: 220 22% 12%;
+    /* Near-black ink primary → black pill buttons. */
+    --primary: 222 30% 10%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 214 16% 94%;
-    --secondary-foreground: 220 18% 22%;
+    --secondary: 214 18% 94%;
+    --secondary-foreground: 222 26% 20%;
 
-    --muted: 214 16% 95%;
-    --muted-foreground: 218 10% 44%;
+    --muted: 214 18% 95%;
+    --muted-foreground: 220 12% 42%;
 
-    /* Steel-blue accent, used sparingly (picks, highlights). */
-    --accent: 212 60% 47%;
-    --accent-foreground: 0 0% 100%;
+    /* Signal Amber. Darkened for large-text/UI AA on light backgrounds; the
+       full-strength brand glow lives in --signal below. */
+    --accent: 36 92% 44%;
+    --accent-foreground: 222 30% 9%;
+
+    /* Full-strength brand signal (decorative: mark, glows, hero art). */
+    --signal: 38 96% 52%;
+    --signal-strong: 32 95% 48%;
 
     --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 88%;
-    --ring: 220 22% 12%;
+    --border: 214 22% 89%;
+    --input: 214 22% 87%;
+    --ring: 36 92% 44%;
 
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 220 20% 7%;
-    --foreground: 210 16% 92%;
+    --background: 224 32% 6%;
+    --foreground: 210 20% 93%;
 
-    --card: 220 16% 10%;
-    --card-foreground: 210 16% 92%;
+    --card: 223 28% 9%;
+    --card-foreground: 210 20% 93%;
 
-    --popover: 220 16% 10%;
-    --popover-foreground: 210 16% 92%;
+    --popover: 223 28% 9%;
+    --popover-foreground: 210 20% 93%;
 
-    /* In dark mode the pill buttons invert to near-white on dark text. */
+    /* In dark mode the pill buttons invert to near-white on ink text. */
     --primary: 0 0% 97%;
-    --primary-foreground: 220 22% 10%;
+    --primary-foreground: 223 30% 8%;
 
-    --secondary: 220 12% 17%;
-    --secondary-foreground: 210 16% 90%;
+    --secondary: 222 18% 16%;
+    --secondary-foreground: 210 18% 90%;
 
-    --muted: 220 12% 15%;
-    --muted-foreground: 214 10% 63%;
+    --muted: 222 18% 14%;
+    --muted-foreground: 214 12% 62%;
 
-    --accent: 212 70% 62%;
-    --accent-foreground: 220 22% 8%;
+    /* On ink, Signal Amber can run at full brightness. */
+    --accent: 40 96% 56%;
+    --accent-foreground: 223 30% 8%;
+
+    --signal: 40 97% 58%;
+    --signal-strong: 34 96% 54%;
 
     --destructive: 0 65% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 12% 20%;
-    --input: 220 12% 22%;
-    --ring: 0 0% 88%;
+    --border: 222 16% 20%;
+    --input: 222 16% 22%;
+    --ring: 40 96% 56%;
   }
 }
 
@@ -100,9 +115,15 @@
     font-family: var(--font-sans);
     letter-spacing: -0.015em;
   }
-  /* Eyebrow / section labels: uppercase, widely tracked — the reference look. */
+  /* Eyebrow / section labels: brand grotesque, uppercase, widely tracked. */
   .eyebrow {
     @apply text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground;
+    font-family: var(--font-brand);
+  }
+
+  /* Brand wordmark type — the Salience grotesque. */
+  .font-brand {
+    font-family: var(--font-brand);
   }
 }
 
@@ -115,7 +136,7 @@
       prose-h2:mt-10 prose-h2:text-2xl
       prose-h3:mt-8 prose-h3:text-xl
       prose-p:leading-relaxed prose-p:text-foreground/90
-      prose-a:text-accent prose-a:font-medium prose-a:no-underline hover:prose-a:underline prose-a:underline-offset-4
+      prose-a:text-foreground prose-a:font-medium prose-a:underline prose-a:decoration-accent prose-a:decoration-2 prose-a:underline-offset-[3px] hover:prose-a:decoration-[3px]
       prose-blockquote:border-l-2 prose-blockquote:border-accent prose-blockquote:not-italic prose-blockquote:text-foreground/80
       prose-img:rounded-xl
       prose-figcaption:text-center;

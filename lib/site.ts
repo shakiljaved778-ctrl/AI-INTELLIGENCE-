@@ -6,15 +6,17 @@
  * publication is a one-line change to `name`.
  */
 export const siteConfig = {
-  name: "Cambrian AI",
-  tagline: "AI News & Analysis",
+  name: "Salience Intelligence",
+  // Short form for tight spaces (mobile masthead, etc.).
+  shortName: "Salience",
+  tagline: "See the Signal, Understand the Shift.",
   description:
-    "Authoritative, comprehensive news and analysis on AI models, companies, research, products, and policy — for researchers, engineers, founders, and investors.",
+    "Salience Intelligence cuts through the noise — sharp, original reporting and analysis on AI, plus the technology, markets, and culture shifts that matter. We surface the signal and explain the shift.",
   // Update this to your production domain once deployed on Vercel.
   url: "https://cambrian-ai.vercel.app",
   ogImage: "/og-default.svg",
-  contactEmail: "tips@cambrian.ai",
-  advertiseEmail: "ads@cambrian.ai",
+  contactEmail: "tips@salience.ai",
+  advertiseEmail: "ads@salience.ai",
   links: {
     twitter: "https://twitter.com",
     github: "https://github.com",

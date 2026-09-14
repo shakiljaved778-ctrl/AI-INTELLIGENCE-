@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Advertise",
   description:
-    "Reach a high-intent audience of AI researchers, engineers, founders, and investors. Cambrian AI media kit and ad formats.",
+    "Reach a high-intent audience of founders, operators, investors, and the technically curious. Salience Intelligence media kit and ad formats.",
 };
 
 const stats = [

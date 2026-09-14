@@ -94,8 +94,8 @@ const BLOCK_TERMS = [
   "frontline", "invasion", "militant", "insurgent", "occupied territories",
 ];
 
-const AUTHOR_AI = "Cambrian AI Desk";
-const AUTHOR_WORLD = "Cambrian Desk";
+const AUTHOR_AI = "Salience AI Desk";
+const AUTHOR_WORLD = "Salience Desk";
 const SITE_URL = (process.env.SITE_URL || "https://cambrian-ai.vercel.app").replace(/\/$/, "");
 const SOCIAL_QUEUE = path.join(ROOT, "content", "social-queue.md");
 const BASE = "https://generativelanguage.googleapis.com/v1beta";
@@ -168,7 +168,7 @@ async function gatherItems(feeds, desk) {
   return items;
 }
 
-const SYSTEM = `You are a staff writer for "Cambrian AI", an AI-news publication with a clean, analytical, Verge-meets-WSJ voice.
+const SYSTEM = `You are a staff writer for "Salience Intelligence", a news publication with a clean, analytical, Verge-meets-WSJ voice whose promise is "See the Signal, Understand the Shift."
 
 You are given a source news item (headline, publication, link, snippet). Use Google Search grounding when available to verify and enrich the facts, then write an ORIGINAL short news-analysis in the publication's voice.
 
