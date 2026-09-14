@@ -27,7 +27,7 @@ export function SiteFooter() {
                 </span>
               </p>
             </div>
-            <p className="eyebrow mt-3 !text-accent">{siteConfig.tagline}</p>
+            <p className="eyebrow mt-3 !text-navy">{siteConfig.tagline}</p>
             <p className="mt-3 max-w-md text-sm text-muted-foreground">
               {siteConfig.description}
             </p>

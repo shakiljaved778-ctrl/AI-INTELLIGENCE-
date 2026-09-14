@@ -66,7 +66,7 @@ export function Wordmark({
           </span>
         </span>
         {tagline && (
-          <span className="mt-1 font-brand text-[10.5px] font-medium tracking-[0.02em] text-accent sm:text-[11px]">
+          <span className="mt-1 font-brand text-[10.5px] font-medium tracking-[0.02em] text-navy sm:text-[11px]">
             See the Signal, Understand the Shift.
           </span>
         )}

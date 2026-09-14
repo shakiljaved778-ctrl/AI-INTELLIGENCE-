@@ -47,6 +47,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--signal))",
           strong: "hsl(var(--signal-strong))",
         },
+        navy: "hsl(var(--navy))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

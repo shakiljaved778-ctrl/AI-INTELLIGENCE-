@@ -22,7 +22,7 @@ export default function AboutPage() {
           <h1 className="font-serif text-4xl font-bold tracking-tight">
             About {siteConfig.name}
           </h1>
-          <p className="eyebrow mt-3 !text-accent">{siteConfig.tagline}</p>
+          <p className="eyebrow mt-3 !text-navy">{siteConfig.tagline}</p>
           <div className="prose-article mt-6">
             <p>
               <strong>{siteConfig.name}</strong> exists to surface the signal

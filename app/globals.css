@@ -48,6 +48,9 @@
     --signal: 38 96% 52%;
     --signal-strong: 32 95% 48%;
 
+    /* Navy — used for the tagline; a deep, authoritative blue on light. */
+    --navy: 222 52% 30%;
+
     --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
 
@@ -84,6 +87,9 @@
 
     --signal: 40 97% 58%;
     --signal-strong: 34 96% 54%;
+
+    /* On ink, lift the navy to a readable steel-blue. */
+    --navy: 213 70% 68%;
 
     --destructive: 0 65% 52%;
     --destructive-foreground: 0 0% 100%;
