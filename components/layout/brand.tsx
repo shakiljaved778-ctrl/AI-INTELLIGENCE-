@@ -52,21 +52,25 @@ export function Wordmark({
 }) {
   return (
     <span className={cn("flex items-center gap-2.5", className)}>
-      <BrandMark className={size === "sm" ? "h-[22px] w-[22px]" : "h-7 w-7"} />
+      <BrandMark
+        className={
+          size === "sm" ? "h-[26px] w-[26px]" : "h-8 w-8 sm:h-9 sm:w-9"
+        }
+      />
       <span className="flex flex-col justify-center leading-none">
         <span
           className={cn(
-            "font-brand font-semibold tracking-[-0.01em] text-foreground transition-all duration-300",
-            size === "sm" ? "text-base sm:text-lg" : "text-lg sm:text-xl"
+            "font-brand font-bold tracking-[-0.025em] text-foreground transition-all duration-300",
+            size === "sm" ? "text-lg sm:text-xl" : "text-xl sm:text-[1.7rem]"
           )}
         >
           Salience
-          <span className="ml-1.5 font-normal text-muted-foreground">
+          <span className="ml-1.5 font-medium text-muted-foreground">
             Intelligence
           </span>
         </span>
         {tagline && (
-          <span className="mt-1 font-brand text-[10.5px] font-medium tracking-[0.02em] text-navy sm:text-[11px]">
+          <span className="mt-1.5 font-brand text-[10.5px] font-semibold leading-snug tracking-[0.03em] text-navy sm:text-xs">
             See the Signal, Understand the Shift.
           </span>
         )}
