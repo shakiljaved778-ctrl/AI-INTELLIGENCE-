@@ -13,12 +13,14 @@
   <ellipse cx="245" cy="300" rx="360" ry="300" fill="url(#glow)"/>
 
   <!-- Globe mark -->
-  <g fill="none" stroke="#E6EAF2">
-    <circle cx="167" cy="315" r="71" stroke-width="4"/>
-    <path d="M96 315h142" stroke-width="3" opacity="0.7"/>
-    <ellipse cx="167" cy="315" rx="32" ry="71" stroke-width="3" opacity="0.7"/>
+  <g fill="none" stroke="#E6EAF2" stroke-width="4">
+    <circle cx="167" cy="315" r="71"/>
+    <path d="M96 315h142"/>
+    <path d="M106 279Q167 265 228 279" opacity="0.6"/>
+    <path d="M106 351Q167 365 228 351" opacity="0.6"/>
+    <ellipse cx="167" cy="315" rx="33" ry="71"/>
   </g>
-  <circle cx="194" cy="280" r="15" fill="#F9B015"/>
+  <circle cx="195" cy="278" r="15" fill="#F9B015"/>
 
   <!-- Wordmark -->
   <text x="270" y="300" font-family="'Space Grotesk', Helvetica, Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-1" fill="#F4F6FB">Europa</text>

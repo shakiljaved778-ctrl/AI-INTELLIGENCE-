@@ -22,11 +22,15 @@ export function BrandMark({
       className={cn("h-6 w-6 shrink-0", className)}
       fill="none"
     >
-      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M3 12h18" stroke="currentColor" strokeWidth="1.1" opacity="0.7" />
-      <ellipse cx="12" cy="12" rx="4.1" ry="9" stroke="currentColor" strokeWidth="1.1" opacity="0.7" />
+      <g stroke="currentColor" strokeWidth="1.4">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18" />
+        <path d="M4.3 7.4Q12 5.7 19.7 7.4" opacity="0.6" />
+        <path d="M4.3 16.6Q12 18.3 19.7 16.6" opacity="0.6" />
+        <ellipse cx="12" cy="12" rx="4.2" ry="9" />
+      </g>
       {/* signal locus */}
-      <circle cx="15.4" cy="7.6" r="1.9" fill="hsl(var(--signal))" />
+      <circle cx="15.6" cy="7.2" r="1.95" fill="hsl(var(--signal))" />
     </svg>
   );
 }
