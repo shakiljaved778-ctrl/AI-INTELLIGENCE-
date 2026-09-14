@@ -2,11 +2,10 @@ import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 
 /**
- * Europa Research brand mark — "the signal rising above the noise."
- * Four bars: three quiet noise bars in the ink/text colour and one tall
- * Signal-Amber bar that stands out — the finding that matters. Scales to a 16px
- * favicon. Noise bars use `currentColor`, so the mark adapts to ink on light
- * and near-white on dark automatically.
+ * Europa Research brand mark — a meridian globe with a Signal-Amber locus:
+ * "intelligence for a changing world," a point of insight on the map. The
+ * globe lines use `currentColor`, so the mark adapts to ink on light and
+ * near-white on dark automatically; the locus is always Signal Amber.
  */
 export function BrandMark({
   className,
@@ -23,13 +22,11 @@ export function BrandMark({
       className={cn("h-6 w-6 shrink-0", className)}
       fill="none"
     >
-      {/* noise */}
-      <rect x="1.6" y="14" width="3.2" height="7" rx="1.2" fill="currentColor" opacity="0.34" />
-      <rect x="6.6" y="10" width="3.2" height="11" rx="1.2" fill="currentColor" opacity="0.5" />
-      <rect x="16.8" y="12" width="3.2" height="9" rx="1.2" fill="currentColor" opacity="0.42" />
-      {/* signal */}
-      <rect x="11.7" y="3" width="3.4" height="18" rx="1.4" fill="hsl(var(--signal))" />
-      <circle cx="13.4" cy="3.2" r="2.1" fill="hsl(var(--signal))" opacity="0.28" />
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M3 12h18" stroke="currentColor" strokeWidth="1.1" opacity="0.7" />
+      <ellipse cx="12" cy="12" rx="4.1" ry="9" stroke="currentColor" strokeWidth="1.1" opacity="0.7" />
+      {/* signal locus */}
+      <circle cx="15.4" cy="7.6" r="1.9" fill="hsl(var(--signal))" />
     </svg>
   );
 }
