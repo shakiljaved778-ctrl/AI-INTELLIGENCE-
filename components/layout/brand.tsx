@@ -43,23 +43,33 @@ export function BrandMark({
 export function Wordmark({
   className,
   size = "md",
+  tagline = false,
 }: {
   className?: string;
   size?: "sm" | "md";
+  /** Show the brand tagline beneath the name (used on the home masthead). */
+  tagline?: boolean;
 }) {
   return (
-    <span className={cn("flex items-center gap-2", className)}>
+    <span className={cn("flex items-center gap-2.5", className)}>
       <BrandMark className={size === "sm" ? "h-[22px] w-[22px]" : "h-7 w-7"} />
-      <span
-        className={cn(
-          "font-brand font-semibold leading-none tracking-[-0.01em] text-foreground transition-all duration-300",
-          size === "sm" ? "text-base sm:text-lg" : "text-lg sm:text-xl"
-        )}
-      >
-        Salience
-        <span className="ml-1.5 hidden font-normal text-muted-foreground sm:inline">
-          Intelligence
+      <span className="flex flex-col justify-center leading-none">
+        <span
+          className={cn(
+            "font-brand font-semibold tracking-[-0.01em] text-foreground transition-all duration-300",
+            size === "sm" ? "text-base sm:text-lg" : "text-lg sm:text-xl"
+          )}
+        >
+          Salience
+          <span className="ml-1.5 font-normal text-muted-foreground">
+            Intelligence
+          </span>
         </span>
+        {tagline && (
+          <span className="mt-1 font-brand text-[10.5px] font-medium tracking-[0.02em] text-accent sm:text-[11px]">
+            See the Signal, Understand the Shift.
+          </span>
+        )}
       </span>
       <span className="sr-only">{siteConfig.name}</span>
     </span>

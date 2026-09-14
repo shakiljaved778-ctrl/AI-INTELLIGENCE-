@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MainNav } from "@/components/layout/main-nav";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
@@ -14,6 +15,8 @@ import { siteConfig } from "@/lib/site";
 export function SiteHeader() {
   // Condense the header once the reader scrolls past the very top.
   const [scrolled, setScrolled] = useState(false);
+  // Show the tagline beneath the wordmark on the landing page (resting only).
+  const isHome = usePathname() === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -40,7 +43,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <MobileNav />
           <Link href="/" aria-label={siteConfig.name} className="group">
-            <Wordmark size={scrolled ? "sm" : "md"} />
+            <Wordmark size={scrolled ? "sm" : "md"} tagline={isHome && !scrolled} />
           </Link>
         </div>
 
