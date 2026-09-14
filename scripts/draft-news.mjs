@@ -52,7 +52,7 @@ const FEEDS = (
   .map((s) => s.trim())
   .filter(Boolean);
 
-const AUTHOR = "Salience AI Desk";
+const AUTHOR = "Europa AI Desk";
 
 function log(...args) {
   console.log("[draft-news]", ...args);
@@ -149,7 +149,7 @@ async function gatherItems() {
   return items;
 }
 
-const SYSTEM = `You are a staff writer for "Salience Intelligence", a news publication with a clean, analytical, Verge-meets-WSJ voice. You write concise, original news-analysis pieces about artificial intelligence.
+const SYSTEM = `You are a staff writer for "Europa Research", a news publication with a clean, analytical, Verge-meets-WSJ voice. You write concise, original news-analysis pieces about artificial intelligence.
 
 You will be given a source news item (headline, publication, link, and a short snippet) and the web_fetch tool. Fetch the source article to ground yourself in the facts, then write an ORIGINAL short analysis in the publication's voice.
 

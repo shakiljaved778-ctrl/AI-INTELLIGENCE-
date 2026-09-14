@@ -1,4 +1,4 @@
-# Decap CMS configuration for Salience Intelligence.
+# Decap CMS configuration for Europa Research.
 # Docs: https://decapcms.org/docs/
 
 backend:
@@ -65,7 +65,7 @@ collections:
           time_format: false,
           format: "YYYY-MM-DD",
         }
-      - { label: Author, name: author, widget: string, default: "Salience Intelligence Staff" }
+      - { label: Author, name: author, widget: string, default: "Europa Research Staff" }
       - {
           label: Category,
           name: category,

@@ -2,15 +2,15 @@ import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 
 /**
- * Salience Intelligence brand mark — "the signal rising above the noise."
+ * Europa Research brand mark — "the signal rising above the noise."
  * Four bars: three quiet noise bars in the ink/text colour and one tall
- * Signal-Amber bar that stands out (salience). Scales cleanly to a 16px
+ * Signal-Amber bar that stands out — the finding that matters. Scales to a 16px
  * favicon. Noise bars use `currentColor`, so the mark adapts to ink on light
  * and near-white on dark automatically.
  */
 export function BrandMark({
   className,
-  title = "Salience Intelligence",
+  title = "Europa Research",
 }: {
   className?: string;
   title?: string;
@@ -35,10 +35,9 @@ export function BrandMark({
 }
 
 /**
- * Full wordmark lockup: the signal mark + "Salience" (bold) and
- * "Intelligence" (light, muted). On narrow screens the second word is hidden,
- * leaving the mark + "Salience". `size` tunes the type for the condensed
- * (scrolled) header vs. the resting one.
+ * Full wordmark lockup: the signal mark + "Europa" (bold) and
+ * "Research" (light, muted). `size` tunes the type for the condensed
+ * (scrolled) header vs. the resting one; `tagline` shows the strapline beneath.
  */
 export function Wordmark({
   className,
@@ -64,14 +63,14 @@ export function Wordmark({
             size === "sm" ? "text-lg sm:text-xl" : "text-xl sm:text-[1.7rem]"
           )}
         >
-          Salience
+          Europa
           <span className="ml-1.5 font-medium text-muted-foreground">
-            Intelligence
+            Research
           </span>
         </span>
         {tagline && (
           <span className="mt-1.5 font-brand text-[10.5px] font-semibold leading-snug tracking-[0.03em] text-navy sm:text-xs">
-            See the Signal, Understand the Shift.
+            Intelligence for a Changing World.
           </span>
         )}
       </span>

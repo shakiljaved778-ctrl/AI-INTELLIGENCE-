@@ -25,7 +25,7 @@ const display = Fraunces({
 
 /**
  * Brand face — Space Grotesk, a precise technical grotesque. Carries the
- * Salience wordmark and the uppercase eyebrow/section labels, giving the
+ * Europa wordmark and the uppercase eyebrow/section labels, giving the
  * identity a "signal instrument" feel distinct from the editorial serif.
  */
 const brand = Space_Grotesk({

@@ -5,13 +5,13 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Salience Intelligence surfaces the signal from the noise — sharp, original reporting on AI, technology, markets, and culture, and what each shift means.",
+    "Europa Research is intelligence for a changing world — sharp, original reporting on AI, technology, markets, and culture, and what each shift means.",
 };
 
 const team = [
   { name: "AI Desk", role: "Models, research & policy" },
   { name: "Beyond Desk", role: "Tech, markets & culture" },
-  { name: "Signal Desk", role: "Analysis & picks" },
+  { name: "Editorial Desk", role: "Analysis & picks" },
 ];
 
 export default function AboutPage() {
@@ -25,8 +25,8 @@ export default function AboutPage() {
           <p className="eyebrow mt-3 !text-navy">{siteConfig.tagline}</p>
           <div className="prose-article mt-6">
             <p>
-              <strong>{siteConfig.name}</strong> exists to surface the signal
-              from the noise. We report on the technology reshaping the world —
+              <strong>{siteConfig.name}</strong> is intelligence for a changing
+              world. We report on the technology reshaping how we live and work —
               led by artificial intelligence — and on the shifts it sets off
               across markets, business, culture, and everyday life.
             </p>
@@ -34,8 +34,8 @@ export default function AboutPage() {
             <p>
               Enough is happening every day to fill a hundred feeds. Our job is
               to tell you what actually matters and why — clearly, accurately,
-              and without hype. We <em>see the signal</em>, then help you{" "}
-              <em>understand the shift</em>.
+              and without hype: rigorous analysis that helps you make sense of a
+              world in motion.
             </p>
             <h2>What we cover</h2>
             <p>

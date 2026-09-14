@@ -1,6 +1,6 @@
 # Automated news drafts (with human review)
 
-Salience Intelligence drafts fresh news articles on a schedule and opens them as a
+Europa Research drafts fresh news articles on a schedule and opens them as a
 **Pull Request for you to review**. Nothing is ever published automatically —
 you approve each batch by merging (or discard it by closing) the PR.
 

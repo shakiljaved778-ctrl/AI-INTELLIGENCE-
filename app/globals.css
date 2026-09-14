@@ -17,7 +17,7 @@
     --font-brand: var(--font-brand-sg), "SF Pro Display", ui-sans-serif,
       system-ui, "Segoe UI", Roboto, sans-serif;
 
-    /* ── Salience Intelligence "Signal" palette ──
+    /* ── Europa Research "Signal" palette ──
        Cool ink neutrals (premium, dossier-like) + one ownable Signal Amber
        accent — the "highlight what matters" colour. */
     --background: 210 24% 99%;
@@ -127,7 +127,7 @@
     font-family: var(--font-brand);
   }
 
-  /* Brand wordmark type — the Salience grotesque. */
+  /* Brand wordmark type — the Europa grotesque. */
   .font-brand {
     font-family: var(--font-brand);
   }

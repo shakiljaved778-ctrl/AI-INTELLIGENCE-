@@ -6,17 +6,17 @@
  * publication is a one-line change to `name`.
  */
 export const siteConfig = {
-  name: "Salience Intelligence",
+  name: "Europa Research",
   // Short form for tight spaces (mobile masthead, etc.).
-  shortName: "Salience",
-  tagline: "See the Signal, Understand the Shift.",
+  shortName: "Europa",
+  tagline: "Intelligence for a Changing World.",
   description:
-    "Salience Intelligence cuts through the noise — sharp, original reporting and analysis on AI, plus the technology, markets, and culture shifts that matter. We surface the signal and explain the shift.",
+    "Europa Research is intelligence for a changing world — sharp, original reporting and analysis on AI and the technology, markets, and culture shifts reshaping how we live and work.",
   // Update this to your production domain once deployed on Vercel.
   url: "https://cambrian-ai.vercel.app",
   ogImage: "/og-default.svg",
-  contactEmail: "tips@salience.ai",
-  advertiseEmail: "ads@salience.ai",
+  contactEmail: "tips@europaresearch.com",
+  advertiseEmail: "ads@europaresearch.com",
   links: {
     twitter: "https://twitter.com",
     github: "https://github.com",
