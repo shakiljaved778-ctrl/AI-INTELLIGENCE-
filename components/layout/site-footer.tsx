@@ -20,7 +20,7 @@ export function SiteFooter() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5">
               <BrandMark className="h-7 w-7" />
-              <p className="font-brand text-2xl font-semibold tracking-[-0.01em]">
+              <p className="font-brand text-2xl font-semibold uppercase tracking-[0.005em]">
                 Bayaan
                 <span className="ml-1.5 font-normal text-muted-foreground">
                   AI

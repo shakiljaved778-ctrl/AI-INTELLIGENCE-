@@ -60,7 +60,7 @@ export function Wordmark({
       <span className="flex flex-col justify-center leading-none">
         <span
           className={cn(
-            "font-brand font-bold tracking-[-0.025em] text-foreground transition-all duration-300",
+            "font-brand font-bold uppercase tracking-[-0.005em] text-foreground transition-all duration-300",
             size === "sm" ? "text-lg sm:text-xl" : "text-xl sm:text-[1.7rem]"
           )}
         >
