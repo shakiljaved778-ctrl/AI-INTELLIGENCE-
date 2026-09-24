@@ -1,0 +1,50 @@
+---
+title: "The Distillation Boom: How Small Models Learn From Big Ones"
+subtitle: "The cheapest way to build a capable model in 2026 isn't to train from scratch — it's to teach a small one to imitate a large one."
+date: "2026-09-23T18:00:00Z"
+author: "Europa AI Desk"
+category: "models"
+tags: ["Models", "Distillation", "Open Models", "Efficiency"]
+excerpt: "Model distillation — training small models to mimic large ones — has become the quiet engine behind cheap, capable AI."
+featured: false
+---
+
+One of the least glamorous techniques in AI has become one of its most important.
+Distillation — training a small "student" model to imitate the outputs of a large,
+expensive "teacher" — is now the quiet engine behind much of the cheap, capable AI
+reaching real products. It is how a model small enough to run on a phone can feel
+suspiciously close to one that needed a data center to train.
+
+The logic is simple. Training a frontier model from scratch costs a fortune and a
+mountain of data. But once that model exists, its behavior can be used to teach a
+far smaller one: the big model generates answers, and the small model learns to
+reproduce them. The student ends up punching well above its parameter count.
+
+## Why it matters now
+
+Distillation is what makes the economics of deployment work. Frontier models are
+expensive to run at scale; distilled models deliver most of the capability at a
+fraction of the cost and latency. For the vast majority of production tasks — the
+routing, drafting, and classification that make up real workloads — a distilled
+model is not a compromise, it is the sensible default.
+
+It also reshapes the competitive map. A lab that cannot afford to train a frontier
+model from zero can still ship an excellent smaller one by distilling from an
+available larger model, which is part of why the open-weight ecosystem has
+improved so fast.
+
+## The tensions underneath
+
+That same dynamic makes distillation contentious. Learning from a competitor's
+model — especially through its public interface — sits in a legal and ethical gray
+zone, and model providers increasingly write terms to forbid it. The line between
+"trained on public data" and "trained on a rival's outputs" is blurry and
+actively disputed.
+
+For now, distillation remains one of the most powerful levers in the field: the
+reason capability keeps trickling down from the frontier to the phone in your
+pocket, faster and cheaper than a scratch-built model ever could.
+
+<Callout>
+Overview of model distillation and why it underpins cheap, capable AI in 2026.
+</Callout>
