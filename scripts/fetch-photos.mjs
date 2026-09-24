@@ -127,6 +127,13 @@ const QUERY_OVERRIDES = {
   "openai-gpt6-astra": "futuristic technology glow",
   "physical-ai-robotics-investment": "robot arm factory",
   "qualcomm-aws-ai-chips": "semiconductor chip closeup",
+  // manual batch — 2026-09-24
+  "agentic-browser-arrives": "laptop web browser screen",
+  "ai-weather-models-forecast": "dramatic storm clouds sky",
+  "ai-agent-memory-turn": "computer memory chips macro",
+  "content-credentials-provenance": "photographer camera closeup",
+  "solid-state-batteries-ship": "electric car charging port",
+  "mlb-playoffs-2026-field-set": "baseball stadium night",
   // manual batch — 2026-09-13
   "small-models-on-device-surge": "laptop computer workspace",
   "enterprise-ai-eval-gap": "data dashboard analytics screen",
