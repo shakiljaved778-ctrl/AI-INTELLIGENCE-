@@ -2,10 +2,10 @@ import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 
 /**
- * Bayaan AI brand mark — a meridian globe with a Signal-Amber locus:
- * "intelligence for a changing world," a point of insight on the map. The
- * globe lines use `currentColor`, so the mark adapts to ink on light and
- * near-white on dark automatically; the locus is always Signal Amber.
+ * Bayaan AI brand mark — a geometric "B" monogram in a rounded app-icon tile.
+ * The stem and upper bowl are near-white; the lower bowl is Signal Amber. The
+ * tile is a self-contained logo (its own ink field + a hairline edge), so it
+ * reads identically on light and dark themes and scales to a 16px favicon.
  */
 export function BrandMark({
   className,
@@ -20,17 +20,26 @@ export function BrandMark({
       role="img"
       aria-label={title}
       className={cn("h-6 w-6 shrink-0", className)}
-      fill="none"
     >
-      <g stroke="currentColor" strokeWidth="1.4">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M3 12h18" />
-        <path d="M4.3 7.4Q12 5.7 19.7 7.4" opacity="0.6" />
-        <path d="M4.3 16.6Q12 18.3 19.7 16.6" opacity="0.6" />
-        <ellipse cx="12" cy="12" rx="4.2" ry="9" />
+      <rect
+        x="0.5"
+        y="0.5"
+        width="23"
+        height="23"
+        rx="6"
+        fill="#141A26"
+        stroke="rgba(148,163,184,0.20)"
+      />
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.3"
+      >
+        <path d="M9 6 V18" stroke="#F4F6FB" />
+        <path d="M9 6 H13.4 a3.1 3.1 0 0 1 0 6.2 H9" stroke="#F4F6FB" />
+        <path d="M9 12 H14 a3.3 3.3 0 0 1 0 6.4 H9" stroke="#F9B015" />
       </g>
-      {/* signal locus */}
-      <circle cx="15.6" cy="7.2" r="1.95" fill="hsl(var(--signal))" />
     </svg>
   );
 }
@@ -60,7 +69,7 @@ export function Wordmark({
       <span className="flex flex-col justify-center leading-none">
         <span
           className={cn(
-            "font-brand font-bold uppercase tracking-[-0.005em] text-foreground transition-all duration-300",
+            "font-brand font-bold uppercase tracking-[0.01em] text-foreground transition-all duration-300",
             size === "sm" ? "text-lg sm:text-xl" : "text-xl sm:text-[1.7rem]"
           )}
         >
