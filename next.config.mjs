@@ -11,7 +11,7 @@ const nextConfig = {
   // Use a stable build ID so an unchanged source tree produces a byte-identical
   // out/. This keeps the auto-rebuild CI (which commits out/) idempotent — it
   // only commits when content or code actually changed, avoiding noisy commits.
-  generateBuildId: async () => "europa-research",
+  generateBuildId: async () => "bayaan-ai",
   images: {
     // The site uses local/static assets only; no next/image optimization server
     // is needed.

@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Europa Research is intelligence for a changing world — sharp, original reporting on AI, technology, markets, and culture, and what each shift means.",
+    "Bayaan AI is intelligence for a changing world — sharp, original reporting on AI, technology, markets, and culture, and what each shift means.",
 };
 
 const team = [

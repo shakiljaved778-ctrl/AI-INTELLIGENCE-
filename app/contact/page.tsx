@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact & Tips",
   description:
-    "Send Europa Research a tip, a correction, or a press inquiry. We read everything.",
+    "Send Bayaan AI a tip, a correction, or a press inquiry. We read everything.",
 };
 
 export default function ContactPage() {

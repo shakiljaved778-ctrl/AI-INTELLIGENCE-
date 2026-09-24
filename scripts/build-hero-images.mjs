@@ -230,7 +230,7 @@ function generateSvg({ slug, category, title, tags }) {
   <rect width="1600" height="900" filter="url(#grain)" opacity="0.09"/>
 
   <!-- Masthead + kicker + headline -->
-  <text x="80" y="118" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="8" fill="#ffffff" opacity="0.6">EUROPA RESEARCH</text>
+  <text x="80" y="118" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="8" fill="#ffffff" opacity="0.6">BAYAAN AI</text>
   <rect x="80" y="${barY}" width="72" height="7" rx="3.5" fill="${accent}"/>
   <text x="82" y="${eyebrowY}" font-family="Helvetica, Arial, sans-serif" font-size="29" font-weight="700" letter-spacing="7" fill="${accent}">${label}</text>
   ${headlineSvg}

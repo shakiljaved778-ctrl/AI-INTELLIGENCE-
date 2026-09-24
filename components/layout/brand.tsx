@@ -2,14 +2,14 @@ import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 
 /**
- * Europa Research brand mark — a meridian globe with a Signal-Amber locus:
+ * Bayaan AI brand mark — a meridian globe with a Signal-Amber locus:
  * "intelligence for a changing world," a point of insight on the map. The
  * globe lines use `currentColor`, so the mark adapts to ink on light and
  * near-white on dark automatically; the locus is always Signal Amber.
  */
 export function BrandMark({
   className,
-  title = "Europa Research",
+  title = "Bayaan AI",
 }: {
   className?: string;
   title?: string;
@@ -36,8 +36,8 @@ export function BrandMark({
 }
 
 /**
- * Full wordmark lockup: the signal mark + "Europa" (bold) and
- * "Research" (light, muted). `size` tunes the type for the condensed
+ * Full wordmark lockup: the signal mark + "Bayaan" (bold) and
+ * "AI" (light, muted). `size` tunes the type for the condensed
  * (scrolled) header vs. the resting one; `tagline` shows the strapline beneath.
  */
 export function Wordmark({
@@ -64,9 +64,9 @@ export function Wordmark({
             size === "sm" ? "text-lg sm:text-xl" : "text-xl sm:text-[1.7rem]"
           )}
         >
-          Europa
+          Bayaan
           <span className="ml-1.5 font-medium text-muted-foreground">
-            Research
+            AI
           </span>
         </span>
         {tagline && (

@@ -6,17 +6,17 @@
  * publication is a one-line change to `name`.
  */
 export const siteConfig = {
-  name: "Europa Research",
+  name: "Bayaan AI",
   // Short form for tight spaces (mobile masthead, etc.).
-  shortName: "Europa",
+  shortName: "Bayaan",
   tagline: "Intelligence for a Changing World.",
   description:
-    "Europa Research is intelligence for a changing world — sharp, original reporting and analysis on AI and the technology, markets, and culture shifts reshaping how we live and work.",
+    "Bayaan AI is intelligence for a changing world — sharp, original reporting and analysis on AI and the technology, markets, and culture shifts reshaping how we live and work.",
   // Update this to your production domain once deployed on Vercel.
   url: "https://cambrian-ai.vercel.app",
   ogImage: "/og-default.svg",
-  contactEmail: "tips@europaresearch.com",
-  advertiseEmail: "ads@europaresearch.com",
+  contactEmail: "tips@bayaan.ai",
+  advertiseEmail: "ads@bayaan.ai",
   links: {
     twitter: "https://twitter.com",
     github: "https://github.com",

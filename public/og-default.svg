@@ -23,8 +23,8 @@
   <circle cx="195" cy="278" r="15" fill="#F9B015"/>
 
   <!-- Wordmark -->
-  <text x="270" y="300" font-family="'Space Grotesk', Helvetica, Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-1" fill="#F4F6FB">Europa</text>
-  <text x="545" y="300" font-family="'Space Grotesk', Helvetica, Arial, sans-serif" font-size="72" font-weight="400" letter-spacing="-1" fill="#8A93A6">Research</text>
+  <text x="270" y="300" font-family="'Space Grotesk', Helvetica, Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-1" fill="#F4F6FB">Bayaan</text>
+  <text x="545" y="300" font-family="'Space Grotesk', Helvetica, Arial, sans-serif" font-size="72" font-weight="400" letter-spacing="-1" fill="#8A93A6">AI</text>
 
   <!-- Tagline -->
   <text x="98" y="392" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-style="italic" fill="#F4F6FB">Intelligence for a Changing World.</text>

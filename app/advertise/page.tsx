@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Advertise",
   description:
-    "Reach a high-intent audience of founders, operators, investors, and the technically curious. Europa Research media kit and ad formats.",
+    "Reach a high-intent audience of founders, operators, investors, and the technically curious. Bayaan AI media kit and ad formats.",
 };
 
 const stats = [

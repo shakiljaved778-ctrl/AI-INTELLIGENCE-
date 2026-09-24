@@ -87,7 +87,7 @@ export const categories: Category[] = [
     slug: "opinion",
     title: "Opinion",
     description:
-      "Analysis, argument, and perspective from the Europa Research editorial desk.",
+      "Analysis, argument, and perspective from the Bayaan AI editorial desk.",
     group: "ai",
     color: "43 90% 52%",
   },

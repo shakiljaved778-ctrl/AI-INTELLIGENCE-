@@ -21,9 +21,9 @@ export function SiteFooter() {
             <div className="flex items-center gap-2.5">
               <BrandMark className="h-7 w-7" />
               <p className="font-brand text-2xl font-semibold tracking-[-0.01em]">
-                Europa
+                Bayaan
                 <span className="ml-1.5 font-normal text-muted-foreground">
-                  Research
+                  AI
                 </span>
               </p>
             </div>
