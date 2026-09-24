@@ -478,5 +478,95 @@
     "photographer_url": "https://www.pexels.com/@harry-tucker-1863749148",
     "pexels_url": "https://www.pexels.com/photo/electric-vehicle-charging-station-in-yass-australia-33083244/",
     "query": "electric car charging port"
+  },
+  "agents-back-office-automation": {
+    "photographer": "Toàn Văn",
+    "photographer_url": "https://www.pexels.com/@toan-van-1745332",
+    "pexels_url": "https://www.pexels.com/photo/monitors-on-desks-in-office-20988575/",
+    "query": "corporate office workstations"
+  },
+  "ai-data-center-land-rush": {
+    "photographer": "Brett Sayles",
+    "photographer_url": "https://www.pexels.com/@brett-sayles",
+    "pexels_url": "https://www.pexels.com/photo/high-angle-shot-of-network-switch-5050305/",
+    "query": "data center server hall"
+  },
+  "ai-productivity-paradox": {
+    "photographer": "Yan Krukau",
+    "photographer_url": "https://www.pexels.com/@yankrukov",
+    "pexels_url": "https://www.pexels.com/photo/businesspeople-brainstorming-in-a-meeting-7693692/",
+    "query": "business chart meeting office"
+  },
+  "ai-training-copyright-reckoning": {
+    "photographer": "SHOX ART",
+    "photographer_url": "https://www.pexels.com/@shox",
+    "pexels_url": "https://www.pexels.com/photo/wooden-library-shelves-with-ladder-in-wroclaw-37726708/",
+    "query": "law library books"
+  },
+  "conversational-voice-ai": {
+    "photographer": "Luis Quintero",
+    "photographer_url": "https://www.pexels.com/@jibarofoto",
+    "pexels_url": "https://www.pexels.com/photo/a-person-holding-a-steel-tool-10668303/",
+    "query": "microphone studio closeup"
+  },
+  "distillation-boom-small-models": {
+    "photographer": "Jakub Pabis",
+    "photographer_url": "https://www.pexels.com/@jakub-pabis-147246622",
+    "pexels_url": "https://www.pexels.com/photo/close-up-of-computer-circuit-board-components-36169769/",
+    "query": "circuit board macro"
+  },
+  "gold-record-run-2026": {
+    "photographer": "Michael Steinberg",
+    "photographer_url": "https://www.pexels.com/@michael-steinberg-95604",
+    "pexels_url": "https://www.pexels.com/photo/several-gold-plates-342946/",
+    "query": "gold bars"
+  },
+  "interpretability-grows-up": {
+    "photographer": "Vladimir Srajber",
+    "photographer_url": "https://www.pexels.com/@vladimirsrajber",
+    "pexels_url": "https://www.pexels.com/photo/close-up-of-a-microscope-13949979/",
+    "query": "microscope laboratory"
+  },
+  "multimodal-by-default": {
+    "photographer": "Diego G.",
+    "photographer_url": "https://www.pexels.com/@emptymirror",
+    "pexels_url": "https://www.pexels.com/photo/selective-focus-photo-of-a-dslr-camera-12548528/",
+    "query": "camera lens macro"
+  },
+  "nine-figure-researcher-talent-war": {
+    "photographer": "Valeria Nikitina",
+    "photographer_url": "https://www.pexels.com/@rlldied",
+    "pexels_url": "https://www.pexels.com/photo/city-buildings-under-the-cloudy-sky-9312364/",
+    "query": "modern office glass tower"
+  },
+  "ryder-cup-2026-returns": {
+    "photographer": "Ryan Lansdown",
+    "photographer_url": "https://www.pexels.com/@ryanlans",
+    "pexels_url": "https://www.pexels.com/photo/scenic-golf-course-with-mountain-view-32988401/",
+    "query": "golf course green flag"
+  },
+  "satellite-internet-race-2026": {
+    "photographer": "Zelch Csaba",
+    "photographer_url": "https://www.pexels.com/@zelch",
+    "pexels_url": "https://www.pexels.com/photo/satellite-orbiting-earth-with-blue-ocean-view-30596893/",
+    "query": "satellite orbit space"
+  },
+  "shadow-ai-enterprise": {
+    "photographer": "https://kaboompics.com/",
+    "photographer_url": "https://www.pexels.com/@karola-g",
+    "pexels_url": "https://www.pexels.com/photo/a-person-holding-a-pen-5717719/",
+    "query": "person laptop office desk"
+  },
+  "sleep-economy-boom": {
+    "photographer": "Max Vakhtbovych",
+    "photographer_url": "https://www.pexels.com/@artbovich",
+    "pexels_url": "https://www.pexels.com/photo/modern-bedroom-interior-design-8135505/",
+    "query": "cozy bedroom bed"
+  },
+  "streaming-bundle-returns": {
+    "photographer": "Soumith Soman",
+    "photographer_url": "https://www.pexels.com/@soumithsoman",
+    "pexels_url": "https://www.pexels.com/photo/photo-of-a-person-s-hand-holding-a-remote-control-4777979/",
+    "query": "television remote living room"
   }
 }

@@ -62,6 +62,141 @@
       <description>As the regular season winds down, the postseason picture sharpens — a few juggernauts, a scramble of wild cards, and the usual promise that seeding means little once October starts.</description>
     </item>
     <item>
+      <title>The Distillation Boom: How Small Models Learn From Big Ones</title>
+      <link>https://cambrian-ai.vercel.app/post/distillation-boom-small-models</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/distillation-boom-small-models</guid>
+      <pubDate>Wed, 23 Sep 2026 18:00:00 GMT</pubDate>
+      <category>Models</category>
+      <dc:creator>Europa AI Desk</dc:creator>
+      <description>The cheapest way to build a capable model in 2026 isn't to train from scratch — it's to teach a small one to imitate a large one.</description>
+    </item>
+    <item>
+      <title>The AI Data-Center Land Rush</title>
+      <link>https://cambrian-ai.vercel.app/post/ai-data-center-land-rush</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-data-center-land-rush</guid>
+      <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
+      <category>Companies</category>
+      <dc:creator>Europa AI Desk</dc:creator>
+      <description>The race to train and serve AI has turned into a race for land, power, and cooling water — remaking the physical map of the internet.</description>
+    </item>
+    <item>
+      <title>Gold's Quiet Record Run</title>
+      <link>https://cambrian-ai.vercel.app/post/gold-record-run-2026</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/gold-record-run-2026</guid>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Wealth &amp; Finance</category>
+      <dc:creator>Europa Desk</dc:creator>
+      <description>The oldest asset in finance has had a remarkable year — and what's driving it says as much about the mood of the world as about the metal.</description>
+    </item>
+    <item>
+      <title>The Nine-Figure Researcher: Inside the AI Talent War</title>
+      <link>https://cambrian-ai.vercel.app/post/nine-figure-researcher-talent-war</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/nine-figure-researcher-talent-war</guid>
+      <pubDate>Tue, 22 Sep 2026 18:00:00 GMT</pubDate>
+      <category>Companies</category>
+      <dc:creator>Europa Research Staff</dc:creator>
+      <description>A small pool of researchers can move the frontier — and the pay packages chasing them have reached numbers once reserved for star athletes.</description>
+    </item>
+    <item>
+      <title>Shadow AI: Your Employees Already Adopted It</title>
+      <link>https://cambrian-ai.vercel.app/post/shadow-ai-enterprise</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/shadow-ai-enterprise</guid>
+      <pubDate>Tue, 22 Sep 2026 15:00:00 GMT</pubDate>
+      <category>Enterprise</category>
+      <dc:creator>Europa Research Staff</dc:creator>
+      <description>Long before most companies finished writing an AI policy, their staff were quietly pasting work into whatever tool helped — creating a governance problem no memo can undo.</description>
+    </item>
+    <item>
+      <title>The Bundle Is Back: Streaming Reconsolidates</title>
+      <link>https://cambrian-ai.vercel.app/post/streaming-bundle-returns</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/streaming-bundle-returns</guid>
+      <pubDate>Tue, 22 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Entertainment</category>
+      <dc:creator>Europa Desk</dc:creator>
+      <description>After years of splintering into a dozen apps, streaming is quietly reassembling into bundles — the very thing cord-cutters fled cable to escape.</description>
+    </item>
+    <item>
+      <title>Voice Regains Its Voice: Conversational AI Gets Real</title>
+      <link>https://cambrian-ai.vercel.app/post/conversational-voice-ai</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/conversational-voice-ai</guid>
+      <pubDate>Mon, 21 Sep 2026 18:00:00 GMT</pubDate>
+      <category>Products</category>
+      <dc:creator>Europa AI Desk</dc:creator>
+      <description>After a decade of stilted assistants, natural, low-latency voice is finally good enough to change how people use their devices.</description>
+    </item>
+    <item>
+      <title>Opening the Black Box: Interpretability Grows Up</title>
+      <link>https://cambrian-ai.vercel.app/post/interpretability-grows-up</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/interpretability-grows-up</guid>
+      <pubDate>Mon, 21 Sep 2026 15:00:00 GMT</pubDate>
+      <category>Research</category>
+      <dc:creator>Europa Research Staff</dc:creator>
+      <description>The effort to understand what happens inside a neural network is maturing from academic curiosity into a practical tool for safety and debugging.</description>
+    </item>
+    <item>
+      <title>The Sleep Economy: Rest Becomes a Status Symbol</title>
+      <link>https://cambrian-ai.vercel.app/post/sleep-economy-boom</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/sleep-economy-boom</guid>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Lifestyle</category>
+      <dc:creator>Europa Desk</dc:creator>
+      <description>Once a sign of laziness, a good night's sleep has become an aspiration — and a fast-growing market of trackers, gadgets, and rituals to chase it.</description>
+    </item>
+    <item>
+      <title>The Copyright Reckoning Comes for AI Training</title>
+      <link>https://cambrian-ai.vercel.app/post/ai-training-copyright-reckoning</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-training-copyright-reckoning</guid>
+      <pubDate>Sun, 20 Sep 2026 18:00:00 GMT</pubDate>
+      <category>AI Policy</category>
+      <dc:creator>Europa Research Staff</dc:creator>
+      <description>The question of whether models can be trained on copyrighted work without permission is moving from lawsuit to settled practice — and licensing is becoming a real market.</description>
+    </item>
+    <item>
+      <title>The Productivity Paradox: Still Waiting for the AI Payoff</title>
+      <link>https://cambrian-ai.vercel.app/post/ai-productivity-paradox</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-productivity-paradox</guid>
+      <pubDate>Sun, 20 Sep 2026 15:00:00 GMT</pubDate>
+      <category>Opinion</category>
+      <dc:creator>Europa Editorial Board</dc:creator>
+      <description>Adoption is everywhere and the demos are dazzling — so why hasn't the promised surge in measured productivity clearly shown up yet?</description>
+    </item>
+    <item>
+      <title>The Satellite-Internet Race Widens</title>
+      <link>https://cambrian-ai.vercel.app/post/satellite-internet-race-2026</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/satellite-internet-race-2026</guid>
+      <pubDate>Sun, 20 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Technology</category>
+      <dc:creator>Europa Desk</dc:creator>
+      <description>For years one company owned the sky. Now rival constellations are finally reaching orbit — and competition is coming to space-based broadband.</description>
+    </item>
+    <item>
+      <title>Multimodal by Default: One Model to See, Hear, and Speak</title>
+      <link>https://cambrian-ai.vercel.app/post/multimodal-by-default</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/multimodal-by-default</guid>
+      <pubDate>Sat, 19 Sep 2026 18:00:00 GMT</pubDate>
+      <category>Models</category>
+      <dc:creator>Europa AI Desk</dc:creator>
+      <description>The line between text, image, audio, and video models is dissolving — and building everything into one system changes what AI can do.</description>
+    </item>
+    <item>
+      <title>Agents at Work: The Quiet Automation of the Back Office</title>
+      <link>https://cambrian-ai.vercel.app/post/agents-back-office-automation</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/agents-back-office-automation</guid>
+      <pubDate>Sat, 19 Sep 2026 15:00:00 GMT</pubDate>
+      <category>Enterprise</category>
+      <dc:creator>Europa AI Desk</dc:creator>
+      <description>The most consequential enterprise AI isn't a chatbot customers see — it's the agents quietly working through invoices, tickets, and reconciliations.</description>
+    </item>
+    <item>
+      <title>The Ryder Cup Returns: Golf Goes Tribal</title>
+      <link>https://cambrian-ai.vercel.app/post/ryder-cup-2026-returns</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ryder-cup-2026-returns</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Sports</category>
+      <dc:creator>Europa Desk</dc:creator>
+      <description>For one weekend, an individual sport becomes a team sport — and the most genteel game on Earth turns into its loudest, most partisan spectacle.</description>
+    </item>
+    <item>
       <title>The Small-Model Surge: Capable AI That Runs on Your Laptop</title>
       <link>https://cambrian-ai.vercel.app/post/small-models-on-device-surge</link>
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/small-models-on-device-surge</guid>
@@ -321,141 +456,6 @@
       <category>Products</category>
       <dc:creator>Europa Research Staff</dc:creator>
       <description>GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, and Meta's new flagship all landed in a week. A practical guide to picking.</description>
-    </item>
-    <item>
-      <title>The AI ROI Gap: Why Most Companies Invest and Only Some Cash In</title>
-      <link>https://cambrian-ai.vercel.app/post/enterprise-ai-roi-gap</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/enterprise-ai-roi-gap</guid>
-      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Enterprise</category>
-      <dc:creator>Europa Research Staff</dc:creator>
-      <description>Nearly everyone is using AI; far fewer see it in earnings. The winners share a strikingly consistent playbook.</description>
-    </item>
-    <item>
-      <title>What to Watch: The Fall AI Conference Season</title>
-      <link>https://cambrian-ai.vercel.app/post/fall-ai-conference-preview</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/fall-ai-conference-preview</guid>
-      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Events</category>
-      <dc:creator>Europa Research Staff</dc:creator>
-      <description>After a blistering launch week, attention turns to the research and industry gatherings that close out the year.</description>
-    </item>
-    <item>
-      <title>How GLP-1 Rewired the Snack Aisle</title>
-      <link>https://cambrian-ai.vercel.app/post/glp1-protein-snacking-2026</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/glp1-protein-snacking-2026</guid>
-      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Lifestyle</category>
-      <dc:creator>Europa Desk</dc:creator>
-      <description>Protein bars are graduating from gym bag to everyday staple as smaller, denser eating patterns reshape what and how we snack.</description>
-    </item>
-    <item>
-      <title>The NFL Is Back: A Wide-Open Race Kicks Off</title>
-      <link>https://cambrian-ai.vercel.app/post/nfl-2026-season-kickoff</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/nfl-2026-season-kickoff</guid>
-      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Sports</category>
-      <dc:creator>Europa Desk</dc:creator>
-      <description>The 2026 season opened with the Patriots visiting Seattle — and a league that looks less top-heavy than it has in years.</description>
-    </item>
-    <item>
-      <title>Chinese Models Are Quietly Dominating OpenRouter's Top 10</title>
-      <link>https://cambrian-ai.vercel.app/post/chinese-models-dominate-openrouter</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/chinese-models-dominate-openrouter</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Companies</category>
-      <dc:creator>Europa Research Staff</dc:creator>
-      <description>On the popular model marketplace, Chinese labs have at times held all of the top five slots — a real-usage signal that's hard to spin.</description>
-    </item>
-    <item>
-      <title>DeepMind’s ‘Atlas’ Predicts the Effect of All 9 Billion Human DNA Mutations</title>
-      <link>https://cambrian-ai.vercel.app/post/deepmind-atlas-genome</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/deepmind-atlas-genome</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Research</category>
-      <dc:creator>Europa Research Staff</dc:creator>
-      <description>Built on AlphaGenome, the model maps every possible single-letter change to the human genome — a potential accelerant for disease research.</description>
-    </item>
-    <item>
-      <title>Norris Defends His Crown as F1's Autumn Run Begins</title>
-      <link>https://cambrian-ai.vercel.app/post/f1-2026-norris-title-defense</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/f1-2026-norris-title-defense</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Sports</category>
-      <dc:creator>Europa Desk</dc:creator>
-      <description>The reigning champion enters the season's back half with a target on his car and a calendar that rewards consistency.</description>
-    </item>
-    <item>
-      <title>The IPO Window Swings Open Again</title>
-      <link>https://cambrian-ai.vercel.app/post/ipo-window-reopens-2026</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ipo-window-reopens-2026</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Wealth &amp; Finance</category>
-      <dc:creator>Europa Desk</dc:creator>
-      <description>Goldman Sachs sees U.S. listing proceeds potentially quadrupling toward $160 billion — a thaw after years of a frozen market.</description>
-    </item>
-    <item>
-      <title>Mistral Raises €3B to Back a Sovereign European AI</title>
-      <link>https://cambrian-ai.vercel.app/post/mistral-3b-sovereign-ai</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/mistral-3b-sovereign-ai</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Companies</category>
-      <dc:creator>Europa Research Staff</dc:creator>
-      <description>The French lab's mega-round is as much a geopolitical statement as a financing — Europe wants a frontier champion of its own.</description>
-    </item>
-    <item>
-      <title>Opinion: Model Fatigue Is a Buyer’s Problem, Not a Buyer’s Excuse</title>
-      <link>https://cambrian-ai.vercel.app/post/opinion-model-fatigue</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/opinion-model-fatigue</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Opinion</category>
-      <dc:creator>Europa Editorial Board</dc:creator>
-      <description>Four frontier models in a week is exhausting. It is not a reason to stop evaluating — it’s a reason to evaluate better.</description>
-    </item>
-    <item>
-      <title>Qualcomm and AWS Partner on AI Chips</title>
-      <link>https://cambrian-ai.vercel.app/post/qualcomm-aws-ai-chips</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/qualcomm-aws-ai-chips</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Products</category>
-      <dc:creator>Europa Research Staff</dc:creator>
-      <description>A tie-up between a mobile-silicon giant and the largest cloud signals how hard everyone is working to break the GPU bottleneck.</description>
-    </item>
-    <item>
-      <title>Opinion: The Real Winner of Launch Week Is the Buyer</title>
-      <link>https://cambrian-ai.vercel.app/post/buyers-win-launch-week</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/buyers-win-launch-week</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Opinion</category>
-      <dc:creator>Europa Editorial Board</dc:creator>
-      <description>Four labs racing at once is exhausting to track — and quietly excellent news for anyone purchasing AI.</description>
-    </item>
-    <item>
-      <title>Reuse Becomes Routine: A Falcon 9 Booster Flies for the 35th Time</title>
-      <link>https://cambrian-ai.vercel.app/post/falcon9-reuse-milestone-2026</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/falcon9-reuse-milestone-2026</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Technology</category>
-      <dc:creator>Europa Desk</dc:creator>
-      <description>A rocket stage flying dozens of times used to be science fiction. In 2026 it's a logistics footnote — and that's the point.</description>
-    </item>
-    <item>
-      <title>The New Frontier Lineup: A Scorecard After Launch Week</title>
-      <link>https://cambrian-ai.vercel.app/post/frontier-lineup-scorecard</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/frontier-lineup-scorecard</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Models</category>
-      <dc:creator>Europa Research Staff</dc:creator>
-      <description>Where GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, and Meta's flagship each stake their claim.</description>
-    </item>
-    <item>
-      <title>‘Model Fatigue’ Sets In as Four Labs Ship in One Week</title>
-      <link>https://cambrian-ai.vercel.app/post/ai-model-fatigue-launch-week</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-model-fatigue-launch-week</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Companies</category>
-      <dc:creator>Europa Research Staff</dc:creator>
-      <description>Anthropic, Google, OpenAI, and Meta all released new frontier models within days, leaving buyers struggling to keep pace.</description>
     </item>
   </channel>
 </rss>

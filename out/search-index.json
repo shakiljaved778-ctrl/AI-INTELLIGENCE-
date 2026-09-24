@@ -90,6 +90,231 @@
     "isPick": false
   },
   {
+    "title": "The Distillation Boom: How Small Models Learn From Big Ones",
+    "slug": "distillation-boom-small-models",
+    "subtitle": "The cheapest way to build a capable model in 2026 isn't to train from scratch — it's to teach a small one to imitate a large one.",
+    "excerpt": "One of the least glamorous techniques in AI has become one of its most important. Distillation — training a small \"student\" model to imitate the outputs of a…",
+    "category": "models",
+    "tags": [
+      "Models",
+      "Distillation",
+      "Open Models",
+      "Efficiency"
+    ],
+    "date": "2026-09-23T18:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The AI Data-Center Land Rush",
+    "slug": "ai-data-center-land-rush",
+    "subtitle": "The race to train and serve AI has turned into a race for land, power, and cooling water — remaking the physical map of the internet.",
+    "excerpt": "The most consequential competition in AI right now is not on a leaderboard. It is in county zoning offices, utility interconnection queues, and the…",
+    "category": "companies",
+    "tags": [
+      "Companies",
+      "Data Centers",
+      "Infrastructure",
+      "Energy"
+    ],
+    "date": "2026-09-23T15:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Gold's Quiet Record Run",
+    "slug": "gold-record-run-2026",
+    "subtitle": "The oldest asset in finance has had a remarkable year — and what's driving it says as much about the mood of the world as about the metal.",
+    "excerpt": "While flashier assets grabbed the headlines, the oldest one in finance quietly had a banner year. Gold — an inert metal that pays no dividend, earns no…",
+    "category": "finance",
+    "tags": [
+      "finance",
+      "gold",
+      "markets",
+      "commodities"
+    ],
+    "date": "2026-09-23T12:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Nine-Figure Researcher: Inside the AI Talent War",
+    "slug": "nine-figure-researcher-talent-war",
+    "subtitle": "A small pool of researchers can move the frontier — and the pay packages chasing them have reached numbers once reserved for star athletes.",
+    "excerpt": "In most industries, no single hire changes the trajectory of a company. AI is one of the exceptions. A relatively small number of researchers have demonstrably…",
+    "category": "companies",
+    "tags": [
+      "Companies",
+      "Talent",
+      "Hiring",
+      "Research"
+    ],
+    "date": "2026-09-22T18:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Shadow AI: Your Employees Already Adopted It",
+    "slug": "shadow-ai-enterprise",
+    "subtitle": "Long before most companies finished writing an AI policy, their staff were quietly pasting work into whatever tool helped — creating a governance problem no memo can undo.",
+    "excerpt": "The most important AI deployment inside most companies is the one nobody approved. While leadership debates strategy and legal drafts policy, employees have…",
+    "category": "enterprise",
+    "tags": [
+      "Enterprise",
+      "Governance",
+      "Security",
+      "Adoption"
+    ],
+    "date": "2026-09-22T15:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Bundle Is Back: Streaming Reconsolidates",
+    "slug": "streaming-bundle-returns",
+    "subtitle": "After years of splintering into a dozen apps, streaming is quietly reassembling into bundles — the very thing cord-cutters fled cable to escape.",
+    "excerpt": "The great promise of streaming was à la carte freedom: pay for only what you watch, cancel anytime, escape the bloated cable bundle forever. A decade later,…",
+    "category": "entertainment",
+    "tags": [
+      "entertainment",
+      "streaming",
+      "media",
+      "television"
+    ],
+    "date": "2026-09-22T12:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Voice Regains Its Voice: Conversational AI Gets Real",
+    "slug": "conversational-voice-ai",
+    "subtitle": "After a decade of stilted assistants, natural, low-latency voice is finally good enough to change how people use their devices.",
+    "excerpt": "Voice was supposed to be the future, then it wasn't. The first generation of voice assistants promised a world where you simply spoke your intent; what they…",
+    "category": "products",
+    "tags": [
+      "Products",
+      "Voice",
+      "Assistants",
+      "Interfaces"
+    ],
+    "date": "2026-09-21T18:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Opening the Black Box: Interpretability Grows Up",
+    "slug": "interpretability-grows-up",
+    "subtitle": "The effort to understand what happens inside a neural network is maturing from academic curiosity into a practical tool for safety and debugging.",
+    "excerpt": "For all their power, large AI models remain, to a striking degree, mysteries to the people who build them. A model can pass an exam, write working code, and…",
+    "category": "research",
+    "tags": [
+      "Research",
+      "Interpretability",
+      "Safety",
+      "Neural Networks"
+    ],
+    "date": "2026-09-21T15:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Sleep Economy: Rest Becomes a Status Symbol",
+    "slug": "sleep-economy-boom",
+    "subtitle": "Once a sign of laziness, a good night's sleep has become an aspiration — and a fast-growing market of trackers, gadgets, and rituals to chase it.",
+    "excerpt": "There was an era when sleep was something to brag about skipping — the four-hours-a- night founder, the always-on hustle. That badge has quietly flipped. In…",
+    "category": "lifestyle",
+    "tags": [
+      "lifestyle",
+      "sleep",
+      "wellness",
+      "health"
+    ],
+    "date": "2026-09-21T12:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Copyright Reckoning Comes for AI Training",
+    "slug": "ai-training-copyright-reckoning",
+    "subtitle": "The question of whether models can be trained on copyrighted work without permission is moving from lawsuit to settled practice — and licensing is becoming a real market.",
+    "excerpt": "The models that dazzled the world were built on a foundation the world is still arguing about: enormous quantities of text, images, and code scraped from the…",
+    "category": "policy",
+    "tags": [
+      "Policy",
+      "Copyright",
+      "Licensing",
+      "Data"
+    ],
+    "date": "2026-09-20T18:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Productivity Paradox: Still Waiting for the AI Payoff",
+    "slug": "ai-productivity-paradox",
+    "subtitle": "Adoption is everywhere and the demos are dazzling — so why hasn't the promised surge in measured productivity clearly shown up yet?",
+    "excerpt": "Here is the uncomfortable question hanging over the AI boom: if these tools are as transformative as their champions claim, where is the productivity surge?…",
+    "category": "opinion",
+    "tags": [
+      "Opinion",
+      "Productivity",
+      "Economy",
+      "Adoption"
+    ],
+    "date": "2026-09-20T15:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Satellite-Internet Race Widens",
+    "slug": "satellite-internet-race-2026",
+    "subtitle": "For years one company owned the sky. Now rival constellations are finally reaching orbit — and competition is coming to space-based broadband.",
+    "excerpt": "For most of the low-Earth-orbit era, satellite internet had a defining feature: one company was miles ahead of everyone else. It launched first, launched…",
+    "category": "technology",
+    "tags": [
+      "technology",
+      "space",
+      "satellites",
+      "internet"
+    ],
+    "date": "2026-09-20T12:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Multimodal by Default: One Model to See, Hear, and Speak",
+    "slug": "multimodal-by-default",
+    "subtitle": "The line between text, image, audio, and video models is dissolving — and building everything into one system changes what AI can do.",
+    "excerpt": "Not long ago, AI came in separate boxes: a language model for text, a vision model for images, a speech model for audio, each trained and used on its own. In…",
+    "category": "models",
+    "tags": [
+      "Models",
+      "Multimodal",
+      "Vision",
+      "Audio"
+    ],
+    "date": "2026-09-19T18:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Agents at Work: The Quiet Automation of the Back Office",
+    "slug": "agents-back-office-automation",
+    "subtitle": "The most consequential enterprise AI isn't a chatbot customers see — it's the agents quietly working through invoices, tickets, and reconciliations.",
+    "excerpt": "The AI that gets the headlines is the AI you can talk to. The AI that is quietly changing how companies run is the AI you never see: software agents grinding…",
+    "category": "enterprise",
+    "tags": [
+      "Enterprise",
+      "Agents",
+      "Automation",
+      "Operations"
+    ],
+    "date": "2026-09-19T15:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Ryder Cup Returns: Golf Goes Tribal",
+    "slug": "ryder-cup-2026-returns",
+    "subtitle": "For one weekend, an individual sport becomes a team sport — and the most genteel game on Earth turns into its loudest, most partisan spectacle.",
+    "excerpt": "Golf spends most of the year as the most solitary of pursuits: one player, one ball, a quiet crowd, a polite ripple of applause. Then, for one weekend, it…",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "golf",
+      "ryder-cup",
+      "team"
+    ],
+    "date": "2026-09-19T12:00:00Z",
+    "isPick": false
+  },
+  {
     "title": "The Small-Model Surge: Capable AI That Runs on Your Laptop",
     "slug": "small-models-on-device-surge",
     "subtitle": "A wave of efficient open-weight models is pushing useful inference off the cloud and onto the device in your hands.",
