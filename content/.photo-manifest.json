@@ -442,5 +442,41 @@
     "photographer_url": "https://www.pexels.com/@youn-seung-jin-36101845",
     "pexels_url": "https://www.pexels.com/photo/advanced-robotic-automation-in-laboratory-32778341/",
     "query": "robot arm engineering lab"
+  },
+  "agentic-browser-arrives": {
+    "photographer": "Firmbee.com",
+    "photographer_url": "https://www.pexels.com/@firmbee-com-22729701",
+    "pexels_url": "https://www.pexels.com/photo/person-using-macbook-drinking-coffee-6941871/",
+    "query": "laptop web browser screen"
+  },
+  "ai-agent-memory-turn": {
+    "photographer": "Adriano Ponte Abreu",
+    "photographer_url": "https://www.pexels.com/@adriano-ponte-abreu-2162631677",
+    "pexels_url": "https://www.pexels.com/photo/close-up-of-sk-hynix-dram-chips-on-circuit-board-38361204/",
+    "query": "computer memory chips macro"
+  },
+  "ai-weather-models-forecast": {
+    "photographer": "Abdullah Öğük",
+    "photographer_url": "https://www.pexels.com/@abdullahoguk",
+    "pexels_url": "https://www.pexels.com/photo/dramatic-cloudscape-with-sunlight-glow-39258975/",
+    "query": "dramatic storm clouds sky"
+  },
+  "content-credentials-provenance": {
+    "photographer": "Pixabay",
+    "photographer_url": "https://www.pexels.com/@pixabay",
+    "pexels_url": "https://www.pexels.com/photo/black-dslr-camera-on-white-surface-51383/",
+    "query": "photographer camera closeup"
+  },
+  "mlb-playoffs-2026-field-set": {
+    "photographer": "Steve DiMatteo",
+    "photographer_url": "https://www.pexels.com/@stevedimatteo",
+    "pexels_url": "https://www.pexels.com/photo/twilight-baseball-game-at-progressive-field-34087592/",
+    "query": "baseball stadium night"
+  },
+  "solid-state-batteries-ship": {
+    "photographer": "Harry Tucker",
+    "photographer_url": "https://www.pexels.com/@harry-tucker-1863749148",
+    "pexels_url": "https://www.pexels.com/photo/electric-vehicle-charging-station-in-yass-australia-33083244/",
+    "query": "electric car charging port"
   }
 }

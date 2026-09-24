@@ -1,5 +1,95 @@
 [
   {
+    "title": "The Agentic Browser Arrives: Your Next Tab Does the Work",
+    "slug": "agentic-browser-arrives",
+    "subtitle": "A wave of AI-native browsers wants to move from showing you the web to acting on it — booking, buying, and researching on your behalf.",
+    "excerpt": "For thirty years the browser has been a window: it fetches pages and shows them to you, and you do the clicking. The AI-native browsers arriving in 2026 want…",
+    "category": "products",
+    "tags": [
+      "Agents",
+      "Browsers",
+      "Products",
+      "AI"
+    ],
+    "date": "2026-09-24T14:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "AI Weather Models Outpace the Forecast",
+    "slug": "ai-weather-models-forecast",
+    "subtitle": "Machine-learning systems now rival — and often beat — the physics-based models that have run forecasting for decades, at a fraction of the compute.",
+    "excerpt": "Weather forecasting has, for half a century, been one of computing's great brute-force problems: carve the atmosphere into a grid, apply the equations of fluid…",
+    "category": "research",
+    "tags": [
+      "Research",
+      "Weather",
+      "Forecasting",
+      "Science"
+    ],
+    "date": "2026-09-24T13:30:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Memory Turn: AI Agents Start to Remember",
+    "slug": "ai-agent-memory-turn",
+    "subtitle": "Persistent memory is becoming the feature that separates a useful assistant from a clever one that forgets you the moment the chat ends.",
+    "excerpt": "Ask most AI assistants the same question twice a week apart and you will get two strangers answering. For all their fluency, the systems that reached the…",
+    "category": "models",
+    "tags": [
+      "Models",
+      "Memory",
+      "Agents",
+      "LLM"
+    ],
+    "date": "2026-09-24T13:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Proving What's Real: Content Credentials Go Mainstream",
+    "slug": "content-credentials-provenance",
+    "subtitle": "As AI-generated media becomes indistinguishable from the real thing, a quiet standard for tamper-evident provenance is spreading across cameras, software, and platforms.",
+    "excerpt": "The problem with a world of convincing synthetic media is not only that fakes exist; it is that the real can no longer prove it is real. When any image, voice,…",
+    "category": "policy",
+    "tags": [
+      "Policy",
+      "Provenance",
+      "Media",
+      "Trust"
+    ],
+    "date": "2026-09-24T12:30:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Solid-State Batteries Finally Ship: The Range Barrier Cracks",
+    "slug": "solid-state-batteries-ship",
+    "subtitle": "After a decade of 'two years away,' solid-state cells are reaching real vehicles — promising more range, faster charging, and a lower fire risk.",
+    "excerpt": "For a decade, solid-state batteries have been the technology of the future — and, skeptics liked to add, always would be. The pitch was irresistible: replace…",
+    "category": "technology",
+    "tags": [
+      "technology",
+      "batteries",
+      "electric-vehicles",
+      "energy"
+    ],
+    "date": "2026-09-24T12:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "October Baseball: The MLB Playoff Field Takes Shape",
+    "slug": "mlb-playoffs-2026-field-set",
+    "subtitle": "As the regular season winds down, the postseason picture sharpens — a few juggernauts, a scramble of wild cards, and the usual promise that seeding means little once October starts.",
+    "excerpt": "The calendar has done its annual work: the long, 162-game grind of the baseball season is nearly spent, and the postseason picture is coming into focus.…",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "baseball",
+      "mlb",
+      "playoffs"
+    ],
+    "date": "2026-09-24T11:30:00Z",
+    "isPick": false
+  },
+  {
     "title": "The Small-Model Surge: Capable AI That Runs on Your Laptop",
     "slug": "small-models-on-device-surge",
     "subtitle": "A wave of efficient open-weight models is pushing useful inference off the cloud and onto the device in your hands.",
