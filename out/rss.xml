@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Europa Research</title>
+    <title>Bayaan AI</title>
     <link>https://cambrian-ai.vercel.app</link>
     <atom:link href="https://cambrian-ai.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
-    <description>Europa Research is intelligence for a changing world — sharp, original reporting and analysis on AI and the technology, markets, and culture shifts reshaping how we live and work.</description>
+    <description>Bayaan AI is intelligence for a changing world — sharp, original reporting and analysis on AI and the technology, markets, and culture shifts reshaping how we live and work.</description>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Sep 2026 14:00:00 GMT</lastBuildDate>
     <item>
@@ -13,7 +13,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/agentic-browser-arrives</guid>
       <pubDate>Thu, 24 Sep 2026 14:00:00 GMT</pubDate>
       <category>Products</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>A wave of AI-native browsers wants to move from showing you the web to acting on it — booking, buying, and researching on your behalf.</description>
     </item>
     <item>
@@ -22,7 +22,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-weather-models-forecast</guid>
       <pubDate>Thu, 24 Sep 2026 13:30:00 GMT</pubDate>
       <category>Research</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>Machine-learning systems now rival — and often beat — the physics-based models that have run forecasting for decades, at a fraction of the compute.</description>
     </item>
     <item>
@@ -31,7 +31,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-agent-memory-turn</guid>
       <pubDate>Thu, 24 Sep 2026 13:00:00 GMT</pubDate>
       <category>Models</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>Persistent memory is becoming the feature that separates a useful assistant from a clever one that forgets you the moment the chat ends.</description>
     </item>
     <item>
@@ -40,7 +40,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/content-credentials-provenance</guid>
       <pubDate>Thu, 24 Sep 2026 12:30:00 GMT</pubDate>
       <category>AI Policy</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>As AI-generated media becomes indistinguishable from the real thing, a quiet standard for tamper-evident provenance is spreading across cameras, software, and platforms.</description>
     </item>
     <item>
@@ -49,7 +49,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/solid-state-batteries-ship</guid>
       <pubDate>Thu, 24 Sep 2026 12:00:00 GMT</pubDate>
       <category>Technology</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>After a decade of 'two years away,' solid-state cells are reaching real vehicles — promising more range, faster charging, and a lower fire risk.</description>
     </item>
     <item>
@@ -58,7 +58,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/mlb-playoffs-2026-field-set</guid>
       <pubDate>Thu, 24 Sep 2026 11:30:00 GMT</pubDate>
       <category>Sports</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>As the regular season winds down, the postseason picture sharpens — a few juggernauts, a scramble of wild cards, and the usual promise that seeding means little once October starts.</description>
     </item>
     <item>
@@ -67,7 +67,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/distillation-boom-small-models</guid>
       <pubDate>Wed, 23 Sep 2026 18:00:00 GMT</pubDate>
       <category>Models</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>The cheapest way to build a capable model in 2026 isn't to train from scratch — it's to teach a small one to imitate a large one.</description>
     </item>
     <item>
@@ -76,7 +76,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-data-center-land-rush</guid>
       <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
       <category>Companies</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>The race to train and serve AI has turned into a race for land, power, and cooling water — remaking the physical map of the internet.</description>
     </item>
     <item>
@@ -85,7 +85,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/gold-record-run-2026</guid>
       <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
       <category>Wealth &amp; Finance</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>The oldest asset in finance has had a remarkable year — and what's driving it says as much about the mood of the world as about the metal.</description>
     </item>
     <item>
@@ -94,7 +94,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/nine-figure-researcher-talent-war</guid>
       <pubDate>Tue, 22 Sep 2026 18:00:00 GMT</pubDate>
       <category>Companies</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>A small pool of researchers can move the frontier — and the pay packages chasing them have reached numbers once reserved for star athletes.</description>
     </item>
     <item>
@@ -103,7 +103,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/shadow-ai-enterprise</guid>
       <pubDate>Tue, 22 Sep 2026 15:00:00 GMT</pubDate>
       <category>Enterprise</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>Long before most companies finished writing an AI policy, their staff were quietly pasting work into whatever tool helped — creating a governance problem no memo can undo.</description>
     </item>
     <item>
@@ -112,7 +112,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/streaming-bundle-returns</guid>
       <pubDate>Tue, 22 Sep 2026 12:00:00 GMT</pubDate>
       <category>Entertainment</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>After years of splintering into a dozen apps, streaming is quietly reassembling into bundles — the very thing cord-cutters fled cable to escape.</description>
     </item>
     <item>
@@ -121,7 +121,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/conversational-voice-ai</guid>
       <pubDate>Mon, 21 Sep 2026 18:00:00 GMT</pubDate>
       <category>Products</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>After a decade of stilted assistants, natural, low-latency voice is finally good enough to change how people use their devices.</description>
     </item>
     <item>
@@ -130,7 +130,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/interpretability-grows-up</guid>
       <pubDate>Mon, 21 Sep 2026 15:00:00 GMT</pubDate>
       <category>Research</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>The effort to understand what happens inside a neural network is maturing from academic curiosity into a practical tool for safety and debugging.</description>
     </item>
     <item>
@@ -139,7 +139,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/sleep-economy-boom</guid>
       <pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
       <category>Lifestyle</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>Once a sign of laziness, a good night's sleep has become an aspiration — and a fast-growing market of trackers, gadgets, and rituals to chase it.</description>
     </item>
     <item>
@@ -148,7 +148,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-training-copyright-reckoning</guid>
       <pubDate>Sun, 20 Sep 2026 18:00:00 GMT</pubDate>
       <category>AI Policy</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>The question of whether models can be trained on copyrighted work without permission is moving from lawsuit to settled practice — and licensing is becoming a real market.</description>
     </item>
     <item>
@@ -157,7 +157,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-productivity-paradox</guid>
       <pubDate>Sun, 20 Sep 2026 15:00:00 GMT</pubDate>
       <category>Opinion</category>
-      <dc:creator>Europa Editorial Board</dc:creator>
+      <dc:creator>Bayaan Editorial Board</dc:creator>
       <description>Adoption is everywhere and the demos are dazzling — so why hasn't the promised surge in measured productivity clearly shown up yet?</description>
     </item>
     <item>
@@ -166,7 +166,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/satellite-internet-race-2026</guid>
       <pubDate>Sun, 20 Sep 2026 12:00:00 GMT</pubDate>
       <category>Technology</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>For years one company owned the sky. Now rival constellations are finally reaching orbit — and competition is coming to space-based broadband.</description>
     </item>
     <item>
@@ -175,7 +175,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/multimodal-by-default</guid>
       <pubDate>Sat, 19 Sep 2026 18:00:00 GMT</pubDate>
       <category>Models</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>The line between text, image, audio, and video models is dissolving — and building everything into one system changes what AI can do.</description>
     </item>
     <item>
@@ -184,7 +184,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/agents-back-office-automation</guid>
       <pubDate>Sat, 19 Sep 2026 15:00:00 GMT</pubDate>
       <category>Enterprise</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>The most consequential enterprise AI isn't a chatbot customers see — it's the agents quietly working through invoices, tickets, and reconciliations.</description>
     </item>
     <item>
@@ -193,7 +193,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ryder-cup-2026-returns</guid>
       <pubDate>Sat, 19 Sep 2026 12:00:00 GMT</pubDate>
       <category>Sports</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>For one weekend, an individual sport becomes a team sport — and the most genteel game on Earth turns into its loudest, most partisan spectacle.</description>
     </item>
     <item>
@@ -202,7 +202,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/small-models-on-device-surge</guid>
       <pubDate>Sun, 13 Sep 2026 18:00:00 GMT</pubDate>
       <category>Models</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>A wave of efficient open-weight models is pushing useful inference off the cloud and onto the device in your hands.</description>
     </item>
     <item>
@@ -211,7 +211,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/enterprise-ai-eval-gap</guid>
       <pubDate>Sun, 13 Sep 2026 17:30:00 GMT</pubDate>
       <category>Enterprise</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>As enterprises move agents into production, the hardest problem isn't the model — it's knowing whether it's working.</description>
     </item>
     <item>
@@ -220,7 +220,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/state-ai-law-patchwork</guid>
       <pubDate>Sun, 13 Sep 2026 17:00:00 GMT</pubDate>
       <category>AI Policy</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>With no single federal standard, companies face a growing thicket of state AI rules — and compliance is becoming a competitive advantage.</description>
     </item>
     <item>
@@ -229,7 +229,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/world-models-physics-research</guid>
       <pubDate>Sun, 13 Sep 2026 16:30:00 GMT</pubDate>
       <category>Research</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>Systems that learn how the world behaves — not just how to talk about it — are edging out of the lab and into robotics and simulation.</description>
     </item>
     <item>
@@ -238,7 +238,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/repairable-phone-right-to-repair</guid>
       <pubDate>Sun, 13 Sep 2026 16:00:00 GMT</pubDate>
       <category>Technology</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>After a decade of glued-shut gadgets, repairability is becoming a selling point — pushed by new laws and, increasingly, by buyers.</description>
     </item>
     <item>
@@ -247,7 +247,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/private-credit-shift</guid>
       <pubDate>Sun, 13 Sep 2026 15:30:00 GMT</pubDate>
       <category>Wealth &amp; Finance</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>Lending that once ran through banks and bond markets is increasingly happening in private funds — reshaping who finances the economy.</description>
     </item>
     <item>
@@ -256,7 +256,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-agents-weaponized-papercut-attack</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>AI Policy</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>Researchers say a threat actor wired together AI coding agents to exploit known bugs — reaching remote code execution in under four hours.</description>
     </item>
     <item>
@@ -265,7 +265,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/amodei-pace-the-frontier</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>AI Policy</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>Anthropic’s Dario Amodei urges companies and governments to ease off the accelerator — days after a safety researcher quit warning the industry is ‘gambling with our lives.’</description>
     </item>
     <item>
@@ -274,7 +274,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/box-office-record-summer-2026</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>Entertainment</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>Summer 2026 hit a record $4.76 billion in the U.S. — and the year's box office has $10 billion in sight as streaming loses its shine.</description>
     </item>
     <item>
@@ -283,7 +283,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/deepseek-v41-flash-scales-up</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>Models</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>The new Flash model is roughly twice the size of its predecessor, yet launched cheaper and with stronger benchmarks.</description>
     </item>
     <item>
@@ -292,7 +292,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/fall-tv-premieres-2026</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>Entertainment</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>Mid-September reloads the streaming slate — 'Slow Horses,' a 'Stranger Things' spin-off, and a fresh 'Traitors' land within days of each other.</description>
     </item>
     <item>
@@ -301,7 +301,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/markets-brace-for-fed-decision</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>Wealth &amp; Finance</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>A firmer CPI has money markets pricing a September move as near-certain, even as falling oil helped stocks steady after a four-day slide.</description>
     </item>
     <item>
@@ -310,7 +310,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/openai-raises-frontier-prices</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>Companies</category>
-      <dc:creator>Europa AI Desk</dc:creator>
+      <dc:creator>Bayaan AI Desk</dc:creator>
       <description>The company lifted its top-tier rate to $10/$50 per million tokens — and Sam Altman says an IPO isn't happening this year.</description>
     </item>
     <item>
@@ -319,7 +319,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/premier-league-arsenal-perfect-start</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>Sports</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>A Premier League matchday that rewarded the ruthless and punished the rest — Liverpool and Chelsea among those dropping points.</description>
     </item>
     <item>
@@ -328,7 +328,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/team-tennis-davis-cup-bjk-cup</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>Sports</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>After a summer of singles drama, the sport's national team competitions bring a different kind of pressure — playing for a flag, not a ranking.</description>
     </item>
     <item>
@@ -337,7 +337,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/techtember-2026-phone-flood</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>Technology</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>From the iPhone 18 Pro to a wave of foldables and Snapdragon flagships, September's launch glut is really a battle over one thing — a reason to upgrade.</description>
     </item>
     <item>
@@ -346,7 +346,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/wellness-travel-2026-recalibrate</guid>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>Lifestyle</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>2026's wellness travel is moving from performance and pampering toward sleep, mental health, and 'intention-led' trips built around how a place makes you feel.</description>
     </item>
     <item>
@@ -355,7 +355,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/emmys-2026-preview</guid>
       <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
       <category>Entertainment</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>Television's biggest night arrives with a hospital drama out front, 'Hacks' bowing out on a record, and a new host in the chair.</description>
     </item>
     <item>
@@ -364,7 +364,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/awards-season-nominations-2026</guid>
       <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
       <category>Entertainment</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>CMA and Latin Grammy nominations kick off the fall run-up, a stretch that increasingly shapes what the algorithms push next.</description>
     </item>
     <item>
@@ -373,7 +373,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-are-embeddings</guid>
       <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
       <category>Learn</category>
-      <dc:creator>Europa Explainers</dc:creator>
+      <dc:creator>Bayaan Explainers</dc:creator>
       <description>The quiet building block behind semantic search, RAG, recommendations, and vector databases.</description>
     </item>
     <item>
@@ -382,7 +382,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-is-a-vector-database</guid>
       <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
       <category>Learn</category>
-      <dc:creator>Europa Explainers</dc:creator>
+      <dc:creator>Bayaan Explainers</dc:creator>
       <description>The storage layer that lets AI search by meaning instead of exact keywords.</description>
     </item>
     <item>
@@ -391,7 +391,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-is-agentic-ai</guid>
       <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
       <category>Learn</category>
-      <dc:creator>Europa Explainers</dc:creator>
+      <dc:creator>Bayaan Explainers</dc:creator>
       <description>What separates an 'agent' from a chatbot — and why it's the defining AI pattern of the moment.</description>
     </item>
     <item>
@@ -400,7 +400,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-is-mcp</guid>
       <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
       <category>Learn</category>
-      <dc:creator>Europa Explainers</dc:creator>
+      <dc:creator>Bayaan Explainers</dc:creator>
       <description>The open standard that lets AI assistants plug into your tools and data the way USB-C plugs into your devices.</description>
     </item>
     <item>
@@ -409,7 +409,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-is-rag</guid>
       <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
       <category>Learn</category>
-      <dc:creator>Europa Explainers</dc:creator>
+      <dc:creator>Bayaan Explainers</dc:creator>
       <description>How to give a language model access to your own, up-to-date knowledge — without retraining it.</description>
     </item>
     <item>
@@ -418,7 +418,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-is-vibe-coding</guid>
       <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
       <category>Learn</category>
-      <dc:creator>Europa Explainers</dc:creator>
+      <dc:creator>Bayaan Explainers</dc:creator>
       <description>Building software by describing what you want in natural language and letting AI write the code — plus where it helps and where it bites.</description>
     </item>
     <item>
@@ -427,7 +427,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/apple-foldable-2nm-chip-2026</guid>
       <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
       <category>Technology</category>
-      <dc:creator>Europa Desk</dc:creator>
+      <dc:creator>Bayaan Desk</dc:creator>
       <description>The company that waited out the foldable era finally joins it — paired with a leap to 2-nanometer silicon.</description>
     </item>
     <item>
@@ -436,7 +436,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/chinese-ai-labs-race</guid>
       <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
       <category>Companies</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>Alibaba, Moonshot, DeepSeek, and Z.ai are shipping fast and undercutting US labs on price, reshaping the open-model landscape.</description>
     </item>
     <item>
@@ -445,7 +445,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-funding-proof-over-promise</guid>
       <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
       <category>Opinion</category>
-      <dc:creator>Europa Editorial Board</dc:creator>
+      <dc:creator>Bayaan Editorial Board</dc:creator>
       <description>Mega-rounds still go to the giants — but for everyone else, the era of raising on a slide deck and a vibe is over.</description>
     </item>
     <item>
@@ -454,7 +454,7 @@
       <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/choosing-frontier-models-guide</guid>
       <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
       <category>Products</category>
-      <dc:creator>Europa Research Staff</dc:creator>
+      <dc:creator>Bayaan AI Staff</dc:creator>
       <description>GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, and Meta's new flagship all landed in a week. A practical guide to picking.</description>
     </item>
   </channel>

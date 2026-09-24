@@ -33,7 +33,7 @@
   <rect width="1600" height="900" filter="url(#grain)" opacity="0.09"/>
 
   <!-- Masthead + kicker + headline -->
-  <text x="80" y="118" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="8" fill="#ffffff" opacity="0.6">EUROPA RESEARCH</text>
+  <text x="80" y="118" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="8" fill="#ffffff" opacity="0.6">BAYAAN AI</text>
   <rect x="80" y="482" width="72" height="7" rx="3.5" fill="hsl(14, 92%, 66%)"/>
   <text x="82" y="512" font-family="Helvetica, Arial, sans-serif" font-size="29" font-weight="700" letter-spacing="7" fill="hsl(14, 92%, 66%)">POLICY</text>
   <text x="78" y="622" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="600" letter-spacing="-1.5" fill="#ffffff">Agents on the</text><text x="78" y="707" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="600" letter-spacing="-1.5" fill="#ffffff">Attack: Hundreds of</text><text x="78" y="792" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="600" letter-spacing="-1.5" fill="#ffffff">AI Bots Breach 440…</text>
