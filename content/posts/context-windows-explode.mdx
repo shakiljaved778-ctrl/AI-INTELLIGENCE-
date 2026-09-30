@@ -1,0 +1,56 @@
+---
+title: "The Context Window Explodes: Million-Token Models Go Mainstream"
+subtitle: "Models can now read a whole codebase, a stack of contracts, or a year of email in a single prompt — changing what you build and how you use them."
+date: "2026-09-29T14:00:00Z"
+author: "Bayaan AI Staff"
+category: "models"
+tags: ["Models", "Context", "LLM", "Retrieval"]
+excerpt: "Million-token context windows let models ingest entire codebases and document sets at once, reshaping how they're used."
+featured: false
+---
+
+For most of the chatbot era, the models had short memories. You could paste in a few
+pages, but hand over a whole codebase, a stack of contracts, or a year of email and
+you hit the wall of the context window — the amount of text a model can consider at
+once. In 2026, that wall moved dramatically. Million-token context windows have gone
+mainstream, and the practical effect is larger than the number suggests.
+
+A model that can read an entire repository, a full case file, or a book-length
+document in a single prompt behaves differently from one you feed in fragments. It
+can reason across the whole thing at once — spotting the contradiction between clause
+3 and clause 40, tracing a bug across files, or summarizing a sprawling thread
+without losing the plot in the middle.
+
+## What it changes for builders
+
+Long context reshapes how applications are built. For years, the standard workaround
+was retrieval — chopping documents into pieces, storing them, and fetching the
+relevant bits at query time. Long context doesn't kill that approach, but it changes
+the calculus: for many tasks you can now just hand the model everything and skip the
+plumbing, which is simpler and often more accurate because nothing relevant gets left
+out of the fetch.
+
+## The catches
+
+Bigger windows are not a free lunch. Processing a million tokens is slow and
+expensive, so throwing the maximum at every query is wasteful. And capacity is not
+the same as attention: models can still lose track of details buried in the middle of
+an enormous prompt — the "lost in the middle" problem — so more context does not
+automatically mean better answers. Feeding a model a haystack and hoping it finds the
+needle can backfire.
+
+## The pragmatic middle
+
+The teams getting the most from long context treat it as a tool, not a default:
+retrieval to narrow the field, long context to reason over what's left, and careful
+attention to cost. Used well, it removes a whole category of engineering headache and
+lets models work over the messy, book-length reality of real documents.
+
+The short-memory era of AI is ending. What replaces it is a model you can hand the
+whole file to — as long as you remember that reading everything and understanding
+everything are still not quite the same thing.
+
+<Callout>
+Overview of long-context models, how they change application design, and their
+limits, as of 2026.
+</Callout>

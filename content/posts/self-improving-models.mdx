@@ -1,0 +1,57 @@
+---
+title: "Self-Improving Models: When AI Trains AI"
+subtitle: "As high-quality human data grows scarce, labs are leaning on models to generate and grade their own training material — a powerful, and delicate, loop."
+date: "2026-09-28T14:00:00Z"
+author: "Bayaan AI Staff"
+category: "research"
+tags: ["Research", "Synthetic Data", "Training", "Reinforcement Learning"]
+excerpt: "With human data running short, labs increasingly train models on AI-generated, AI-graded data — a promising but risky loop."
+featured: false
+---
+
+The models that defined the last few years were trained on a finite resource: the
+text humans have written. That well is not bottomless, and the best of it has largely
+been used. So the field has turned to an idea that sounds almost paradoxical — having
+models generate and grade the data used to train the next models. AI, increasingly,
+is training AI.
+
+It is less strange than it sounds. A capable model can produce enormous quantities of
+practice problems, candidate solutions, and critiques, and — crucially — in domains
+where answers are checkable, it can verify its own work. A model can write a math
+problem, solve it many ways, keep the solutions that check out, and learn from them.
+That verifiable feedback loop is how systems have kept improving on reasoning and
+code even as fresh human data has grown scarce.
+
+## Why it works — where it works
+
+The technique is strongest exactly where correctness is objective: mathematics, code,
+formal logic, anything you can test. There, the model is not just imagining more data;
+it is generating attempts and filtering for the ones that provably work, which is a
+reliable teacher. This is a big part of why reasoning and coding capability has
+advanced so fast.
+
+## The risk of the loop
+
+The danger is subtler in domains without a ground truth. A model trained too heavily
+on its own output can drift — amplifying its blind spots, narrowing its range, and
+mistaking its own tendencies for the world. Researchers call the worst version "model
+collapse," where quality quietly degrades as each generation learns from the last
+instead of from reality. Keeping real human data and real-world feedback in the mix is
+what prevents the loop from becoming an echo chamber.
+
+## The stakes
+
+If self-improvement generalizes beyond the checkable domains, it changes the
+trajectory of the field — capability that compounds with less dependence on scraping
+ever more human text. If it doesn't, labs still need fresh, high-quality human data,
+which is part of why licensing deals and expert-generated datasets have become so
+valuable.
+
+Either way, the question of how AI learns is shifting from "what did humans write?"
+to "what can a model reliably teach itself?" — and the answer will shape how far, and
+how safely, the next models go.
+
+<Callout>
+Overview of self-improving training loops — synthetic data and self-verification —
+and the risks of learning from one's own output, as of 2026.
+</Callout>
