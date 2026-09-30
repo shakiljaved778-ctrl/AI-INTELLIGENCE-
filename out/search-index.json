@@ -1,5 +1,185 @@
 [
   {
+    "title": "Coding Agents Graduate: From Autocomplete to Autonomous Pull Requests",
+    "slug": "coding-agents-graduate",
+    "subtitle": "AI has moved past suggesting the next line — it now takes a ticket, writes the change, runs the tests, and opens the PR. The hard part is trusting it.",
+    "excerpt": "The first wave of AI coding tools finished your line of code. The wave arriving in 2026 finishes your ticket. Coding agents now take a task described in plain…",
+    "category": "products",
+    "tags": [
+      "Products",
+      "Coding",
+      "Agents",
+      "Developers"
+    ],
+    "date": "2026-09-30T14:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Reasoning Models: A New Gear, or a Wall?",
+    "slug": "reasoning-models-new-gear",
+    "subtitle": "Letting models 'think' longer at inference time unlocked a jump in hard-problem performance. The debate now is how far that lever can stretch.",
+    "excerpt": "The last big unlock in AI capability did not come from a bigger model. It came from letting the model think longer. \"Reasoning\" models — which spend extra…",
+    "category": "models",
+    "tags": [
+      "Models",
+      "Reasoning",
+      "Inference",
+      "Scaling"
+    ],
+    "date": "2026-09-30T12:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Context Window Explodes: Million-Token Models Go Mainstream",
+    "slug": "context-windows-explode",
+    "subtitle": "Models can now read a whole codebase, a stack of contracts, or a year of email in a single prompt — changing what you build and how you use them.",
+    "excerpt": "For most of the chatbot era, the models had short memories. You could paste in a few pages, but hand over a whole codebase, a stack of contracts, or a year of…",
+    "category": "models",
+    "tags": [
+      "Models",
+      "Context",
+      "LLM",
+      "Retrieval"
+    ],
+    "date": "2026-09-29T14:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Fed Pivots: Rate Cuts Arrive, and Markets Exhale",
+    "slug": "fed-rate-cuts-2026",
+    "subtitle": "After a long stretch of higher-for-longer, the central bank has begun easing — a turn that ripples through mortgages, markets, and Main Street.",
+    "excerpt": "After one of the longest stretches of elevated interest rates in recent memory, the central bank has begun to ease — and the whole financial system is…",
+    "category": "finance",
+    "tags": [
+      "finance",
+      "federal-reserve",
+      "interest-rates",
+      "markets"
+    ],
+    "date": "2026-09-29T11:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Self-Improving Models: When AI Trains AI",
+    "slug": "self-improving-models",
+    "subtitle": "As high-quality human data grows scarce, labs are leaning on models to generate and grade their own training material — a powerful, and delicate, loop.",
+    "excerpt": "The models that defined the last few years were trained on a finite resource: the text humans have written. That well is not bottomless, and the best of it has…",
+    "category": "research",
+    "tags": [
+      "Research",
+      "Synthetic Data",
+      "Training",
+      "Reinforcement Learning"
+    ],
+    "date": "2026-09-28T14:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The NBA Tips Off: Storylines for a Wide-Open Season",
+    "slug": "nba-season-tipoff-2026",
+    "subtitle": "A new campaign begins with no clear favorite, a fresh crop of stars, and a league still reinventing how it plays.",
+    "excerpt": "Basketball is back. As the NBA opens a new season, it does so in a state the league has not enjoyed in a while: genuinely wide open. There is no single…",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "basketball",
+      "nba",
+      "season"
+    ],
+    "date": "2026-09-28T11:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Meet the AI Officer: Companies Appoint Their First AI Chiefs",
+    "slug": "ai-officer-caio",
+    "subtitle": "A new title is spreading through the org chart — and whether it becomes essential or a passing fad depends on what the job is actually allowed to do.",
+    "excerpt": "A new box is appearing near the top of the org chart: the Chief AI Officer. As companies grapple with a technology that touches every function at once, many…",
+    "category": "enterprise",
+    "tags": [
+      "Enterprise",
+      "Leadership",
+      "Strategy",
+      "Adoption"
+    ],
+    "date": "2026-09-27T14:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Fall Gaming Blitz: A Blockbuster Release Window Lands",
+    "slug": "fall-gaming-blitz-2026",
+    "subtitle": "A crowded autumn of big-budget launches tests players' wallets and attention — and the industry's bet that fewer, bigger games still rule.",
+    "excerpt": "Autumn is when the games industry empties its arsenal. The fall release window — the run-up to the holidays — is traditionally where the biggest, most…",
+    "category": "entertainment",
+    "tags": [
+      "entertainment",
+      "gaming",
+      "video-games",
+      "culture"
+    ],
+    "date": "2026-09-27T11:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Sovereign AI: Nations Build Their Own Models",
+    "slug": "sovereign-ai-nations",
+    "subtitle": "Countries increasingly want models trained on their own languages, values, and data — and running on their own soil. The ambition is real; so is the cost.",
+    "excerpt": "A growing number of governments have concluded that depending entirely on a handful of foreign companies for a foundational technology is a strategic risk they…",
+    "category": "policy",
+    "tags": [
+      "Policy",
+      "Sovereign AI",
+      "Industrial Policy",
+      "Infrastructure"
+    ],
+    "date": "2026-09-26T14:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Longevity Craze: The Quest to Age Slower",
+    "slug": "longevity-craze-2026",
+    "subtitle": "Once the province of eccentric billionaires, the pursuit of a longer 'healthspan' has gone mainstream — with real science and a lot of noise.",
+    "excerpt": "Not long ago, the quest to slow aging belonged to a handful of eccentric billionaires running elaborate self-experiments. In 2026 it has gone thoroughly…",
+    "category": "lifestyle",
+    "tags": [
+      "lifestyle",
+      "longevity",
+      "health",
+      "wellness"
+    ],
+    "date": "2026-09-26T11:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "Circular Money: The AI Financing Loop Under Scrutiny",
+    "slug": "circular-ai-financing",
+    "subtitle": "Chipmakers invest in labs that buy their chips; cloud providers fund customers who rent their clouds. It's fueling the boom — and unnerving the skeptics.",
+    "excerpt": "The AI boom is being financed by an increasingly intertwined web of deals, and it has started to make even enthusiasts uneasy. Chipmakers take stakes in the…",
+    "category": "companies",
+    "tags": [
+      "Companies",
+      "Finance",
+      "Investment",
+      "Infrastructure"
+    ],
+    "date": "2026-09-25T14:00:00Z",
+    "isPick": false
+  },
+  {
+    "title": "The Benchmark Crisis: Why AI Leaderboards Stopped Meaning Much",
+    "slug": "ai-benchmark-crisis",
+    "subtitle": "Every new model tops the charts — and the charts increasingly tell us less. The gap between benchmark scores and real usefulness has become the field's blind spot.",
+    "excerpt": "Every few weeks a new model arrives boasting record scores across a wall of benchmarks. And every few weeks, more people who actually use these tools shrug.…",
+    "category": "opinion",
+    "tags": [
+      "Opinion",
+      "Benchmarks",
+      "Evaluation",
+      "Models"
+    ],
+    "date": "2026-09-25T12:00:00Z",
+    "isPick": false
+  },
+  {
     "title": "The Agentic Browser Arrives: Your Next Tab Does the Work",
     "slug": "agentic-browser-arrives",
     "subtitle": "A wave of AI-native browsers wants to move from showing you the web to acting on it — booking, buying, and researching on your behalf.",

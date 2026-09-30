@@ -6,7 +6,115 @@
     <atom:link href="https://cambrian-ai.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Bayaan AI is intelligence for a changing world — sharp, original reporting and analysis on AI and the technology, markets, and culture shifts reshaping how we live and work.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Sep 2026 14:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 14:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Coding Agents Graduate: From Autocomplete to Autonomous Pull Requests</title>
+      <link>https://cambrian-ai.vercel.app/post/coding-agents-graduate</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/coding-agents-graduate</guid>
+      <pubDate>Wed, 30 Sep 2026 14:00:00 GMT</pubDate>
+      <category>Products</category>
+      <dc:creator>Bayaan AI Desk</dc:creator>
+      <description>AI has moved past suggesting the next line — it now takes a ticket, writes the change, runs the tests, and opens the PR. The hard part is trusting it.</description>
+    </item>
+    <item>
+      <title>Reasoning Models: A New Gear, or a Wall?</title>
+      <link>https://cambrian-ai.vercel.app/post/reasoning-models-new-gear</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/reasoning-models-new-gear</guid>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Models</category>
+      <dc:creator>Bayaan AI Desk</dc:creator>
+      <description>Letting models 'think' longer at inference time unlocked a jump in hard-problem performance. The debate now is how far that lever can stretch.</description>
+    </item>
+    <item>
+      <title>The Context Window Explodes: Million-Token Models Go Mainstream</title>
+      <link>https://cambrian-ai.vercel.app/post/context-windows-explode</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/context-windows-explode</guid>
+      <pubDate>Tue, 29 Sep 2026 14:00:00 GMT</pubDate>
+      <category>Models</category>
+      <dc:creator>Bayaan AI Staff</dc:creator>
+      <description>Models can now read a whole codebase, a stack of contracts, or a year of email in a single prompt — changing what you build and how you use them.</description>
+    </item>
+    <item>
+      <title>The Fed Pivots: Rate Cuts Arrive, and Markets Exhale</title>
+      <link>https://cambrian-ai.vercel.app/post/fed-rate-cuts-2026</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/fed-rate-cuts-2026</guid>
+      <pubDate>Tue, 29 Sep 2026 11:00:00 GMT</pubDate>
+      <category>Wealth &amp; Finance</category>
+      <dc:creator>Bayaan Desk</dc:creator>
+      <description>After a long stretch of higher-for-longer, the central bank has begun easing — a turn that ripples through mortgages, markets, and Main Street.</description>
+    </item>
+    <item>
+      <title>Self-Improving Models: When AI Trains AI</title>
+      <link>https://cambrian-ai.vercel.app/post/self-improving-models</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/self-improving-models</guid>
+      <pubDate>Mon, 28 Sep 2026 14:00:00 GMT</pubDate>
+      <category>Research</category>
+      <dc:creator>Bayaan AI Staff</dc:creator>
+      <description>As high-quality human data grows scarce, labs are leaning on models to generate and grade their own training material — a powerful, and delicate, loop.</description>
+    </item>
+    <item>
+      <title>The NBA Tips Off: Storylines for a Wide-Open Season</title>
+      <link>https://cambrian-ai.vercel.app/post/nba-season-tipoff-2026</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/nba-season-tipoff-2026</guid>
+      <pubDate>Mon, 28 Sep 2026 11:00:00 GMT</pubDate>
+      <category>Sports</category>
+      <dc:creator>Bayaan Desk</dc:creator>
+      <description>A new campaign begins with no clear favorite, a fresh crop of stars, and a league still reinventing how it plays.</description>
+    </item>
+    <item>
+      <title>Meet the AI Officer: Companies Appoint Their First AI Chiefs</title>
+      <link>https://cambrian-ai.vercel.app/post/ai-officer-caio</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-officer-caio</guid>
+      <pubDate>Sun, 27 Sep 2026 14:00:00 GMT</pubDate>
+      <category>Enterprise</category>
+      <dc:creator>Bayaan AI Staff</dc:creator>
+      <description>A new title is spreading through the org chart — and whether it becomes essential or a passing fad depends on what the job is actually allowed to do.</description>
+    </item>
+    <item>
+      <title>The Fall Gaming Blitz: A Blockbuster Release Window Lands</title>
+      <link>https://cambrian-ai.vercel.app/post/fall-gaming-blitz-2026</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/fall-gaming-blitz-2026</guid>
+      <pubDate>Sun, 27 Sep 2026 11:00:00 GMT</pubDate>
+      <category>Entertainment</category>
+      <dc:creator>Bayaan Desk</dc:creator>
+      <description>A crowded autumn of big-budget launches tests players' wallets and attention — and the industry's bet that fewer, bigger games still rule.</description>
+    </item>
+    <item>
+      <title>Sovereign AI: Nations Build Their Own Models</title>
+      <link>https://cambrian-ai.vercel.app/post/sovereign-ai-nations</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/sovereign-ai-nations</guid>
+      <pubDate>Sat, 26 Sep 2026 14:00:00 GMT</pubDate>
+      <category>AI Policy</category>
+      <dc:creator>Bayaan AI Staff</dc:creator>
+      <description>Countries increasingly want models trained on their own languages, values, and data — and running on their own soil. The ambition is real; so is the cost.</description>
+    </item>
+    <item>
+      <title>The Longevity Craze: The Quest to Age Slower</title>
+      <link>https://cambrian-ai.vercel.app/post/longevity-craze-2026</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/longevity-craze-2026</guid>
+      <pubDate>Sat, 26 Sep 2026 11:00:00 GMT</pubDate>
+      <category>Lifestyle</category>
+      <dc:creator>Bayaan Desk</dc:creator>
+      <description>Once the province of eccentric billionaires, the pursuit of a longer 'healthspan' has gone mainstream — with real science and a lot of noise.</description>
+    </item>
+    <item>
+      <title>Circular Money: The AI Financing Loop Under Scrutiny</title>
+      <link>https://cambrian-ai.vercel.app/post/circular-ai-financing</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/circular-ai-financing</guid>
+      <pubDate>Fri, 25 Sep 2026 14:00:00 GMT</pubDate>
+      <category>Companies</category>
+      <dc:creator>Bayaan AI Staff</dc:creator>
+      <description>Chipmakers invest in labs that buy their chips; cloud providers fund customers who rent their clouds. It's fueling the boom — and unnerving the skeptics.</description>
+    </item>
+    <item>
+      <title>The Benchmark Crisis: Why AI Leaderboards Stopped Meaning Much</title>
+      <link>https://cambrian-ai.vercel.app/post/ai-benchmark-crisis</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-benchmark-crisis</guid>
+      <pubDate>Fri, 25 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Opinion</category>
+      <dc:creator>Bayaan Editorial Board</dc:creator>
+      <description>Every new model tops the charts — and the charts increasingly tell us less. The gap between benchmark scores and real usefulness has become the field's blind spot.</description>
+    </item>
     <item>
       <title>The Agentic Browser Arrives: Your Next Tab Does the Work</title>
       <link>https://cambrian-ai.vercel.app/post/agentic-browser-arrives</link>
@@ -348,114 +456,6 @@
       <category>Lifestyle</category>
       <dc:creator>Bayaan Desk</dc:creator>
       <description>2026's wellness travel is moving from performance and pampering toward sleep, mental health, and 'intention-led' trips built around how a place makes you feel.</description>
-    </item>
-    <item>
-      <title>Emmys 2026: 'The Pitt' Leads as the Streaming Wars Peak</title>
-      <link>https://cambrian-ai.vercel.app/post/emmys-2026-preview</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/emmys-2026-preview</guid>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Entertainment</category>
-      <dc:creator>Bayaan Desk</dc:creator>
-      <description>Television's biggest night arrives with a hospital drama out front, 'Hacks' bowing out on a record, and a new host in the chair.</description>
-    </item>
-    <item>
-      <title>Awards Season Warms Up: Country and Latin Music Reveal Their Contenders</title>
-      <link>https://cambrian-ai.vercel.app/post/awards-season-nominations-2026</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/awards-season-nominations-2026</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Entertainment</category>
-      <dc:creator>Bayaan Desk</dc:creator>
-      <description>CMA and Latin Grammy nominations kick off the fall run-up, a stretch that increasingly shapes what the algorithms push next.</description>
-    </item>
-    <item>
-      <title>Embeddings: How AI Turns Meaning Into Numbers</title>
-      <link>https://cambrian-ai.vercel.app/post/what-are-embeddings</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-are-embeddings</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Learn</category>
-      <dc:creator>Bayaan Explainers</dc:creator>
-      <description>The quiet building block behind semantic search, RAG, recommendations, and vector databases.</description>
-    </item>
-    <item>
-      <title>Vector Databases, Explained</title>
-      <link>https://cambrian-ai.vercel.app/post/what-is-a-vector-database</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-is-a-vector-database</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Learn</category>
-      <dc:creator>Bayaan Explainers</dc:creator>
-      <description>The storage layer that lets AI search by meaning instead of exact keywords.</description>
-    </item>
-    <item>
-      <title>Agentic AI: From Chatbots to Autonomous Workers</title>
-      <link>https://cambrian-ai.vercel.app/post/what-is-agentic-ai</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-is-agentic-ai</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Learn</category>
-      <dc:creator>Bayaan Explainers</dc:creator>
-      <description>What separates an 'agent' from a chatbot — and why it's the defining AI pattern of the moment.</description>
-    </item>
-    <item>
-      <title>Model Context Protocol (MCP), Explained</title>
-      <link>https://cambrian-ai.vercel.app/post/what-is-mcp</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-is-mcp</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Learn</category>
-      <dc:creator>Bayaan Explainers</dc:creator>
-      <description>The open standard that lets AI assistants plug into your tools and data the way USB-C plugs into your devices.</description>
-    </item>
-    <item>
-      <title>What Is RAG (Retrieval-Augmented Generation)?</title>
-      <link>https://cambrian-ai.vercel.app/post/what-is-rag</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-is-rag</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Learn</category>
-      <dc:creator>Bayaan Explainers</dc:creator>
-      <description>How to give a language model access to your own, up-to-date knowledge — without retraining it.</description>
-    </item>
-    <item>
-      <title>Vibe Coding, Explained</title>
-      <link>https://cambrian-ai.vercel.app/post/what-is-vibe-coding</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/what-is-vibe-coding</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Learn</category>
-      <dc:creator>Bayaan Explainers</dc:creator>
-      <description>Building software by describing what you want in natural language and letting AI write the code — plus where it helps and where it bites.</description>
-    </item>
-    <item>
-      <title>Apple Bends: Its First Foldable Arrives on a 2nm Chip</title>
-      <link>https://cambrian-ai.vercel.app/post/apple-foldable-2nm-chip-2026</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/apple-foldable-2nm-chip-2026</guid>
-      <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Technology</category>
-      <dc:creator>Bayaan Desk</dc:creator>
-      <description>The company that waited out the foldable era finally joins it — paired with a leap to 2-nanometer silicon.</description>
-    </item>
-    <item>
-      <title>One Year After DeepSeek, China's Labs Are Racing Ahead — and Winning on Cost</title>
-      <link>https://cambrian-ai.vercel.app/post/chinese-ai-labs-race</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/chinese-ai-labs-race</guid>
-      <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Companies</category>
-      <dc:creator>Bayaan AI Staff</dc:creator>
-      <description>Alibaba, Moonshot, DeepSeek, and Z.ai are shipping fast and undercutting US labs on price, reshaping the open-model landscape.</description>
-    </item>
-    <item>
-      <title>Opinion: In 2026, AI Funding Rewards Proof, Not Promise</title>
-      <link>https://cambrian-ai.vercel.app/post/ai-funding-proof-over-promise</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-funding-proof-over-promise</guid>
-      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Opinion</category>
-      <dc:creator>Bayaan Editorial Board</dc:creator>
-      <description>Mega-rounds still go to the giants — but for everyone else, the era of raising on a slide deck and a vibe is over.</description>
-    </item>
-    <item>
-      <title>How to Choose Among the New Frontier Models</title>
-      <link>https://cambrian-ai.vercel.app/post/choosing-frontier-models-guide</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/choosing-frontier-models-guide</guid>
-      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Products</category>
-      <dc:creator>Bayaan AI Staff</dc:creator>
-      <description>GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash, and Meta's new flagship all landed in a week. A practical guide to picking.</description>
     </item>
   </channel>
 </rss>

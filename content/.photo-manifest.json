@@ -568,5 +568,77 @@
     "photographer_url": "https://www.pexels.com/@soumithsoman",
     "pexels_url": "https://www.pexels.com/photo/photo-of-a-person-s-hand-holding-a-remote-control-4777979/",
     "query": "television remote living room"
+  },
+  "ai-benchmark-crisis": {
+    "photographer": "Tima Miroshnichenko",
+    "photographer_url": "https://www.pexels.com/@tima-miroshnichenko",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-a-tape-measure-7033665/",
+    "query": "measuring tape ruler closeup"
+  },
+  "ai-officer-caio": {
+    "photographer": "Vlada Karpovich",
+    "photographer_url": "https://www.pexels.com/@vlada-karpovich",
+    "pexels_url": "https://www.pexels.com/photo/a-group-of-people-discussing-in-a-room-7433840/",
+    "query": "corporate boardroom meeting"
+  },
+  "circular-ai-financing": {
+    "photographer": "Rafael Minguet Delgado",
+    "photographer_url": "https://www.pexels.com/@thales13",
+    "pexels_url": "https://www.pexels.com/photo/crypto-trading-screen-with-market-analysis-graphs-38343508/",
+    "query": "financial charts trading screen"
+  },
+  "coding-agents-graduate": {
+    "photographer": "Nemuel Sereti",
+    "photographer_url": "https://www.pexels.com/@nemuel",
+    "pexels_url": "https://www.pexels.com/photo/monitor-displaying-lines-of-code-6424583/",
+    "query": "programming code editor screen"
+  },
+  "context-windows-explode": {
+    "photographer": "aboodi vesakaran",
+    "photographer_url": "https://www.pexels.com/@aboodi",
+    "pexels_url": "https://www.pexels.com/photo/furniture-with-books-18620046/",
+    "query": "library bookshelves rows"
+  },
+  "fall-gaming-blitz-2026": {
+    "photographer": "Sam A",
+    "photographer_url": "https://www.pexels.com/@sam-a-351058944",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-a-game-controller-14205160/",
+    "query": "game controller closeup"
+  },
+  "fed-rate-cuts-2026": {
+    "photographer": "Sergei Starostin",
+    "photographer_url": "https://www.pexels.com/@sejio402",
+    "pexels_url": "https://www.pexels.com/photo/paper-dollar-bills-6590651/",
+    "query": "hundred dollar bills money"
+  },
+  "longevity-craze-2026": {
+    "photographer": "Dmitry Egorov",
+    "photographer_url": "https://www.pexels.com/@egorov",
+    "pexels_url": "https://www.pexels.com/photo/an-athlete-in-the-running-track-10141165/",
+    "query": "person running outdoors sunrise"
+  },
+  "nba-season-tipoff-2026": {
+    "photographer": "Anastasiya Badun",
+    "photographer_url": "https://www.pexels.com/@badun",
+    "pexels_url": "https://www.pexels.com/photo/people-preparing-for-the-performance-in-an-empty-pauley-pavilion-in-ucla-los-angeles-california-usa-16551474/",
+    "query": "basketball court arena"
+  },
+  "reasoning-models-new-gear": {
+    "photographer": "Rain Photography",
+    "photographer_url": "https://www.pexels.com/@rain-photography-384729126",
+    "pexels_url": "https://www.pexels.com/photo/close-up-of-black-king-chess-piece-on-board-37707936/",
+    "query": "chess board pieces closeup"
+  },
+  "self-improving-models": {
+    "photographer": "Pavel Danilyuk",
+    "photographer_url": "https://www.pexels.com/@pavel-danilyuk",
+    "pexels_url": "https://www.pexels.com/photo/a-man-and-a-woman-wearing-white-coats-and-protective-goggles-8439008/",
+    "query": "robotic arm laboratory"
+  },
+  "sovereign-ai-nations": {
+    "photographer": "panumas nikhomkhai",
+    "photographer_url": "https://www.pexels.com/@cookiecutter",
+    "pexels_url": "https://www.pexels.com/photo/boxes-of-computers-17489152/",
+    "query": "server racks data center"
   }
 }
