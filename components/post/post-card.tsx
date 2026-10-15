@@ -45,7 +45,7 @@ export function PostCard({
     <article className="group flex flex-col">
       <Link href={`/post/${post.slug}`} className="flex flex-col">
         {post.image && (
-          <div className="mb-4 overflow-hidden rounded-xl border bg-muted">
+          <div className="mb-4 overflow-hidden rounded-xl border bg-muted shadow-sm transition-shadow duration-300 group-hover:shadow-lg">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={post.image}

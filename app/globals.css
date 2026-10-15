@@ -127,6 +127,18 @@
     font-family: var(--font-brand);
   }
 
+  /* Section kicker — an eyebrow led by the ownable Signal Amber tick. The
+     "highlight what matters" brand cue, used on the main section heads. */
+  .kicker {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground;
+    font-family: var(--font-brand);
+  }
+  .kicker::before {
+    content: "";
+    @apply inline-block h-3 w-[3px] shrink-0 rounded-full;
+    background: hsl(var(--signal));
+  }
+
   /* Brand wordmark type — the Bayaan grotesque. */
   .font-brand {
     font-family: var(--font-brand);

@@ -163,7 +163,7 @@ export default async function PostPage({
               className="mt-8 animate-fade-up"
               style={{ animationDelay: "300ms" }}
             >
-              <div className="overflow-hidden rounded-xl border bg-muted">
+              <div className="overflow-hidden rounded-xl border bg-muted shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={post.image}

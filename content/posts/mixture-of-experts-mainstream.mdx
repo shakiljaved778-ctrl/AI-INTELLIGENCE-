@@ -1,0 +1,54 @@
+---
+title: "Mixture-of-Experts Goes Mainstream: The Architecture Behind Cheaper Frontier AI"
+subtitle: "The biggest models now only switch on the parts they need for each token — a design that quietly reshaped the economics of running them."
+date: "2026-10-14T14:00:00Z"
+author: "Bayaan AI Staff"
+category: "models"
+tags: ["Models", "Architecture", "Efficiency", "MoE"]
+excerpt: "Mixture-of-experts architectures let huge models activate only a fraction of themselves per token, reshaping AI's cost math."
+featured: false
+---
+
+One of the most consequential changes in how AI models are built is nearly
+invisible to the people using them. The largest models are no longer monolithic
+blocks of computation where every parameter fires on every word. Increasingly they
+are "mixtures of experts" — vast networks that, for each token, switch on only the
+small slice of themselves best suited to the job. The idea is old; in 2026 it has
+become the default way to build at the frontier, and it quietly reshaped the
+economics of the whole field.
+
+The appeal is a way out of a painful trade-off. More parameters generally mean more
+capability, but also more cost to run — and running cost, not training cost, is what
+dominates once a model is in production serving millions of requests. Mixture-of-
+experts breaks the link: a model can hold an enormous number of parameters, making
+it capable, while activating only a fraction of them per token, keeping it cheap to
+run. You get much of the benefit of a huge model at a fraction of the compute.
+
+## A router and a committee of specialists
+
+The mechanism is intuitive. Alongside the "experts" — specialized sub-networks — sits
+a small router that, for each token, decides which experts to consult. Most of the
+model stays dark; only the relevant few light up. Over training, the experts
+specialize, and the router learns who to ask. A trillion-parameter model can run
+with the cost profile of a far smaller one.
+
+## The catches
+
+It is not free cleverness. Mixture-of-experts models are harder to train stably —
+getting the router to distribute work evenly, rather than overloading a few popular
+experts, is a real engineering challenge. They are also more complex to serve
+efficiently, since which experts are needed varies request to request, complicating
+how you pack work onto hardware. The savings are real but earned.
+
+## Why it matters to everyone else
+
+For users and builders, the architecture is why frontier-grade capability keeps
+getting cheaper to access even as the models grow. It is a big part of the answer to
+"how is this getting both better and more affordable at once?" The headline models
+get the attention; the sparse, switch-on-demand design underneath is a quiet reason
+the economics keep improving — and why the frontier keeps moving within reach.
+
+<Callout>
+Overview of mixture-of-experts architectures and why they underpin cheaper frontier
+AI, as of 2026.
+</Callout>

@@ -87,7 +87,7 @@ export default function HomePage() {
             {/* Lead */}
             <article className="group lg:col-span-2">
               <Link href={`/post/${lead.slug}`} className="block">
-                <div className="overflow-hidden rounded-2xl border bg-muted">
+                <div className="overflow-hidden rounded-2xl border bg-muted shadow-sm transition-shadow duration-500 group-hover:shadow-[0_22px_48px_-24px_rgba(15,23,42,0.5)]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={lead.image}
@@ -159,7 +159,7 @@ export default function HomePage() {
       <section aria-labelledby="ai-desk" className="mb-16">
         <div className="mb-6 flex items-end justify-between border-b pb-3">
           <div>
-            <p className="eyebrow mb-1">The core</p>
+            <p className="kicker mb-1">The core</p>
             <h2 id="ai-desk" className="font-serif text-2xl font-bold tracking-tight sm:text-3xl">
               Artificial Intelligence
             </h2>
@@ -184,7 +184,7 @@ export default function HomePage() {
         <Reveal as="section" aria-labelledby="beyond" className="mb-16">
           <div className="mb-6 flex items-end justify-between border-b pb-3">
             <div>
-              <p className="eyebrow mb-1">Beyond AI</p>
+              <p className="kicker mb-1">Beyond AI</p>
               <h2 id="beyond" className="font-serif text-2xl font-bold tracking-tight sm:text-3xl">
                 The wider world
               </h2>
@@ -209,7 +209,7 @@ export default function HomePage() {
                 {/* First story gets a thumbnail, the rest are headline rows. */}
                 <article className="group">
                   <Link href={`/post/${block.posts[0].slug}`} className="block">
-                    <div className="overflow-hidden rounded-lg border bg-muted">
+                    <div className="overflow-hidden rounded-lg border bg-muted shadow-sm transition-shadow duration-300 group-hover:shadow-md">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={block.posts[0].image}
@@ -239,7 +239,7 @@ export default function HomePage() {
         <Reveal as="section" aria-labelledby="learn">
           <div className="mb-6 flex items-end justify-between border-b pb-3">
             <div>
-              <p className="eyebrow mb-1">Learn</p>
+              <p className="kicker mb-1">Learn</p>
               <h2 id="learn" className="text-2xl font-semibold tracking-tight">
                 AI concepts, explained
               </h2>
