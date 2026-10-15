@@ -6,7 +6,97 @@
     <atom:link href="https://cambrian-ai.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Bayaan AI is intelligence for a changing world — sharp, original reporting and analysis on AI and the technology, markets, and culture shifts reshaping how we live and work.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Sep 2026 14:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 14:00:00 GMT</lastBuildDate>
+    <item>
+      <title>AI Wearables Are Back: The Fight for Ambient Computing</title>
+      <link>https://cambrian-ai.vercel.app/post/ai-wearables-ambient-computing</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-wearables-ambient-computing</guid>
+      <pubDate>Thu, 15 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Products</category>
+      <dc:creator>Bayaan AI Desk</dc:creator>
+      <description>A new wave of smart glasses, pins, and pendants wants to pull AI off the screen and into the room with you. The ambition is old; the models are new.</description>
+    </item>
+    <item>
+      <title>The Jagged Frontier: Why AI Is Superhuman and Hopeless at Once</title>
+      <link>https://cambrian-ai.vercel.app/post/jagged-frontier-ai</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/jagged-frontier-ai</guid>
+      <pubDate>Thu, 15 Oct 2026 11:00:00 GMT</pubDate>
+      <category>Opinion</category>
+      <dc:creator>Bayaan Editorial Board</dc:creator>
+      <description>The same model that drafts a brilliant legal argument fumbles a simple count. Understanding that unevenness is the key to using AI well.</description>
+    </item>
+    <item>
+      <title>Mixture-of-Experts Goes Mainstream: The Architecture Behind Cheaper Frontier AI</title>
+      <link>https://cambrian-ai.vercel.app/post/mixture-of-experts-mainstream</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/mixture-of-experts-mainstream</guid>
+      <pubDate>Wed, 14 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Models</category>
+      <dc:creator>Bayaan AI Staff</dc:creator>
+      <description>The biggest models now only switch on the parts they need for each token — a design that quietly reshaped the economics of running them.</description>
+    </item>
+    <item>
+      <title>October Classic: The World Series Is Set</title>
+      <link>https://cambrian-ai.vercel.app/post/world-series-2026</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/world-series-2026</guid>
+      <pubDate>Wed, 14 Oct 2026 11:00:00 GMT</pubDate>
+      <category>Sports</category>
+      <dc:creator>Bayaan Desk</dc:creator>
+      <description>Two survivors of a month of knife-edge baseball reach the final stage — where a long season gets decided in a handful of games.</description>
+    </item>
+    <item>
+      <title>The Great Consolidation: AI's Acquisition Wave Picks Up</title>
+      <link>https://cambrian-ai.vercel.app/post/ai-startup-consolidation</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-startup-consolidation</guid>
+      <pubDate>Tue, 13 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Companies</category>
+      <dc:creator>Bayaan AI Desk</dc:creator>
+      <description>As the funding froth cools, the AI startup landscape is thinning — through acquisitions, talent raids, and quiet shutdowns — into a smaller set of survivors.</description>
+    </item>
+    <item>
+      <title>The Housing Market Thaws as Rates Fall</title>
+      <link>https://cambrian-ai.vercel.app/post/housing-market-thaws-2026</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/housing-market-thaws-2026</guid>
+      <pubDate>Tue, 13 Oct 2026 11:00:00 GMT</pubDate>
+      <category>Wealth &amp; Finance</category>
+      <dc:creator>Bayaan Desk</dc:creator>
+      <description>After years of frozen sales and sidelined buyers, cheaper mortgages are beginning to loosen a market that locked itself in place.</description>
+    </item>
+    <item>
+      <title>Vertical AI: The Rise of Industry-Specific Models</title>
+      <link>https://cambrian-ai.vercel.app/post/vertical-ai-industry-models</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/vertical-ai-industry-models</guid>
+      <pubDate>Mon, 12 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Enterprise</category>
+      <dc:creator>Bayaan AI Staff</dc:creator>
+      <description>The next wave of enterprise AI isn't a bigger general model — it's smaller, specialized systems that deeply understand one industry's language and rules.</description>
+    </item>
+    <item>
+      <title>Self-Driving Labs: When AI Runs the Experiment</title>
+      <link>https://cambrian-ai.vercel.app/post/self-driving-labs-ai-science</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/self-driving-labs-ai-science</guid>
+      <pubDate>Sun, 11 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Research</category>
+      <dc:creator>Bayaan AI Staff</dc:creator>
+      <description>Beyond predicting molecules, AI systems are now designing experiments, commanding robots to run them, and learning from the results — around the clock.</description>
+    </item>
+    <item>
+      <title>Who Pays? The Coming Fight Over AI Liability</title>
+      <link>https://cambrian-ai.vercel.app/post/ai-liability-who-pays</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-liability-who-pays</guid>
+      <pubDate>Sat, 10 Oct 2026 14:00:00 GMT</pubDate>
+      <category>AI Policy</category>
+      <dc:creator>Bayaan AI Staff</dc:creator>
+      <description>When an autonomous agent books the wrong flight, gives bad advice, or causes real harm, the law has to answer a question it was never designed for.</description>
+    </item>
+    <item>
+      <title>The Quantum Milestone: Error Correction Turns a Corner</title>
+      <link>https://cambrian-ai.vercel.app/post/quantum-error-correction-2026</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/quantum-error-correction-2026</guid>
+      <pubDate>Fri, 09 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Technology</category>
+      <dc:creator>Bayaan Desk</dc:creator>
+      <description>Quantum computing's defining obstacle has always been noise. Steady progress on error correction is the first real sign the field is beating it.</description>
+    </item>
     <item>
       <title>Coding Agents Graduate: From Autocomplete to Autonomous Pull Requests</title>
       <link>https://cambrian-ai.vercel.app/post/coding-agents-graduate</link>
@@ -366,96 +456,6 @@
       <category>AI Policy</category>
       <dc:creator>Bayaan AI Desk</dc:creator>
       <description>Researchers say a threat actor wired together AI coding agents to exploit known bugs — reaching remote code execution in under four hours.</description>
-    </item>
-    <item>
-      <title>‘Pace the Frontier’: AI’s Own Leaders Say Slow Down</title>
-      <link>https://cambrian-ai.vercel.app/post/amodei-pace-the-frontier</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/amodei-pace-the-frontier</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>AI Policy</category>
-      <dc:creator>Bayaan AI Desk</dc:creator>
-      <description>Anthropic’s Dario Amodei urges companies and governments to ease off the accelerator — days after a safety researcher quit warning the industry is ‘gambling with our lives.’</description>
-    </item>
-    <item>
-      <title>The Theater Strikes Back: A Record Summer Rewrites the Streaming Story</title>
-      <link>https://cambrian-ai.vercel.app/post/box-office-record-summer-2026</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/box-office-record-summer-2026</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Entertainment</category>
-      <dc:creator>Bayaan Desk</dc:creator>
-      <description>Summer 2026 hit a record $4.76 billion in the U.S. — and the year's box office has $10 billion in sight as streaming loses its shine.</description>
-    </item>
-    <item>
-      <title>DeepSeek Doubles Down: V4.1 Flash Scales Up as Prices Fall</title>
-      <link>https://cambrian-ai.vercel.app/post/deepseek-v41-flash-scales-up</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/deepseek-v41-flash-scales-up</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Models</category>
-      <dc:creator>Bayaan AI Desk</dc:creator>
-      <description>The new Flash model is roughly twice the size of its predecessor, yet launched cheaper and with stronger benchmarks.</description>
-    </item>
-    <item>
-      <title>The Fall TV Rush: Spies, Stranger Things and Traitors Return</title>
-      <link>https://cambrian-ai.vercel.app/post/fall-tv-premieres-2026</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/fall-tv-premieres-2026</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Entertainment</category>
-      <dc:creator>Bayaan Desk</dc:creator>
-      <description>Mid-September reloads the streaming slate — 'Slow Horses,' a 'Stranger Things' spin-off, and a fresh 'Traitors' land within days of each other.</description>
-    </item>
-    <item>
-      <title>Hot Inflation Sets Up a Tense Fed Week on Wall Street</title>
-      <link>https://cambrian-ai.vercel.app/post/markets-brace-for-fed-decision</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/markets-brace-for-fed-decision</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Wealth &amp; Finance</category>
-      <dc:creator>Bayaan Desk</dc:creator>
-      <description>A firmer CPI has money markets pricing a September move as near-certain, even as falling oil helped stocks steady after a four-day slide.</description>
-    </item>
-    <item>
-      <title>OpenAI Raises the Toll: First Frontier Price Hike in Years</title>
-      <link>https://cambrian-ai.vercel.app/post/openai-raises-frontier-prices</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/openai-raises-frontier-prices</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Companies</category>
-      <dc:creator>Bayaan AI Desk</dc:creator>
-      <description>The company lifted its top-tier rate to $10/$50 per million tokens — and Sam Altman says an IPO isn't happening this year.</description>
-    </item>
-    <item>
-      <title>Arsenal March On as the Title Chasers Stumble</title>
-      <link>https://cambrian-ai.vercel.app/post/premier-league-arsenal-perfect-start</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/premier-league-arsenal-perfect-start</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Sports</category>
-      <dc:creator>Bayaan Desk</dc:creator>
-      <description>A Premier League matchday that rewarded the ruthless and punished the rest — Liverpool and Chelsea among those dropping points.</description>
-    </item>
-    <item>
-      <title>Tennis Goes Team: Davis Cup and BJK Cup Take Center Court</title>
-      <link>https://cambrian-ai.vercel.app/post/team-tennis-davis-cup-bjk-cup</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/team-tennis-davis-cup-bjk-cup</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Sports</category>
-      <dc:creator>Bayaan Desk</dc:creator>
-      <description>After a summer of singles drama, the sport's national team competitions bring a different kind of pressure — playing for a flag, not a ranking.</description>
-    </item>
-    <item>
-      <title>'Techtember' Returns: 20+ Phones and a Fight for Your Upgrade</title>
-      <link>https://cambrian-ai.vercel.app/post/techtember-2026-phone-flood</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/techtember-2026-phone-flood</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Technology</category>
-      <dc:creator>Bayaan Desk</dc:creator>
-      <description>From the iPhone 18 Pro to a wave of foldables and Snapdragon flagships, September's launch glut is really a battle over one thing — a reason to upgrade.</description>
-    </item>
-    <item>
-      <title>Travel to Recalibrate: Wellness Trips Trade Hustle for the Nervous System</title>
-      <link>https://cambrian-ai.vercel.app/post/wellness-travel-2026-recalibrate</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/wellness-travel-2026-recalibrate</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>Lifestyle</category>
-      <dc:creator>Bayaan Desk</dc:creator>
-      <description>2026's wellness travel is moving from performance and pampering toward sleep, mental health, and 'intention-led' trips built around how a place makes you feel.</description>
     </item>
   </channel>
 </rss>

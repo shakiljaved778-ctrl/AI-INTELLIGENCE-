@@ -640,5 +640,65 @@
     "photographer_url": "https://www.pexels.com/@cookiecutter",
     "pexels_url": "https://www.pexels.com/photo/boxes-of-computers-17489152/",
     "query": "server racks data center"
+  },
+  "ai-liability-who-pays": {
+    "photographer": "Sora Shimazaki",
+    "photographer_url": "https://www.pexels.com/@sora-shimazaki",
+    "pexels_url": "https://www.pexels.com/photo/close-up-photo-of-a-wooden-gavel-5668481/",
+    "query": "courtroom gavel law"
+  },
+  "ai-startup-consolidation": {
+    "photographer": "Ron Lach",
+    "photographer_url": "https://www.pexels.com/@ron-lach",
+    "pexels_url": "https://www.pexels.com/photo/person-doing-handshake-8921546/",
+    "query": "business handshake office deal"
+  },
+  "ai-wearables-ambient-computing": {
+    "photographer": "Startup Stock Photos",
+    "photographer_url": "https://www.pexels.com/@startup-stock-photos",
+    "pexels_url": "https://www.pexels.com/photo/man-in-gray-t-shirt-near-black-metal-wall-212290/",
+    "query": "smart glasses wearable device"
+  },
+  "housing-market-thaws-2026": {
+    "photographer": "Alena Darmel",
+    "photographer_url": "https://www.pexels.com/@a-darmel",
+    "pexels_url": "https://www.pexels.com/photo/sign-in-a-window-7641828/",
+    "query": "suburban house for sale sign"
+  },
+  "jagged-frontier-ai": {
+    "photographer": "Maël  BALLAND",
+    "photographer_url": "https://www.pexels.com/@toulouse",
+    "pexels_url": "https://www.pexels.com/photo/rocky-mountain-under-blue-sky-14339511/",
+    "query": "jagged mountain ridge peaks"
+  },
+  "mixture-of-experts-mainstream": {
+    "photographer": "Tima Miroshnichenko",
+    "photographer_url": "https://www.pexels.com/@tima-miroshnichenko",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-a-chip-6755081/",
+    "query": "circuit board chip macro"
+  },
+  "quantum-error-correction-2026": {
+    "photographer": "Ludovic Delot",
+    "photographer_url": "https://www.pexels.com/@delot",
+    "pexels_url": "https://www.pexels.com/photo/a-laboratory-with-computers-and-monitors-on-the-desk-18471529/",
+    "query": "quantum computer laboratory"
+  },
+  "self-driving-labs-ai-science": {
+    "photographer": "Pavel Danilyuk",
+    "photographer_url": "https://www.pexels.com/@pavel-danilyuk",
+    "pexels_url": "https://www.pexels.com/photo/scientists-testing-a-device-8438994/",
+    "query": "science laboratory robotics"
+  },
+  "vertical-ai-industry-models": {
+    "photographer": "Sami TÜRK",
+    "photographer_url": "https://www.pexels.com/@trksami",
+    "pexels_url": "https://www.pexels.com/photo/vintage-industrial-machines-in-abandoned-workshop-30335372/",
+    "query": "factory industrial machinery"
+  },
+  "world-series-2026": {
+    "photographer": "Ayyeee Ayyeee",
+    "photographer_url": "https://www.pexels.com/@ayyeee-ayyeee-434363205",
+    "pexels_url": "https://www.pexels.com/photo/a-full-stadium-at-the-baseball-game-in-nishinomiya-japan-16547083/",
+    "query": "baseball stadium night lights"
   }
 }
