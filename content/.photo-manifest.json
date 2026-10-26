@@ -700,5 +700,11 @@
     "photographer_url": "https://www.pexels.com/@ayyeee-ayyeee-434363205",
     "pexels_url": "https://www.pexels.com/photo/a-full-stadium-at-the-baseball-game-in-nishinomiya-japan-16547083/",
     "query": "baseball stadium night lights"
+  },
+  "anthropic-ipo-filing": {
+    "photographer": "RDNE Stock project",
+    "photographer_url": "https://www.pexels.com/@rdne",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-a-graph-7947742/",
+    "query": "stock exchange trading floor"
   }
 }

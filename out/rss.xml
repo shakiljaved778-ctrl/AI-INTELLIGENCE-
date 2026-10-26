@@ -6,7 +6,16 @@
     <atom:link href="https://cambrian-ai.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
     <description>Bayaan AI is intelligence for a changing world — sharp, original reporting and analysis on AI and the technology, markets, and culture shifts reshaping how we live and work.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2026 14:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 14:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Anthropic Files to Go Public in What Could Be a Record IPO</title>
+      <link>https://cambrian-ai.vercel.app/post/anthropic-ipo-filing</link>
+      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/anthropic-ipo-filing</guid>
+      <pubDate>Mon, 26 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Companies</category>
+      <dc:creator>Bayaan AI Staff</dc:creator>
+      <description>The maker of Claude has filed to list on the public markets under the ticker ANT, setting up one of the largest — and most hotly debated — technology debuts ever.</description>
+    </item>
     <item>
       <title>AI Wearables Are Back: The Fight for Ambient Computing</title>
       <link>https://cambrian-ai.vercel.app/post/ai-wearables-ambient-computing</link>
@@ -447,15 +456,6 @@
       <category>Wealth &amp; Finance</category>
       <dc:creator>Bayaan Desk</dc:creator>
       <description>Lending that once ran through banks and bond markets is increasingly happening in private funds — reshaping who finances the economy.</description>
-    </item>
-    <item>
-      <title>Agents on the Attack: Hundreds of AI Bots Breach 440 Servers in Days</title>
-      <link>https://cambrian-ai.vercel.app/post/ai-agents-weaponized-papercut-attack</link>
-      <guid isPermaLink="true">https://cambrian-ai.vercel.app/post/ai-agents-weaponized-papercut-attack</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>AI Policy</category>
-      <dc:creator>Bayaan AI Desk</dc:creator>
-      <description>Researchers say a threat actor wired together AI coding agents to exploit known bugs — reaching remote code execution in under four hours.</description>
     </item>
   </channel>
 </rss>
