@@ -127,6 +127,8 @@ const QUERY_OVERRIDES = {
   "openai-gpt6-astra": "futuristic technology glow",
   "physical-ai-robotics-investment": "robot arm factory",
   "qualcomm-aws-ai-chips": "semiconductor chip closeup",
+  // manual batch — 2026-10-26
+  "anthropic-ipo-filing": "stock exchange trading floor",
   // manual batch — 2026-10-09..15
   "ai-wearables-ambient-computing": "smart glasses wearable device",
   "jagged-frontier-ai": "jagged mountain ridge peaks",
